@@ -32,11 +32,14 @@ enum ChatVision {
     private static let log = Logger(subsystem: "app.paralist", category: "chat")
 
     static var available: Bool {
+        #if SDK27
         if #available(iOS 27.0, *) { return SystemLanguageModel.default.capabilities.contains(.vision) }
+        #endif
         return false
     }
 
     static func plan(image: URL, document: ScannedDocument, name: String, today: Day) async -> ShiftPlan? {
+        #if SDK27
         guard #available(iOS 27.0, *), available else { return nil }
         let started = Date()
         let session = LanguageModelSession(model: .default, instructions: ShiftPlanModel.instructions(name: name))
@@ -57,5 +60,8 @@ enum ChatVision {
             log.info("vision plan failed: \(String(describing: error), privacy: .public)")
             return nil
         }
+        #else
+        return nil
+        #endif
     }
 }

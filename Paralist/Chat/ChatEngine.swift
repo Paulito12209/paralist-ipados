@@ -33,7 +33,9 @@ final class ChatEngine {
     }
 
     var supportsThinking: Bool {
+        #if SDK27
         if #available(iOS 27.0, *) { return SystemLanguageModel.default.capabilities.contains(.reasoning) }
+        #endif
         return false
     }
 
@@ -91,12 +93,15 @@ final class ChatEngine {
     }
 
     private func stream(_ session: LanguageModelSession, _ prompt: String, _ thinking: ChatThinking) -> LanguageModelSession.ResponseStream<String> {
+        #if SDK27
         if #available(iOS 27.0, *), supportsThinking {
             return session.streamResponse(to: prompt, contextOptions: ContextOptions(reasoningLevel: Self.level(thinking)))
         }
+        #endif
         return session.streamResponse(to: prompt)
     }
 
+    #if SDK27
     @available(iOS 27.0, *)
     private static func level(_ thinking: ChatThinking) -> ContextOptions.ReasoningLevel {
         switch thinking {
@@ -105,6 +110,7 @@ final class ChatEngine {
         case .thorough: return .deep
         }
     }
+    #endif
 
     private func scanned(_ hash: String?, _ snapshot: ChatSnapshot) async -> String {
         guard let document = await document(hash, snapshot) else { return "" }
@@ -161,6 +167,7 @@ final class ChatEngine {
 
     static func failure(_ error: Error) -> ChatFailure {
         if error is CancellationError { return .cancelled }
+        #if SDK27
         if #available(iOS 27.0, *) {
             if let modelError = error as? LanguageModelError {
                 switch modelError {
@@ -172,6 +179,7 @@ final class ChatEngine {
             }
             if error is SystemLanguageModel.Error { return .loading }
         }
+        #endif
         if let generation = error as? LanguageModelSession.GenerationError {
             switch generation {
             case .exceededContextWindowSize: return .context
