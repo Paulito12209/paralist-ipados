@@ -1,0 +1,199 @@
+# Zusammenhang: Tests/ParalistCoreTests/SpokenCorpusTests.swift, Sources/ParalistCore/Planning/SpokenEvent.swift, Sources/ParalistCore/Planning/SpokenWords.swift, docs/siri.md
+# Satz | Titel | Tag | Beginn | Ende | Erinnerung | Ganztag
+# Bezugstag Donnerstag 2026-10-22, 10:00 Uhr, Tageszeiten Standard
+# Pauls Sätze
+Erstelle mir einen Reminder für morgen um 13:00 Uhr, dass ich die Mail von Google bearbeiten muss.	Mail von Google bearbeiten	+1	13:00		ja	nein
+stelle mir eine Erinnerung, dass ich morgen die Mails von Google bearbeiten muss um 13:00 Uhr.	Mails von Google bearbeiten	+1	13:00		ja	nein
+E-Mail von Google bezüglich Speicherplatz. bearbeiten. Morgen um 13:00 Uhr und erinnere mich daran .	E-Mail von Google bezüglich Speicherplatz bearbeiten	+1	13:00		ja	nein
+stelle mir einen Reminder , dass ich morgen um 15:00 Uhr die Übersichtsseite überarbeiten muss.	Übersichtsseite überarbeiten	+1	15:00		ja	nein
+# docs/siri.md
+morgen 8 Uhr Zahnarzt	Zahnarzt	+1	08:00		nein	nein
+übermorgen von 15 bis 17 Uhr Workshop	Workshop	+2	15:00	17:00	nein	nein
+# SpokenEventTests
+Übermorgen 15 Uhr Termin beim Zahnarzt.	Termin beim Zahnarzt	+2	15:00		nein	nein
+Termin beim Zahnarzt übermorgen um 15:30 Uhr	Termin beim Zahnarzt	+2	15:30		nein	nein
+Neuer Termin morgen 8 Uhr Zahnarzt	Zahnarzt	+1	08:00		nein	nein
+Erstelle mir einen neuen Termin heute 18 Uhr Kino	Kino	+0	18:00		nein	nein
+morgen abend Kino mit Anna	Kino mit Anna	+1	18:00		nein	nein
+Joggen morgens	Joggen	+1	08:00		nein	nein
+heute Morgen Joggen	Joggen	+0	08:00		nein	nein
+Montag morgen Standup	Standup	mo	08:00		nein	nein
+Essen um 8 abends	Essen	+0	20:00		nein	nein
+um 3 nachmittags Kaffee	Kaffee	+0	15:00		nein	nein
+1 Uhr mittags Lunch	Lunch	+0	13:00		nein	nein
+halb neun Frühstück	Frühstück	+1	08:30		nein	nein
+viertel vor drei Anruf	Anruf	+1	02:45		nein	nein
+Am Montag von 9 bis 11 Uhr Workshop	Workshop	mo	09:00	11:00	nein	nein
+morgen 15-17 Uhr Training	Training	+1	15:00	17:00	nein	nein
+Party am Samstag von 22 bis 2 Uhr	Party	sa	22:00	02:00	nein	nein
+Meeting morgen 11 bis 1	Meeting	+1	11:00	13:00	nein	nein
+Lernen morgen 14 Uhr für 2 Stunden	Lernen	+1	14:00	16:00	nein	nein
+Call heute 23 Uhr für eine halbe Stunde	Call	+0	23:00	23:30	nein	nein
+Nachtzug heute 23:30 für 2 Stunden	Nachtzug	+0	23:30	01:30	nein	nein
+Zahnarzt am 24.10. um 15:30	Zahnarzt	2026-10-24	15:30		nein	nein
+Geburtstag Oma am 3. März	Geburtstag Oma	2027-03-03			nein	nein
+Prüfung 12.11.2026 9 Uhr	Prüfung	2026-11-12	09:00		nein	nein
+in 3 Tagen Friseur	Friseur	+3			nein	nein
+in einer Woche Kontrolle	Kontrolle	+7			nein	nein
+nächsten Donnerstag Yoga	Yoga	2026-10-29			nein	nein
+Zahnarzt 15 Uhr	Zahnarzt	+0	15:00		nein	nein
+Zahnarzt 8 Uhr	Zahnarzt	+1	08:00		nein	nein
+heute 8 Uhr Zahnarzt	Zahnarzt	+0	08:00		nein	nein
+Meeting tomorrow at 3 pm for 2 hours	Meeting	+1	15:00	17:00	nein	nein
+Dinner tonight at 8	Dinner	+0	20:00		nein	nein
+Dentist on Friday 9:30am	Dentist	fr	09:30		nein	nein
+Trip October 30th	Trip	2026-10-30			nein	nein
+the day after tomorrow lunch at noon	Lunch	+2	12:00		nein	nein
+Einkaufen gehen	Einkaufen gehen				nein	nein
+Ein Termin beim Arzt	Ein Termin beim Arzt				nein	nein
+übermorgen 15 Uhr Steuer abgeben	Steuer abgeben	+2	15:00		nein	nein
+# SpokenWordingTests
+Erinnere mich daran morgen um 9 Uhr die Miete zu überweisen	Miete zu überweisen	+1	09:00		ja	nein
+Ich habe morgen einen Termin beim Zahnarzt	Termin beim Zahnarzt	+1			nein	nein
+Ich muss übermorgen einkaufen	Einkaufen	+2			nein	nein
+Remind me to call mom tomorrow at 5 pm	Call mom	+1	17:00		ja	nein
+Zahnarzt morgen 15 Uhr eintragen bitte	Zahnarzt	+1	15:00		nein	nein
+Termin: Zahnarzt morgen	Zahnarzt	+1			nein	nein
+Erstelle eine Aufgabe Steuer abgeben bis Freitag	Steuer abgeben	fr			nein	nein
+gestern Notiz	Notiz	-1			nein	nein
+vorgestern Notiz	Notiz	-2			nein	nein
+in zwei Wochen Kontrolle	Kontrolle	+14			nein	nein
+in einem Monat Zahnarzt	Zahnarzt	2026-11-22			nein	nein
+in 3 Monaten TÜV	TÜV	2027-01-22			nein	nein
+heute in einer Woche Kontrolle	Kontrolle	+7			nein	nein
+am Wochenende Wandern	Wandern	sa			nein	nein
+nächste Woche Zahnarzt	Zahnarzt	+7			nein	nein
+nächste Woche Montag Standup	Standup	2026-10-26			nein	nein
+Montag nächste Woche Standup	Standup	2026-10-26			nein	nein
+übernächste Woche Freitag Abgabe	Abgabe	2026-11-06			nein	nein
+übernächste Woche Urlaub	Urlaub	+14			nein	nein
+nächsten Monat Miete	Miete	2026-11-22			nein	nein
+am Mo. Standup	Standup	mo			nein	nein
+so schnell wie möglich Antwort	So schnell wie möglich Antwort				nein	nein
+am 24. Friseur	Friseur	2026-10-24			nein	nein
+am 3. Friseur	Friseur	2026-11-03			nein	nein
+on the 30th Trip	Trip	2026-10-30			nein	nein
+3 Eier kaufen	3 Eier kaufen				nein	nein
+Kapitel 3 lesen	Kapitel 3 lesen				nein	nein
+zwischen 14 und 16 Uhr Workshop	Workshop	+0	14:00	16:00	nein	nein
+between 2 and 4 pm Review	Review	+0	14:00	16:00	nein	nein
+dreiviertel 3 Kaffee	Kaffee	+1	02:45		nein	nein
+viertel 3 Kaffee	Kaffee	+1	02:15		nein	nein
+half past 3 Tea	Tea	+1	03:30		nein	nein
+quarter to 5 Tea	Tea	+1	04:45		nein	nein
+zehn nach acht Frühstück	Frühstück	+1	08:10		nein	nein
+twenty to five Tea	Tea	+1	04:40		nein	nein
+halb 9 abends Kino	Kino	+0	20:30		nein	nein
+um 10 nachts Heimfahrt	Heimfahrt	+0	22:00		nein	nein
+um 3 nachts Wecker	Wecker	+1	03:00		nein	nein
+um Mitternacht Feuerwerk	Feuerwerk	+1	00:00		nein	nein
+Rendez-vous demain à 18h30	Rendez-vous	+1	18:30		nein	nein
+Cita mañana a las 3 de la tarde	Cita	+1	15:00		nein	nein
+Standup 9 a.m. tomorrow	Standup	+1	09:00		nein	nein
+Lauf um 7 Uhr 30	Lauf	+1	07:30		nein	nein
+in einer Stunde Anruf	Anruf	+0	11:00		nein	nein
+in 20 Minuten Pause	Pause	+0	10:15		nein	nein
+in zwei Stunden Pause	Pause	+0	12:00		nein	nein
+Lernen morgen 14 Uhr 2 Stunden lang	Lernen	+1	14:00	16:00	nein	nein
+Meeting morgen 9 Uhr eine halbe Stunde lang	Meeting	+1	09:00	09:30	nein	nein
+Workshop morgen 9 Uhr für anderthalb Stunden	Workshop	+1	09:00	10:30	nein	nein
+morgen ganztägig Messe	Messe	+1			nein	ja
+Konferenz Freitag den ganzen Tag	Konferenz	fr			nein	ja
+all day Saturday Hackathon	Hackathon	sa			nein	ja
+Treffen in Berlin	Treffen in Berlin				nein	nein
+Go to gym tomorrow	Go to gym	+1			nein	nein
+Zahlen für Q3 prüfen	Zahlen für Q3 prüfen				nein	nein
+Erstelle mir einen Reminder für übermorgen dieselbe Uhrzeit		+2	10:00		ja	nein
+Erinnere mich morgen um 18 Uhr an die Miete	Miete	+1	18:00		ja	nein
+Reminder: Müll rausbringen morgen früh	Müll rausbringen	+1	08:00		ja	nein
+Erinnere mich daran, dass ich morgen die Miete überweisen soll	Miete überweisen	+1			ja	nein
+Erinnere mich bitte morgen daran, dass wir die Bewerbung abschicken müssen	Bewerbung abschicken	+1			ja	nein
+Stell mir für Freitag eine Erinnerung, dass ich Oma anrufen soll	Oma anrufen	fr			ja	nein
+Remind me that I have to call mom tomorrow	Call mom	+1			ja	nein
+Ich muss morgen die Küche putzen	Küche putzen	+1			nein	nein
+Dass ich das nicht vergesse	Das nicht vergesse				nein	nein
+Ich muss morgen 9 Uhr die E-Mail an Lisa schreiben	E-Mail an Lisa schreiben	+1	09:00		nein	nein
+Das Buch lesen	Das Buch lesen				nein	nein
+Steuer abgeben Freitag mit Erinnerung	Steuer abgeben	fr			ja	nein
+Buy milk tomorrow and set a reminder please	Buy milk	+1			ja	nein
+Stelle mir eine Erinnerung für übermorgen um dieselbe Uhrzeit		+2	10:00		ja	nein
+Mails von Google bearbeiten morgen 13 Uhr, stell mir eine Erinnerung	Mails von Google bearbeiten	+1	13:00		ja	nein
+# Deutsch, Varianten
+Denk dran, morgen Blumen gießen	Blumen gießen	+1			nein	nein
+Denk daran, übermorgen die Pakete zur Post zu bringen	Pakete zur Post zu bringen	+2			nein	nein
+Denk dran, dass ich morgen um 11 Uhr den Elektriker anrufen muss	Elektriker anrufen	+1	11:00		nein	nein
+Nicht vergessen: Zahnarzt am Freitag um 10	Zahnarzt	fr	10:00		nein	nein
+Nicht vergessen, Mama anrufen	Mama anrufen				nein	nein
+Ich muss unbedingt morgen die Steuererklärung abgeben	Steuererklärung abgeben	+1			nein	nein
+Ich muss noch Geschenk für Anna kaufen	Geschenk für Anna kaufen				nein	nein
+Ich will morgen Abend joggen gehen	Joggen gehen	+1	18:00		nein	nein
+Ich soll morgen früh Brötchen holen	Brötchen holen	+1	08:00		nein	nein
+Ich hab morgen um 16 Uhr Physiotherapie	Physiotherapie	+1	16:00		nein	nein
+Wir haben am Montag um 10 Uhr ein Meeting mit dem Team	Meeting mit dem Team	mo	10:00		nein	nein
+Wir müssen am Freitag die Garage aufräumen	Garage aufräumen	fr			nein	nein
+Termin beim Zahnarzt am 5. November um 9:30	Termin beim Zahnarzt	2026-11-05	09:30		nein	nein
+Termin mit Herrn Schulz am 2.11. um 11 Uhr	Termin mit Herrn Schulz	2026-11-02	11:00		nein	nein
+Arzttermin am Montag, den 2. November um 8:15	Arzttermin	2026-11-02	08:15		nein	nein
+Anruf mit Lisa wegen Projekt Alpha morgen um 14 Uhr	Anruf mit Lisa wegen Projekt Alpha	+1	14:00		nein	nein
+Ähm, also morgen um 9 Uhr Bäcker anrufen	Bäcker anrufen	+1	09:00		nein	nein
+Morgen um 8 Uhr, ähm, Auto zur Werkstatt bringen	Auto zur Werkstatt bringen	+1	08:00		nein	nein
+Also, ich muss morgen, ähm, die Wohnung putzen	Wohnung putzen	+1			nein	nein
+Ähm, Termin beim Zahnarzt am Montag um 9	Termin beim Zahnarzt	mo	09:00		nein	nein
+Bitte morgen Müll rausbringen	Müll rausbringen	+1			nein	nein
+Zahnarzt am Dienstag um 16 Uhr	Zahnarzt	di	16:00		nein	nein
+Am Freitag Abend Essen bei Mama	Essen bei Mama	fr	18:00		nein	nein
+Müll rausbringen heute Abend	Müll rausbringen	+0	18:00		nein	nein
+Heute Nachmittag Paket abholen	Paket abholen	+0	15:00		nein	nein
+Morgen Mittag Essen mit Anna	Essen mit Anna	+1	12:00		nein	nein
+Morgen früh um 7 Uhr Laufen gehen	Laufen gehen	+1	07:00		nein	nein
+Geburtstag von Max am 12. Dezember	Geburtstag von Max	2026-12-12			nein	nein
+Steuerberater anrufen nächste Woche Dienstag	Steuerberater anrufen	2026-10-27			nein	nein
+Zahnarzt nächsten Dienstag um 8:30	Zahnarzt	2026-10-27	08:30		nein	nein
+Präsentation vorbereiten bis Montag	Präsentation vorbereiten	mo			nein	nein
+Präsentation für Kunde X fertig machen bis übermorgen	Präsentation für Kunde X fertig machen	+2			nein	nein
+Rechnung bezahlen bis zum 30.	Rechnung bezahlen	2026-10-30			nein	nein
+Steuererklärung bis 31.12. abgeben	Steuererklärung abgeben	2026-12-31			nein	nein
+Abgabe Bachelorarbeit am 15.01.2027	Abgabe Bachelorarbeit	2027-01-15			nein	nein
+Elternabend am Mittwoch von 19 bis 21 Uhr	Elternabend	mi	19:00	21:00	nein	nein
+Jahresgespräch übermorgen 11:00 bis 12:30	Jahresgespräch	+2	11:00	12:30	nein	nein
+Flug nach Lissabon am 14.11. um 6:40 Uhr	Flug nach Lissabon	2026-11-14	06:40		nein	nein
+Termin beim Finanzamt am 3.11. um 10:15 eintragen	Termin beim Finanzamt	2026-11-03	10:15		nein	nein
+Kino mit Lea heute um 20:15	Kino mit Lea	+0	20:15		nein	nein
+Sport am Mittwochabend	Sport	mi	18:00		nein	nein
+Vereinsfeier am Samstag ganztägig	Vereinsfeier	sa			nein	ja
+Mama anrufen in 30 Minuten	Mama anrufen	+0	10:30		nein	nein
+In einer halben Stunde Pizza aus dem Ofen holen	Pizza aus dem Ofen holen	+0	10:30		nein	nein
+Wäsche waschen am Wochenende	Wäsche waschen	sa			nein	nein
+Morgen um 13:00 Uhr Mail von Google bearbeiten und erinnere mich daran	Mail von Google bearbeiten	+1	13:00		ja	nein
+Stell mir einen Reminder für Freitag um 9, dass ich die Miete überweisen muss	Miete überweisen	fr	09:00		ja	nein
+Erinnere mich heute Abend daran, den Müll rauszubringen	Müll rauszubringen	+0	18:00		ja	nein
+Erinnere mich in einer Stunde an den Kuchen im Ofen	Kuchen im Ofen	+0	11:00		ja	nein
+Erinner mich übermorgen ans Blumengießen	Blumengießen	+2			ja	nein
+Erstelle eine Erinnerung für Montag 9 Uhr Rechnung schreiben	Rechnung schreiben	mo	09:00		ja	nein
+# Englisch, Varianten
+Call the plumber on Monday at 10 am	Call the plumber	mo	10:00		nein	nein
+Don't forget to pay rent on Friday	Pay rent	fr			nein	nein
+I need to finish the report by Wednesday	Finish the report	mi			nein	nein
+Lunch with Sarah at 12:30 tomorrow	Lunch with Sarah	+1	12:30		nein	nein
+Team meeting from 2 to 3 pm on Tuesday	Team meeting	di	14:00	15:00	nein	nein
+Set a reminder to water the plants tonight	Water the plants	+0	18:00		ja	nein
+# Spanisch
+Dentista el viernes a las 10	Dentista	fr	10:00		nein	nein
+Reunión pasado mañana a las 9 de la mañana	Reunión	+2	09:00		nein	nein
+Llamar a mamá mañana a las 5 de la tarde	Llamar a mamá	+1	17:00		nein	nein
+Comprar pan hoy	Comprar pan	+0			nein	nein
+Cena con Ana el sábado a las 8 de la noche	Cena con Ana	sa	20:00		nein	nein
+# Französisch
+Dentiste vendredi à 9h	Dentiste	fr	09:00		nein	nein
+Appeler maman demain à 17h	Appeler maman	+1	17:00		nein	nein
+Réunion lundi de 10h à 11h30	Réunion	mo	10:00	11:30	nein	nein
+Courses samedi matin	Courses	sa	08:00		nein	nein
+Cours de yoga aujourd'hui à 19h	Cours de yoga	+0	19:00		nein	nein
+# offen
+# Heute um halb drei Kaffee mit Jonas	Kaffee mit Jonas	+0	14:30		nein	nein
+# Don't forget to pay rent next Friday	Pay rent	fr				nein	nein
+# Urlaub vom 2. bis 6. November	Urlaub	2026-11-02			nein	ja
+# Wochenmeeting jeden Montag um 9	Wochenmeeting	mo	09:00		nein	nein
+# Bitte trag mir für Samstag Grillen bei Tom ein	Grillen bei Tom	sa			nein	nein
+# Morgen 9 Uhr Zahnarzt und erinnere mich eine Stunde vorher	Zahnarzt	+1	09:00		ja	nein
+# Kannst du mich morgen um 8 an den Arzttermin erinnern	Arzttermin	+1	08:00		ja	nein

@@ -1,0 +1,112 @@
+{
+  "sourceLanguage": "de",
+  "strings": {
+    "NSCameraUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يستخدم Paralist الكاميرا لحفظ الصور ومقاطع الفيديو كعناصر."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist ছবি ও ভিডিও এন্ট্রি হিসেবে সংরক্ষণ করতে ক্যামেরা ব্যবহার করে।"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist nutzt die Kamera, um Fotos und Videos als Einträge zu speichern."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist uses the camera to save photos and videos as entries."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist usa la cámara para guardar fotos y vídeos como entradas."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist utilise la caméra pour enregistrer des photos et vidéos comme entrées."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist फ़ोटो और वीडियो को प्रविष्टियों के रूप में सहेजने के लिए कैमरे का उपयोग करता है।"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist 使用相机将照片和视频保存为条目。"
+          }
+        }
+      }
+    },
+    "NSMicrophoneUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يستخدم Paralist الميكروفون للتسجيلات الصوتية وصوت الفيديو والإدخال الصوتي."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist অডিও রেকর্ডিং, ভিডিওর শব্দ ও বলে লেখার জন্য মাইক্রোফোন ব্যবহার করে।"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist nutzt das Mikrofon für Audioaufnahmen, den Ton von Videos und die Spracheingabe."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist uses the microphone for audio recordings, video sound and dictation."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist usa el micrófono para grabaciones de audio, el sonido de los vídeos y el dictado."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist utilise le micro pour les enregistrements audio, le son des vidéos et la dictée."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist ऑडियो रिकॉर्डिंग, वीडियो की आवाज़ और बोलकर लिखने के लिए माइक्रोफ़ोन का उपयोग करता है।"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paralist 使用麦克风进行录音、录制视频声音和语音输入。"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

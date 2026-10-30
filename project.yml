@@ -1,0 +1,185 @@
+# Zusammenhang: Paralist/*, ParalistShare/* (inkl. Assets.xcassets), ParalistCore/Package.swift, Paralist/Paralist.entitlements, Paralist/Resources/InfoPlist.xcstrings, ParalistShare/ParalistShare.entitlements, ParalistWidgets/* (Info.plist, ParalistWidgets.entitlements), docs/widget.md, docs/siri.md, .github/workflows/ios.yml
+name: Paralist
+options:
+  bundleIdPrefix: app.paralist.ipad
+  deploymentTarget:
+    iOS: "26.0"
+  developmentLanguage: de
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    PRODUCT_NAME: $(TARGET_NAME)
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    TARGETED_DEVICE_FAMILY: "2"
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+packages:
+  ParalistCore:
+    path: ParalistCore
+targets:
+  Paralist:
+    type: application
+    platform: iOS
+    sources:
+      - path: Paralist
+    dependencies:
+      - package: ParalistCore
+      - target: ParalistShare
+        embed: true
+      - target: ParalistWidgets
+        embed: true
+    entitlements:
+      path: Paralist/Paralist.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.app.paralist.ipad
+        com.apple.developer.associated-domains:
+          - applinks:xool-app.de
+    info:
+      path: Paralist/Info.plist
+      properties:
+        CFBundleDisplayName: Paralist
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        INAlternativeAppNames:
+          - INAlternativeAppName: Parallelist
+            INAlternativeAppNamePronunciationHint: Parallelist
+          - INAlternativeAppName: Paralyst
+            INAlternativeAppNamePronunciationHint: Paralyst
+          - INAlternativeAppName: Para List
+            INAlternativeAppNamePronunciationHint: Para List
+        CFBundleDevelopmentRegion: de
+        CFBundleLocalizations: [de, en, es, fr, zh-Hans, hi, ar, bn]
+        UIAppFonts: [DMSans.ttf]
+        UILaunchScreen:
+          UIColorName: ""
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UISupportedInterfaceOrientations~ipad: [UIInterfaceOrientationPortrait, UIInterfaceOrientationPortraitUpsideDown, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        ITSAppUsesNonExemptEncryption: false
+        NSCameraUsageDescription: Paralist nutzt die Kamera, um Fotos und Videos als Einträge zu speichern.
+        NSMicrophoneUsageDescription: Paralist nutzt das Mikrofon für Audioaufnahmen, den Ton von Videos und die Spracheingabe.
+        LSSupportsOpeningDocumentsInPlace: false
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: app.paralist.backup
+            UTTypeDescription: Paralist-Sicherung
+            UTTypeConformsTo: [public.zip-archive, public.data]
+            UTTypeTagSpecification:
+              public.filename-extension: [paralist]
+              public.mime-type: [application/vnd.paralist]
+        CFBundleDocumentTypes:
+          - CFBundleTypeName: Paralist-Sicherung
+            CFBundleTypeRole: Viewer
+            LSHandlerRank: Owner
+            LSItemContentTypes: [app.paralist.backup]
+        CFBundleURLTypes:
+          - CFBundleURLName: app.paralist.ipad
+            CFBundleURLSchemes: [paralist-ipad]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.paralist.ipad
+        TARGETED_DEVICE_FAMILY: "2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: YES
+  ParalistShare:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ParalistShare
+      - path: Paralist/Theme
+      - path: Paralist/Icons/AppIcons.swift
+      - path: Paralist/Icons/GlyphIcon.swift
+      - path: Paralist/Entries/TypeLook.swift
+      - path: Paralist/Entry/LinkPickerSheet.swift
+      - path: Paralist/Entry/LinkCreateRow.swift
+      - path: Paralist/Components/Chips.swift
+      - path: Paralist/App/L.swift
+      - path: Paralist/App/AppPaths.swift
+      - path: Paralist/App/ClipboardMemory.swift
+      - path: Paralist/Net/TitleFetcher.swift
+      - path: Paralist/Entry/YouTubePlayer.swift
+      - path: Paralist/Files/AttachmentImporter.swift
+      - path: Paralist/Files/Thumbnails.swift
+      - path: Paralist/Resources/Localizable.xcstrings
+      - path: Paralist/Resources/Fonts
+    dependencies:
+      - package: ParalistCore
+    entitlements:
+      path: ParalistShare/ParalistShare.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.app.paralist.ipad
+    info:
+      path: ParalistShare/Info.plist
+      properties:
+        CFBundleDisplayName: Paralist
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UIAppFonts: [DMSans.ttf]
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.share-services
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).ShareViewController
+          NSExtensionAttributes:
+            NSExtensionActivationRule:
+              NSExtensionActivationSupportsWebURLWithMaxCount: 1
+              NSExtensionActivationSupportsText: true
+              NSExtensionActivationSupportsImageWithMaxCount: 10
+              NSExtensionActivationSupportsMovieWithMaxCount: 10
+              NSExtensionActivationSupportsFileWithMaxCount: 10
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.paralist.ipad.share
+        TARGETED_DEVICE_FAMILY: "2"
+        APPLICATION_EXTENSION_API_ONLY: YES
+  ParalistWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: ParalistWidgets
+      - path: Paralist/Intents/EntryEntity.swift
+      - path: Paralist/Theme
+      - path: Paralist/Icons/AppIcons.swift
+      - path: Paralist/Icons/GlyphIcon.swift
+      - path: Paralist/Entries/TypeLook.swift
+      - path: Paralist/Entry/CoverArtwork.swift
+      - path: Paralist/App/L.swift
+      - path: Paralist/App/AppPaths.swift
+      - path: Paralist/Resources/Localizable.xcstrings
+      - path: Paralist/Resources/Fonts
+      - path: ParalistShare/Assets.xcassets
+    dependencies:
+      - package: ParalistCore
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+    entitlements:
+      path: ParalistWidgets/ParalistWidgets.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.app.paralist.ipad
+    info:
+      path: ParalistWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: Paralist
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        UIAppFonts: [DMSans.ttf]
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.paralist.ipad.widgets
+        TARGETED_DEVICE_FAMILY: "2"
+        APPLICATION_EXTENSION_API_ONLY: YES
+schemes:
+  Paralist:
+    build:
+      targets:
+        Paralist: all
+    run:
+      config: Debug
+    test:
+      config: Debug

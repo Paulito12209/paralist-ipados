@@ -1,0 +1,62 @@
+# Zusammenhang: project.yml, ParalistCore/Package.swift, tools/screenshots.sh, Paralist/App/LaunchOptions.swift
+name: iPadOS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Xcode wählen
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_27*.app /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          sudo xcode-select -s "$XCODE"
+          xcodebuild -version
+      - name: Projekt erzeugen
+        run: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Logik-Tests
+        run: cd ParalistCore && swift test
+      - name: App bauen
+        run: |
+          set -o pipefail
+          xcodebuild -project Paralist.xcodeproj -scheme Paralist -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO build 2>&1 | tee build.log | grep -E "error:|BUILD" || true
+          grep -q "BUILD SUCCEEDED" build.log
+      - name: Fehler zeigen
+        if: failure()
+        run: grep -E "error:" build.log | head -100 || true
+      - name: Screenshots
+        run: tools/screenshots.sh build/Build/Products/Debug-iphonesimulator/Paralist.app screenshots
+      - uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots
+      - name: Screenshots in Branch ablegen
+        run: |
+          git config user.name "paralist-ci"
+          git config user.email "ci@paralist.invalid"
+          SHA=$(git rev-parse --short HEAD)
+          mv screenshots /tmp/screenshots
+          if git fetch origin ci-screenshots; then
+            git checkout -B ci-screenshots origin/ci-screenshots
+          else
+            git checkout --orphan ci-screenshots
+            git rm -rf --quiet .
+          fi
+          git clean -fdxq
+          rm -rf latest && mkdir latest && cp /tmp/screenshots/*.png latest/
+          echo "$SHA" > latest/COMMIT
+          git add latest
+          git commit -q -m "Screenshots für $SHA" || exit 0
+          git push origin ci-screenshots

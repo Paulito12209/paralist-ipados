@@ -1,0 +1,4479 @@
+{
+  "composer_place_title": {
+    "de": "Ablegen in",
+    "en": "Move to",
+    "es": "Mover a",
+    "fr": "Déplacer vers",
+    "zh-Hans": "移到",
+    "hi": "इसमें रखें",
+    "ar": "نقل إلى",
+    "bn": "এখানে রাখুন"
+  },
+  "share_title_bookmark": {
+    "de": "Lesezeichen speichern",
+    "en": "Save bookmark",
+    "es": "Guardar marcador",
+    "fr": "Enregistrer le signet",
+    "zh-Hans": "保存书签",
+    "hi": "बुकमार्क सहेजें",
+    "ar": "حفظ الإشارة المرجعية",
+    "bn": "বুকমার্ক সংরক্ষণ"
+  },
+  "share_title_note": {
+    "de": "Notiz speichern",
+    "en": "Save note",
+    "es": "Guardar nota",
+    "fr": "Enregistrer la note",
+    "zh-Hans": "保存笔记",
+    "hi": "नोट सहेजें",
+    "ar": "حفظ الملاحظة",
+    "bn": "নোট সংরক্ষণ"
+  },
+  "export_failed": {
+    "de": "Die Sicherung konnte nicht erstellt werden.",
+    "en": "The backup could not be created.",
+    "es": "No se pudo crear la copia de seguridad.",
+    "fr": "La sauvegarde n’a pas pu être créée.",
+    "zh-Hans": "无法创建备份。",
+    "hi": "बैकअप नहीं बनाया जा सका।",
+    "ar": "تعذّر إنشاء النسخة الاحتياطية.",
+    "bn": "ব্যাকআপ তৈরি করা যায়নি।"
+  },
+  "settings_pins": {
+    "de": "Anpinnen",
+    "en": "Pinning",
+    "es": "Fijar",
+    "fr": "Épingler",
+    "zh-Hans": "置顶",
+    "hi": "पिन करना",
+    "ar": "التثبيت",
+    "bn": "পিন করা"
+  },
+  "settings_pin_limit": {
+    "de": "Angepinnt je Ort",
+    "en": "Pinned per place",
+    "es": "Fijados por lugar",
+    "fr": "Épinglés par lieu",
+    "zh-Hans": "每个位置的置顶数",
+    "hi": "प्रति स्थान पिन किए गए",
+    "ar": "المثبّت لكل مكان",
+    "bn": "প্রতি স্থানে পিন করা"
+  },
+  "settings_pin_limit_hint": {
+    "de": "So viele Einträge dürfen in Eingang, Projekt, Arbeitsbereich oder Ressource gleichzeitig angepinnt sein. Beim nächsten Anpinnen löst sich der älteste Pin.",
+    "en": "This many entries can be pinned at once in the inbox, a project, an area or a resource. Pinning one more releases the oldest pin.",
+    "es": "Cuántas entradas pueden estar fijadas a la vez en la bandeja de entrada, un proyecto, un área o un recurso. Al fijar otra, se suelta la más antigua.",
+    "fr": "Nombre d’entrées pouvant être épinglées en même temps dans la boîte de réception, un projet, un domaine ou une ressource. En épingler une de plus libère la plus ancienne.",
+    "zh-Hans": "收件箱、项目、领域或资源中可同时置顶的条目数量。再置顶一条时，最早的置顶会被取消。",
+    "hi": "इनबॉक्स, प्रोजेक्ट, क्षेत्र या संसाधन में एक साथ इतनी प्रविष्टियाँ पिन की जा सकती हैं। एक और पिन करने पर सबसे पुराना पिन हट जाता है।",
+    "ar": "عدد الإدخالات التي يمكن تثبيتها في آن واحد في البريد الوارد أو مشروع أو مجال أو مورد. عند تثبيت إدخال آخر يُلغى أقدم تثبيت.",
+    "bn": "ইনবক্স, প্রকল্প, ক্ষেত্র বা রিসোর্সে একসাথে এতগুলো এন্ট্রি পিন করা যায়। আরেকটি পিন করলে সবচেয়ে পুরোনো পিন সরে যায়।"
+  },
+  "pin_released": {
+    "de": "Pin gelöst: %@",
+    "en": "Unpinned: %@",
+    "es": "Desfijado: %@",
+    "fr": "Désépinglé : %@",
+    "zh-Hans": "已取消置顶：%@",
+    "hi": "पिन हटाया गया: %@",
+    "ar": "أُلغي التثبيت: %@",
+    "bn": "পিন সরানো হয়েছে: %@"
+  },
+  "menu_refresh": {
+    "de": "Aktualisieren",
+    "en": "Refresh",
+    "es": "Actualizar",
+    "fr": "Actualiser",
+    "zh-Hans": "刷新",
+    "hi": "ताज़ा करें",
+    "ar": "تحديث",
+    "bn": "রিফ্রেশ করুন"
+  },
+  "avatar_zoom": {
+    "de": "Zoom",
+    "en": "Zoom",
+    "es": "Zoom",
+    "fr": "Zoom",
+    "zh-Hans": "缩放",
+    "hi": "ज़ूम",
+    "ar": "التكبير",
+    "bn": "জুম"
+  },
+  "avatar_focus_x": {
+    "de": "Fokus horizontal",
+    "en": "Focus horizontal",
+    "es": "Enfoque horizontal",
+    "fr": "Focus horizontal",
+    "zh-Hans": "水平焦点",
+    "hi": "क्षैतिज फ़ोकस",
+    "ar": "التركيز الأفقي",
+    "bn": "অনুভূমিক ফোকাস"
+  },
+  "avatar_focus_y": {
+    "de": "Fokus vertikal",
+    "en": "Focus vertical",
+    "es": "Enfoque vertical",
+    "fr": "Focus vertical",
+    "zh-Hans": "垂直焦点",
+    "hi": "ऊर्ध्वाधर फ़ोकस",
+    "ar": "التركيز العمودي",
+    "bn": "উল্লম্ব ফোকাস"
+  },
+  "save_failed": {
+    "de": "Speichern fehlgeschlagen. Der Eintrag wurde nicht angelegt.",
+    "en": "Saving failed. The entry was not created.",
+    "es": "No se pudo guardar. La entrada no se creó.",
+    "fr": "Échec de l’enregistrement. L’entrée n’a pas été créée.",
+    "zh-Hans": "保存失败，条目未创建。",
+    "hi": "सहेजना विफल रहा। प्रविष्टि नहीं बनी।",
+    "ar": "فشل الحفظ. لم يتم إنشاء الإدخال.",
+    "bn": "সংরক্ষণ ব্যর্থ হয়েছে। এন্ট্রি তৈরি হয়নি।"
+  },
+  "share_title_image": {
+    "de": "Bild",
+    "en": "Image",
+    "es": "Imagen",
+    "fr": "Image",
+    "zh-Hans": "图片",
+    "hi": "छवि",
+    "ar": "صورة",
+    "bn": "ছবি"
+  },
+  "share_title_video": {
+    "de": "Video",
+    "en": "Video",
+    "es": "Vídeo",
+    "fr": "Vidéo",
+    "zh-Hans": "视频",
+    "hi": "वीडियो",
+    "ar": "فيديو",
+    "bn": "ভিডিও"
+  },
+  "share_title_audio": {
+    "de": "Audio",
+    "en": "Audio",
+    "es": "Audio",
+    "fr": "Audio",
+    "zh-Hans": "音频",
+    "hi": "ऑडियो",
+    "ar": "صوت",
+    "bn": "অডিও"
+  },
+  "share_title_document": {
+    "de": "Dokument",
+    "en": "Document",
+    "es": "Documento",
+    "fr": "Document",
+    "zh-Hans": "文档",
+    "hi": "दस्तावेज़",
+    "ar": "مستند",
+    "bn": "ডকুমেন্ট"
+  },
+  "share_title_files": {
+    "de": "%lld Dateien",
+    "en": "%lld files",
+    "es": "%lld archivos",
+    "fr": "%lld fichiers",
+    "zh-Hans": "%lld 个文件",
+    "hi": "%lld फ़ाइलें",
+    "ar": "%lld ملفات",
+    "bn": "%lld টি ফাইল"
+  },
+  "share_links_none": {
+    "de": "Keine",
+    "en": "None",
+    "es": "Ninguna",
+    "fr": "Aucune",
+    "zh-Hans": "无",
+    "hi": "कोई नहीं",
+    "ar": "لا شيء",
+    "bn": "কোনোটি নয়"
+  },
+  "share_audio_play": {
+    "de": "Abspielen",
+    "en": "Play",
+    "es": "Reproducir",
+    "fr": "Lire",
+    "zh-Hans": "播放",
+    "hi": "चलाएँ",
+    "ar": "تشغيل",
+    "bn": "চালান"
+  },
+  "share_audio_pause": {
+    "de": "Pause",
+    "en": "Pause",
+    "es": "Pausa",
+    "fr": "Pause",
+    "zh-Hans": "暂停",
+    "hi": "रोकें",
+    "ar": "إيقاف مؤقت",
+    "bn": "বিরতি"
+  },
+  "list_pinned": {
+    "de": "Angepinnt",
+    "en": "Pinned",
+    "es": "Fijados",
+    "fr": "Épinglés",
+    "zh-Hans": "已置顶",
+    "hi": "पिन किए गए",
+    "ar": "المثبّتة",
+    "bn": "পিন করা"
+  },
+  "list_favorites": {
+    "de": "Favoriten",
+    "en": "Favorites",
+    "es": "Favoritos",
+    "fr": "Favoris",
+    "zh-Hans": "收藏",
+    "hi": "पसंदीदा",
+    "ar": "المفضلة",
+    "bn": "পছন্দের"
+  },
+  "empty_kind_pinned": {
+    "de": "Pinne Einträge an, dann stehen sie hier.",
+    "en": "Pin entries and they appear here.",
+    "es": "Fija entradas y aparecerán aquí.",
+    "fr": "Épinglez des entrées, elles apparaîtront ici.",
+    "zh-Hans": "置顶条目后会显示在这里。",
+    "hi": "प्रविष्टियाँ पिन करें, वे यहाँ दिखेंगी।",
+    "ar": "ثبّت العناصر لتظهر هنا.",
+    "bn": "এন্ট্রি পিন করলে সেগুলো এখানে দেখা যাবে।"
+  },
+  "empty_kind_favorites": {
+    "de": "Markiere Einträge als Favorit, dann stehen sie hier.",
+    "en": "Mark entries as favorites and they appear here.",
+    "es": "Marca entradas como favoritas y aparecerán aquí.",
+    "fr": "Marquez des entrées comme favorites, elles apparaîtront ici.",
+    "zh-Hans": "将条目设为收藏后会显示在这里。",
+    "hi": "प्रविष्टियों को पसंदीदा बनाएँ, वे यहाँ दिखेंगी।",
+    "ar": "أضف العناصر إلى المفضلة لتظهر هنا.",
+    "bn": "এন্ট্রি পছন্দের করলে সেগুলো এখানে দেখা যাবে।"
+  },
+  "entry_created_on": {
+    "de": "Erstellt am %@",
+    "en": "Created on %@",
+    "es": "Creado el %@",
+    "fr": "Créé le %@",
+    "zh-Hans": "创建于 %@",
+    "hi": "%@ को बनाया गया",
+    "ar": "أُنشئ في %@",
+    "bn": "%@ তারিখে তৈরি"
+  },
+  "search_filter_title": {
+    "de": "Filter",
+    "en": "Filter",
+    "es": "Filtros",
+    "fr": "Filtres",
+    "zh-Hans": "筛选",
+    "hi": "फ़िल्टर",
+    "ar": "تصفية",
+    "bn": "ফিল্টার"
+  },
+  "search_filter_reset": {
+    "de": "Zurücksetzen",
+    "en": "Reset",
+    "es": "Restablecer",
+    "fr": "Réinitialiser",
+    "zh-Hans": "重置",
+    "hi": "रीसेट करें",
+    "ar": "إعادة تعيين",
+    "bn": "রিসেট করুন"
+  },
+  "create_photo": {
+    "de": "Foto",
+    "en": "Photo",
+    "es": "Foto",
+    "fr": "Photo",
+    "zh-Hans": "拍照",
+    "hi": "फ़ोटो",
+    "ar": "صورة",
+    "bn": "ছবি"
+  },
+  "create_video": {
+    "de": "Video",
+    "en": "Video",
+    "es": "Vídeo",
+    "fr": "Vidéo",
+    "zh-Hans": "视频",
+    "hi": "वीडियो",
+    "ar": "فيديو",
+    "bn": "ভিডিও"
+  },
+  "create_audio": {
+    "de": "Audio",
+    "en": "Audio",
+    "es": "Audio",
+    "fr": "Audio",
+    "zh-Hans": "录音",
+    "hi": "ऑडियो",
+    "ar": "صوت",
+    "bn": "অডিও"
+  },
+  "capture_saved": {
+    "de": "Aufnahme gespeichert",
+    "en": "Recording saved",
+    "es": "Grabación guardada",
+    "fr": "Enregistrement sauvegardé",
+    "zh-Hans": "录制已保存",
+    "hi": "रिकॉर्डिंग सहेजी गई",
+    "ar": "تم حفظ التسجيل",
+    "bn": "রেকর্ডিং সংরক্ষিত"
+  },
+  "capture_camera_unavailable": {
+    "de": "Kamera nicht verfügbar",
+    "en": "Camera not available",
+    "es": "Cámara no disponible",
+    "fr": "Caméra indisponible",
+    "zh-Hans": "相机不可用",
+    "hi": "कैमरा उपलब्ध नहीं है",
+    "ar": "الكاميرا غير متاحة",
+    "bn": "ক্যামেরা পাওয়া যাচ্ছে না"
+  },
+  "capture_camera_denied": {
+    "de": "Kamerazugriff fehlt. In den Einstellungen erlauben.",
+    "en": "Camera access is off. Allow it in Settings.",
+    "es": "Falta acceso a la cámara. Permítelo en Ajustes.",
+    "fr": "Accès à la caméra refusé. Autorisez-le dans Réglages.",
+    "zh-Hans": "无法访问相机，请在设置中允许。",
+    "hi": "कैमरा एक्सेस बंद है। सेटिंग्स में अनुमति दें।",
+    "ar": "الوصول إلى الكاميرا مغلق. اسمح به من الإعدادات.",
+    "bn": "ক্যামেরা অ্যাক্সেস বন্ধ। সেটিংসে অনুমতি দিন।"
+  },
+  "capture_mic_denied": {
+    "de": "Mikrofonzugriff fehlt. In den Einstellungen erlauben.",
+    "en": "Microphone access is off. Allow it in Settings.",
+    "es": "Falta acceso al micrófono. Permítelo en Ajustes.",
+    "fr": "Accès au micro refusé. Autorisez-le dans Réglages.",
+    "zh-Hans": "无法访问麦克风，请在设置中允许。",
+    "hi": "माइक्रोफ़ोन एक्सेस बंद है। सेटिंग्स में अनुमति दें।",
+    "ar": "الوصول إلى الميكروفون مغلق. اسمح به من الإعدادات.",
+    "bn": "মাইক্রোফোন অ্যাক্সেস বন্ধ। সেটিংসে অনুমতি দিন।"
+  },
+  "record_title": {
+    "de": "Audioaufnahme",
+    "en": "Audio recording",
+    "es": "Grabación de audio",
+    "fr": "Enregistrement audio",
+    "zh-Hans": "录音",
+    "hi": "ऑडियो रिकॉर्डिंग",
+    "ar": "تسجيل صوتي",
+    "bn": "অডিও রেকর্ডিং"
+  },
+  "entry_link_copy": {
+    "de": "Link kopieren",
+    "en": "Copy link",
+    "es": "Copiar enlace",
+    "fr": "Copier le lien",
+    "zh-Hans": "复制链接",
+    "hi": "लिंक कॉपी करें",
+    "ar": "نسخ الرابط",
+    "bn": "লিংক কপি করুন"
+  },
+  "entry_link_copied": {
+    "de": "Link kopiert",
+    "en": "Link copied",
+    "es": "Enlace copiado",
+    "fr": "Lien copié",
+    "zh-Hans": "链接已复制",
+    "hi": "लिंक कॉपी हो गया",
+    "ar": "تم نسخ الرابط",
+    "bn": "লিংক কপি হয়েছে"
+  },
+  "entry_unpin": {
+    "de": "Pin lösen",
+    "en": "Unpin",
+    "es": "Desfijar",
+    "fr": "Détacher",
+    "zh-Hans": "取消固定",
+    "hi": "पिन हटाएँ",
+    "ar": "إلغاء التثبيت",
+    "bn": "পিন সরান"
+  },
+  "entry_photo_fullscreen": {
+    "de": "Vollbild anzeigen",
+    "en": "View full screen",
+    "es": "Ver a pantalla completa",
+    "fr": "Afficher en plein écran",
+    "zh-Hans": "全屏查看",
+    "hi": "पूर्ण स्क्रीन में देखें",
+    "ar": "عرض بملء الشاشة",
+    "bn": "পূর্ণ পর্দায় দেখুন"
+  },
+  "entry_video_play": {
+    "de": "Video abspielen",
+    "en": "Play video",
+    "es": "Reproducir vídeo",
+    "fr": "Lire la vidéo",
+    "zh-Hans": "播放视频",
+    "hi": "वीडियो चलाएँ",
+    "ar": "تشغيل الفيديو",
+    "bn": "ভিডিও চালান"
+  },
+  "entry_title_copy": {
+    "de": "Titel kopieren",
+    "en": "Copy title",
+    "es": "Copiar título",
+    "fr": "Copier le titre",
+    "zh-Hans": "复制标题",
+    "hi": "शीर्षक कॉपी करें",
+    "ar": "نسخ العنوان",
+    "bn": "শিরোনাম কপি করুন"
+  },
+  "entry_title_rewrite": {
+    "de": "Neu schreiben",
+    "en": "Rewrite",
+    "es": "Reescribir",
+    "fr": "Réécrire",
+    "zh-Hans": "重写",
+    "hi": "दोबारा लिखें",
+    "ar": "إعادة الكتابة",
+    "bn": "নতুন করে লিখুন"
+  },
+  "entry_title_copied": {
+    "de": "Titel kopiert",
+    "en": "Title copied",
+    "es": "Título copiado",
+    "fr": "Titre copié",
+    "zh-Hans": "标题已复制",
+    "hi": "शीर्षक कॉपी हो गया",
+    "ar": "تم نسخ العنوان",
+    "bn": "শিরোনাম কপি হয়েছে"
+  },
+  "entry_keyboard_hide": {
+    "de": "Tastatur schließen",
+    "en": "Hide keyboard",
+    "es": "Ocultar teclado",
+    "fr": "Masquer le clavier",
+    "zh-Hans": "收起键盘",
+    "hi": "कीबोर्ड बंद करें",
+    "ar": "إخفاء لوحة المفاتيح",
+    "bn": "কিবোর্ড বন্ধ করুন"
+  },
+  "entry_title_restore": {
+    "de": "Rückgängig",
+    "en": "Undo",
+    "es": "Deshacer",
+    "fr": "Annuler",
+    "zh-Hans": "撤销",
+    "hi": "पूर्ववत करें",
+    "ar": "تراجع",
+    "bn": "পূর্বাবস্থায় ফেরান"
+  },
+  "search_recent_created": {
+    "de": "Zuletzt erstellt",
+    "en": "Recently created",
+    "es": "Creados recientemente",
+    "fr": "Créés récemment",
+    "zh-Hans": "最近创建",
+    "hi": "हाल ही में बनाए",
+    "ar": "أُنشئ مؤخرًا",
+    "bn": "সম্প্রতি তৈরি"
+  },
+  "search_forget": {
+    "de": "Entfernen",
+    "en": "Remove",
+    "es": "Quitar",
+    "fr": "Retirer",
+    "zh-Hans": "移除",
+    "hi": "हटाएँ",
+    "ar": "إزالة",
+    "bn": "সরান"
+  },
+  "cover_ratio_info": {
+    "de": "Hinweis zum Format",
+    "en": "About the format",
+    "es": "Sobre el formato",
+    "fr": "À propos du format",
+    "zh-Hans": "关于画面比例",
+    "hi": "फ़ॉर्मेट के बारे में",
+    "ar": "حول التنسيق",
+    "bn": "ফরম্যাট সম্পর্কে"
+  },
+  "cover_ratio_title": {
+    "de": "Warum füllt das Medium den Bereich nicht aus?",
+    "en": "Why doesn't the media fill the area?",
+    "es": "¿Por qué el contenido no llena el área?",
+    "fr": "Pourquoi le média ne remplit-il pas la zone ?",
+    "zh-Hans": "为什么媒体没有填满区域？",
+    "hi": "मीडिया पूरा क्षेत्र क्यों नहीं भरता?",
+    "ar": "لماذا لا تملأ الوسائط المساحة؟",
+    "bn": "মিডিয়া কেন পুরো জায়গা ভরছে না?"
+  },
+  "cover_ratio_message": {
+    "de": "Bild oder Video haben ein anderes Seitenverhältnis als dieser Bereich (16:9), etwa 4:3 oder Hochformat. Damit nichts abgeschnitten wird, bleibt daneben Platz frei. In der Vollbildansicht siehst du alles. Wie soll der freie Platz aussehen?",
+    "en": "The image or video has a different aspect ratio than this area (16:9), such as 4:3 or portrait. To avoid cropping, some space stays empty. Full screen shows everything. How should the empty space look?",
+    "es": "La imagen o el vídeo tiene una proporción distinta a esta área (16:9), por ejemplo 4:3 o vertical. Para no recortar nada, queda espacio libre. En pantalla completa lo ves todo. ¿Cómo debe verse el espacio libre?",
+    "fr": "L'image ou la vidéo a un format différent de cette zone (16:9), par exemple 4:3 ou portrait. Pour ne rien rogner, un espace reste vide. Le plein écran montre tout. À quoi doit ressembler l'espace vide ?",
+    "zh-Hans": "图片或视频的宽高比与此区域（16:9）不同，例如 4:3 或竖屏。为避免裁剪，旁边会留出空白。全屏可查看完整内容。空白处应如何显示？",
+    "hi": "छवि या वीडियो का आकार-अनुपात इस क्षेत्र (16:9) से अलग है, जैसे 4:3 या पोर्ट्रेट। कुछ भी कटे नहीं, इसलिए जगह खाली रहती है। फ़ुल स्क्रीन में सब दिखता है। खाली जगह कैसी दिखे?",
+    "ar": "للصورة أو الفيديو نسبة أبعاد مختلفة عن هذه المساحة (16:9)، مثل 4:3 أو الوضع الطولي. حتى لا يُقص شيء تبقى مساحة فارغة. يعرض ملء الشاشة كل شيء. كيف يجب أن تبدو المساحة الفارغة؟",
+    "bn": "ছবি বা ভিডিওর অনুপাত এই জায়গা (16:9) থেকে আলাদা, যেমন 4:3 বা পোর্ট্রেট। কিছু যেন কাটা না পড়ে, তাই পাশে জায়গা ফাঁকা থাকে। ফুল স্ক্রিনে সব দেখা যায়। ফাঁকা জায়গা কেমন দেখাবে?"
+  },
+  "cover_fill_gradient": {
+    "de": "Farbverlauf",
+    "en": "Gradient",
+    "es": "Degradado",
+    "fr": "Dégradé",
+    "zh-Hans": "渐变",
+    "hi": "ग्रेडिएंट",
+    "ar": "تدرج لوني",
+    "bn": "গ্রেডিয়েন্ট"
+  },
+  "cover_fill_black": {
+    "de": "Schwarz",
+    "en": "Black",
+    "es": "Negro",
+    "fr": "Noir",
+    "zh-Hans": "黑色",
+    "hi": "काला",
+    "ar": "أسود",
+    "bn": "কালো"
+  },
+  "canvas_picker": {
+    "de": "Ansicht wählen",
+    "en": "Choose view",
+    "es": "Elegir vista",
+    "fr": "Choisir la vue",
+    "zh-Hans": "选择视图",
+    "hi": "दृश्य चुनें",
+    "ar": "اختيار العرض",
+    "bn": "ভিউ বেছে নিন"
+  },
+  "canvas_cover": {
+    "de": "Cover",
+    "en": "Cover",
+    "es": "Portada",
+    "fr": "Couverture",
+    "zh-Hans": "封面",
+    "hi": "कवर",
+    "ar": "الغلاف",
+    "bn": "কভার"
+  },
+  "canvas_actions": {
+    "de": "Aktionen",
+    "en": "Actions",
+    "es": "Acciones",
+    "fr": "Actions",
+    "zh-Hans": "操作",
+    "hi": "क्रियाएँ",
+    "ar": "الإجراءات",
+    "bn": "অ্যাকশন"
+  },
+  "canvas_text": {
+    "de": "Text",
+    "en": "Text",
+    "es": "Texto",
+    "fr": "Texte",
+    "zh-Hans": "文本",
+    "hi": "टेक्स्ट",
+    "ar": "النص",
+    "bn": "টেক্সট"
+  },
+  "entry_link_add": {
+    "de": "Verknüpfung hinzufügen",
+    "en": "Add link",
+    "es": "Añadir vínculo",
+    "fr": "Ajouter un lien",
+    "zh-Hans": "添加关联",
+    "hi": "लिंक जोड़ें",
+    "ar": "إضافة ربط",
+    "bn": "লিংক যোগ করুন"
+  },
+  "entry_date_add": {
+    "de": "Datum hinzufügen",
+    "en": "Add date",
+    "es": "Añadir fecha",
+    "fr": "Ajouter une date",
+    "zh-Hans": "添加日期",
+    "hi": "तारीख जोड़ें",
+    "ar": "إضافة تاريخ",
+    "bn": "তারিখ যোগ করুন"
+  },
+  "link_suggestions": {
+    "de": "Vorschläge",
+    "en": "Suggestions",
+    "es": "Sugerencias",
+    "fr": "Suggestions",
+    "zh-Hans": "建议",
+    "hi": "सुझाव",
+    "ar": "اقتراحات",
+    "bn": "পরামর্শ"
+  },
+  "entry_reminder_add": {
+    "de": "Erinnerung einstellen",
+    "en": "Set reminder",
+    "es": "Configurar recordatorio",
+    "fr": "Régler un rappel",
+    "zh-Hans": "设置提醒",
+    "hi": "रिमाइंडर सेट करें",
+    "ar": "ضبط تذكير",
+    "bn": "রিমাইন্ডার সেট করুন"
+  },
+  "entry_mark_read": {
+    "de": "Als gelesen markieren",
+    "en": "Mark as read",
+    "es": "Marcar como leído",
+    "fr": "Marquer comme lu",
+    "zh-Hans": "标记为已读",
+    "hi": "पढ़ा हुआ चिह्नित करें",
+    "ar": "وضع علامة كمقروء",
+    "bn": "পড়া হিসেবে চিহ্নিত করুন"
+  },
+  "entry_mark_unread": {
+    "de": "Als ungelesen markieren",
+    "en": "Mark as unread",
+    "es": "Marcar como no leído",
+    "fr": "Marquer comme non lu",
+    "zh-Hans": "标记为未读",
+    "hi": "अपठित चिह्नित करें",
+    "ar": "وضع علامة كغير مقروء",
+    "bn": "অপঠিত হিসেবে চিহ্নিত করুন"
+  },
+  "entry_video_pause": {
+    "de": "Video pausieren",
+    "en": "Pause video",
+    "es": "Pausar vídeo",
+    "fr": "Mettre la vidéo en pause",
+    "zh-Hans": "暂停视频",
+    "hi": "वीडियो रोकें",
+    "ar": "إيقاف الفيديو مؤقتًا",
+    "bn": "ভিডিও থামান"
+  },
+  "entry_audio_play": {
+    "de": "Abspielen",
+    "en": "Play",
+    "es": "Reproducir",
+    "fr": "Lire",
+    "zh-Hans": "播放",
+    "hi": "चलाएँ",
+    "ar": "تشغيل",
+    "bn": "চালান"
+  },
+  "entry_audio_pause": {
+    "de": "Pausieren",
+    "en": "Pause",
+    "es": "Pausar",
+    "fr": "Pause",
+    "zh-Hans": "暂停",
+    "hi": "रोकें",
+    "ar": "إيقاف مؤقت",
+    "bn": "থামান"
+  },
+  "entry_delete_word": {
+    "de": "Wort entfernen",
+    "en": "Delete word",
+    "es": "Borrar palabra",
+    "fr": "Supprimer le mot",
+    "zh-Hans": "删除单词",
+    "hi": "शब्द हटाएँ",
+    "ar": "حذف الكلمة",
+    "bn": "শব্দ মুছুন"
+  },
+  "entry_show_more": {
+    "de": "Mehr anzeigen",
+    "en": "Show more",
+    "es": "Mostrar más",
+    "fr": "Afficher plus",
+    "zh-Hans": "显示更多",
+    "hi": "और दिखाएँ",
+    "ar": "عرض المزيد",
+    "bn": "আরও দেখান"
+  },
+  "week_label": {
+    "de": "KW",
+    "en": "Week",
+    "es": "Sem.",
+    "fr": "Sem.",
+    "zh-Hans": "周",
+    "hi": "सप्ताह",
+    "ar": "الأسبوع",
+    "bn": "সপ্তাহ"
+  },
+  "widget_name": {
+    "de": "Schnellzugriff",
+    "en": "Quick access",
+    "es": "Acceso rápido",
+    "fr": "Accès rapide",
+    "zh-Hans": "快速访问",
+    "hi": "त्वरित पहुँच",
+    "ar": "وصول سريع",
+    "bn": "দ্রুত অ্যাক্সেস"
+  },
+  "widget_description": {
+    "de": "Öffnet mit einem Tipp den Eintrag deiner Wahl, etwa ein Projekt, einen Arbeitsbereich oder ein Lesezeichen.",
+    "en": "Opens the entry of your choice with one tap, such as a project, an area or a bookmark.",
+    "es": "Abre con un toque la entrada que elijas, como un proyecto, un área o un marcador.",
+    "fr": "Ouvre d’un geste l’entrée de ton choix, par exemple un projet, un domaine ou un signet.",
+    "zh-Hans": "轻点一下即可打开你选择的条目，例如项目、领域或书签。",
+    "hi": "एक टैप में अपनी पसंद की प्रविष्टि खोलें, जैसे कोई प्रोजेक्ट, कार्यक्षेत्र या बुकमार्क।",
+    "ar": "يفتح الإدخال الذي تختاره بنقرة واحدة، مثل مشروع أو مجال عمل أو إشارة مرجعية.",
+    "bn": "এক ট্যাপে আপনার পছন্দের এন্ট্রি খোলে, যেমন একটি প্রজেক্ট, কর্মক্ষেত্র বা বুকমার্ক।"
+  },
+  "widget_intent_title": {
+    "de": "Eintrag wählen",
+    "en": "Choose entry",
+    "es": "Elegir entrada",
+    "fr": "Choisir une entrée",
+    "zh-Hans": "选择条目",
+    "hi": "प्रविष्टि चुनें",
+    "ar": "اختر إدخالاً",
+    "bn": "এন্ট্রি বেছে নিন"
+  },
+  "widget_entity": {
+    "de": "Eintrag",
+    "en": "Entry",
+    "es": "Entrada",
+    "fr": "Entrée",
+    "zh-Hans": "条目",
+    "hi": "प्रविष्टि",
+    "ar": "إدخال",
+    "bn": "এন্ট্রি"
+  },
+  "widget_empty": {
+    "de": "Widget gedrückt halten und „Widget bearbeiten“ wählen, um einen Eintrag festzulegen.",
+    "en": "Touch and hold the widget and choose “Edit Widget” to pick an entry.",
+    "es": "Mantén pulsado el widget y elige “Editar widget” para fijar una entrada.",
+    "fr": "Maintiens le widget appuyé et choisis « Modifier le widget » pour définir une entrée.",
+    "zh-Hans": "按住小组件并选择“编辑小组件”来指定一个条目。",
+    "hi": "प्रविष्टि तय करने के लिए विजेट को दबाकर रखें और “विजेट संपादित करें” चुनें।",
+    "ar": "المس مع الاستمرار الأداة واختر „تعديل الأداة“ لتحديد إدخال.",
+    "bn": "একটি এন্ট্রি ঠিক করতে উইজেট চেপে ধরে „উইজেট সম্পাদনা“ বেছে নিন।"
+  },
+  "widget_missing": {
+    "de": "Dieser Eintrag ist nicht mehr da. Wähle einen neuen.",
+    "en": "This entry is gone. Choose a new one.",
+    "es": "Esta entrada ya no existe. Elige otra.",
+    "fr": "Cette entrée n’existe plus. Choisis-en une nouvelle.",
+    "zh-Hans": "此条目已不存在。请选择一个新条目。",
+    "hi": "यह प्रविष्टि अब मौजूद नहीं है। नई चुनें।",
+    "ar": "هذا الإدخال لم يعد موجوداً. اختر إدخالاً جديداً.",
+    "bn": "এই এন্ট্রিটি আর নেই। নতুন একটি বেছে নিন।"
+  },
+  "widget_sample": {
+    "de": "Mein Projekt",
+    "en": "My project",
+    "es": "Mi proyecto",
+    "fr": "Mon projet",
+    "zh-Hans": "我的项目",
+    "hi": "मेरा प्रोजेक्ट",
+    "ar": "مشروعي",
+    "bn": "আমার প্রজেক্ট"
+  },
+  "widget_links_count": {
+    "de": {
+      "one": "%lld Verknüpfung",
+      "other": "%lld Verknüpfungen"
+    },
+    "en": {
+      "one": "%lld link",
+      "other": "%lld links"
+    },
+    "es": {
+      "one": "%lld vínculo",
+      "other": "%lld vínculos"
+    },
+    "fr": {
+      "one": "%lld lien",
+      "other": "%lld liens"
+    },
+    "zh-Hans": {
+      "other": "%lld 个关联"
+    },
+    "hi": {
+      "one": "%lld लिंक",
+      "other": "%lld लिंक"
+    },
+    "ar": {
+      "zero": "لا روابط",
+      "one": "رابط واحد",
+      "two": "رابطان",
+      "few": "%lld روابط",
+      "many": "%lld رابطاً",
+      "other": "%lld رابط"
+    },
+    "bn": {
+      "one": "%lld সংযোগ",
+      "other": "%lld সংযোগ"
+    }
+  },
+  "siri_open_title": {
+    "de": "Eintrag öffnen",
+    "en": "Open entry",
+    "es": "Abrir entrada",
+    "fr": "Ouvrir une entrée",
+    "zh-Hans": "打开条目",
+    "hi": "प्रविष्टि खोलें",
+    "ar": "فتح إدخال",
+    "bn": "এন্ট্রি খুলুন"
+  },
+  "siri_open_description": {
+    "de": "Öffnet einen Eintrag auf seiner Detailseite.",
+    "en": "Opens an entry on its detail page.",
+    "es": "Abre una entrada en su página de detalles.",
+    "fr": "Ouvre une entrée sur sa page de détails.",
+    "zh-Hans": "在详情页中打开一个条目。",
+    "hi": "किसी प्रविष्टि को उसके विवरण पृष्ठ पर खोलता है।",
+    "ar": "يفتح إدخالاً في صفحة تفاصيله.",
+    "bn": "একটি এন্ট্রি তার বিস্তারিত পাতায় খোলে।"
+  },
+  "siri_open_short": {
+    "de": "Eintrag öffnen",
+    "en": "Open entry",
+    "es": "Abrir entrada",
+    "fr": "Ouvrir une entrée",
+    "zh-Hans": "打开条目",
+    "hi": "प्रविष्टि खोलें",
+    "ar": "فتح إدخال",
+    "bn": "এন্ট্রি খুলুন"
+  },
+  "siri_today_title": {
+    "de": "Heute",
+    "en": "Today",
+    "es": "Hoy",
+    "fr": "Aujourd’hui",
+    "zh-Hans": "今天",
+    "hi": "आज",
+    "ar": "اليوم",
+    "bn": "আজ"
+  },
+  "siri_today_description": {
+    "de": "Nennt die Termine von heute und fällige Aufgaben.",
+    "en": "Lists today’s events and due tasks.",
+    "es": "Enumera los eventos de hoy y las tareas pendientes.",
+    "fr": "Énumère les rendez-vous du jour et les tâches à échéance.",
+    "zh-Hans": "列出今天的日程和到期任务。",
+    "hi": "आज के कार्यक्रम और देय कार्य बताता है।",
+    "ar": "يذكر مواعيد اليوم والمهام المستحقة.",
+    "bn": "আজকের ইভেন্ট ও বাকি কাজগুলো জানায়।"
+  },
+  "siri_today_short": {
+    "de": "Was steht heute an?",
+    "en": "What’s on today?",
+    "es": "¿Qué hay hoy?",
+    "fr": "Quoi de prévu aujourd’hui ?",
+    "zh-Hans": "今天有什么安排？",
+    "hi": "आज क्या है?",
+    "ar": "ماذا لدي اليوم؟",
+    "bn": "আজ কী আছে?"
+  },
+  "siri_today_empty": {
+    "de": "Heute steht nichts an.",
+    "en": "Nothing is planned for today.",
+    "es": "Hoy no hay nada previsto.",
+    "fr": "Rien de prévu aujourd’hui.",
+    "zh-Hans": "今天没有安排。",
+    "hi": "आज कुछ भी तय नहीं है।",
+    "ar": "لا شيء مخطط له اليوم.",
+    "bn": "আজ কিছু নেই।"
+  },
+  "siri_today_list": {
+    "de": "Heute steht an: %@.",
+    "en": "Today: %@.",
+    "es": "Hoy: %@.",
+    "fr": "Aujourd’hui : %@.",
+    "zh-Hans": "今天：%@。",
+    "hi": "आज: %@।",
+    "ar": "اليوم: %@.",
+    "bn": "আজ: %@।"
+  },
+  "siri_today_at": {
+    "de": "%1$@ %2$@",
+    "en": "%1$@ %2$@",
+    "es": "%1$@ %2$@",
+    "fr": "%1$@ %2$@",
+    "zh-Hans": "%1$@ %2$@",
+    "hi": "%1$@ %2$@",
+    "ar": "%1$@ %2$@",
+    "bn": "%1$@ %2$@"
+  },
+  "siri_today_overdue": {
+    "de": "%@ (überfällig)",
+    "en": "%@ (overdue)",
+    "es": "%@ (vencida)",
+    "fr": "%@ (en retard)",
+    "zh-Hans": "%@（已逾期）",
+    "hi": "%@ (अतिदेय)",
+    "ar": "%@ (متأخرة)",
+    "bn": "%@ (মেয়াদোত্তীর্ণ)"
+  },
+  "siri_today_more": {
+    "de": {
+      "one": "%lld weiterer Eintrag",
+      "other": "%lld weitere Einträge"
+    },
+    "en": {
+      "one": "%lld more entry",
+      "other": "%lld more entries"
+    },
+    "es": {
+      "one": "%lld entrada más",
+      "other": "%lld entradas más"
+    },
+    "fr": {
+      "one": "%lld autre entrée",
+      "other": "%lld autres entrées"
+    },
+    "zh-Hans": {
+      "other": "另外 %lld 个条目"
+    },
+    "hi": {
+      "one": "%lld और प्रविष्टि",
+      "other": "%lld और प्रविष्टियाँ"
+    },
+    "ar": {
+      "zero": "لا إدخالات أخرى",
+      "one": "إدخال آخر",
+      "two": "إدخالان آخران",
+      "few": "%lld إدخالات أخرى",
+      "many": "%lld إدخالاً آخر",
+      "other": "%lld إدخال آخر"
+    },
+    "bn": {
+      "one": "আরও %lld টি এন্ট্রি",
+      "other": "আরও %lld টি এন্ট্রি"
+    }
+  },
+  "siri_today_locked": {
+    "de": "Entsperre dein iPad, um zu hören, was heute ansteht.",
+    "en": "Unlock your iPad to hear what’s on today.",
+    "es": "Desbloquea tu iPad para oír lo que hay hoy.",
+    "fr": "Déverrouille ton iPad pour savoir ce qui est prévu aujourd’hui.",
+    "zh-Hans": "解锁 iPad 即可听到今天的安排。",
+    "hi": "आज क्या है, यह सुनने के लिए अपना iPad अनलॉक करें।",
+    "ar": "افتح قفل iPad لتسمع ما لديك اليوم.",
+    "bn": "আজ কী আছে শুনতে আপনার iPad আনলক করুন।"
+  },
+  "siri_new_title": {
+    "de": "Neuer Eintrag",
+    "en": "New entry",
+    "es": "Nueva entrada",
+    "fr": "Nouvelle entrée",
+    "zh-Hans": "新建条目",
+    "hi": "नई प्रविष्टि",
+    "ar": "إدخال جديد",
+    "bn": "নতুন এন্ট্রি"
+  },
+  "siri_new_description": {
+    "de": "Legt eine Notiz, Aufgabe, ein Projekt, einen Arbeitsbereich oder ein Dokument an.",
+    "en": "Creates a note, task, project, area or document.",
+    "es": "Crea una nota, tarea, proyecto, área o documento.",
+    "fr": "Crée une note, une tâche, un projet, un domaine ou un document.",
+    "zh-Hans": "创建笔记、任务、项目、领域或文档。",
+    "hi": "नोट, कार्य, प्रोजेक्ट, कार्यक्षेत्र या दस्तावेज़ बनाता है।",
+    "ar": "ينشئ ملاحظة أو مهمة أو مشروعاً أو مجال عمل أو مستنداً.",
+    "bn": "নোট, কাজ, প্রজেক্ট, কর্মক্ষেত্র বা ডকুমেন্ট তৈরি করে।"
+  },
+  "siri_new_short": {
+    "de": "Neuer Eintrag",
+    "en": "New entry",
+    "es": "Nueva entrada",
+    "fr": "Nouvelle entrée",
+    "zh-Hans": "新建条目",
+    "hi": "नई प्रविष्टि",
+    "ar": "إدخال جديد",
+    "bn": "নতুন এন্ট্রি"
+  },
+  "siri_new_text": {
+    "de": "Text",
+    "en": "Text",
+    "es": "Texto",
+    "fr": "Texte",
+    "zh-Hans": "文本",
+    "hi": "पाठ",
+    "ar": "النص",
+    "bn": "লেখা"
+  },
+  "siri_kind": {
+    "de": "Typ",
+    "en": "Type",
+    "es": "Tipo",
+    "fr": "Type",
+    "zh-Hans": "类型",
+    "hi": "प्रकार",
+    "ar": "النوع",
+    "bn": "ধরন"
+  },
+  "siri_ask_notiz": {
+    "de": "Was soll in der Notiz stehen?",
+    "en": "What should the note say?",
+    "es": "¿Qué debe decir la nota?",
+    "fr": "Que doit contenir la note ?",
+    "zh-Hans": "笔记里要写什么？",
+    "hi": "नोट में क्या लिखना है?",
+    "ar": "ماذا تريد أن تكتب في الملاحظة؟",
+    "bn": "নোটে কী লিখব?"
+  },
+  "siri_ask_aufgabe": {
+    "de": "Wie heißt die Aufgabe?",
+    "en": "What’s the task?",
+    "es": "¿Cuál es la tarea?",
+    "fr": "Quelle est la tâche ?",
+    "zh-Hans": "任务是什么？",
+    "hi": "कार्य क्या है?",
+    "ar": "ما المهمة؟",
+    "bn": "কাজটি কী?"
+  },
+  "siri_ask_projekt": {
+    "de": "Wie heißt das Projekt?",
+    "en": "What’s the project called?",
+    "es": "¿Cómo se llama el proyecto?",
+    "fr": "Comment s’appelle le projet ?",
+    "zh-Hans": "项目叫什么？",
+    "hi": "प्रोजेक्ट का नाम क्या है?",
+    "ar": "ما اسم المشروع؟",
+    "bn": "প্রজেক্টের নাম কী?"
+  },
+  "siri_ask_arbeitsbereich": {
+    "de": "Wie heißt der Arbeitsbereich?",
+    "en": "What’s the area called?",
+    "es": "¿Cómo se llama el área?",
+    "fr": "Comment s’appelle le domaine ?",
+    "zh-Hans": "领域叫什么？",
+    "hi": "कार्यक्षेत्र का नाम क्या है?",
+    "ar": "ما اسم مجال العمل؟",
+    "bn": "কর্মক্ষেত্রের নাম কী?"
+  },
+  "siri_ask_dokument": {
+    "de": "Wie heißt das Dokument?",
+    "en": "What’s the document called?",
+    "es": "¿Cómo se llama el documento?",
+    "fr": "Comment s’appelle le document ?",
+    "zh-Hans": "文档叫什么？",
+    "hi": "दस्तावेज़ का नाम क्या है?",
+    "ar": "ما اسم المستند؟",
+    "bn": "ডকুমেন্টের নাম কী?"
+  },
+  "siri_saved_notiz": {
+    "de": "Notiz gespeichert",
+    "en": "Note saved",
+    "es": "Nota guardada",
+    "fr": "Note enregistrée",
+    "zh-Hans": "笔记已保存",
+    "hi": "नोट सहेजा गया",
+    "ar": "تم حفظ الملاحظة",
+    "bn": "নোট সংরক্ষিত"
+  },
+  "siri_saved_aufgabe": {
+    "de": "Aufgabe gespeichert",
+    "en": "Task saved",
+    "es": "Tarea guardada",
+    "fr": "Tâche enregistrée",
+    "zh-Hans": "任务已保存",
+    "hi": "कार्य सहेजा गया",
+    "ar": "تم حفظ المهمة",
+    "bn": "কাজ সংরক্ষিত"
+  },
+  "siri_saved_projekt": {
+    "de": "Projekt angelegt",
+    "en": "Project created",
+    "es": "Proyecto creado",
+    "fr": "Projet créé",
+    "zh-Hans": "项目已创建",
+    "hi": "प्रोजेक्ट बनाया गया",
+    "ar": "تم إنشاء المشروع",
+    "bn": "প্রজেক্ট তৈরি হয়েছে"
+  },
+  "siri_saved_arbeitsbereich": {
+    "de": "Arbeitsbereich angelegt",
+    "en": "Area created",
+    "es": "Área creada",
+    "fr": "Domaine créé",
+    "zh-Hans": "领域已创建",
+    "hi": "कार्यक्षेत्र बनाया गया",
+    "ar": "تم إنشاء مجال العمل",
+    "bn": "কর্মক্ষেত্র তৈরি হয়েছে"
+  },
+  "siri_saved_dokument": {
+    "de": "Dokument gespeichert",
+    "en": "Document saved",
+    "es": "Documento guardado",
+    "fr": "Document enregistré",
+    "zh-Hans": "文档已保存",
+    "hi": "दस्तावेज़ सहेजा गया",
+    "ar": "تم حفظ المستند",
+    "bn": "ডকুমেন্ট সংরক্ষিত"
+  },
+  "siri_new_note": {
+    "de": "Neue Notiz",
+    "en": "New note",
+    "es": "Nueva nota",
+    "fr": "Nouvelle note",
+    "zh-Hans": "新建笔记",
+    "hi": "नया नोट",
+    "ar": "ملاحظة جديدة",
+    "bn": "নতুন নোট"
+  },
+  "siri_new_task": {
+    "de": "Neue Aufgabe",
+    "en": "New task",
+    "es": "Nueva tarea",
+    "fr": "Nouvelle tâche",
+    "zh-Hans": "新建任务",
+    "hi": "नया कार्य",
+    "ar": "مهمة جديدة",
+    "bn": "নতুন কাজ"
+  },
+  "siri_new_project": {
+    "de": "Neues Projekt",
+    "en": "New project",
+    "es": "Nuevo proyecto",
+    "fr": "Nouveau projet",
+    "zh-Hans": "新建项目",
+    "hi": "नया प्रोजेक्ट",
+    "ar": "مشروع جديد",
+    "bn": "নতুন প্রজেক্ট"
+  },
+  "siri_new_area": {
+    "de": "Neuer Arbeitsbereich",
+    "en": "New area",
+    "es": "Nueva área",
+    "fr": "Nouveau domaine",
+    "zh-Hans": "新建领域",
+    "hi": "नया कार्यक्षेत्र",
+    "ar": "مجال عمل جديد",
+    "bn": "নতুন কর্মক্ষেত্র"
+  },
+  "siri_new_document": {
+    "de": "Neues Dokument",
+    "en": "New document",
+    "es": "Nuevo documento",
+    "fr": "Nouveau document",
+    "zh-Hans": "新建文档",
+    "hi": "नया दस्तावेज़",
+    "ar": "مستند جديد",
+    "bn": "নতুন ডকুমেন্ট"
+  },
+  "siri_ask_kind": {
+    "de": "Was möchtest du anlegen?",
+    "en": "What would you like to create?",
+    "es": "¿Qué quieres crear?",
+    "fr": "Que veux-tu créer ?",
+    "zh-Hans": "你想创建什么？",
+    "hi": "आप क्या बनाना चाहते हैं?",
+    "ar": "ماذا تريد أن تنشئ؟",
+    "bn": "আপনি কী তৈরি করতে চান?"
+  },
+  "chat_title": {
+    "de": "Chats",
+    "en": "Chats",
+    "es": "Chats",
+    "fr": "Chats",
+    "zh-Hans": "聊天",
+    "hi": "चैट",
+    "ar": "الدردشات",
+    "bn": "চ্যাট"
+  },
+  "chat_new": {
+    "de": "Neuer Chat",
+    "en": "New chat",
+    "es": "Nuevo chat",
+    "fr": "Nouveau chat",
+    "zh-Hans": "新聊天",
+    "hi": "नई चैट",
+    "ar": "دردشة جديدة",
+    "bn": "নতুন চ্যাট"
+  },
+  "chat_search": {
+    "de": "Chats durchsuchen",
+    "en": "Search chats",
+    "es": "Buscar chats",
+    "fr": "Rechercher des chats",
+    "zh-Hans": "搜索聊天",
+    "hi": "चैट खोजें",
+    "ar": "البحث في الدردشات",
+    "bn": "চ্যাট খুঁজুন"
+  },
+  "chat_empty_list": {
+    "de": "Noch keine Chats. Starte eine Unterhaltung über deine Einträge.",
+    "en": "No chats yet. Start a conversation about your entries.",
+    "es": "Aún no hay chats. Empieza una conversación sobre tus entradas.",
+    "fr": "Aucun chat pour l’instant. Lance une conversation sur tes entrées.",
+    "zh-Hans": "还没有聊天。开始一段关于你的条目的对话吧。",
+    "hi": "अभी कोई चैट नहीं। अपनी प्रविष्टियों के बारे में बातचीत शुरू करें।",
+    "ar": "لا توجد دردشات بعد. ابدأ محادثة حول إدخالاتك.",
+    "bn": "এখনও কোনো চ্যাট নেই। তোমার এন্ট্রি নিয়ে কথোপকথন শুরু করো।"
+  },
+  "chat_no_results": {
+    "de": "Keine Chats gefunden",
+    "en": "No chats found",
+    "es": "No se encontraron chats",
+    "fr": "Aucun chat trouvé",
+    "zh-Hans": "未找到聊天",
+    "hi": "कोई चैट नहीं मिली",
+    "ar": "لم يتم العثور على دردشات",
+    "bn": "কোনো চ্যাট পাওয়া যায়নি"
+  },
+  "chat_rename": {
+    "de": "Umbenennen",
+    "en": "Rename",
+    "es": "Renombrar",
+    "fr": "Renommer",
+    "zh-Hans": "重命名",
+    "hi": "नाम बदलें",
+    "ar": "إعادة التسمية",
+    "bn": "নাম বদলাও"
+  },
+  "chat_delete": {
+    "de": "Chat löschen",
+    "en": "Delete chat",
+    "es": "Eliminar chat",
+    "fr": "Supprimer le chat",
+    "zh-Hans": "删除聊天",
+    "hi": "चैट हटाएँ",
+    "ar": "حذف الدردشة",
+    "bn": "চ্যাট মুছুন"
+  },
+  "chat_delete_confirm": {
+    "de": "Der Chat wird endgültig gelöscht.",
+    "en": "The chat will be deleted permanently.",
+    "es": "El chat se eliminará de forma permanente.",
+    "fr": "Le chat sera supprimé définitivement.",
+    "zh-Hans": "该聊天将被永久删除。",
+    "hi": "चैट स्थायी रूप से हटा दी जाएगी।",
+    "ar": "سيتم حذف الدردشة نهائيًا.",
+    "bn": "চ্যাটটি স্থায়ীভাবে মুছে যাবে।"
+  },
+  "chat_input_placeholder": {
+    "de": "Nachricht",
+    "en": "Message",
+    "es": "Mensaje",
+    "fr": "Message",
+    "zh-Hans": "消息",
+    "hi": "संदेश",
+    "ar": "رسالة",
+    "bn": "বার্তা"
+  },
+  "chat_send": {
+    "de": "Senden",
+    "en": "Send",
+    "es": "Enviar",
+    "fr": "Envoyer",
+    "zh-Hans": "发送",
+    "hi": "भेजें",
+    "ar": "إرسال",
+    "bn": "পাঠান"
+  },
+  "chat_empty_thread": {
+    "de": "Frag etwas zu deinen Einträgen, Aufgaben oder deiner Woche.",
+    "en": "Ask something about your entries, tasks or your week.",
+    "es": "Pregunta algo sobre tus entradas, tareas o tu semana.",
+    "fr": "Pose une question sur tes entrées, tes tâches ou ta semaine.",
+    "zh-Hans": "问问关于你的条目、任务或本周的事情。",
+    "hi": "अपनी प्रविष्टियों, कार्यों या अपने सप्ताह के बारे में कुछ पूछें।",
+    "ar": "اسأل شيئًا عن إدخالاتك أو مهامك أو أسبوعك.",
+    "bn": "তোমার এন্ট্রি, কাজ বা সপ্তাহ নিয়ে কিছু জিজ্ঞেস করো।"
+  },
+  "chat_unavailable_device": {
+    "de": "Der Chat braucht ein Gerät mit Apple Intelligence. Hier kannst du deine Chats lesen, aber keine neuen Antworten bekommen.",
+    "en": "Chat needs a device with Apple Intelligence. You can read your chats here, but you won’t get new replies.",
+    "es": "El chat necesita un dispositivo con Apple Intelligence. Aquí puedes leer tus chats, pero no recibirás respuestas nuevas.",
+    "fr": "Le chat nécessite un appareil compatible Apple Intelligence. Tu peux lire tes chats ici, mais tu ne recevras pas de nouvelles réponses.",
+    "zh-Hans": "聊天需要支持 Apple 智能的设备。你可以在这里查看聊天，但不会收到新的回复。",
+    "hi": "चैट के लिए Apple Intelligence वाला डिवाइस चाहिए। यहाँ आप अपनी चैट पढ़ सकते हैं, लेकिन नए जवाब नहीं मिलेंगे।",
+    "ar": "تحتاج الدردشة إلى جهاز يدعم Apple Intelligence. يمكنك قراءة دردشاتك هنا، لكن لن تحصل على ردود جديدة.",
+    "bn": "চ্যাটের জন্য Apple Intelligence সমর্থিত ডিভাইস দরকার। এখানে তুমি চ্যাট পড়তে পারো, কিন্তু নতুন উত্তর পাবে না।"
+  },
+  "chat_unavailable_off": {
+    "de": "Apple Intelligence ist ausgeschaltet. Schalte es unter Einstellungen › Apple Intelligence & Siri ein, dann antwortet der Chat.",
+    "en": "Apple Intelligence is turned off. Turn it on in Settings › Apple Intelligence & Siri and the chat will reply.",
+    "es": "Apple Intelligence está desactivado. Actívalo en Ajustes › Apple Intelligence y Siri y el chat responderá.",
+    "fr": "Apple Intelligence est désactivé. Active-le dans Réglages › Apple Intelligence et Siri pour que le chat réponde.",
+    "zh-Hans": "Apple 智能已关闭。在“设置 › Apple 智能与 Siri”中打开后，聊天即可回复。",
+    "hi": "Apple Intelligence बंद है। सेटिंग्स › Apple Intelligence और Siri में इसे चालू करें, फिर चैट जवाब देगी।",
+    "ar": "Apple Intelligence متوقف. شغّله من الإعدادات › Apple Intelligence وSiri وستبدأ الدردشة بالرد.",
+    "bn": "Apple Intelligence বন্ধ আছে। সেটিংস › Apple Intelligence ও Siri থেকে চালু করো, তাহলে চ্যাট উত্তর দেবে।"
+  },
+  "chat_unavailable_loading": {
+    "de": "Das Sprachmodell wird noch geladen. Das kann nach dem Einschalten von Apple Intelligence eine Weile dauern.",
+    "en": "The language model is still loading. This can take a while after turning on Apple Intelligence.",
+    "es": "El modelo de lenguaje aún se está cargando. Puede tardar un rato después de activar Apple Intelligence.",
+    "fr": "Le modèle de langage est encore en cours de chargement. Cela peut prendre un moment après l’activation d’Apple Intelligence.",
+    "zh-Hans": "语言模型仍在加载。打开 Apple 智能后可能需要一段时间。",
+    "hi": "भाषा मॉडल अभी लोड हो रहा है। Apple Intelligence चालू करने के बाद इसमें कुछ समय लग सकता है।",
+    "ar": "لا يزال النموذج اللغوي قيد التحميل. قد يستغرق ذلك بعض الوقت بعد تشغيل Apple Intelligence.",
+    "bn": "ভাষা মডেল এখনও লোড হচ্ছে। Apple Intelligence চালু করার পর এতে কিছুটা সময় লাগতে পারে।"
+  },
+  "chat_open_settings": {
+    "de": "Einstellungen öffnen",
+    "en": "Open Settings",
+    "es": "Abrir Ajustes",
+    "fr": "Ouvrir Réglages",
+    "zh-Hans": "打开设置",
+    "hi": "सेटिंग्स खोलें",
+    "ar": "فتح الإعدادات",
+    "bn": "সেটিংস খুলুন"
+  },
+  "chat_error_guardrail": {
+    "de": "Darauf kann das Modell nicht antworten. Formuliere die Frage anders.",
+    "en": "The model can’t answer that. Try asking in a different way.",
+    "es": "El modelo no puede responder a eso. Prueba a formular la pregunta de otra forma.",
+    "fr": "Le modèle ne peut pas répondre à cela. Reformule ta question.",
+    "zh-Hans": "模型无法回答这个问题。请换个方式提问。",
+    "hi": "मॉडल इसका जवाब नहीं दे सकता। सवाल अलग तरीके से पूछें।",
+    "ar": "لا يستطيع النموذج الإجابة عن ذلك. جرّب صياغة السؤال بطريقة أخرى.",
+    "bn": "মডেল এর উত্তর দিতে পারে না। প্রশ্নটি অন্যভাবে করো।"
+  },
+  "chat_error_context": {
+    "de": "Die Unterhaltung ist zu lang für das Modell. Starte am besten einen neuen Chat.",
+    "en": "The conversation is too long for the model. Best start a new chat.",
+    "es": "La conversación es demasiado larga para el modelo. Mejor empieza un chat nuevo.",
+    "fr": "La conversation est trop longue pour le modèle. Mieux vaut commencer un nouveau chat.",
+    "zh-Hans": "对话对模型来说太长了。最好开始一个新聊天。",
+    "hi": "बातचीत मॉडल के लिए बहुत लंबी है। बेहतर है नई चैट शुरू करें।",
+    "ar": "المحادثة طويلة جدًا بالنسبة للنموذج. من الأفضل بدء دردشة جديدة.",
+    "bn": "কথোপকথনটি মডেলের জন্য খুব লম্বা। নতুন চ্যাট শুরু করাই ভালো।"
+  },
+  "chat_error_language": {
+    "de": "Das Modell unterstützt diese Sprache noch nicht. Stell die App-Sprache um oder frag auf Englisch.",
+    "en": "The model doesn’t support this language yet. Switch the app language or ask in English.",
+    "es": "El modelo aún no admite este idioma. Cambia el idioma de la app o pregunta en inglés.",
+    "fr": "Le modèle ne prend pas encore en charge cette langue. Change la langue de l’app ou pose ta question en anglais.",
+    "zh-Hans": "模型暂不支持这种语言。请切换应用语言或用英语提问。",
+    "hi": "मॉडल अभी इस भाषा का समर्थन नहीं करता। ऐप की भाषा बदलें या अंग्रेज़ी में पूछें।",
+    "ar": "لا يدعم النموذج هذه اللغة بعد. غيّر لغة التطبيق أو اسأل بالإنجليزية.",
+    "bn": "মডেল এখনও এই ভাষা সমর্থন করে না। অ্যাপের ভাষা বদলাও বা ইংরেজিতে জিজ্ঞেস করো।"
+  },
+  "chat_error_cancelled": {
+    "de": "Antwort abgebrochen.",
+    "en": "Reply stopped.",
+    "es": "Respuesta detenida.",
+    "fr": "Réponse interrompue.",
+    "zh-Hans": "回复已停止。",
+    "hi": "जवाब रोका गया।",
+    "ar": "تم إيقاف الرد.",
+    "bn": "উত্তর থামানো হয়েছে।"
+  },
+  "chat_error_generic": {
+    "de": "Das hat nicht geklappt. Versuch es noch einmal.",
+    "en": "That didn’t work. Please try again.",
+    "es": "No ha funcionado. Inténtalo de nuevo.",
+    "fr": "Ça n’a pas fonctionné. Réessaie.",
+    "zh-Hans": "操作未成功。请重试。",
+    "hi": "यह काम नहीं किया। फिर से कोशिश करें।",
+    "ar": "لم ينجح ذلك. حاول مرة أخرى.",
+    "bn": "এটা কাজ করেনি। আবার চেষ্টা করো।"
+  },
+  "chat_retry": {
+    "de": "Erneut versuchen",
+    "en": "Try again",
+    "es": "Reintentar",
+    "fr": "Réessayer",
+    "zh-Hans": "重试",
+    "hi": "फिर से कोशिश करें",
+    "ar": "إعادة المحاولة",
+    "bn": "আবার চেষ্টা করুন"
+  },
+  "chat_stop": {
+    "de": "Stoppen",
+    "en": "Stop",
+    "es": "Detener",
+    "fr": "Arrêter",
+    "zh-Hans": "停止",
+    "hi": "रोकें",
+    "ar": "إيقاف",
+    "bn": "থামান"
+  },
+  "chat_suggest_week": {
+    "de": "Was steht diese Woche an?",
+    "en": "What’s coming up this week?",
+    "es": "¿Qué tengo esta semana?",
+    "fr": "Qu’est-ce qui m’attend cette semaine ?",
+    "zh-Hans": "这周有什么安排？",
+    "hi": "इस हफ़्ते क्या है?",
+    "ar": "ما الذي ينتظرني هذا الأسبوع؟",
+    "bn": "এই সপ্তাহে কী কী আছে?"
+  },
+  "chat_suggest_project": {
+    "de": "Fasse Projekt %@ zusammen",
+    "en": "Summarize project %@",
+    "es": "Resume el proyecto %@",
+    "fr": "Résume le projet %@",
+    "zh-Hans": "总结项目 %@",
+    "hi": "प्रोजेक्ट %@ का सारांश दें",
+    "ar": "لخّص المشروع %@",
+    "bn": "প্রজেক্ট %@ এর সারসংক্ষেপ দাও"
+  },
+  "chat_suggest_overdue": {
+    "de": "Welche Aufgaben sind überfällig?",
+    "en": "Which tasks are overdue?",
+    "es": "¿Qué tareas están atrasadas?",
+    "fr": "Quelles tâches sont en retard ?",
+    "zh-Hans": "哪些任务已逾期？",
+    "hi": "कौन से कार्य समय से पीछे हैं?",
+    "ar": "ما المهام المتأخرة؟",
+    "bn": "কোন কাজগুলোর সময় পেরিয়ে গেছে?"
+  },
+  "chat_link": {
+    "de": "Verknüpfen",
+    "en": "Link",
+    "es": "Vincular",
+    "fr": "Lier",
+    "zh-Hans": "关联",
+    "hi": "लिंक करें",
+    "ar": "ربط",
+    "bn": "লিংক করুন"
+  },
+  "chat_linked": {
+    "de": "Verknüpft",
+    "en": "Linked",
+    "es": "Vinculado",
+    "fr": "Lié",
+    "zh-Hans": "已关联",
+    "hi": "लिंक किया गया",
+    "ar": "مرتبط",
+    "bn": "লিংক করা"
+  },
+  "chat_link_title": {
+    "de": "Mit Einträgen verknüpfen",
+    "en": "Link to entries",
+    "es": "Vincular con entradas",
+    "fr": "Lier à des entrées",
+    "zh-Hans": "关联条目",
+    "hi": "प्रविष्टियों से लिंक करें",
+    "ar": "ربط بالإدخالات",
+    "bn": "এন্ট্রির সাথে লিংক করুন"
+  },
+  "chat_link_search": {
+    "de": "Einträge durchsuchen",
+    "en": "Search entries",
+    "es": "Buscar entradas",
+    "fr": "Rechercher des entrées",
+    "zh-Hans": "搜索条目",
+    "hi": "प्रविष्टियाँ खोजें",
+    "ar": "البحث في الإدخالات",
+    "bn": "এন্ট্রি খুঁজুন"
+  },
+  "chat_link_all": {
+    "de": "Alle",
+    "en": "All",
+    "es": "Todo",
+    "fr": "Tout",
+    "zh-Hans": "全部",
+    "hi": "सभी",
+    "ar": "الكل",
+    "bn": "সব"
+  },
+  "chat_section": {
+    "de": "Chats",
+    "en": "Chats",
+    "es": "Chats",
+    "fr": "Chats",
+    "zh-Hans": "聊天",
+    "hi": "चैट",
+    "ar": "الدردشات",
+    "bn": "চ্যাট"
+  },
+  "entry_link_new": {
+    "de": "Neuer Eintrag",
+    "en": "New entry",
+    "es": "Nueva entrada",
+    "fr": "Nouvelle entrée",
+    "zh-Hans": "新建条目",
+    "hi": "नई प्रविष्टि",
+    "ar": "مدخل جديد",
+    "bn": "নতুন এন্ট্রি"
+  },
+  "page_feedback": {
+    "de": "Feedback",
+    "en": "Feedback",
+    "es": "Comentarios",
+    "fr": "Avis",
+    "zh-Hans": "反馈",
+    "hi": "फ़ीडबैक",
+    "ar": "الملاحظات",
+    "bn": "মতামত"
+  },
+  "settings_feedback_hint": {
+    "de": "Ideen teilen und Fehler melden",
+    "en": "Share ideas and report bugs",
+    "es": "Comparte ideas e informa de errores",
+    "fr": "Partager des idées et signaler des bugs",
+    "zh-Hans": "分享想法并报告问题",
+    "hi": "विचार साझा करें और गड़बड़ियाँ बताएँ",
+    "ar": "شارك أفكارك وأبلغ عن الأخطاء",
+    "bn": "ধারণা শেয়ার করুন ও ত্রুটি জানান"
+  },
+  "feedback_title": {
+    "de": "Hilf mit, Paralist besser zu machen",
+    "en": "Help make Paralist better",
+    "es": "Ayuda a mejorar Paralist",
+    "fr": "Aide à améliorer Paralist",
+    "zh-Hans": "帮助 Paralist 变得更好",
+    "hi": "Paralist को बेहतर बनाने में मदद करें",
+    "ar": "ساعد في تحسين Paralist",
+    "bn": "Paralist আরও ভালো করতে সাহায্য করুন"
+  },
+  "feedback_intro": {
+    "de": "In der Discord-Community teilst du Ideen, meldest Fehler und tauschst dich mit anderen Testern aus. Ich antworte dort selbst und zeige dir, wie es mit deinem Vorschlag weitergeht.",
+    "en": "In the Discord community you can share ideas, report bugs and talk with other testers. I reply there myself and show you how your suggestion is progressing.",
+    "es": "En la comunidad de Discord puedes compartir ideas, informar de errores y hablar con otros testers. Respondo allí personalmente y te muestro cómo avanza tu propuesta.",
+    "fr": "Dans la communauté Discord, tu partages tes idées, signales des bugs et échanges avec d'autres testeurs. J'y réponds moi-même et je t'indique où en est ta suggestion.",
+    "zh-Hans": "在 Discord 社区中，你可以分享想法、报告问题，并与其他测试者交流。我会亲自回复，并告诉你建议的进展。",
+    "hi": "Discord कम्युनिटी में आप विचार साझा कर सकते हैं, गड़बड़ियाँ बता सकते हैं और दूसरे टेस्टर्स से बात कर सकते हैं। वहाँ सीधे डेवलपर से जवाब मिलता है और आप देख सकते हैं कि आपका सुझाव कहाँ तक पहुँचा।",
+    "ar": "في مجتمع Discord يمكنك مشاركة أفكارك والإبلاغ عن الأخطاء والتحدث مع مختبرين آخرين. أرد هناك بنفسي وأخبرك بما وصل إليه اقتراحك.",
+    "bn": "Discord কমিউনিটিতে আপনি ধারণা শেয়ার করতে, ত্রুটি জানাতে এবং অন্য টেস্টারদের সাথে কথা বলতে পারেন। আমি নিজে সেখানে উত্তর দিই এবং আপনার প্রস্তাবের অগ্রগতি জানাই।"
+  },
+  "feedback_tip": {
+    "de": "Nenne bitte dein Gerät, die iOS-Version und die App-Version %1$@. So finde ich Fehler schneller.",
+    "en": "Please mention your device, iOS version and app version %1$@. That helps me find bugs faster.",
+    "es": "Indica tu dispositivo, la versión de iOS y la versión de la app %1$@. Así encuentro los errores más rápido.",
+    "fr": "Indique ton appareil, la version d'iOS et la version de l'app %1$@. Je trouve ainsi les bugs plus vite.",
+    "zh-Hans": "请注明你的设备、iOS 版本和 App 版本 %1$@，这样我能更快找到问题。",
+    "hi": "कृपया अपना डिवाइस, iOS वर्ज़न और ऐप वर्ज़न %1$@ बताएँ। इससे गड़बड़ियाँ जल्दी मिलती हैं।",
+    "ar": "يرجى ذكر جهازك وإصدار iOS وإصدار التطبيق %1$@. هذا يساعدني على إيجاد الأخطاء أسرع.",
+    "bn": "অনুগ্রহ করে আপনার ডিভাইস, iOS সংস্করণ এবং অ্যাপ সংস্করণ %1$@ জানান। এতে আমি দ্রুত ত্রুটি খুঁজে পাই।"
+  },
+  "feedback_join_discord": {
+    "de": "Discord-Community kostenlos beitreten",
+    "en": "Join the Discord community for free",
+    "es": "Únete gratis a la comunidad de Discord",
+    "fr": "Rejoindre gratuitement la communauté Discord",
+    "zh-Hans": "免费加入 Discord 社区",
+    "hi": "Discord कम्युनिटी से मुफ़्त जुड़ें",
+    "ar": "انضم مجانًا إلى مجتمع Discord",
+    "bn": "বিনামূল্যে Discord কমিউনিটিতে যোগ দিন"
+  },
+  "feedback_account_note": {
+    "de": "Du brauchst dafür ein kostenloses Discord-Konto.",
+    "en": "You need a free Discord account.",
+    "es": "Necesitas una cuenta gratuita de Discord.",
+    "fr": "Il te faut un compte Discord gratuit.",
+    "zh-Hans": "你需要一个免费的 Discord 账号。",
+    "hi": "इसके लिए एक मुफ़्त Discord खाता चाहिए।",
+    "ar": "تحتاج إلى حساب Discord مجاني.",
+    "bn": "এর জন্য একটি বিনামূল্যের Discord অ্যাকাউন্ট দরকার।"
+  },
+  "chat_draft_cards": {
+    "de": {
+      "one": "%lld Karteikarte",
+      "other": "%lld Karteikarten"
+    },
+    "en": {
+      "one": "%lld flashcard",
+      "other": "%lld flashcards"
+    },
+    "es": {
+      "one": "%lld tarjeta",
+      "other": "%lld tarjetas"
+    },
+    "fr": {
+      "one": "%lld fiche",
+      "other": "%lld fiches"
+    },
+    "zh-Hans": {
+      "other": "%lld 张卡片"
+    },
+    "hi": {
+      "one": "%lld फ़्लैशकार्ड",
+      "other": "%lld फ़्लैशकार्ड"
+    },
+    "ar": {
+      "zero": "لا بطاقات",
+      "one": "بطاقة واحدة",
+      "two": "بطاقتان",
+      "few": "%lld بطاقات",
+      "many": "%lld بطاقة",
+      "other": "%lld بطاقة"
+    },
+    "bn": {
+      "one": "%lld ফ্ল্যাশকার্ড",
+      "other": "%lld ফ্ল্যাশকার্ড"
+    }
+  },
+  "chat_draft_tasks": {
+    "de": {
+      "one": "%lld Aufgabe",
+      "other": "%lld Aufgaben"
+    },
+    "en": {
+      "one": "%lld task",
+      "other": "%lld tasks"
+    },
+    "es": {
+      "one": "%lld tarea",
+      "other": "%lld tareas"
+    },
+    "fr": {
+      "one": "%lld tâche",
+      "other": "%lld tâches"
+    },
+    "zh-Hans": {
+      "other": "%lld 个任务"
+    },
+    "hi": {
+      "one": "%lld कार्य",
+      "other": "%lld कार्य"
+    },
+    "ar": {
+      "zero": "لا مهام",
+      "one": "مهمة واحدة",
+      "two": "مهمتان",
+      "few": "%lld مهام",
+      "many": "%lld مهمة",
+      "other": "%lld مهمة"
+    },
+    "bn": {
+      "one": "%lld কাজ",
+      "other": "%lld কাজ"
+    }
+  },
+  "chat_draft_more": {
+    "de": {
+      "one": "+ %lld weitere",
+      "other": "+ %lld weitere"
+    },
+    "en": {
+      "one": "+ %lld more",
+      "other": "+ %lld more"
+    },
+    "es": {
+      "one": "+ %lld más",
+      "other": "+ %lld más"
+    },
+    "fr": {
+      "one": "+ %lld autre",
+      "other": "+ %lld autres"
+    },
+    "zh-Hans": {
+      "other": "另外 %lld 项"
+    },
+    "hi": {
+      "one": "+ %lld और",
+      "other": "+ %lld और"
+    },
+    "ar": {
+      "zero": "+ %lld أخرى",
+      "one": "+ %lld أخرى",
+      "two": "+ %lld أخريان",
+      "few": "+ %lld أخرى",
+      "many": "+ %lld أخرى",
+      "other": "+ %lld أخرى"
+    },
+    "bn": {
+      "one": "+ আরও %lld",
+      "other": "+ আরও %lld"
+    }
+  },
+  "chat_draft_deck_new": {
+    "de": "Neues Kartendeck „%@“",
+    "en": "New deck “%@”",
+    "es": "Nuevo mazo «%@»",
+    "fr": "Nouveau paquet « %@ »",
+    "zh-Hans": "新卡组“%@”",
+    "hi": "नया डेक “%@”",
+    "ar": "مجموعة جديدة «%@»",
+    "bn": "নতুন ডেক “%@”"
+  },
+  "chat_draft_deck_existing": {
+    "de": "Ins Kartendeck „%@“",
+    "en": "Into deck “%@”",
+    "es": "En el mazo «%@»",
+    "fr": "Dans le paquet « %@ »",
+    "zh-Hans": "加入卡组“%@”",
+    "hi": "डेक “%@” में",
+    "ar": "إلى المجموعة «%@»",
+    "bn": "ডেক “%@”-এ"
+  },
+  "chat_draft_create": {
+    "de": "Anlegen",
+    "en": "Create",
+    "es": "Crear",
+    "fr": "Créer",
+    "zh-Hans": "创建",
+    "hi": "बनाएँ",
+    "ar": "إنشاء",
+    "bn": "তৈরি করুন"
+  },
+  "chat_draft_edit": {
+    "de": "Bearbeiten",
+    "en": "Edit",
+    "es": "Editar",
+    "fr": "Modifier",
+    "zh-Hans": "编辑",
+    "hi": "संपादित करें",
+    "ar": "تعديل",
+    "bn": "সম্পাদনা"
+  },
+  "chat_draft_discard": {
+    "de": "Verwerfen",
+    "en": "Discard",
+    "es": "Descartar",
+    "fr": "Ignorer",
+    "zh-Hans": "舍弃",
+    "hi": "छोड़ें",
+    "ar": "تجاهل",
+    "bn": "বাতিল করুন"
+  },
+  "chat_draft_saved": {
+    "de": "Angelegt",
+    "en": "Created",
+    "es": "Creado",
+    "fr": "Créé",
+    "zh-Hans": "已创建",
+    "hi": "बनाया गया",
+    "ar": "تم الإنشاء",
+    "bn": "তৈরি হয়েছে"
+  },
+  "chat_draft_discarded": {
+    "de": "Verworfen",
+    "en": "Discarded",
+    "es": "Descartado",
+    "fr": "Ignoré",
+    "zh-Hans": "已舍弃",
+    "hi": "छोड़ा गया",
+    "ar": "تم التجاهل",
+    "bn": "বাতিল করা হয়েছে"
+  },
+  "chat_draft_failed": {
+    "de": "Konnte nicht angelegt werden.",
+    "en": "Could not be created.",
+    "es": "No se pudo crear.",
+    "fr": "Impossible de créer.",
+    "zh-Hans": "无法创建。",
+    "hi": "बनाया नहीं जा सका।",
+    "ar": "تعذّر الإنشاء.",
+    "bn": "তৈরি করা যায়নি।"
+  },
+  "chat_draft_ready": {
+    "de": "Hier ist mein Entwurf.",
+    "en": "Here is my draft.",
+    "es": "Aquí está mi borrador.",
+    "fr": "Voici mon brouillon.",
+    "zh-Hans": "这是我的草稿。",
+    "hi": "यह रहा मेरा ड्राफ़्ट।",
+    "ar": "إليك مسودتي.",
+    "bn": "এই আমার খসড়া।"
+  },
+  "chat_draft_edit_title": {
+    "de": "Entwurf bearbeiten",
+    "en": "Edit draft",
+    "es": "Editar borrador",
+    "fr": "Modifier le brouillon",
+    "zh-Hans": "编辑草稿",
+    "hi": "ड्राफ़्ट संपादित करें",
+    "ar": "تعديل المسودة",
+    "bn": "খসড়া সম্পাদনা"
+  },
+  "chat_draft_add": {
+    "de": "Hinzufügen",
+    "en": "Add",
+    "es": "Añadir",
+    "fr": "Ajouter",
+    "zh-Hans": "添加",
+    "hi": "जोड़ें",
+    "ar": "إضافة",
+    "bn": "যোগ করুন"
+  },
+  "event_start": {
+    "de": "Beginn",
+    "en": "Starts",
+    "es": "Inicio",
+    "fr": "Début",
+    "zh-Hans": "开始",
+    "hi": "शुरू",
+    "ar": "البداية",
+    "bn": "শুরু"
+  },
+  "event_end": {
+    "de": "Ende",
+    "en": "Ends",
+    "es": "Fin",
+    "fr": "Fin",
+    "zh-Hans": "结束",
+    "hi": "समाप्ति",
+    "ar": "النهاية",
+    "bn": "শেষ"
+  },
+  "dictation_title": {
+    "de": "Per Sprache eingeben",
+    "en": "Dictate",
+    "es": "Dictar",
+    "fr": "Dicter",
+    "zh-Hans": "语音输入",
+    "hi": "बोलकर लिखें",
+    "ar": "إدخال صوتي",
+    "bn": "বলে লিখুন"
+  },
+  "dictation_preparing": {
+    "de": "Mikrofon wird vorbereitet …",
+    "en": "Preparing the microphone …",
+    "es": "Preparando el micrófono …",
+    "fr": "Préparation du micro …",
+    "zh-Hans": "正在准备麦克风…",
+    "hi": "माइक्रोफ़ोन तैयार हो रहा है …",
+    "ar": "جارٍ تجهيز الميكروفون …",
+    "bn": "মাইক্রোফোন প্রস্তুত হচ্ছে …"
+  },
+  "dictation_loading": {
+    "de": "Sprachmodell wird geladen … %lld %%",
+    "en": "Loading the speech model … %lld %%",
+    "es": "Cargando el modelo de voz … %lld %%",
+    "fr": "Chargement du modèle vocal … %lld %%",
+    "zh-Hans": "正在加载语音模型… %lld %%",
+    "hi": "वाक् मॉडल लोड हो रहा है … %lld %%",
+    "ar": "جارٍ تحميل نموذج الكلام … %lld %%",
+    "bn": "স্পিচ মডেল লোড হচ্ছে … %lld %%"
+  },
+  "dictation_hint": {
+    "de": "Sprich jetzt, zum Beispiel: „Übermorgen 15 Uhr Zahnarzt“",
+    "en": "Speak now, for example: “Dentist the day after tomorrow at 3 pm”",
+    "es": "Habla ahora, por ejemplo: «Dentista pasado mañana a las 15»",
+    "fr": "Parle maintenant, par exemple : « Dentiste après-demain à 15 h »",
+    "zh-Hans": "现在说话，例如：“后天下午3点看牙医”",
+    "hi": "अब बोलें, जैसे: „परसों 3 बजे डेंटिस्ट“",
+    "ar": "تحدث الآن، مثلًا: «طبيب الأسنان بعد غد الساعة 3»",
+    "bn": "এখন বলুন, যেমন: „পরশু ৩টায় দাঁতের ডাক্তার“"
+  },
+  "dictation_unsupported": {
+    "de": "Spracheingabe gibt es für diese Sprache auf diesem Gerät nicht.",
+    "en": "Dictation isn’t available for this language on this device.",
+    "es": "El dictado no está disponible para este idioma en este dispositivo.",
+    "fr": "La dictée n’est pas disponible pour cette langue sur cet appareil.",
+    "zh-Hans": "此设备不支持该语言的语音输入。",
+    "hi": "इस डिवाइस पर इस भाषा के लिए बोलकर लिखना उपलब्ध नहीं है।",
+    "ar": "الإدخال الصوتي غير متاح لهذه اللغة على هذا الجهاز.",
+    "bn": "এই ডিভাইসে এই ভাষার জন্য বলে লেখা উপলব্ধ নয়।"
+  },
+  "dictation_failed": {
+    "de": "Spracheingabe konnte nicht starten. Bitte noch einmal versuchen.",
+    "en": "Dictation couldn’t start. Please try again.",
+    "es": "No se pudo iniciar el dictado. Inténtalo de nuevo.",
+    "fr": "La dictée n’a pas pu démarrer. Réessaie.",
+    "zh-Hans": "无法开始语音输入，请重试。",
+    "hi": "बोलकर लिखना शुरू नहीं हो सका। फिर से कोशिश करें।",
+    "ar": "تعذّر بدء الإدخال الصوتي. حاول مرة أخرى.",
+    "bn": "বলে লেখা শুরু করা যায়নি। আবার চেষ্টা করুন।"
+  },
+  "settings_periods": {
+    "de": "Tageszeiten",
+    "en": "Times of day",
+    "es": "Momentos del día",
+    "fr": "Moments de la journée",
+    "zh-Hans": "时段",
+    "hi": "दिन के समय",
+    "ar": "أوقات اليوم",
+    "bn": "দিনের সময়"
+  },
+  "settings_periods_hint": {
+    "de": "Gilt, wenn du per Sprache oder Siri „morgens“, „mittags“, „nachmittags“ oder „abends“ sagst.",
+    "en": "Used when you say “morning”, “noon”, “afternoon” or “evening” by voice or to Siri.",
+    "es": "Se usa cuando dices «mañana», «mediodía», «tarde» o «noche» por voz o a Siri.",
+    "fr": "Utilisé quand tu dis « matin », « midi », « après-midi » ou « soir » à la voix ou à Siri.",
+    "zh-Hans": "通过语音或 Siri 说“早上”“中午”“下午”或“晚上”时使用。",
+    "hi": "जब आप आवाज़ से या Siri को „सुबह“, „दोपहर“ या „शाम“ कहते हैं, तब लागू होता है।",
+    "ar": "يُستخدم عندما تقول «صباحًا» أو «ظهرًا» أو «بعد الظهر» أو «مساءً» صوتيًا أو لـ Siri.",
+    "bn": "কণ্ঠে বা Siri-কে „সকাল“, „দুপুর“, „বিকেল“ বা „সন্ধ্যা“ বললে প্রযোজ্য।"
+  },
+  "period_morgens": {
+    "de": "Morgens",
+    "en": "Morning",
+    "es": "Mañana",
+    "fr": "Matin",
+    "zh-Hans": "早上",
+    "hi": "सुबह",
+    "ar": "صباحًا",
+    "bn": "সকাল"
+  },
+  "period_mittags": {
+    "de": "Mittags",
+    "en": "Noon",
+    "es": "Mediodía",
+    "fr": "Midi",
+    "zh-Hans": "中午",
+    "hi": "दोपहर",
+    "ar": "ظهرًا",
+    "bn": "দুপুর"
+  },
+  "period_nachmittags": {
+    "de": "Nachmittags",
+    "en": "Afternoon",
+    "es": "Tarde",
+    "fr": "Après-midi",
+    "zh-Hans": "下午",
+    "hi": "अपराह्न",
+    "ar": "بعد الظهر",
+    "bn": "বিকেল"
+  },
+  "period_abends": {
+    "de": "Abends",
+    "en": "Evening",
+    "es": "Noche",
+    "fr": "Soir",
+    "zh-Hans": "晚上",
+    "hi": "शाम",
+    "ar": "مساءً",
+    "bn": "সন্ধ্যা"
+  },
+  "siri_new_event": {
+    "de": "Neuer Termin",
+    "en": "New event",
+    "es": "Nueva cita",
+    "fr": "Nouveau rendez-vous",
+    "zh-Hans": "新建日程",
+    "hi": "नया अपॉइंटमेंट",
+    "ar": "موعد جديد",
+    "bn": "নতুন অ্যাপয়েন্টমেন্ট"
+  },
+  "siri_new_event_description": {
+    "de": "Legt einen Termin an. Datum und Uhrzeit erkennt Paralist aus dem Gesagten, zum Beispiel „morgen 8 Uhr Zahnarzt“.",
+    "en": "Creates an event. Paralist reads the date and time from what you say, for example “dentist tomorrow at 8”.",
+    "es": "Crea una cita. Paralist entiende la fecha y la hora de lo que dices, por ejemplo «dentista mañana a las 8».",
+    "fr": "Crée un rendez-vous. Paralist comprend la date et l’heure de ce que tu dis, par exemple « dentiste demain à 8 h ».",
+    "zh-Hans": "创建日程。Paralist 会从你说的话中识别日期和时间，例如“明天8点看牙医”。",
+    "hi": "अपॉइंटमेंट बनाता है। Paralist आपकी बात से तारीख और समय पहचानता है, जैसे „कल 8 बजे डेंटिस्ट“।",
+    "ar": "ينشئ موعدًا. يفهم Paralist التاريخ والوقت مما تقوله، مثلًا «طبيب الأسنان غدًا الساعة 8».",
+    "bn": "অ্যাপয়েন্টমেন্ট তৈরি করে। Paralist আপনার কথা থেকে তারিখ ও সময় বোঝে, যেমন „কাল ৮টায় দাঁতের ডাক্তার“।"
+  },
+  "siri_ask_termin": {
+    "de": "Wann und was? Zum Beispiel: morgen 8 Uhr Zahnarzt.",
+    "en": "When and what? For example: dentist tomorrow at 8.",
+    "es": "¿Cuándo y qué? Por ejemplo: dentista mañana a las 8.",
+    "fr": "Quand et quoi ? Par exemple : dentiste demain à 8 h.",
+    "zh-Hans": "什么时间，什么事？例如：明天8点看牙医。",
+    "hi": "कब और क्या? जैसे: कल 8 बजे डेंटिस्ट।",
+    "ar": "متى وماذا؟ مثلًا: طبيب الأسنان غدًا الساعة 8.",
+    "bn": "কখন আর কী? যেমন: কাল ৮টায় দাঁতের ডাক্তার।"
+  },
+  "siri_saved_termin": {
+    "de": "Termin „%1$@“ angelegt: %2$@",
+    "en": "Event “%1$@” created: %2$@",
+    "es": "Cita «%1$@» creada: %2$@",
+    "fr": "Rendez-vous « %1$@ » créé : %2$@",
+    "zh-Hans": "已创建日程“%1$@”：%2$@",
+    "hi": "अपॉइंटमेंट „%1$@“ बनाया गया: %2$@",
+    "ar": "تم إنشاء الموعد «%1$@»: %2$@",
+    "bn": "অ্যাপয়েন্টমেন্ট „%1$@“ তৈরি হয়েছে: %2$@"
+  },
+  "chat_thinking_title": {
+    "de": "Denkstufe",
+    "en": "Thinking",
+    "es": "Razonamiento",
+    "fr": "Réflexion",
+    "zh-Hans": "思考程度",
+    "hi": "सोचने का स्तर",
+    "ar": "مستوى التفكير",
+    "bn": "চিন্তার স্তর"
+  },
+  "chat_thinking_fast": {
+    "de": "Schnell",
+    "en": "Fast",
+    "es": "Rápido",
+    "fr": "Rapide",
+    "zh-Hans": "快速",
+    "hi": "तेज़",
+    "ar": "سريع",
+    "bn": "দ্রুত"
+  },
+  "chat_thinking_balanced": {
+    "de": "Ausgewogen",
+    "en": "Balanced",
+    "es": "Equilibrado",
+    "fr": "Équilibré",
+    "zh-Hans": "均衡",
+    "hi": "संतुलित",
+    "ar": "متوازن",
+    "bn": "ভারসাম্যপূর্ণ"
+  },
+  "chat_thinking_thorough": {
+    "de": "Gründlich",
+    "en": "Thorough",
+    "es": "Minucioso",
+    "fr": "Approfondi",
+    "zh-Hans": "深入",
+    "hi": "गहन",
+    "ar": "شامل",
+    "bn": "বিস্তারিত"
+  },
+  "chat_thinking_fast_hint": {
+    "de": "Antwortet sofort",
+    "en": "Answers right away",
+    "es": "Responde al instante",
+    "fr": "Répond tout de suite",
+    "zh-Hans": "立即回答",
+    "hi": "तुरंत जवाब देता है",
+    "ar": "يجيب فورًا",
+    "bn": "সঙ্গে সঙ্গে উত্তর দেয়"
+  },
+  "chat_thinking_balanced_hint": {
+    "de": "Denkt etwas länger nach",
+    "en": "Thinks a little longer",
+    "es": "Piensa un poco más",
+    "fr": "Réfléchit un peu plus",
+    "zh-Hans": "思考稍久一些",
+    "hi": "थोड़ा ज़्यादा सोचता है",
+    "ar": "يفكر لفترة أطول قليلًا",
+    "bn": "একটু বেশি সময় ভাবে"
+  },
+  "chat_thinking_thorough_hint": {
+    "de": "Langsamer, braucht mehr Akku",
+    "en": "Slower, uses more battery",
+    "es": "Más lento, usa más batería",
+    "fr": "Plus lent, consomme plus de batterie",
+    "zh-Hans": "较慢，更耗电",
+    "hi": "धीमा, ज़्यादा बैटरी लेता है",
+    "ar": "أبطأ ويستهلك بطارية أكثر",
+    "bn": "ধীর, বেশি ব্যাটারি খরচ করে"
+  },
+  "entry_parent_none": {
+    "de": "Kein Arbeitsbereich",
+    "en": "No area",
+    "es": "Sin área",
+    "fr": "Aucun domaine",
+    "zh-Hans": "无领域",
+    "hi": "कोई क्षेत्र नहीं",
+    "ar": "بلا مجال",
+    "bn": "কোনো ক্ষেত্র নেই"
+  },
+  "attachment_entry_saved": {
+    "de": "Gespeichert, Anhang als eigener Eintrag verknüpft",
+    "en": "Saved, attachment linked as its own entry",
+    "es": "Guardado, adjunto vinculado como entrada propia",
+    "fr": "Enregistré, pièce jointe liée comme entrée à part",
+    "zh-Hans": "已保存，附件已作为单独条目关联",
+    "hi": "सहेजा गया, अनुलग्नक अलग प्रविष्टि के रूप में जुड़ा",
+    "ar": "تم الحفظ وربط المرفق كإدخال مستقل",
+    "bn": "সংরক্ষিত, সংযুক্তি আলাদা এন্ট্রি হিসেবে যুক্ত"
+  },
+  "list_add": {
+    "de": "Hinzufügen",
+    "en": "Add",
+    "es": "Añadir",
+    "fr": "Ajouter",
+    "zh-Hans": "添加",
+    "hi": "जोड़ें",
+    "ar": "إضافة",
+    "bn": "যোগ করুন"
+  },
+  "list_documents": {
+    "de": "Dokumente",
+    "en": "Documents",
+    "es": "Documentos",
+    "fr": "Documents",
+    "zh-Hans": "文档",
+    "hi": "दस्तावेज़",
+    "ar": "المستندات",
+    "bn": "ডকুমেন্ট"
+  },
+  "media_filter_images": {
+    "de": "Bilder",
+    "en": "Images",
+    "es": "Imágenes",
+    "fr": "Images",
+    "zh-Hans": "图片",
+    "hi": "चित्र",
+    "ar": "الصور",
+    "bn": "ছবি"
+  },
+  "media_filter_videos": {
+    "de": "Videos",
+    "en": "Videos",
+    "es": "Vídeos",
+    "fr": "Vidéos",
+    "zh-Hans": "视频",
+    "hi": "वीडियो",
+    "ar": "الفيديوهات",
+    "bn": "ভিডিও"
+  },
+  "media_filter_audios": {
+    "de": "Audios",
+    "en": "Audio",
+    "es": "Audios",
+    "fr": "Audios",
+    "zh-Hans": "音频",
+    "hi": "ऑडियो",
+    "ar": "الصوتيات",
+    "bn": "অডিও"
+  },
+  "media_empty": {
+    "de": "Noch keine Bilder, Videos oder Audios. Nimm etwas auf oder füge es unten hinzu.",
+    "en": "No images, videos or audio yet. Record something or add it below.",
+    "es": "Aún no hay imágenes, vídeos ni audios. Graba algo o añádelo abajo.",
+    "fr": "Aucune image, vidéo ni audio pour l’instant. Enregistre quelque chose ou ajoute-le en bas.",
+    "zh-Hans": "还没有图片、视频或音频。录制或在下方添加。",
+    "hi": "अभी कोई चित्र, वीडियो या ऑडियो नहीं। कुछ रिकॉर्ड करें या नीचे जोड़ें।",
+    "ar": "لا صور أو فيديوهات أو تسجيلات صوتية بعد. سجّل شيئًا أو أضفه من الأسفل.",
+    "bn": "এখনো কোনো ছবি, ভিডিও বা অডিও নেই। কিছু রেকর্ড করুন বা নিচে যোগ করুন।"
+  },
+  "briefing_events_count": {
+    "de": {
+      "one": "%lld Termin",
+      "other": "%lld Termine"
+    },
+    "en": {
+      "one": "%lld event",
+      "other": "%lld events"
+    },
+    "es": {
+      "one": "%lld evento",
+      "other": "%lld eventos"
+    },
+    "fr": {
+      "one": "%lld événement",
+      "other": "%lld événements"
+    },
+    "zh-Hans": {
+      "other": "%lld 个日程"
+    },
+    "hi": {
+      "one": "%lld कार्यक्रम",
+      "other": "%lld कार्यक्रम"
+    },
+    "ar": {
+      "zero": "لا مواعيد",
+      "one": "موعد واحد",
+      "two": "موعدان",
+      "few": "%lld مواعيد",
+      "many": "%lld موعدًا",
+      "other": "%lld موعد"
+    },
+    "bn": {
+      "one": "%lld ইভেন্ট",
+      "other": "%lld ইভেন্ট"
+    }
+  },
+  "briefing_created_count": {
+    "de": {
+      "one": "%lld neu",
+      "other": "%lld neue"
+    },
+    "en": {
+      "one": "%lld new",
+      "other": "%lld new"
+    },
+    "es": {
+      "one": "%lld nuevo",
+      "other": "%lld nuevos"
+    },
+    "fr": {
+      "one": "%lld nouveau",
+      "other": "%lld nouveaux"
+    },
+    "zh-Hans": {
+      "other": "%lld 个新增"
+    },
+    "hi": {
+      "one": "%lld नया",
+      "other": "%lld नए"
+    },
+    "ar": {
+      "zero": "لا جديد",
+      "one": "جديد واحد",
+      "two": "جديدان",
+      "few": "%lld جديدة",
+      "many": "%lld جديدًا",
+      "other": "%lld جديد"
+    },
+    "bn": {
+      "one": "%lld নতুন",
+      "other": "%lld নতুন"
+    }
+  },
+  "date_tomorrow": {
+    "de": "Morgen",
+    "en": "Tomorrow",
+    "es": "Mañana",
+    "fr": "Demain",
+    "zh-Hans": "明天",
+    "hi": "कल",
+    "ar": "غدًا",
+    "bn": "আগামীকাল"
+  },
+  "type_tag": {
+    "de": "Tag",
+    "en": "Tag",
+    "es": "Etiqueta",
+    "fr": "Tag",
+    "zh-Hans": "标签",
+    "hi": "टैग",
+    "ar": "وسم",
+    "bn": "ট্যাগ"
+  },
+  "composer_hint_tag": {
+    "de": "Name des Tags",
+    "en": "Tag name",
+    "es": "Nombre de la etiqueta",
+    "fr": "Nom du tag",
+    "zh-Hans": "标签名称",
+    "hi": "टैग का नाम",
+    "ar": "اسم الوسم",
+    "bn": "ট্যাগের নাম"
+  },
+  "list_tags": {
+    "de": "Tags",
+    "en": "Tags",
+    "es": "Etiquetas",
+    "fr": "Tags",
+    "zh-Hans": "标签",
+    "hi": "टैग",
+    "ar": "الوسوم",
+    "bn": "ট্যাগ"
+  },
+  "empty_kind_tags": {
+    "de": "Noch keine Tags.",
+    "en": "No tags yet.",
+    "es": "Aún no hay etiquetas.",
+    "fr": "Aucun tag pour l’instant.",
+    "zh-Hans": "还没有标签。",
+    "hi": "अभी कोई टैग नहीं।",
+    "ar": "لا توجد وسوم بعد.",
+    "bn": "এখনও কোনো ট্যাগ নেই।"
+  },
+  "tag_kind_title": {
+    "de": "Art des Tags",
+    "en": "Tag type",
+    "es": "Tipo de etiqueta",
+    "fr": "Type de tag",
+    "zh-Hans": "标签类型",
+    "hi": "टैग का प्रकार",
+    "ar": "نوع الوسم",
+    "bn": "ট্যাগের ধরন"
+  },
+  "tag_kind_tag": {
+    "de": "Tag",
+    "en": "Tag",
+    "es": "Etiqueta",
+    "fr": "Tag",
+    "zh-Hans": "标签",
+    "hi": "टैग",
+    "ar": "وسم",
+    "bn": "ট্যাগ"
+  },
+  "tag_kind_person": {
+    "de": "Person",
+    "en": "Person",
+    "es": "Persona",
+    "fr": "Personne",
+    "zh-Hans": "人物",
+    "hi": "व्यक्ति",
+    "ar": "شخص",
+    "bn": "ব্যক্তি"
+  },
+  "tag_kind_place": {
+    "de": "Ort",
+    "en": "Place",
+    "es": "Lugar",
+    "fr": "Lieu",
+    "zh-Hans": "地点",
+    "hi": "स्थान",
+    "ar": "مكان",
+    "bn": "স্থান"
+  },
+  "view_customize": {
+    "de": "Anpassen",
+    "en": "Customize",
+    "es": "Personalizar",
+    "fr": "Personnaliser",
+    "zh-Hans": "自定义",
+    "hi": "अनुकूलित करें",
+    "ar": "تخصيص",
+    "bn": "কাস্টমাইজ করুন"
+  },
+  "view_sort_by": {
+    "de": "Sortieren nach",
+    "en": "Sort by",
+    "es": "Ordenar por",
+    "fr": "Trier par",
+    "zh-Hans": "排序依据",
+    "hi": "इसके अनुसार क्रमबद्ध करें",
+    "ar": "ترتيب حسب",
+    "bn": "সাজানোর ভিত্তি"
+  },
+  "view_order": {
+    "de": "Reihenfolge",
+    "en": "Order",
+    "es": "Orden",
+    "fr": "Ordre",
+    "zh-Hans": "顺序",
+    "hi": "क्रम",
+    "ar": "الترتيب",
+    "bn": "ক্রম"
+  },
+  "view_order_newest": {
+    "de": "Neueste zuerst",
+    "en": "Newest first",
+    "es": "Más recientes primero",
+    "fr": "Plus récents d’abord",
+    "zh-Hans": "最新优先",
+    "hi": "नवीनतम पहले",
+    "ar": "الأحدث أولاً",
+    "bn": "নতুনগুলো আগে"
+  },
+  "view_order_oldest": {
+    "de": "Älteste zuerst",
+    "en": "Oldest first",
+    "es": "Más antiguos primero",
+    "fr": "Plus anciens d’abord",
+    "zh-Hans": "最早优先",
+    "hi": "सबसे पुराने पहले",
+    "ar": "الأقدم أولاً",
+    "bn": "পুরোনোগুলো আগে"
+  },
+  "view_order_az": {
+    "de": "A bis Z",
+    "en": "A to Z",
+    "es": "De la A a la Z",
+    "fr": "De A à Z",
+    "zh-Hans": "A 到 Z",
+    "hi": "A से Z",
+    "ar": "من أ إلى ي",
+    "bn": "A থেকে Z"
+  },
+  "view_order_za": {
+    "de": "Z bis A",
+    "en": "Z to A",
+    "es": "De la Z a la A",
+    "fr": "De Z à A",
+    "zh-Hans": "Z 到 A",
+    "hi": "Z से A",
+    "ar": "من ي إلى أ",
+    "bn": "Z থেকে A"
+  },
+  "view_group_by": {
+    "de": "Gruppieren nach",
+    "en": "Group by",
+    "es": "Agrupar por",
+    "fr": "Grouper par",
+    "zh-Hans": "分组依据",
+    "hi": "इसके अनुसार समूह",
+    "ar": "تجميع حسب",
+    "bn": "গ্রুপের ভিত্তি"
+  },
+  "view_show": {
+    "de": "Anzeigen",
+    "en": "Show",
+    "es": "Mostrar",
+    "fr": "Afficher",
+    "zh-Hans": "显示",
+    "hi": "दिखाएँ",
+    "ar": "عرض",
+    "bn": "দেখান"
+  },
+  "view_group_collapsed": {
+    "de": "Zugeklappt",
+    "en": "Collapsed",
+    "es": "Contraído",
+    "fr": "Replié",
+    "zh-Hans": "已折叠",
+    "hi": "संकुचित",
+    "ar": "مطوي",
+    "bn": "সংকুচিত"
+  },
+  "view_group_expanded": {
+    "de": "Aufgeklappt",
+    "en": "Expanded",
+    "es": "Expandido",
+    "fr": "Déplié",
+    "zh-Hans": "已展开",
+    "hi": "विस्तृत",
+    "ar": "موسّع",
+    "bn": "প্রসারিত"
+  },
+  "tag_parent_none": {
+    "de": "Nicht zugeordnet",
+    "en": "Not assigned",
+    "es": "Sin asignar",
+    "fr": "Non attribué",
+    "zh-Hans": "未归类",
+    "hi": "असाइन नहीं",
+    "ar": "غير مُسنَد",
+    "bn": "বরাদ্দ নেই"
+  },
+  "entry_info_more": {
+    "de": "mehr",
+    "en": "more",
+    "es": "más",
+    "fr": "plus",
+    "zh-Hans": "更多",
+    "hi": "और",
+    "ar": "المزيد",
+    "bn": "আরও"
+  },
+  "entry_info_title": {
+    "de": "Info",
+    "en": "Info",
+    "es": "Información",
+    "fr": "Infos",
+    "zh-Hans": "信息",
+    "hi": "जानकारी",
+    "ar": "معلومات",
+    "bn": "তথ্য"
+  },
+  "entry_info_created": {
+    "de": "Erstellt",
+    "en": "Created",
+    "es": "Creado",
+    "fr": "Créé",
+    "zh-Hans": "创建于",
+    "hi": "बनाया गया",
+    "ar": "تاريخ الإنشاء",
+    "bn": "তৈরি"
+  },
+  "entry_info_updated": {
+    "de": "Geändert",
+    "en": "Edited",
+    "es": "Editado",
+    "fr": "Modifié",
+    "zh-Hans": "修改于",
+    "hi": "बदला गया",
+    "ar": "آخر تعديل",
+    "bn": "পরিবর্তিত"
+  },
+  "entry_info_words": {
+    "de": "Wörter",
+    "en": "Words",
+    "es": "Palabras",
+    "fr": "Mots",
+    "zh-Hans": "字数",
+    "hi": "शब्द",
+    "ar": "كلمات",
+    "bn": "শব্দ"
+  },
+  "entry_info_details_photo": {
+    "de": "Fotodetails",
+    "en": "Photo details",
+    "es": "Detalles de la foto",
+    "fr": "Détails de la photo",
+    "zh-Hans": "照片详情",
+    "hi": "फ़ोटो विवरण",
+    "ar": "تفاصيل الصورة",
+    "bn": "ছবির বিবরণ"
+  },
+  "entry_info_details_video": {
+    "de": "Videodetails",
+    "en": "Video details",
+    "es": "Detalles del vídeo",
+    "fr": "Détails de la vidéo",
+    "zh-Hans": "视频详情",
+    "hi": "वीडियो विवरण",
+    "ar": "تفاصيل الفيديو",
+    "bn": "ভিডিওর বিবরণ"
+  },
+  "entry_info_details_audio": {
+    "de": "Audiodetails",
+    "en": "Audio details",
+    "es": "Detalles del audio",
+    "fr": "Détails de l’audio",
+    "zh-Hans": "音频详情",
+    "hi": "ऑडियो विवरण",
+    "ar": "تفاصيل الصوت",
+    "bn": "অডিওর বিবরণ"
+  },
+  "entry_info_details_file": {
+    "de": "Dateidetails",
+    "en": "File details",
+    "es": "Detalles del archivo",
+    "fr": "Détails du fichier",
+    "zh-Hans": "文件详情",
+    "hi": "फ़ाइल विवरण",
+    "ar": "تفاصيل الملف",
+    "bn": "ফাইলের বিবরণ"
+  },
+  "entry_info_details_entry": {
+    "de": "Details",
+    "en": "Details",
+    "es": "Detalles",
+    "fr": "Détails",
+    "zh-Hans": "详情",
+    "hi": "विवरण",
+    "ar": "التفاصيل",
+    "bn": "বিবরণ"
+  },
+  "entry_info_date": {
+    "de": "Datum",
+    "en": "Date",
+    "es": "Fecha",
+    "fr": "Date",
+    "zh-Hans": "日期",
+    "hi": "तारीख",
+    "ar": "التاريخ",
+    "bn": "তারিখ"
+  },
+  "entry_info_views": {
+    "de": "Aufrufe",
+    "en": "Views",
+    "es": "Vistas",
+    "fr": "Vues",
+    "zh-Hans": "查看次数",
+    "hi": "बार देखा गया",
+    "ar": "المشاهدات",
+    "bn": "দেখা হয়েছে"
+  },
+  "entry_info_shares": {
+    "de": "Geteilt",
+    "en": "Shared",
+    "es": "Compartido",
+    "fr": "Partagé",
+    "zh-Hans": "分享次数",
+    "hi": "साझा किया गया",
+    "ar": "المشاركات",
+    "bn": "শেয়ার করা হয়েছে"
+  },
+  "entry_info_size": {
+    "de": "Größe",
+    "en": "Size",
+    "es": "Tamaño",
+    "fr": "Taille",
+    "zh-Hans": "大小",
+    "hi": "आकार",
+    "ar": "الحجم",
+    "bn": "আকার"
+  },
+  "entry_share": {
+    "de": "Teilen",
+    "en": "Share",
+    "es": "Compartir",
+    "fr": "Partager",
+    "zh-Hans": "分享",
+    "hi": "साझा करें",
+    "ar": "مشاركة",
+    "bn": "শেয়ার করুন"
+  },
+  "entry_info_views_count": {
+    "de": {
+      "one": "%lld Aufruf",
+      "other": "%lld Aufrufe"
+    },
+    "en": {
+      "one": "%lld view",
+      "other": "%lld views"
+    },
+    "es": {
+      "one": "%lld vista",
+      "other": "%lld vistas"
+    },
+    "fr": {
+      "one": "%lld vue",
+      "other": "%lld vues"
+    },
+    "zh-Hans": {
+      "other": "%lld 次查看"
+    },
+    "hi": {
+      "one": "%lld बार देखा",
+      "other": "%lld बार देखा"
+    },
+    "ar": {
+      "zero": "لا مشاهدات",
+      "one": "مشاهدة واحدة",
+      "two": "مشاهدتان",
+      "few": "%lld مشاهدات",
+      "many": "%lld مشاهدة",
+      "other": "%lld مشاهدة"
+    },
+    "bn": {
+      "one": "%lld বার দেখা",
+      "other": "%lld বার দেখা"
+    }
+  },
+  "entry_updated_on": {
+    "de": "Geändert am %@",
+    "en": "Edited on %@",
+    "es": "Modificado el %@",
+    "fr": "Modifié le %@",
+    "zh-Hans": "修改于 %@",
+    "hi": "%@ को बदला गया",
+    "ar": "عُدّل في %@",
+    "bn": "%@ তারিখে পরিবর্তিত"
+  },
+  "entry_body_remove": {
+    "de": "Text entfernen",
+    "en": "Remove text",
+    "es": "Quitar texto",
+    "fr": "Supprimer le texte",
+    "zh-Hans": "移除文本",
+    "hi": "टेक्स्ट हटाएँ",
+    "ar": "إزالة النص",
+    "bn": "টেক্সট সরান"
+  },
+  "entry_body_remove_question": {
+    "de": "Text entfernen?",
+    "en": "Remove text?",
+    "es": "¿Quitar el texto?",
+    "fr": "Supprimer le texte ?",
+    "zh-Hans": "要移除文本吗？",
+    "hi": "टेक्स्ट हटाएँ?",
+    "ar": "هل تريد إزالة النص؟",
+    "bn": "টেক্সট সরাবেন?"
+  },
+  "entry_body_remove_message": {
+    "de": "Der ganze Text dieses Eintrags wird gelöscht.",
+    "en": "All text of this entry will be deleted.",
+    "es": "Se eliminará todo el texto de esta entrada.",
+    "fr": "Tout le texte de cette entrée sera supprimé.",
+    "zh-Hans": "此条目的全部文本将被删除。",
+    "hi": "इस प्रविष्टि का पूरा टेक्स्ट हटा दिया जाएगा।",
+    "ar": "سيُحذف كل نص هذا الإدخال.",
+    "bn": "এই এন্ট্রির সব টেক্সট মুছে যাবে।"
+  },
+  "entry_canvas_open": {
+    "de": "Ansicht öffnen",
+    "en": "Open view",
+    "es": "Abrir vista",
+    "fr": "Ouvrir la vue",
+    "zh-Hans": "打开视图",
+    "hi": "दृश्य खोलें",
+    "ar": "فتح العرض",
+    "bn": "ভিউ খুলুন"
+  },
+  "project_mark_done": {
+    "de": "Als abgeschlossen markieren",
+    "en": "Mark as completed",
+    "es": "Marcar como completado",
+    "fr": "Marquer comme achevé",
+    "zh-Hans": "标记为已结束",
+    "hi": "समाप्त के रूप में चिह्नित करें",
+    "ar": "وضع علامة مكتمل",
+    "bn": "সমাপ্ত হিসেবে চিহ্নিত করুন"
+  },
+  "project_mark_open": {
+    "de": "Als offen markieren",
+    "en": "Mark as open",
+    "es": "Marcar como abierto",
+    "fr": "Marquer comme ouvert",
+    "zh-Hans": "标记为未结束",
+    "hi": "खुला के रूप में चिह्नित करें",
+    "ar": "وضع علامة مفتوح",
+    "bn": "খোলা হিসেবে চিহ্নিত করুন"
+  },
+  "entry_link_open_web": {
+    "de": "Link öffnen",
+    "en": "Open link",
+    "es": "Abrir enlace",
+    "fr": "Ouvrir le lien",
+    "zh-Hans": "打开链接",
+    "hi": "लिंक खोलें",
+    "ar": "فتح الرابط",
+    "bn": "লিংক খুলুন"
+  },
+  "status_postponed": {
+    "de": "Verschoben",
+    "en": "Postponed",
+    "es": "Aplazado",
+    "fr": "Reporté",
+    "zh-Hans": "已推迟",
+    "hi": "स्थगित",
+    "ar": "مؤجّل",
+    "bn": "স্থগিত"
+  },
+  "status_cancelled": {
+    "de": "Abgesagt",
+    "en": "Cancelled",
+    "es": "Cancelado",
+    "fr": "Annulé",
+    "zh-Hans": "已取消",
+    "hi": "रद्द",
+    "ar": "ملغى",
+    "bn": "বাতিল"
+  },
+  "status_held": {
+    "de": "Stattgefunden",
+    "en": "Took place",
+    "es": "Celebrado",
+    "fr": "A eu lieu",
+    "zh-Hans": "已举行",
+    "hi": "हो चुका",
+    "ar": "انعقد",
+    "bn": "অনুষ্ঠিত"
+  },
+  "status_closed": {
+    "de": "Geschlossen",
+    "en": "Closed",
+    "es": "Cerrado",
+    "fr": "Fermé",
+    "zh-Hans": "已关闭",
+    "hi": "बंद",
+    "ar": "مغلق",
+    "bn": "বন্ধ"
+  },
+  "status_closed_project": {
+    "de": "Abgeschlossen",
+    "en": "Completed",
+    "es": "Finalizado",
+    "fr": "Terminé",
+    "zh-Hans": "已完成",
+    "hi": "पूर्ण",
+    "ar": "مكتمل",
+    "bn": "সম্পন্ন"
+  },
+  "status_unfinished": {
+    "de": "Unfertig",
+    "en": "Unfinished",
+    "es": "Sin terminar",
+    "fr": "Inachevé",
+    "zh-Hans": "未完成",
+    "hi": "अधूरा",
+    "ar": "غير مكتمل",
+    "bn": "অসমাপ্ত"
+  },
+  "status_read": {
+    "de": "Gelesen",
+    "en": "Read",
+    "es": "Leído",
+    "fr": "Lu",
+    "zh-Hans": "已读",
+    "hi": "पढ़ा गया",
+    "ar": "مقروء",
+    "bn": "পঠিত"
+  },
+  "status_viewed": {
+    "de": "Angesehen",
+    "en": "Viewed",
+    "es": "Visto",
+    "fr": "Vu",
+    "zh-Hans": "已看",
+    "hi": "देखा गया",
+    "ar": "تمت مشاهدته",
+    "bn": "দেখা হয়েছে"
+  },
+  "status_listened": {
+    "de": "Angehört",
+    "en": "Listened",
+    "es": "Escuchado",
+    "fr": "Écouté",
+    "zh-Hans": "已听",
+    "hi": "सुना गया",
+    "ar": "تم الاستماع",
+    "bn": "শোনা হয়েছে"
+  },
+  "status_played": {
+    "de": "Abgespielt",
+    "en": "Played",
+    "es": "Reproducido",
+    "fr": "Lu",
+    "zh-Hans": "已播放",
+    "hi": "चलाया गया",
+    "ar": "تم تشغيله",
+    "bn": "চালানো হয়েছে"
+  },
+  "status_shared": {
+    "de": "Geteilt",
+    "en": "Shared",
+    "es": "Compartido",
+    "fr": "Partagé",
+    "zh-Hans": "已分享",
+    "hi": "साझा किया",
+    "ar": "تمت مشاركته",
+    "bn": "শেয়ার করা"
+  },
+  "status_learned": {
+    "de": "Gelernt",
+    "en": "Learned",
+    "es": "Aprendido",
+    "fr": "Appris",
+    "zh-Hans": "已学习",
+    "hi": "सीखा गया",
+    "ar": "تم تعلّمه",
+    "bn": "শেখা হয়েছে"
+  },
+  "status_hard": {
+    "de": "Schwer",
+    "en": "Hard",
+    "es": "Difícil",
+    "fr": "Difficile",
+    "zh-Hans": "困难",
+    "hi": "कठिन",
+    "ar": "صعب",
+    "bn": "কঠিন"
+  },
+  "status_good": {
+    "de": "Gut",
+    "en": "Good",
+    "es": "Bien",
+    "fr": "Bien",
+    "zh-Hans": "良好",
+    "hi": "अच्छा",
+    "ar": "جيد",
+    "bn": "ভালো"
+  },
+  "status_easy": {
+    "de": "Leicht",
+    "en": "Easy",
+    "es": "Fácil",
+    "fr": "Facile",
+    "zh-Hans": "简单",
+    "hi": "आसान",
+    "ar": "سهل",
+    "bn": "সহজ"
+  },
+  "entry_info_moves": {
+    "de": "Verschoben",
+    "en": "Postponed",
+    "es": "Aplazado",
+    "fr": "Reporté",
+    "zh-Hans": "推迟次数",
+    "hi": "स्थगित",
+    "ar": "مرات التأجيل",
+    "bn": "স্থগিত"
+  },
+  "entry_info_history": {
+    "de": "Verlauf",
+    "en": "History",
+    "es": "Historial",
+    "fr": "Historique",
+    "zh-Hans": "历史",
+    "hi": "इतिहास",
+    "ar": "السجل",
+    "bn": "ইতিহাস"
+  },
+  "entry_info_moved_on": {
+    "de": "Verschoben am %@",
+    "en": "Postponed on %@",
+    "es": "Aplazado el %@",
+    "fr": "Reporté le %@",
+    "zh-Hans": "推迟于 %@",
+    "hi": "%@ को स्थगित",
+    "ar": "أُجّل في %@",
+    "bn": "%@ তারিখে স্থগিত"
+  },
+  "entry_info_cancelled_on": {
+    "de": "Abgesagt am %@",
+    "en": "Cancelled on %@",
+    "es": "Cancelado el %@",
+    "fr": "Annulé le %@",
+    "zh-Hans": "取消于 %@",
+    "hi": "%@ को रद्द",
+    "ar": "أُلغي في %@",
+    "bn": "%@ তারিখে বাতিল"
+  },
+  "file_kind_pdf": {
+    "de": "PDF",
+    "en": "PDF",
+    "es": "PDF",
+    "fr": "PDF",
+    "zh-Hans": "PDF",
+    "hi": "PDF",
+    "ar": "PDF",
+    "bn": "PDF"
+  },
+  "list_decks": {
+    "de": "Kartendecks",
+    "en": "Decks",
+    "es": "Mazos",
+    "fr": "Paquets",
+    "zh-Hans": "卡组",
+    "hi": "डेक",
+    "ar": "مجموعات البطاقات",
+    "bn": "ডেকগুলো"
+  },
+  "tasks_toggle_active": {
+    "de": "Aktiv",
+    "en": "Active",
+    "es": "Activas",
+    "fr": "Actives",
+    "zh-Hans": "进行中",
+    "hi": "सक्रिय",
+    "ar": "نشطة",
+    "bn": "সক্রিয়"
+  },
+  "tasks_show_archive": {
+    "de": "Archiv anzeigen",
+    "en": "Show archive",
+    "es": "Mostrar archivo",
+    "fr": "Afficher les archives",
+    "zh-Hans": "显示归档",
+    "hi": "संग्रह दिखाएँ",
+    "ar": "إظهار الأرشيف",
+    "bn": "আর্কাইভ দেখান"
+  },
+  "tasks_active_count": {
+    "de": "%lld aktive Aufgaben",
+    "en": "%lld active tasks",
+    "es": "%lld tareas activas",
+    "fr": "%lld tâches actives",
+    "zh-Hans": "%lld 个进行中的任务",
+    "hi": "%lld सक्रिय कार्य",
+    "ar": "%lld مهمة نشطة",
+    "bn": "%lld টি সক্রিয় কাজ"
+  },
+  "tasks_archived_count": {
+    "de": "%lld archivierte Aufgaben",
+    "en": "%lld archived tasks",
+    "es": "%lld tareas archivadas",
+    "fr": "%lld tâches archivées",
+    "zh-Hans": "%lld 个已归档的任务",
+    "hi": "%lld संग्रहीत कार्य",
+    "ar": "%lld مهمة مؤرشفة",
+    "bn": "%lld টি আর্কাইভ করা কাজ"
+  },
+  "tasks_pinned_open": {
+    "de": "Angepinnte Aufgabe öffnen",
+    "en": "Open pinned task",
+    "es": "Abrir tarea anclada",
+    "fr": "Ouvrir la tâche épinglée",
+    "zh-Hans": "打开置顶任务",
+    "hi": "पिन किया गया कार्य खोलें",
+    "ar": "فتح المهمة المثبتة",
+    "bn": "পিন করা কাজ খুলুন"
+  },
+  "tasks_recent_created": {
+    "de": "Zuletzt erstellt",
+    "en": "Recently created",
+    "es": "Creadas recientemente",
+    "fr": "Créées récemment",
+    "zh-Hans": "最近创建",
+    "hi": "हाल में बनाई गईं",
+    "ar": "أُنشئت مؤخرًا",
+    "bn": "সম্প্রতি তৈরি"
+  },
+  "tasks_recent_updated": {
+    "de": "Zuletzt geändert",
+    "en": "Recently changed",
+    "es": "Modificadas recientemente",
+    "fr": "Modifiées récemment",
+    "zh-Hans": "最近修改",
+    "hi": "हाल में बदली गईं",
+    "ar": "عُدِّلت مؤخرًا",
+    "bn": "সম্প্রতি পরিবর্তিত"
+  },
+  "tasks_by_due": {
+    "de": "Nach Fälligkeit",
+    "en": "By due date",
+    "es": "Por vencimiento",
+    "fr": "Par échéance",
+    "zh-Hans": "按到期日",
+    "hi": "नियत तिथि के अनुसार",
+    "ar": "حسب تاريخ الاستحقاق",
+    "bn": "নির্ধারিত তারিখ অনুযায়ী"
+  },
+  "tasks_by_title": {
+    "de": "Alphabetisch",
+    "en": "Alphabetical",
+    "es": "Alfabético",
+    "fr": "Alphabétique",
+    "zh-Hans": "按字母顺序",
+    "hi": "वर्णानुक्रम",
+    "ar": "أبجديًا",
+    "bn": "বর্ণানুক্রমিক"
+  },
+  "tasks_sort_due": {
+    "de": "Fälligkeit",
+    "en": "Due date",
+    "es": "Vencimiento",
+    "fr": "Échéance",
+    "zh-Hans": "到期日",
+    "hi": "नियत तिथि",
+    "ar": "تاريخ الاستحقاق",
+    "bn": "নির্ধারিত তারিখ"
+  },
+  "tasks_order_soonest": {
+    "de": "Nächste zuerst",
+    "en": "Soonest first",
+    "es": "Las más próximas primero",
+    "fr": "Les plus proches d'abord",
+    "zh-Hans": "最近的在前",
+    "hi": "निकटतम पहले",
+    "ar": "الأقرب أولًا",
+    "bn": "নিকটতম আগে"
+  },
+  "tasks_order_latest": {
+    "de": "Späteste zuerst",
+    "en": "Latest first",
+    "es": "Las más lejanas primero",
+    "fr": "Les plus lointaines d'abord",
+    "zh-Hans": "最远的在前",
+    "hi": "सबसे दूर की पहले",
+    "ar": "الأبعد أولًا",
+    "bn": "দূরতম আগে"
+  },
+  "tasks_done_show": {
+    "de": "Erledigte anzeigen",
+    "en": "Show completed",
+    "es": "Mostrar completadas",
+    "fr": "Afficher les terminées",
+    "zh-Hans": "显示已完成",
+    "hi": "पूरी हुई दिखाएँ",
+    "ar": "إظهار المنجزة",
+    "bn": "সম্পন্ন দেখান"
+  },
+  "tasks_done_always": {
+    "de": "Immer",
+    "en": "Always",
+    "es": "Siempre",
+    "fr": "Toujours",
+    "zh-Hans": "始终",
+    "hi": "हमेशा",
+    "ar": "دائمًا",
+    "bn": "সবসময়"
+  },
+  "tasks_done_day": {
+    "de": "Am selben Tag",
+    "en": "Same day",
+    "es": "El mismo día",
+    "fr": "Le jour même",
+    "zh-Hans": "当天",
+    "hi": "उसी दिन",
+    "ar": "في اليوم نفسه",
+    "bn": "একই দিনে"
+  },
+  "tasks_done_week": {
+    "de": "Sieben Tage",
+    "en": "Seven days",
+    "es": "Siete días",
+    "fr": "Sept jours",
+    "zh-Hans": "七天",
+    "hi": "सात दिन",
+    "ar": "سبعة أيام",
+    "bn": "সাত দিন"
+  },
+  "tasks_done_never": {
+    "de": "Nie",
+    "en": "Never",
+    "es": "Nunca",
+    "fr": "Jamais",
+    "zh-Hans": "从不",
+    "hi": "कभी नहीं",
+    "ar": "أبدًا",
+    "bn": "কখনও না"
+  },
+  "view_group_status": {
+    "de": "Status",
+    "en": "Status",
+    "es": "Estado",
+    "fr": "Statut",
+    "zh-Hans": "状态",
+    "hi": "स्थिति",
+    "ar": "الحالة",
+    "bn": "অবস্থা"
+  },
+  "tasks_group_order": {
+    "de": "Reihenfolge der Gruppen",
+    "en": "Group order",
+    "es": "Orden de los grupos",
+    "fr": "Ordre des groupes",
+    "zh-Hans": "分组顺序",
+    "hi": "समूहों का क्रम",
+    "ar": "ترتيب المجموعات",
+    "bn": "গ্রুপের ক্রম"
+  },
+  "tasks_group_order_hint": {
+    "de": "Ziehe die Gruppen in die gewünschte Reihenfolge.",
+    "en": "Drag the groups into the order you want.",
+    "es": "Arrastra los grupos al orden que quieras.",
+    "fr": "Faites glisser les groupes dans l'ordre souhaité.",
+    "zh-Hans": "拖动分组以调整顺序。",
+    "hi": "समूहों को मनचाहे क्रम में खींचें।",
+    "ar": "اسحب المجموعات إلى الترتيب المطلوب.",
+    "bn": "গ্রুপগুলো পছন্দমতো ক্রমে টেনে সাজান।"
+  },
+  "tasks_archive_empty": {
+    "de": "Keine archivierten Aufgaben",
+    "en": "No archived tasks",
+    "es": "No hay tareas archivadas",
+    "fr": "Aucune tâche archivée",
+    "zh-Hans": "没有已归档的任务",
+    "hi": "कोई संग्रहीत कार्य नहीं",
+    "ar": "لا توجد مهام مؤرشفة",
+    "bn": "কোনো আর্কাইভ করা কাজ নেই"
+  },
+  "tasks_hint_title": {
+    "de": "Erledigtes wandert ins Archiv",
+    "en": "Completed tasks move to the archive",
+    "es": "Lo completado pasa al archivo",
+    "fr": "Les tâches terminées passent aux archives",
+    "zh-Hans": "已完成的任务会进入归档",
+    "hi": "पूरे हुए कार्य संग्रह में जाते हैं",
+    "ar": "المهام المنجزة تنتقل إلى الأرشيف",
+    "bn": "সম্পন্ন কাজ আর্কাইভে যায়"
+  },
+  "tasks_hint_body": {
+    "de": "Erledigte Aufgaben bleiben am Tag der Erledigung in der Liste und wandern danach ins Archiv des Ordners. Hier passt du das so an, wie es für dich am übersichtlichsten ist.",
+    "en": "Completed tasks stay in the list on the day you complete them and then move to the folder's archive. Here you can adjust this to whatever is clearest for you.",
+    "es": "Las tareas completadas permanecen en la lista el día en que las completas y después pasan al archivo de la carpeta. Aquí lo ajustas como te resulte más claro.",
+    "fr": "Les tâches terminées restent dans la liste le jour de leur achèvement, puis passent aux archives du dossier. Ici, vous réglez cela comme vous le trouvez le plus clair.",
+    "zh-Hans": "已完成的任务在完成当天留在列表中，之后进入文件夹的归档。你可以在这里按自己觉得最清晰的方式调整。",
+    "hi": "पूरे हुए कार्य पूरा होने के दिन सूची में रहते हैं और फिर फ़ोल्डर के संग्रह में चले जाते हैं। यहाँ इसे वैसे सेट करें जैसे आपको सबसे साफ़ लगे।",
+    "ar": "تبقى المهام المنجزة في القائمة في يوم إنجازها ثم تنتقل إلى أرشيف المجلد. هنا تضبط ذلك بالطريقة الأوضح بالنسبة لك.",
+    "bn": "সম্পন্ন কাজ সম্পন্ন হওয়ার দিনে তালিকায় থাকে, তারপর ফোল্ডারের আর্কাইভে চলে যায়। এখানে তুমি এটা নিজের জন্য সবচেয়ে পরিষ্কার মনে হয় এমনভাবে সাজাতে পারো।"
+  },
+  "add_new_note": {
+    "de": "Neue Notiz",
+    "en": "New note",
+    "es": "Nueva nota",
+    "fr": "Nouvelle note",
+    "zh-Hans": "新建笔记",
+    "hi": "नया नोट",
+    "ar": "ملاحظة جديدة",
+    "bn": "নতুন নোট"
+  },
+  "add_new_task": {
+    "de": "Neue Aufgabe",
+    "en": "New task",
+    "es": "Nueva tarea",
+    "fr": "Nouvelle tâche",
+    "zh-Hans": "新建任务",
+    "hi": "नया कार्य",
+    "ar": "مهمة جديدة",
+    "bn": "নতুন কাজ"
+  },
+  "add_new_event": {
+    "de": "Neuer Termin",
+    "en": "New event",
+    "es": "Nuevo evento",
+    "fr": "Nouvel événement",
+    "zh-Hans": "新建日程",
+    "hi": "नया इवेंट",
+    "ar": "موعد جديد",
+    "bn": "নতুন ইভেন্ট"
+  },
+  "add_new_project": {
+    "de": "Neues Projekt",
+    "en": "New project",
+    "es": "Nuevo proyecto",
+    "fr": "Nouveau projet",
+    "zh-Hans": "新建项目",
+    "hi": "नया प्रोजेक्ट",
+    "ar": "مشروع جديد",
+    "bn": "নতুন প্রজেক্ট"
+  },
+  "add_new_area": {
+    "de": "Neuer Arbeitsbereich",
+    "en": "New area",
+    "es": "Nueva área",
+    "fr": "Nouveau domaine",
+    "zh-Hans": "新建领域",
+    "hi": "नया क्षेत्र",
+    "ar": "مجال جديد",
+    "bn": "নতুন ক্ষেত্র"
+  },
+  "add_new_resource": {
+    "de": "Neue Ressource",
+    "en": "New resource",
+    "es": "Nuevo recurso",
+    "fr": "Nouvelle ressource",
+    "zh-Hans": "新建资源",
+    "hi": "नया संसाधन",
+    "ar": "مورد جديد",
+    "bn": "নতুন রিসোর্স"
+  },
+  "add_new_bookmark": {
+    "de": "Neues Lesezeichen",
+    "en": "New bookmark",
+    "es": "Nuevo marcador",
+    "fr": "Nouveau favori",
+    "zh-Hans": "新建书签",
+    "hi": "नया बुकमार्क",
+    "ar": "إشارة مرجعية جديدة",
+    "bn": "নতুন বুকমার্ক"
+  },
+  "add_new_document": {
+    "de": "Neues Dokument",
+    "en": "New document",
+    "es": "Nuevo documento",
+    "fr": "Nouveau document",
+    "zh-Hans": "新建文档",
+    "hi": "नया दस्तावेज़",
+    "ar": "مستند جديد",
+    "bn": "নতুন ডকুমেন্ট"
+  },
+  "add_new_photo": {
+    "de": "Neues Foto",
+    "en": "New photo",
+    "es": "Nueva foto",
+    "fr": "Nouvelle photo",
+    "zh-Hans": "新建照片",
+    "hi": "नई फ़ोटो",
+    "ar": "صورة جديدة",
+    "bn": "নতুন ছবি"
+  },
+  "add_new_video": {
+    "de": "Neues Video",
+    "en": "New video",
+    "es": "Nuevo vídeo",
+    "fr": "Nouvelle vidéo",
+    "zh-Hans": "新建视频",
+    "hi": "नया वीडियो",
+    "ar": "فيديو جديد",
+    "bn": "নতুন ভিডিও"
+  },
+  "add_new_audio": {
+    "de": "Neue Audioaufnahme",
+    "en": "New audio recording",
+    "es": "Nueva grabación de audio",
+    "fr": "Nouvel enregistrement audio",
+    "zh-Hans": "新建录音",
+    "hi": "नई ऑडियो रिकॉर्डिंग",
+    "ar": "تسجيل صوتي جديد",
+    "bn": "নতুন অডিও রেকর্ডিং"
+  },
+  "add_new_file": {
+    "de": "Neue Datei",
+    "en": "New file",
+    "es": "Nuevo archivo",
+    "fr": "Nouveau fichier",
+    "zh-Hans": "新建文件",
+    "hi": "नई फ़ाइल",
+    "ar": "ملف جديد",
+    "bn": "নতুন ফাইল"
+  },
+  "add_new_tag": {
+    "de": "Neuer Tag",
+    "en": "New tag",
+    "es": "Nueva etiqueta",
+    "fr": "Nouveau tag",
+    "zh-Hans": "新建标签",
+    "hi": "नया टैग",
+    "ar": "وسم جديد",
+    "bn": "নতুন ট্যাগ"
+  },
+  "add_new_flashcard": {
+    "de": "Neue Karteikarte",
+    "en": "New flashcard",
+    "es": "Nueva tarjeta",
+    "fr": "Nouvelle fiche",
+    "zh-Hans": "新建抽认卡",
+    "hi": "नया फ़्लैशकार्ड",
+    "ar": "بطاقة جديدة",
+    "bn": "নতুন ফ্ল্যাশকার্ড"
+  },
+  "add_new_entry": {
+    "de": "Neuer Eintrag",
+    "en": "New entry",
+    "es": "Nueva entrada",
+    "fr": "Nouvelle entrée",
+    "zh-Hans": "新建条目",
+    "hi": "नई प्रविष्टि",
+    "ar": "إدخال جديد",
+    "bn": "নতুন এন্ট্রি"
+  },
+  "empty_info": {
+    "de": "So legst du etwas an",
+    "en": "How to add something",
+    "es": "Cómo añadir algo",
+    "fr": "Comment ajouter un élément",
+    "zh-Hans": "如何添加内容",
+    "hi": "कुछ जोड़ने का तरीका",
+    "ar": "كيفية إضافة شيء",
+    "bn": "কীভাবে কিছু যোগ করবে"
+  },
+  "empty_tap_note": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um eine neue Notiz anzulegen.",
+    "en": "Tap any empty spot in the list to add a new note.",
+    "es": "Toca un espacio libre de la lista para añadir una nueva nota.",
+    "fr": "Touche un espace libre de la liste pour ajouter une nouvelle note.",
+    "zh-Hans": "轻点列表中的空白处即可新建笔记。",
+    "hi": "नया नोट जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة ملاحظة جديدة.",
+    "bn": "নতুন নোট যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_inbox": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um eine neue Notiz anzulegen. Für Aufgaben, Termine und alles andere tippe unten auf „Erstellen“.",
+    "en": "Tap any empty spot in the list to add a new note. For tasks, events and everything else, tap “Create” below.",
+    "es": "Toca un espacio libre de la lista para añadir una nueva nota. Para tareas, eventos y todo lo demás, toca «Crear» abajo.",
+    "fr": "Touche un espace libre de la liste pour ajouter une nouvelle note. Pour les tâches, les événements et tout le reste, touche « Créer » en bas.",
+    "zh-Hans": "轻点列表中的空白处即可新建笔记。任务、日程等其他内容，请轻点下方的“创建”。",
+    "hi": "नया नोट जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें। कार्य, इवेंट और बाकी सब के लिए नीचे „बनाएँ“ पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة ملاحظة جديدة. للمهام والمواعيد وكل شيء آخر، اضغط على «إنشاء» في الأسفل.",
+    "bn": "নতুন নোট যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো। কাজ, ইভেন্ট আর বাকি সবকিছুর জন্য নিচে „তৈরি করো“ ট্যাপ করো।"
+  },
+  "empty_tap_task": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um eine neue Aufgabe anzulegen.",
+    "en": "Tap any empty spot in the list to add a new task.",
+    "es": "Toca un espacio libre de la lista para añadir una nueva tarea.",
+    "fr": "Touche un espace libre de la liste pour ajouter une nouvelle tâche.",
+    "zh-Hans": "轻点列表中的空白处即可新建任务。",
+    "hi": "नया कार्य जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة مهمة جديدة.",
+    "bn": "নতুন কাজ যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_event": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um einen neuen Termin anzulegen.",
+    "en": "Tap any empty spot in the list to add a new event.",
+    "es": "Toca un espacio libre de la lista para añadir un nuevo evento.",
+    "fr": "Touche un espace libre de la liste pour ajouter un nouvel événement.",
+    "zh-Hans": "轻点列表中的空白处即可新建日程。",
+    "hi": "नया इवेंट जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة موعد جديد.",
+    "bn": "নতুন ইভেন্ট যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_project": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um ein neues Projekt anzulegen.",
+    "en": "Tap any empty spot in the list to add a new project.",
+    "es": "Toca un espacio libre de la lista para añadir un nuevo proyecto.",
+    "fr": "Touche un espace libre de la liste pour ajouter un nouveau projet.",
+    "zh-Hans": "轻点列表中的空白处即可新建项目。",
+    "hi": "नया प्रोजेक्ट जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة مشروع جديد.",
+    "bn": "নতুন প্রজেক্ট যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_area": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um einen neuen Arbeitsbereich anzulegen.",
+    "en": "Tap any empty spot in the list to add a new area.",
+    "es": "Toca un espacio libre de la lista para añadir una nueva área.",
+    "fr": "Touche un espace libre de la liste pour ajouter un nouveau domaine.",
+    "zh-Hans": "轻点列表中的空白处即可新建领域。",
+    "hi": "नया क्षेत्र जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة مجال جديد.",
+    "bn": "নতুন ক্ষেত্র যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_resource": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um eine neue Ressource anzulegen: eine Notiz, ein Lesezeichen, ein Dokument oder eine Datei.",
+    "en": "Tap any empty spot in the list to add a new resource: a note, a bookmark, a document or a file.",
+    "es": "Toca un espacio libre de la lista para añadir un nuevo recurso: una nota, un marcador, un documento o un archivo.",
+    "fr": "Touche un espace libre de la liste pour ajouter une nouvelle ressource : une note, un favori, un document ou un fichier.",
+    "zh-Hans": "轻点列表中的空白处即可新建资源：笔记、书签、文档或文件。",
+    "hi": "नया संसाधन जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें: नोट, बुकमार्क, दस्तावेज़ या फ़ाइल।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة مورد جديد: ملاحظة أو إشارة مرجعية أو مستند أو ملف.",
+    "bn": "নতুন রিসোর্স যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো: নোট, বুকমার্ক, ডকুমেন্ট বা ফাইল।"
+  },
+  "empty_tap_bookmark": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um ein neues Lesezeichen anzulegen.",
+    "en": "Tap any empty spot in the list to add a new bookmark.",
+    "es": "Toca un espacio libre de la lista para añadir un nuevo marcador.",
+    "fr": "Touche un espace libre de la liste pour ajouter un nouveau favori.",
+    "zh-Hans": "轻点列表中的空白处即可新建书签。",
+    "hi": "नया बुकमार्क जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة إشارة مرجعية جديدة.",
+    "bn": "নতুন বুকমার্ক যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_file": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um eine neue Datei hinzuzufügen.",
+    "en": "Tap any empty spot in the list to add a new file.",
+    "es": "Toca un espacio libre de la lista para añadir un nuevo archivo.",
+    "fr": "Touche un espace libre de la liste pour ajouter un nouveau fichier.",
+    "zh-Hans": "轻点列表中的空白处即可添加新文件。",
+    "hi": "नई फ़ाइल जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة ملف جديد.",
+    "bn": "নতুন ফাইল যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_tag": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um einen neuen Tag anzulegen.",
+    "en": "Tap any empty spot in the list to add a new tag.",
+    "es": "Toca un espacio libre de la lista para añadir una nueva etiqueta.",
+    "fr": "Touche un espace libre de la liste pour ajouter un nouveau tag.",
+    "zh-Hans": "轻点列表中的空白处即可新建标签。",
+    "hi": "नया टैग जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة وسم جديد.",
+    "bn": "নতুন ট্যাগ যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "empty_tap_flashcard": {
+    "de": "Tippe auf eine freie Stelle in der Liste, um eine neue Karteikarte anzulegen.",
+    "en": "Tap any empty spot in the list to add a new flashcard.",
+    "es": "Toca un espacio libre de la lista para añadir una nueva tarjeta.",
+    "fr": "Touche un espace libre de la liste pour ajouter une nouvelle fiche.",
+    "zh-Hans": "轻点列表中的空白处即可新建抽认卡。",
+    "hi": "नया फ़्लैशकार्ड जोड़ने के लिए सूची में किसी खाली जगह पर टैप करें।",
+    "ar": "اضغط على أي مساحة فارغة في القائمة لإضافة بطاقة جديدة.",
+    "bn": "নতুন ফ্ল্যাশকার্ড যোগ করতে তালিকার যেকোনো খালি জায়গায় ট্যাপ করো।"
+  },
+  "tabbar_show": {
+    "de": "In der Navigationsleiste anzeigen",
+    "en": "Show in the tab bar",
+    "es": "Mostrar en la barra de pestañas",
+    "fr": "Afficher dans la barre d’onglets",
+    "zh-Hans": "在标签栏中显示",
+    "hi": "टैब बार में दिखाएँ",
+    "ar": "إظهار في شريط التبويب",
+    "bn": "ট্যাব বারে দেখাও"
+  },
+  "tabbar_position": {
+    "de": "Position",
+    "en": "Position",
+    "es": "Posición",
+    "fr": "Position",
+    "zh-Hans": "位置",
+    "hi": "स्थान",
+    "ar": "الموضع",
+    "bn": "অবস্থান"
+  },
+  "tabbar_shown": {
+    "de": "Wird in der Navigationsleiste angezeigt",
+    "en": "Shown in the tab bar",
+    "es": "Se muestra en la barra de pestañas",
+    "fr": "Affiché dans la barre d’onglets",
+    "zh-Hans": "显示在标签栏中",
+    "hi": "टैब बार में दिखाया गया",
+    "ar": "معروض في شريط التبويب",
+    "bn": "ট্যাব বারে দেখানো হচ্ছে"
+  },
+  "tabbar_options": {
+    "de": "Reiter-Optionen",
+    "en": "Tab options",
+    "es": "Opciones de pestaña",
+    "fr": "Options de l’onglet",
+    "zh-Hans": "标签选项",
+    "hi": "टैब विकल्प",
+    "ar": "خيارات التبويب",
+    "bn": "ট্যাব বিকল্প"
+  },
+  "tabbar_added_hint": {
+    "de": "Reiter gedrückt halten, um ihn zu verschieben oder auszublenden",
+    "en": "Hold the tab to move or hide it",
+    "es": "Mantén pulsada la pestaña para moverla u ocultarla",
+    "fr": "Maintenez l’onglet pour le déplacer ou le masquer",
+    "zh-Hans": "长按标签以移动或隐藏",
+    "hi": "टैब को दबाकर रखें और उसे खिसकाएँ या छिपाएँ",
+    "ar": "اضغط مطولًا على التبويب لنقله أو إخفائه",
+    "bn": "ট্যাবটি চেপে ধরে সরাও বা লুকাও"
+  },
+  "tabbar_labels": {
+    "de": "Reiternamen anzeigen",
+    "en": "Show tab names",
+    "es": "Mostrar nombres de pestañas",
+    "fr": "Afficher le nom des onglets",
+    "zh-Hans": "显示标签名称",
+    "hi": "टैब के नाम दिखाएँ",
+    "ar": "إظهار أسماء التبويبات",
+    "bn": "ট্যাবের নাম দেখাও"
+  },
+  "tabbar_labels_hint": {
+    "de": "Ohne Namen zeigt die Leiste nur Symbole und wird schmaler.",
+    "en": "Without names the bar shows only icons and gets narrower.",
+    "es": "Sin nombres, la barra solo muestra iconos y es más estrecha.",
+    "fr": "Sans noms, la barre n’affiche que des icônes et devient plus étroite.",
+    "zh-Hans": "不显示名称时，标签栏只显示图标并变窄。",
+    "hi": "नामों के बिना बार में सिर्फ़ आइकन दिखते हैं और वह पतली हो जाती है।",
+    "ar": "بدون أسماء يعرض الشريط الرموز فقط ويصبح أضيق.",
+    "bn": "নাম ছাড়া বারে শুধু আইকন দেখায় এবং বারটি সরু হয়।"
+  },
+  "tabbar_settings_hint": {
+    "de": "Bis zu drei Reiter passen in die Leiste. Über die drei Punkte blendest du sie ein oder aus und wählst ihre Position. Sind drei drin, blende erst einen aus. Erstellen und Menü bleiben immer in der Leiste.",
+    "en": "Up to three tabs fit in the bar. Use the three dots to show or hide them and choose their position. With three in place, hide one first. Create and Menu always stay in the bar.",
+    "es": "Caben hasta tres pestañas en la barra. Con los tres puntos las muestras u ocultas y eliges su posición. Si ya hay tres, oculta primero una. Crear y Menú siempre permanecen en la barra.",
+    "fr": "La barre accueille jusqu’à trois onglets. Les trois points permettent de les afficher ou masquer et de choisir leur position. S’il y en a déjà trois, masquez-en un d’abord. Créer et Menu restent toujours dans la barre.",
+    "zh-Hans": "标签栏最多容纳三个标签。通过三个点可以显示或隐藏它们并选择位置。已有三个时，请先隐藏一个。创建和菜单始终保留在栏中。",
+    "hi": "बार में अधिकतम तीन टैब आते हैं। तीन बिंदुओं से उन्हें दिखाएँ या छिपाएँ और उनका स्थान चुनें। तीन हों तो पहले एक छिपाएँ। बनाएँ और मेन्यू हमेशा बार में रहते हैं।",
+    "ar": "يتسع الشريط لثلاثة تبويبات على الأكثر. من النقاط الثلاث تُظهرها أو تخفيها وتختار موضعها. إن كانت ثلاثة، أخفِ واحدًا أولًا. يبقى إنشاء والقائمة دائمًا في الشريط.",
+    "bn": "বারে সর্বোচ্চ তিনটি ট্যাব ধরে। তিন বিন্দু দিয়ে সেগুলো দেখাও বা লুকাও এবং অবস্থান বেছে নাও। তিনটি থাকলে আগে একটি লুকাও। তৈরি ও মেনু সবসময় বারে থাকে।"
+  },
+  "tabbar_hidden": {
+    "de": "Ausgeblendet",
+    "en": "Hidden",
+    "es": "Oculta",
+    "fr": "Masqué",
+    "zh-Hans": "已隐藏",
+    "hi": "छिपा हुआ",
+    "ar": "مخفي",
+    "bn": "লুকানো"
+  },
+  "tabbar_rules_title": {
+    "de": "Navigationsleiste",
+    "en": "Tab bar",
+    "es": "Barra de pestañas",
+    "fr": "Barre d’onglets",
+    "zh-Hans": "标签栏",
+    "hi": "टैब बार",
+    "ar": "شريط التبويب",
+    "bn": "ট্যাব বার"
+  },
+  "tabbar_rules": {
+    "de": "Bis zu drei Seiten stehen als Reiter in der Leiste. Erstellen und Menü sind immer dabei.\n\nÜber die drei Punkte einer Seite blendest du sie ein oder aus. Sind drei Reiter in der Leiste, zeigen die übrigen Seiten keine drei Punkte. Blende erst einen Reiter aus, dann kannst du einen anderen einblenden. Mindestens ein Reiter bleibt immer in der Leiste.\n\nUnter „Position“ wählst du den Platz. Die beiden Plätze tauschen, so lassen sich auch Erstellen und Menü verschieben. Ein langer Druck auf einen Reiter öffnet dieselben Optionen.\n\nSeiten, die nicht in der Leiste sind, öffnest du hier im Menü. Sie erscheinen als Seite mit Zurück-Knopf.\n\nIn den Einstellungen unter „Navigation“ findest du dieselben Optionen und kannst die Reiternamen ausblenden.\n\nÜber „Auf Standard zurücksetzen“ im Menü eines Reiters oder in den Einstellungen unter „Reiter anordnen“ kehrst du jederzeit zu Übersicht, Erstellen und Menü zurück.",
+    "en": "Up to three pages sit as tabs in the bar. Create and Menu are always there.\n\nUse a page’s three dots to show or hide it. Once three tabs are in the bar, the other pages show no three dots. Hide a tab first, then you can show another one. At least one tab always stays in the bar.\n\nUnder “Position” you pick the slot. The two slots swap, so Create and Menu can be moved as well. A long press on a tab opens the same options.\n\nPages that are not in the bar open from this menu. They appear as a page with a back button.\n\nIn Settings under “Navigation” you find the same options and can hide the tab names.\n\nWith “Reset to default” in a tab’s menu or in Settings under “Arrange tabs” you can return to Overview, Create and Menu at any time.",
+    "es": "Hasta tres páginas van como pestañas en la barra. Crear y Menú siempre están.\n\nCon los tres puntos de una página la muestras u ocultas. Cuando hay tres pestañas en la barra, las demás páginas no muestran los tres puntos. Oculta primero una pestaña y luego podrás mostrar otra. Al menos una pestaña permanece siempre en la barra.\n\nEn «Posición» eliges el lugar. Los dos lugares se intercambian, así también puedes mover Crear y Menú. Una pulsación larga sobre una pestaña abre las mismas opciones.\n\nLas páginas que no están en la barra se abren desde este menú. Aparecen como página con botón de volver.\n\nEn Ajustes, bajo «Navegación», encuentras las mismas opciones y puedes ocultar los nombres de las pestañas.\n\nCon «Restablecer predeterminado» en el menú de una pestaña o en Ajustes, en «Ordenar pestañas», vuelves en cualquier momento a Resumen, Crear y Menú.",
+    "fr": "Jusqu’à trois pages figurent comme onglets dans la barre. Créer et Menu y sont toujours.\n\nLes trois points d’une page permettent de l’afficher ou de la masquer. Quand trois onglets sont dans la barre, les autres pages n’affichent pas de trois points. Masquez d’abord un onglet, puis vous pourrez en afficher un autre. Au moins un onglet reste toujours dans la barre.\n\nSous « Position », vous choisissez la place. Les deux places s’échangent, ce qui permet aussi de déplacer Créer et Menu. Un appui long sur un onglet ouvre les mêmes options.\n\nLes pages absentes de la barre s’ouvrent depuis ce menu. Elles apparaissent comme page avec un bouton de retour.\n\nDans Réglages, sous « Navigation », vous trouvez les mêmes options et pouvez masquer le nom des onglets.\n\nAvec « Rétablir par défaut » dans le menu d’un onglet ou dans Réglages sous « Organiser les onglets », vous revenez à tout moment à Aperçu, Créer et Menu.",
+    "zh-Hans": "最多三个页面作为标签显示在标签栏中。创建和菜单始终存在。\n\n通过页面的三个点可以显示或隐藏它。当标签栏已有三个标签时，其他页面不显示三个点。先隐藏一个标签，然后才能显示另一个。标签栏中始终至少保留一个标签。\n\n在“位置”下选择位置。两个位置互换，因此创建和菜单也可以移动。长按标签可打开相同的选项。\n\n不在标签栏中的页面可从此菜单打开。它们以带返回按钮的页面形式出现。\n\n在设置的“导航”下可以找到相同的选项，并可隐藏标签名称。\n\n通过标签菜单中的“恢复默认”或设置中的“排列标签”，可随时恢复为概览、创建和菜单。",
+    "hi": "बार में अधिकतम तीन पेज टैब के रूप में रहते हैं। बनाएँ और मेन्यू हमेशा होते हैं।\n\nकिसी पेज के तीन बिंदुओं से उसे दिखाएँ या छिपाएँ। जब बार में तीन टैब हों, तो बाकी पेजों पर तीन बिंदु नहीं दिखते। पहले एक टैब छिपाएँ, फिर दूसरा दिखा सकते हैं। बार में हमेशा कम से कम एक टैब रहता है।\n\n“स्थान” में जगह चुनें। दोनों जगहें आपस में बदल जाती हैं, इसलिए बनाएँ और मेन्यू भी खिसकाए जा सकते हैं। टैब को देर तक दबाने पर वही विकल्प खुलते हैं।\n\nजो पेज बार में नहीं हैं, उन्हें इस मेन्यू से खोलें। वे वापस बटन वाले पेज के रूप में दिखते हैं।\n\nसेटिंग्स में “नेविगेशन” के अंतर्गत वही विकल्प मिलते हैं और टैब के नाम छिपाए जा सकते हैं।\n\nकिसी टैब के मेन्यू में या सेटिंग्स में “टैब व्यवस्थित करें” के अंतर्गत “डिफ़ॉल्ट पर रीसेट करें” से आप कभी भी अवलोकन, बनाएँ और मेन्यू पर लौट सकते हैं।",
+    "ar": "حتى ثلاث صفحات تظهر كتبويبات في الشريط. إنشاء والقائمة موجودان دائمًا.\n\nمن النقاط الثلاث لصفحة ما تُظهرها أو تخفيها. عندما تكون ثلاثة تبويبات في الشريط، لا تعرض الصفحات الأخرى النقاط الثلاث. أخفِ تبويبًا أولًا، ثم يمكنك إظهار آخر. يبقى تبويب واحد على الأقل في الشريط دائمًا.\n\nتحت «الموضع» تختار المكان. يتبادل المكانان، وهكذا يمكن نقل إنشاء والقائمة أيضًا. الضغط المطوّل على تبويب يفتح الخيارات نفسها.\n\nالصفحات غير الموجودة في الشريط تفتحها من هذه القائمة. تظهر كصفحة مع زر رجوع.\n\nفي الإعدادات تحت «التنقل» تجد الخيارات نفسها ويمكنك إخفاء أسماء التبويبات.\n\nمن «إعادة التعيين إلى الافتراضي» في قائمة تبويب أو في الإعدادات تحت «ترتيب التبويبات» تعود في أي وقت إلى النظرة العامة وإنشاء والقائمة.",
+    "bn": "সর্বোচ্চ তিনটি পাতা ট্যাব হিসেবে বারে থাকে। তৈরি ও মেনু সবসময় থাকে।\n\nকোনো পাতার তিন বিন্দু দিয়ে সেটি দেখাও বা লুকাও। বারে তিনটি ট্যাব থাকলে বাকি পাতাগুলোতে তিন বিন্দু দেখায় না। আগে একটি ট্যাব লুকাও, তারপর অন্যটি দেখাতে পারবে। বারে সবসময় অন্তত একটি ট্যাব থাকে।\n\n“অবস্থান”-এ জায়গা বেছে নাও। দুটি জায়গা অদলবদল হয়, তাই তৈরি ও মেনুও সরানো যায়। ট্যাবে দীর্ঘ চাপ দিলে একই বিকল্প খোলে।\n\nযে পাতাগুলো বারে নেই, সেগুলো এই মেনু থেকে খোলো। সেগুলো ফিরে যাওয়ার বোতামসহ পাতা হিসেবে দেখায়।\n\nসেটিংসে “নেভিগেশন”-এর নিচে একই বিকল্প পাবে এবং ট্যাবের নাম লুকাতে পারবে।\n\nকোনো ট্যাবের মেনুতে বা সেটিংসে “ট্যাব সাজাও”-এর নিচে “ডিফল্টে ফেরাও” দিয়ে যেকোনো সময় ওভারভিউ, তৈরি ও মেনুতে ফিরে যেতে পারো।"
+  },
+  "tabbar_arrange": {
+    "de": "Reiter anordnen",
+    "en": "Arrange tabs",
+    "es": "Ordenar pestañas",
+    "fr": "Organiser les onglets",
+    "zh-Hans": "排列标签",
+    "hi": "टैब व्यवस्थित करें",
+    "ar": "ترتيب التبويبات",
+    "bn": "ট্যাব সাজাও"
+  },
+  "tabbar_reset": {
+    "de": "Auf Standard zurücksetzen",
+    "en": "Reset to default",
+    "es": "Restablecer predeterminado",
+    "fr": "Rétablir par défaut",
+    "zh-Hans": "恢复默认",
+    "hi": "डिफ़ॉल्ट पर रीसेट करें",
+    "ar": "إعادة التعيين إلى الافتراضي",
+    "bn": "ডিফল্টে ফেরাও"
+  },
+  "tabbar_reset_short": {
+    "de": "Zurücksetzen",
+    "en": "Reset",
+    "es": "Restablecer",
+    "fr": "Réinitialiser",
+    "zh-Hans": "重置",
+    "hi": "रीसेट",
+    "ar": "إعادة تعيين",
+    "bn": "রিসেট"
+  },
+  "page_search_in": {
+    "de": "%@ durchsuchen",
+    "en": "Search %@",
+    "es": "Buscar en %@",
+    "fr": "Rechercher dans %@",
+    "zh-Hans": "搜索%@",
+    "hi": "%@ में खोजें",
+    "ar": "البحث في %@",
+    "bn": "%@-এ খুঁজুন"
+  },
+  "page_pinned_open": {
+    "de": "Angepinnten Eintrag öffnen",
+    "en": "Open pinned entry",
+    "es": "Abrir entrada fijada",
+    "fr": "Ouvrir l’entrée épinglée",
+    "zh-Hans": "打开已置顶的条目",
+    "hi": "पिन की गई प्रविष्टि खोलें",
+    "ar": "فتح الإدخال المثبّت",
+    "bn": "পিন করা এন্ট্রি খুলুন"
+  },
+  "chat_pinned_open": {
+    "de": "Angepinnten Chat öffnen",
+    "en": "Open pinned chat",
+    "es": "Abrir chat fijado",
+    "fr": "Ouvrir la discussion épinglée",
+    "zh-Hans": "打开已置顶的聊天",
+    "hi": "पिन की गई चैट खोलें",
+    "ar": "فتح الدردشة المثبّتة",
+    "bn": "পিন করা চ্যাট খুলুন"
+  },
+  "chat_count": {
+    "de": {
+      "one": "%lld Chat",
+      "other": "%lld Chats"
+    },
+    "en": {
+      "one": "%lld chat",
+      "other": "%lld chats"
+    },
+    "es": {
+      "one": "%lld chat",
+      "other": "%lld chats"
+    },
+    "fr": {
+      "one": "%lld discussion",
+      "other": "%lld discussions"
+    },
+    "zh-Hans": {
+      "other": "%lld 个聊天"
+    },
+    "hi": {
+      "one": "%lld चैट",
+      "other": "%lld चैट"
+    },
+    "ar": {
+      "zero": "لا دردشات",
+      "one": "دردشة واحدة",
+      "two": "دردشتان",
+      "few": "%lld دردشات",
+      "many": "%lld دردشة",
+      "other": "%lld دردشة"
+    },
+    "bn": {
+      "one": "%lld চ্যাট",
+      "other": "%lld চ্যাট"
+    }
+  },
+  "bookmark_exists": {
+    "de": "Schon als Lesezeichen gespeichert",
+    "en": "Already saved as a bookmark",
+    "es": "Ya guardado como marcador",
+    "fr": "Déjà enregistré comme signet",
+    "zh-Hans": "已保存为书签",
+    "hi": "पहले से बुकमार्क के रूप में सहेजा गया",
+    "ar": "محفوظ بالفعل كإشارة مرجعية",
+    "bn": "ইতিমধ্যে বুকমার্ক হিসেবে সংরক্ষিত"
+  },
+  "bookmark_known": {
+    "de": "Diesen Link hattest du schon einmal gespeichert",
+    "en": "You saved this link once before",
+    "es": "Ya guardaste este enlace una vez",
+    "fr": "Tu as déjà enregistré ce lien une fois",
+    "zh-Hans": "你以前保存过这个链接",
+    "hi": "आपने यह लिंक पहले एक बार सहेजा था",
+    "ar": "لقد حفظت هذا الرابط من قبل",
+    "bn": "এই লিংকটি তুমি আগে একবার সংরক্ষণ করেছিলে"
+  },
+  "cal_pick_date": {
+    "de": "Datum",
+    "en": "Date",
+    "es": "Fecha",
+    "fr": "Date",
+    "zh-Hans": "日期",
+    "hi": "तारीख",
+    "ar": "التاريخ",
+    "bn": "তারিখ"
+  },
+  "cal_year_previous": {
+    "de": "Vorheriges Jahr",
+    "en": "Previous year",
+    "es": "Año anterior",
+    "fr": "Année précédente",
+    "zh-Hans": "上一年",
+    "hi": "पिछला वर्ष",
+    "ar": "السنة السابقة",
+    "bn": "আগের বছর"
+  },
+  "cal_year_next": {
+    "de": "Nächstes Jahr",
+    "en": "Next year",
+    "es": "Año siguiente",
+    "fr": "Année suivante",
+    "zh-Hans": "下一年",
+    "hi": "अगला वर्ष",
+    "ar": "السنة التالية",
+    "bn": "পরের বছর"
+  },
+  "cal_more": {
+    "de": "+%lld",
+    "en": "+%lld",
+    "es": "+%lld",
+    "fr": "+%lld",
+    "zh-Hans": "+%lld",
+    "hi": "+%lld",
+    "ar": "+%lld",
+    "bn": "+%lld"
+  },
+  "cal_strip_count": {
+    "de": {
+      "one": "%lld Eintrag",
+      "other": "%lld Einträge"
+    },
+    "en": {
+      "one": "%lld entry",
+      "other": "%lld entries"
+    },
+    "es": {
+      "one": "%lld entrada",
+      "other": "%lld entradas"
+    },
+    "fr": {
+      "one": "%lld entrée",
+      "other": "%lld entrées"
+    },
+    "zh-Hans": {
+      "other": "%lld 个条目"
+    },
+    "hi": {
+      "one": "%lld प्रविष्टि",
+      "other": "%lld प्रविष्टियाँ"
+    },
+    "ar": {
+      "zero": "لا إدخالات",
+      "one": "إدخال واحد",
+      "two": "إدخالان",
+      "few": "%lld إدخالات",
+      "many": "%lld إدخالاً",
+      "other": "%lld إدخال"
+    },
+    "bn": {
+      "one": "%lld এন্ট্রি",
+      "other": "%lld এন্ট্রি"
+    }
+  },
+  "cal_view_picker": {
+    "de": "Kalenderansicht",
+    "en": "Calendar view",
+    "es": "Vista del calendario",
+    "fr": "Vue du calendrier",
+    "zh-Hans": "日历视图",
+    "hi": "कैलेंडर दृश्य",
+    "ar": "عرض التقويم",
+    "bn": "ক্যালেন্ডার দৃশ্য"
+  },
+  "cal_mode_day": {
+    "de": "Täglich",
+    "en": "Daily",
+    "es": "Diario",
+    "fr": "Quotidien",
+    "zh-Hans": "每日",
+    "hi": "दैनिक",
+    "ar": "يومي",
+    "bn": "দৈনিক"
+  },
+  "cal_mode_week": {
+    "de": "Wöchentlich",
+    "en": "Weekly",
+    "es": "Semanal",
+    "fr": "Hebdomadaire",
+    "zh-Hans": "每周",
+    "hi": "साप्ताहिक",
+    "ar": "أسبوعي",
+    "bn": "সাপ্তাহিক"
+  },
+  "cal_mode_month": {
+    "de": "Monatlich",
+    "en": "Monthly",
+    "es": "Mensual",
+    "fr": "Mensuel",
+    "zh-Hans": "每月",
+    "hi": "मासिक",
+    "ar": "شهري",
+    "bn": "মাসিক"
+  },
+  "chat_mascot_working": {
+    "de": "Antwort wird vorbereitet",
+    "en": "Preparing the answer",
+    "es": "Preparando la respuesta",
+    "fr": "Préparation de la réponse",
+    "zh-Hans": "正在准备回答",
+    "hi": "जवाब तैयार हो रहा है",
+    "ar": "جارٍ تحضير الرد",
+    "bn": "উত্তর তৈরি হচ্ছে"
+  },
+  "chat_mascot_quip_1": {
+    "de": "Ich kann nicht mehr. Versuch es später noch mal.",
+    "en": "I’m done for. Try again later.",
+    "es": "No puedo más. Inténtalo más tarde.",
+    "fr": "Je n’en peux plus. Réessaie plus tard.",
+    "zh-Hans": "我撑不住了。晚点再试吧。",
+    "hi": "मुझसे अब नहीं होता। बाद में फिर कोशिश करें।",
+    "ar": "لم أعد أقدر. حاول لاحقًا.",
+    "bn": "আমি আর পারছি না। পরে আবার চেষ্টা করো।"
+  },
+  "chat_mascot_quip_2": {
+    "de": "Ich kann gerade nicht reden. Frag mich gleich noch mal.",
+    "en": "I can’t talk right now. Ask me again in a moment.",
+    "es": "Ahora no puedo hablar. Pregúntame en un momento.",
+    "fr": "Je ne peux pas parler là. Redemande-moi dans un instant.",
+    "zh-Hans": "我现在说不了话。稍后再问我吧。",
+    "hi": "मैं अभी बात नहीं कर सकता। थोड़ी देर में फिर पूछें।",
+    "ar": "لا أستطيع الكلام الآن. اسألني بعد قليل.",
+    "bn": "আমি এখন কথা বলতে পারছি না। একটু পরে আবার জিজ্ঞেস করো।"
+  },
+  "chat_mascot_quip_3": {
+    "de": "Kurzschluss. Einmal durchatmen, dann noch mal.",
+    "en": "Short circuit. One deep breath, then once more.",
+    "es": "Cortocircuito. Respira hondo y otra vez.",
+    "fr": "Court-circuit. On respire, et on recommence.",
+    "zh-Hans": "短路了。深呼吸，再来一次。",
+    "hi": "शॉर्ट सर्किट। एक गहरी साँस, फिर दोबारा।",
+    "ar": "دائرة قصيرة. نفس عميق، ثم من جديد.",
+    "bn": "শর্ট সার্কিট। একটা গভীর শ্বাস, তারপর আবার।"
+  },
+  "chat_mascot_quip_4": {
+    "de": "Puh, das war zu viel für mich. Gleich geht’s weiter.",
+    "en": "Phew, that was too much for me. Back in a moment.",
+    "es": "Uf, eso fue demasiado para mí. Enseguida sigo.",
+    "fr": "Ouf, c’était trop pour moi. Je reviens tout de suite.",
+    "zh-Hans": "呼，这对我来说太难了。马上回来。",
+    "hi": "उफ़, यह मेरे लिए बहुत ज़्यादा था। अभी वापस आता हूँ।",
+    "ar": "أوف، كان هذا كثيرًا عليّ. سأعود حالًا.",
+    "bn": "উফ, এটা আমার জন্য বেশি হয়ে গেল। একটু পরেই ফিরছি।"
+  },
+  "chat_intro": {
+    "de": "Hi, ich bin Pl.AI! Frag mich etwas zu deinen Einträgen. Ich antworte direkt auf deinem iPad, nichts verlässt das Gerät.",
+    "en": "Hi, I’m Pl.AI! Ask me about your entries. I answer right on your iPad, nothing leaves the device.",
+    "es": "¡Hola, soy Pl.AI! Pregúntame sobre tus entradas. Respondo directamente en tu iPad, nada sale del dispositivo.",
+    "fr": "Salut, je suis Pl.AI ! Pose-moi une question sur tes entrées. Je réponds directement sur ton iPad, rien ne quitte l’appareil.",
+    "zh-Hans": "嗨，我是 Pl.AI！问我关于你的条目的问题。我直接在你的 iPad 上回答，任何内容都不会离开设备。",
+    "hi": "नमस्ते, मैं Pl.AI हूँ! अपनी प्रविष्टियों के बारे में मुझसे पूछें। मैं सीधे आपके iPad पर जवाब देता हूँ, कुछ भी डिवाइस से बाहर नहीं जाता।",
+    "ar": "مرحبًا، أنا Pl.AI! اسألني عن مدخلاتك. أجيب مباشرة على جهاز iPad الخاص بك، ولا يغادر أي شيء الجهاز.",
+    "bn": "হাই, আমি Pl.AI! তোমার এন্ট্রি নিয়ে আমাকে জিজ্ঞেস করো। আমি সরাসরি তোমার iPad-এ উত্তর দিই, কিছুই ডিভাইস ছেড়ে যায় না।"
+  },
+  "chat_image": {
+    "de": "Bild",
+    "en": "Image",
+    "es": "Imagen",
+    "fr": "Image",
+    "zh-Hans": "图片",
+    "hi": "छवि",
+    "ar": "صورة",
+    "bn": "ছবি"
+  },
+  "chat_image_photos": {
+    "de": "Fotos",
+    "en": "Photos",
+    "es": "Fotos",
+    "fr": "Photos",
+    "zh-Hans": "照片",
+    "hi": "फ़ोटो",
+    "ar": "الصور",
+    "bn": "ফটো"
+  },
+  "chat_image_camera": {
+    "de": "Kamera",
+    "en": "Camera",
+    "es": "Cámara",
+    "fr": "Appareil photo",
+    "zh-Hans": "相机",
+    "hi": "कैमरा",
+    "ar": "الكاميرا",
+    "bn": "ক্যামেরা"
+  },
+  "chat_image_scan": {
+    "de": "Dokument scannen",
+    "en": "Scan document",
+    "es": "Escanear documento",
+    "fr": "Scanner un document",
+    "zh-Hans": "扫描文档",
+    "hi": "दस्तावेज़ स्कैन करें",
+    "ar": "مسح مستند ضوئيًا",
+    "bn": "নথি স্ক্যান করুন"
+  },
+  "chat_image_open": {
+    "de": "Bild öffnen",
+    "en": "Open image",
+    "es": "Abrir imagen",
+    "fr": "Ouvrir l’image",
+    "zh-Hans": "打开图片",
+    "hi": "छवि खोलें",
+    "ar": "فتح الصورة",
+    "bn": "ছবি খুলুন"
+  },
+  "chat_draft_events": {
+    "de": {
+      "one": "%lld Termin",
+      "other": "%lld Termine"
+    },
+    "en": {
+      "one": "%lld event",
+      "other": "%lld events"
+    },
+    "es": {
+      "one": "%lld evento",
+      "other": "%lld eventos"
+    },
+    "fr": {
+      "one": "%lld événement",
+      "other": "%lld événements"
+    },
+    "zh-Hans": {
+      "other": "%lld 个日程"
+    },
+    "hi": {
+      "one": "%lld इवेंट",
+      "other": "%lld इवेंट"
+    },
+    "ar": {
+      "zero": "لا مواعيد",
+      "one": "موعد واحد",
+      "two": "موعدان",
+      "few": "%lld مواعيد",
+      "many": "%lld موعدًا",
+      "other": "%lld موعد"
+    },
+    "bn": {
+      "one": "%lld ইভেন্ট",
+      "other": "%lld ইভেন্ট"
+    }
+  },
+  "chat_draft_which_row": {
+    "de": "Welche Zeile bist du?",
+    "en": "Which row is yours?",
+    "es": "¿Cuál es tu fila?",
+    "fr": "Quelle ligne est la tienne ?",
+    "zh-Hans": "哪一行是你？",
+    "hi": "कौन-सी पंक्ति आपकी है?",
+    "ar": "أي صف هو صفك؟",
+    "bn": "কোন সারিটি তোমার?"
+  },
+  "chat_draft_exists": {
+    "de": "Schon da",
+    "en": "Already there",
+    "es": "Ya existe",
+    "fr": "Déjà là",
+    "zh-Hans": "已存在",
+    "hi": "पहले से है",
+    "ar": "موجود بالفعل",
+    "bn": "আগে থেকেই আছে"
+  },
+  "chat_draft_past": {
+    "de": "Vergangen",
+    "en": "In the past",
+    "es": "Pasado",
+    "fr": "Passé",
+    "zh-Hans": "已过去",
+    "hi": "बीत चुका",
+    "ar": "في الماضي",
+    "bn": "অতীত"
+  },
+  "chat_draft_hours": {
+    "de": "Std. passt nicht",
+    "en": "Hours don’t match",
+    "es": "Las horas no cuadran",
+    "fr": "Les heures ne concordent pas",
+    "zh-Hans": "工时不符",
+    "hi": "घंटे मेल नहीं खाते",
+    "ar": "الساعات غير مطابقة",
+    "bn": "ঘণ্টা মেলে না"
+  },
+  "chat_draft_toggle": {
+    "de": "Termin auswählen",
+    "en": "Select event",
+    "es": "Seleccionar evento",
+    "fr": "Sélectionner l’événement",
+    "zh-Hans": "选择日程",
+    "hi": "इवेंट चुनें",
+    "ar": "تحديد الموعد",
+    "bn": "ইভেন্ট নির্বাচন"
+  },
+  "shift_work": {
+    "de": "Arbeit",
+    "en": "Work",
+    "es": "Trabajo",
+    "fr": "Travail",
+    "zh-Hans": "工作",
+    "hi": "काम",
+    "ar": "عمل",
+    "bn": "কাজ"
+  },
+  "entry_open_chat": {
+    "de": "In Chat öffnen",
+    "en": "Open in chat",
+    "es": "Abrir en el chat",
+    "fr": "Ouvrir dans le chat",
+    "zh-Hans": "在聊天中打开",
+    "hi": "चैट में खोलें",
+    "ar": "فتح في الدردشة",
+    "bn": "চ্যাটে খুলুন"
+  },
+  "skill_shift_title": {
+    "de": "Schichtplan",
+    "en": "Shift schedule",
+    "es": "Plan de turnos",
+    "fr": "Planning des équipes",
+    "zh-Hans": "排班表",
+    "hi": "शिफ़्ट योजना",
+    "ar": "جدول المناوبات",
+    "bn": "শিফট পরিকল্পনা"
+  },
+  "skill_shift_text": {
+    "de": "Regeln für meinen Schichtplan. Mein Name im Plan steht im Kopf dieser Notiz; hier kann ich dem Assistenten weitere Hinweise geben, etwa wie Schichten heißen.",
+    "en": "Rules for my shift schedule. My name in the schedule is stored in the head of this note; here I can give the assistant more hints, for example what shifts are called.",
+    "es": "Reglas para mi plan de turnos. Mi nombre en el plan está en la cabecera de esta nota; aquí puedo darle al asistente más indicaciones, por ejemplo cómo se llaman los turnos.",
+    "fr": "Règles pour mon planning. Mon nom dans le planning est dans l’en-tête de cette note ; ici je peux donner d’autres indications à l’assistant, par exemple le nom des équipes.",
+    "zh-Hans": "我的排班表规则。我在排班表中的名字保存在这条笔记的头部；在这里我可以给助手更多提示，例如班次的名称。",
+    "hi": "मेरी शिफ़्ट योजना के नियम। योजना में मेरा नाम इस नोट के शीर्ष में है; यहाँ मैं सहायक को और संकेत दे सकता हूँ, जैसे शिफ़्टों के नाम।",
+    "ar": "قواعد جدول مناوباتي. اسمي في الجدول محفوظ في رأس هذه الملاحظة؛ هنا يمكنني إعطاء المساعد مزيدًا من الإرشادات، مثل أسماء المناوبات.",
+    "bn": "আমার শিফট পরিকল্পনার নিয়ম। পরিকল্পনায় আমার নাম এই নোটের শীর্ষে রাখা আছে; এখানে আমি সহকারীকে আরও ইঙ্গিত দিতে পারি, যেমন শিফটগুলোর নাম।"
+  },
+  "shift_absent": {
+    "de": "Abwesend",
+    "en": "Absent",
+    "es": "Ausente",
+    "fr": "Absent",
+    "zh-Hans": "缺勤",
+    "hi": "अनुपस्थित",
+    "ar": "غائب",
+    "bn": "অনুপস্থিত"
+  },
+  "chat_mention_remove": {
+    "de": "Erwähnung entfernen",
+    "en": "Remove mention",
+    "es": "Quitar mención",
+    "fr": "Retirer la mention",
+    "zh-Hans": "移除提及",
+    "hi": "उल्लेख हटाएँ",
+    "ar": "إزالة الإشارة",
+    "bn": "উল্লেখ সরান"
+  },
+  "chat_mention_pick": {
+    "de": "Erwähnen",
+    "en": "Mention",
+    "es": "Mencionar",
+    "fr": "Mentionner",
+    "zh-Hans": "提及",
+    "hi": "उल्लेख करें",
+    "ar": "إشارة",
+    "bn": "উল্লেখ"
+  },
+  "overview_style_tabs": {
+    "de": "Tab-Ansicht",
+    "en": "Tab view",
+    "es": "Vista de pestañas",
+    "fr": "Vue onglets",
+    "zh-Hans": "标签视图",
+    "hi": "टैब दृश्य",
+    "ar": "عرض علامات التبويب",
+    "bn": "ট্যাব ভিউ"
+  },
+  "overview_style_stacked": {
+    "de": "Gruppenansicht",
+    "en": "Group view",
+    "es": "Vista de grupos",
+    "fr": "Vue groupes",
+    "zh-Hans": "分组视图",
+    "hi": "समूह दृश्य",
+    "ar": "عرض المجموعات",
+    "bn": "গ্রুপ ভিউ"
+  },
+  "overview_entry_empty": {
+    "de": "Hier ist noch nichts abgelegt.",
+    "en": "Nothing filed here yet.",
+    "es": "Aún no hay nada guardado aquí.",
+    "fr": "Rien n’est encore classé ici.",
+    "zh-Hans": "这里还没有内容。",
+    "hi": "यहां अभी कुछ नहीं रखा गया है।",
+    "ar": "لم يُحفظ شيء هنا بعد.",
+    "bn": "এখানে এখনও কিছু রাখা হয়নি।"
+  },
+  "overview_show": {
+    "de": "Einblenden",
+    "en": "Show",
+    "es": "Mostrar",
+    "fr": "Afficher",
+    "zh-Hans": "显示",
+    "hi": "दिखाएं",
+    "ar": "إظهار",
+    "bn": "দেখান"
+  },
+  "overview_hide": {
+    "de": "Ausblenden",
+    "en": "Hide",
+    "es": "Ocultar",
+    "fr": "Masquer",
+    "zh-Hans": "隐藏",
+    "hi": "छिपाएं",
+    "ar": "إخفاء",
+    "bn": "লুকান"
+  },
+  "overview_edge_title": {
+    "de": "Übersicht einstellen",
+    "en": "Overview settings",
+    "es": "Ajustes de la vista general",
+    "fr": "Réglages de l’aperçu",
+    "zh-Hans": "概览设置",
+    "hi": "अवलोकन सेटिंग",
+    "ar": "إعدادات النظرة العامة",
+    "bn": "ওভারভিউ সেটিংস"
+  },
+  "overview_switch": {
+    "de": "Liste wechseln",
+    "en": "Switch list",
+    "es": "Cambiar lista",
+    "fr": "Changer de liste",
+    "zh-Hans": "切换列表",
+    "hi": "सूची बदलें",
+    "ar": "تبديل القائمة",
+    "bn": "তালিকা বদলান"
+  },
+  "overview_add_source": {
+    "de": "Liste oder Eintrag hinzufügen",
+    "en": "Add list or entry",
+    "es": "Añadir lista o entrada",
+    "fr": "Ajouter une liste ou une entrée",
+    "zh-Hans": "添加列表或条目",
+    "hi": "सूची या प्रविष्टि जोड़ें",
+    "ar": "إضافة قائمة أو إدخال",
+    "bn": "তালিকা বা এন্ট্রি যোগ করুন"
+  },
+  "overview_sources_hint": {
+    "de": "Tippen zeigt die Liste im Tab. Halten und ziehen ordnet, nach links wischen entfernt.",
+    "en": "Tap to show the list in the tab. Hold and drag to reorder, swipe left to remove.",
+    "es": "Toca para mostrar la lista en la pestaña. Mantén y arrastra para ordenar, desliza a la izquierda para quitar.",
+    "fr": "Touchez pour afficher la liste dans l’onglet. Maintenez et faites glisser pour ordonner, balayez vers la gauche pour retirer.",
+    "zh-Hans": "轻点即可在标签页中显示该列表。按住拖动可排序，向左轻扫可移除。",
+    "hi": "टैब में सूची दिखाने के लिए टैप करें। क्रम बदलने के लिए दबाकर खींचें, हटाने के लिए बाईं ओर स्वाइप करें।",
+    "ar": "اضغط لعرض القائمة في علامة التبويب. اضغط مطولًا واسحب للترتيب، واسحب لليسار للإزالة.",
+    "bn": "ট্যাবে তালিকা দেখাতে ট্যাপ করুন। সাজাতে চেপে ধরে টানুন, সরাতে বাঁয়ে সোয়াইপ করুন।"
+  },
+  "overview_tabs": {
+    "de": "Tabs",
+    "en": "Tabs",
+    "es": "Pestañas",
+    "fr": "Onglets",
+    "zh-Hans": "标签页",
+    "hi": "टैब",
+    "ar": "علامات التبويب",
+    "bn": "ট্যাব"
+  },
+  "overview_tabs_hint": {
+    "de": "Ziehen ändert die Reihenfolge, das Auge blendet einen Tab aus, der Stift benennt ihn um. Mindestens ein Tab bleibt sichtbar. Markiert und Listen lassen sich nur ausblenden, eigene Tabs auch löschen.",
+    "en": "Drag to reorder, the eye hides a tab, the pencil renames it. At least one tab stays visible. Marked and Lists can only be hidden, your own tabs can also be deleted.",
+    "es": "Arrastra para ordenar; el ojo oculta una pestaña y el lápiz la renombra. Siempre queda al menos una visible. Marcado y Listas solo se pueden ocultar; las pestañas propias también se pueden eliminar.",
+    "fr": "Faites glisser pour ordonner ; l’œil masque un onglet, le crayon le renomme. Au moins un onglet reste visible. Marqué et Listes peuvent seulement être masqués, vos onglets peuvent aussi être supprimés.",
+    "zh-Hans": "拖动可排序，眼睛图标隐藏标签页，铅笔图标重命名。至少保留一个可见。“已标记”和“列表”只能隐藏，自建标签页也可删除。",
+    "hi": "क्रम बदलने के लिए खींचें, आंख टैब छिपाती है, पेंसिल नाम बदलती है। कम से कम एक टैब दिखता रहता है। चिह्नित और सूचियां केवल छिपाई जा सकती हैं, अपने टैब हटाए भी जा सकते हैं।",
+    "ar": "اسحب لتغيير الترتيب، والعين تخفي علامة التبويب، والقلم يعيد تسميتها. تبقى علامة واحدة على الأقل ظاهرة. يمكن إخفاء «المميّزة» و«القوائم» فقط، أما علاماتك فيمكن حذفها أيضًا.",
+    "bn": "ক্রম বদলাতে টানুন, চোখ ট্যাব লুকায়, পেন্সিল নাম বদলায়। অন্তত একটি ট্যাব দেখা যায়। চিহ্নিত ও তালিকা শুধু লুকানো যায়, নিজের ট্যাব মুছেও ফেলা যায়।"
+  },
+  "overview_tab_new": {
+    "de": "Neuer Tab",
+    "en": "New tab",
+    "es": "Nueva pestaña",
+    "fr": "Nouvel onglet",
+    "zh-Hans": "新建标签页",
+    "hi": "नया टैब",
+    "ar": "علامة تبويب جديدة",
+    "bn": "নতুন ট্যাব"
+  },
+  "overview_tab_name": {
+    "de": "Name",
+    "en": "Name",
+    "es": "Nombre",
+    "fr": "Nom",
+    "zh-Hans": "名称",
+    "hi": "नाम",
+    "ar": "الاسم",
+    "bn": "নাম"
+  },
+  "overview_tab_rename": {
+    "de": "Tab umbenennen",
+    "en": "Rename tab",
+    "es": "Renombrar pestaña",
+    "fr": "Renommer l’onglet",
+    "zh-Hans": "重命名标签页",
+    "hi": "टैब का नाम बदलें",
+    "ar": "إعادة تسمية علامة التبويب",
+    "bn": "ট্যাবের নাম বদলান"
+  },
+  "overview_tab_empty": {
+    "de": "Dieser Tab ist noch leer. Über „Liste wechseln“ am rechten Rand fügst du Listen oder Einträge hinzu.",
+    "en": "This tab is still empty. Use “Switch list” at the right edge to add lists or entries.",
+    "es": "Esta pestaña aún está vacía. Con «Cambiar lista» en el borde derecho añades listas o entradas.",
+    "fr": "Cet onglet est encore vide. Ajoutez des listes ou des entrées avec « Changer de liste » sur le bord droit.",
+    "zh-Hans": "此标签页还是空的。通过右侧边缘的“切换列表”添加列表或条目。",
+    "hi": "यह टैब अभी खाली है। दाहिने किनारे पर “सूची बदलें” से सूचियां या प्रविष्टियां जोड़ें।",
+    "ar": "علامة التبويب هذه فارغة بعد. أضف قوائم أو إدخالات عبر «تبديل القائمة» على الحافة اليمنى.",
+    "bn": "এই ট্যাব এখনও খালি। ডান প্রান্তের “তালিকা বদলান” দিয়ে তালিকা বা এন্ট্রি যোগ করুন।"
+  },
+  "overview_pick_lists": {
+    "de": "Listen",
+    "en": "Lists",
+    "es": "Listas",
+    "fr": "Listes",
+    "zh-Hans": "列表",
+    "hi": "सूचियां",
+    "ar": "القوائم",
+    "bn": "তালিকা"
+  },
+  "overview_pick_entries": {
+    "de": "Einträge",
+    "en": "Entries",
+    "es": "Entradas",
+    "fr": "Entrées",
+    "zh-Hans": "条目",
+    "hi": "प्रविष्टियां",
+    "ar": "الإدخالات",
+    "bn": "এন্ট্রি"
+  },
+  "overview_edge_hint": {
+    "de": "Neu: Ansicht, Liste und Anordnung stellst du jetzt hier am Rand ein.",
+    "en": "New: set view, list and layout here at the edge.",
+    "es": "Novedad: ajusta la vista, la lista y la disposición aquí en el borde.",
+    "fr": "Nouveau : réglez l’affichage, la liste et la disposition ici, sur le bord.",
+    "zh-Hans": "新功能：现在可在此边缘设置视图、列表和布局。",
+    "hi": "नया: दृश्य, सूची और व्यवस्था अब यहीं किनारे पर सेट करें।",
+    "ar": "جديد: اضبط العرض والقائمة والترتيب هنا على الحافة.",
+    "bn": "নতুন: ভিউ, তালিকা ও বিন্যাস এখন এখানে প্রান্তে সেট করুন।"
+  },
+  "overview_add_here": {
+    "de": "Hinzufügen",
+    "en": "Add",
+    "es": "Añadir",
+    "fr": "Ajouter",
+    "zh-Hans": "添加",
+    "hi": "जोड़ें",
+    "ar": "إضافة",
+    "bn": "যোগ করুন"
+  },
+  "overview_tab_from_source": {
+    "de": "Tab aus Liste oder Eintrag",
+    "en": "Tab from list or entry",
+    "es": "Pestaña de lista o entrada",
+    "fr": "Onglet depuis une liste ou une entrée",
+    "zh-Hans": "从列表或条目新建标签页",
+    "hi": "सूची या प्रविष्टि से टैब",
+    "ar": "علامة تبويب من قائمة أو إدخال",
+    "bn": "তালিকা বা এন্ট্রি থেকে ট্যাব"
+  },
+  "overview_tab_custom": {
+    "de": "Eigener Tab mit Namen",
+    "en": "Own tab with a name",
+    "es": "Pestaña propia con nombre",
+    "fr": "Onglet personnel avec un nom",
+    "zh-Hans": "自定义名称的标签页",
+    "hi": "नाम वाला अपना टैब",
+    "ar": "علامة تبويب خاصة باسم",
+    "bn": "নাম সহ নিজের ট্যাব"
+  },
+  "overview_tab_list": {
+    "de": "Liste",
+    "en": "List",
+    "es": "Lista",
+    "fr": "Liste",
+    "zh-Hans": "列表",
+    "hi": "सूची",
+    "ar": "القائمة",
+    "bn": "তালিকা"
+  },
+  "empty_info_ok": {
+    "de": "Verstanden",
+    "en": "Got it",
+    "es": "Entendido",
+    "fr": "Compris",
+    "zh-Hans": "知道了",
+    "hi": "समझ गया",
+    "ar": "فهمت",
+    "bn": "বুঝেছি"
+  },
+  "empty_info_never": {
+    "de": "Nicht mehr anzeigen",
+    "en": "Don’t show again",
+    "es": "No volver a mostrar",
+    "fr": "Ne plus afficher",
+    "zh-Hans": "不再显示",
+    "hi": "फिर न दिखाएं",
+    "ar": "عدم الإظهار مجددًا",
+    "bn": "আর দেখাবেন না"
+  },
+  "overview_empty_tap": {
+    "de": "Tippe auf eine freie Stelle oder oben rechts auf das Plus, um hier eine Notiz anzulegen.",
+    "en": "Tap an empty spot or the plus at the top right to add a note here.",
+    "es": "Toca un espacio libre o el más arriba a la derecha para añadir una nota aquí.",
+    "fr": "Touchez un espace libre ou le plus en haut à droite pour ajouter une note ici.",
+    "zh-Hans": "轻点空白处或右上角的加号，即可在此添加笔记。",
+    "hi": "यहां नोट जोड़ने के लिए खाली जगह या ऊपर दाईं ओर प्लस पर टैप करें।",
+    "ar": "اضغط على مكان فارغ أو على علامة الزائد أعلى اليمين لإضافة ملاحظة هنا.",
+    "bn": "এখানে নোট যোগ করতে ফাঁকা জায়গায় বা ওপরে ডানে প্লাসে ট্যাপ করুন।"
+  },
+  "overview_no_entries": {
+    "de": "Keine Einträge",
+    "en": "No entries",
+    "es": "Sin entradas",
+    "fr": "Aucune entrée",
+    "zh-Hans": "没有条目",
+    "hi": "कोई प्रविष्टि नहीं",
+    "ar": "لا توجد إدخالات",
+    "bn": "কোনো এন্ট্রি নেই"
+  },
+  "reminder_note_add": {
+    "de": "Notiz",
+    "en": "Note",
+    "es": "Nota",
+    "fr": "Note",
+    "zh-Hans": "备注",
+    "hi": "नोट",
+    "ar": "ملاحظة",
+    "bn": "নোট"
+  },
+  "reminder_note_title": {
+    "de": "Notiz zur Erinnerung",
+    "en": "Reminder note",
+    "es": "Nota del recordatorio",
+    "fr": "Note du rappel",
+    "zh-Hans": "提醒备注",
+    "hi": "रिमाइंडर नोट",
+    "ar": "ملاحظة التذكير",
+    "bn": "রিমাইন্ডার নোট"
+  },
+  "reminder_note_hint": {
+    "de": "Wofür ist die Erinnerung?",
+    "en": "What is this reminder for?",
+    "es": "¿Para qué es este recordatorio?",
+    "fr": "À quoi sert ce rappel ?",
+    "zh-Hans": "这个提醒是做什么的？",
+    "hi": "यह रिमाइंडर किसलिए है?",
+    "ar": "ما الغرض من هذا التذكير؟",
+    "bn": "এই রিমাইন্ডার কিসের জন্য?"
+  },
+  "reminder_late_tonight": {
+    "de": "Heute Nacht",
+    "en": "Later tonight",
+    "es": "Esta noche, más tarde",
+    "fr": "Plus tard ce soir",
+    "zh-Hans": "今晚晚些时候",
+    "hi": "आज रात",
+    "ar": "الليلة لاحقًا",
+    "bn": "আজ রাতে"
+  },
+  "reminder_pick_time": {
+    "de": "Datum und Uhrzeit wählen",
+    "en": "Pick date and time",
+    "es": "Elegir fecha y hora",
+    "fr": "Choisir la date et l’heure",
+    "zh-Hans": "选择日期和时间",
+    "hi": "तारीख और समय चुनें",
+    "ar": "اختيار التاريخ والوقت",
+    "bn": "তারিখ ও সময় বেছে নিন"
+  },
+  "entry_info_link": {
+    "de": "Link",
+    "en": "Link",
+    "es": "Enlace",
+    "fr": "Lien",
+    "zh-Hans": "链接",
+    "hi": "लिंक",
+    "ar": "الرابط",
+    "bn": "লিংক"
+  },
+  "entry_info_source": {
+    "de": "Quelle des Eintrags",
+    "en": "Source of this entry",
+    "es": "Origen de la entrada",
+    "fr": "Source de l’entrée",
+    "zh-Hans": "条目来源",
+    "hi": "प्रविष्टि का स्रोत",
+    "ar": "مصدر الإدخال",
+    "bn": "এন্ট্রির উৎস"
+  },
+  "entry_info_copy": {
+    "de": "Kopieren",
+    "en": "Copy",
+    "es": "Copiar",
+    "fr": "Copier",
+    "zh-Hans": "复制",
+    "hi": "कॉपी करें",
+    "ar": "نسخ",
+    "bn": "কপি করুন"
+  },
+  "entry_info_link_copied": {
+    "de": "Link kopiert",
+    "en": "Link copied",
+    "es": "Enlace copiado",
+    "fr": "Lien copié",
+    "zh-Hans": "链接已复制",
+    "hi": "लिंक कॉपी हो गया",
+    "ar": "تم نسخ الرابط",
+    "bn": "লিংক কপি হয়েছে"
+  },
+  "entry_copy_content": {
+    "de": "Inhalt kopieren",
+    "en": "Copy content",
+    "es": "Copiar contenido",
+    "fr": "Copier le contenu",
+    "zh-Hans": "复制内容",
+    "hi": "सामग्री कॉपी करें",
+    "ar": "نسخ المحتوى",
+    "bn": "বিষয়বস্তু কপি করুন"
+  },
+  "entry_content_copied": {
+    "de": "Inhalt kopiert",
+    "en": "Content copied",
+    "es": "Contenido copiado",
+    "fr": "Contenu copié",
+    "zh-Hans": "内容已复制",
+    "hi": "सामग्री कॉपी हो गई",
+    "ar": "تم نسخ المحتوى",
+    "bn": "বিষয়বস্তু কপি হয়েছে"
+  },
+  "entry_copy_title_only": {
+    "de": "Nur Titel",
+    "en": "Title only",
+    "es": "Solo el título",
+    "fr": "Titre seul",
+    "zh-Hans": "仅标题",
+    "hi": "केवल शीर्षक",
+    "ar": "العنوان فقط",
+    "bn": "শুধু শিরোনাম"
+  },
+  "entry_copy_title_text": {
+    "de": "Titel und Text",
+    "en": "Title and text",
+    "es": "Título y texto",
+    "fr": "Titre et texte",
+    "zh-Hans": "标题和正文",
+    "hi": "शीर्षक और टेक्स्ट",
+    "ar": "العنوان والنص",
+    "bn": "শিরোনাম ও লেখা"
+  },
+  "dictation_checking": {
+    "de": "Wird geprüft …",
+    "en": "Checking …",
+    "es": "Comprobando …",
+    "fr": "Vérification …",
+    "zh-Hans": "正在检查…",
+    "hi": "जाँच हो रही है …",
+    "ar": "جارٍ التحقق …",
+    "bn": "যাচাই হচ্ছে …"
+  },
+  "dictation_discard": {
+    "de": "Verwerfen",
+    "en": "Discard",
+    "es": "Descartar",
+    "fr": "Abandonner",
+    "zh-Hans": "放弃",
+    "hi": "हटाएँ",
+    "ar": "تجاهل",
+    "bn": "বাতিল"
+  },
+  "dictation_apply": {
+    "de": "Übernehmen",
+    "en": "Apply",
+    "es": "Aplicar",
+    "fr": "Appliquer",
+    "zh-Hans": "采用",
+    "hi": "लागू करें",
+    "ar": "اعتماد",
+    "bn": "গ্রহণ"
+  },
+  "reminder_set_title": {
+    "de": "Erinnerung gestellt",
+    "en": "Reminder set",
+    "es": "Recordatorio creado",
+    "fr": "Rappel créé",
+    "zh-Hans": "已设置提醒",
+    "hi": "रिमाइंडर सेट",
+    "ar": "تم ضبط التذكير",
+    "bn": "রিমাইন্ডার সেট হয়েছে"
+  },
+  "reminder_set_body": {
+    "de": "Benachrichtigung am %@",
+    "en": "Notification on %@",
+    "es": "Aviso el %@",
+    "fr": "Notification le %@",
+    "zh-Hans": "将于 %@ 通知",
+    "hi": "सूचना %@ को",
+    "ar": "إشعار في %@",
+    "bn": "বিজ্ঞপ্তি %@"
+  },
+  "composer_title_count": {
+    "de": "%lld / %lld",
+    "en": "%lld / %lld",
+    "es": "%lld / %lld",
+    "fr": "%lld / %lld",
+    "zh-Hans": "%lld / %lld",
+    "hi": "%lld / %lld",
+    "ar": "%lld / %lld",
+    "bn": "%lld / %lld"
+  },
+  "dictation_body_hint": {
+    "de": "Sprich jetzt, der Text landet in den Details",
+    "en": "Speak now, the text goes into the details",
+    "es": "Habla ahora, el texto irá a los detalles",
+    "fr": "Parle maintenant, le texte ira dans les détails",
+    "zh-Hans": "现在说话，文本将写入详情",
+    "hi": "अब बोलें, पाठ विवरण में जाएगा",
+    "ar": "تحدث الآن، سيُكتب النص في التفاصيل",
+    "bn": "এখন বলুন, লেখাটি বিবরণে যাবে"
+  },
+  "dictation_clear_title": {
+    "de": "Titel leeren",
+    "en": "Clear title",
+    "es": "Vaciar título",
+    "fr": "Effacer le titre",
+    "zh-Hans": "清空标题",
+    "hi": "शीर्षक खाली करें",
+    "ar": "مسح العنوان",
+    "bn": "শিরোনাম মুছুন"
+  },
+  "dictation_clear_body": {
+    "de": "Details leeren",
+    "en": "Clear details",
+    "es": "Vaciar detalles",
+    "fr": "Effacer les détails",
+    "zh-Hans": "清空详情",
+    "hi": "विवरण खाली करें",
+    "ar": "مسح التفاصيل",
+    "bn": "বিবরণ মুছুন"
+  },
+  "dictation_again": {
+    "de": "Neu sprechen",
+    "en": "Speak again",
+    "es": "Hablar de nuevo",
+    "fr": "Reparler",
+    "zh-Hans": "重新说",
+    "hi": "फिर से बोलें",
+    "ar": "تحدث مجددًا",
+    "bn": "আবার বলুন"
+  },
+  "ipad_detail_empty": {
+    "de": "Wähle links einen Eintrag aus",
+    "en": "Select an entry on the left",
+    "es": "Selecciona una entrada a la izquierda",
+    "fr": "Sélectionnez une entrée à gauche",
+    "zh-Hans": "在左侧选择一个条目",
+    "hi": "बाईं ओर से कोई प्रविष्टि चुनें",
+    "ar": "اختر عنصرًا من القائمة",
+    "bn": "বাম দিক থেকে একটি এন্ট্রি বেছে নিন"
+  },
+  "suggest_settings_hint": {
+    "de": "Ein kleines Modell auf dem Gerät schlägt vor, wohin ein Eintrag passt. Nichts verlässt das iPad, nichts wird ohne dich verschoben.",
+    "en": "A small on-device model suggests where an entry fits. Nothing leaves the iPad and nothing moves without you.",
+    "es": "Un pequeño modelo en el dispositivo sugiere dónde encaja una entrada. Nada sale del iPad y nada se mueve sin ti.",
+    "fr": "Un petit modèle sur l’appareil suggère où classer une entrée. Rien ne quitte l’iPad et rien n’est déplacé sans toi.",
+    "zh-Hans": "设备上的小模型会建议条目应归入哪里。数据不会离开iPad，未经你确认不会移动。",
+    "hi": "डिवाइस पर एक छोटा मॉडल सुझाता है कि प्रविष्टि कहाँ फिट होती है। कुछ भी iPad से बाहर नहीं जाता और आपके बिना कुछ नहीं हटता।",
+    "ar": "يقترح نموذج صغير على الجهاز أين يناسب المدخل. لا يغادر شيء الـ iPad ولا يُنقل شيء دون موافقتك.",
+    "bn": "ডিভাইসের একটি ছোট মডেল পরামর্শ দেয় এন্ট্রিটি কোথায় মানায়। কিছুই iPad-এর বাইরে যায় না, আপনার ছাড়া কিছু সরে না।"
+  }
+}
