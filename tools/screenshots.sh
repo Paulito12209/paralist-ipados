@@ -10,7 +10,8 @@ xcrun simctl bootstatus "$DEVICE" -b
 xcrun simctl status_bar "$DEVICE" override --time "9:41" --batteryState charged --batteryLevel 100 --cellularBars 4 || true
 xcrun simctl install "$DEVICE" "$APP"
 shoot() {
-  local screen="$1" look="$2" orient="${3:-landscape}" name="$screen-$look"
+  local screen="$1" look="$2" orient="${3:-landscape}"
+  local name="$screen-$look"
   [ "$orient" = "portrait" ] && name="$screen-$look-portrait"
   xcrun simctl terminate "$DEVICE" app.paralist.ipad >/dev/null 2>&1 || true
   xcrun simctl ui "$DEVICE" appearance "$look"
