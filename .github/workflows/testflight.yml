@@ -30,7 +30,12 @@ jobs:
       - name: API-Schlüssel ablegen
         run: |
           mkdir -p "$HOME/.appstoreconnect/private_keys"
-          echo "$ASC_KEY_P8" | base64 --decode > "$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8"
+          F="$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8"
+          if printf '%s' "$ASC_KEY_P8" | grep -q "BEGIN PRIVATE KEY"; then
+            printf '%s\n' "$ASC_KEY_P8" > "$F"
+          else
+            printf '%s' "$ASC_KEY_P8" | base64 --decode > "$F"
+          fi
       - name: Archiv bauen
         run: |
           set -o pipefail
@@ -51,6 +56,8 @@ jobs:
           <dict>
             <key>method</key>
             <string>app-store-connect</string>
+            <key>destination</key>
+            <string>upload</string>
             <key>teamID</key>
             <string>${APPLE_TEAM_ID}</string>
             <key>uploadSymbols</key>
@@ -60,14 +67,10 @@ jobs:
           </dict>
           </plist>
           EOF
-      - name: IPA exportieren
+      - name: Exportieren und zu TestFlight hochladen
         run: |
           xcodebuild -exportArchive -archivePath build/Paralist.xcarchive \
             -exportPath build/export -exportOptionsPlist build/ExportOptions.plist \
             -allowProvisioningUpdates \
             -authenticationKeyPath "$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8" \
             -authenticationKeyID "$ASC_KEY_ID" -authenticationKeyIssuerID "$ASC_ISSUER_ID"
-      - name: Zu TestFlight hochladen
-        run: |
-          xcrun altool --upload-app -f build/export/Paralist.ipa -t ios \
-            --apiKey "$ASC_KEY_ID" --apiIssuer "$ASC_ISSUER_ID"
