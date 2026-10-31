@@ -1,4 +1,4 @@
-// Zusammenhang: ParalistCore Library/TabTap.swift (tapTab, topRequests), Shell/CreateOverlay.swift, Shell/DetailHost.swift, Shell/MediaPager.swift, Pages/MediaPage.swift, Capture/CaptureFlow.swift, Shell/RootView.swift, Shell/RouteDestination.swift, Shell/MenuDrawer.swift, Pages/MenuPage.swift, Shell/TabSlotMenu.swift (freshTab, shows), App/ParalistApp.swift (shows), App/LaunchOptions.swift, Reminders/NotificationHandler.swift, Chat/ChatListPage.swift, Shell/PageBar.swift (Menü aus Seiten außerhalb der Leiste), ParalistCore Library/TabBarLayout.swift (lift, pillDrop), Theme/EntryBarDimens.swift (entryBarPillRest), Entry/EntryToolbar.swift (EntryBottomBar), Library/TabBarOrder.swift, Pages/CalendarPage.swift (pullBlocked, moves), Shell/SplitRootView.swift (split, detailEpoch), Shell/RouterSplit.swift (openSplit, sideOpen, sidePath, toggleMenu), Shell/SplitParts.swift, ParalistCore Library/SplitLayout.swift, docs/ipad.md
+// Zusammenhang: ParalistCore Library/TabTap.swift (tapTab, topRequests), Shell/CreateOverlay.swift, Shell/DetailHost.swift, Shell/MediaPager.swift, Pages/MediaPage.swift, Capture/CaptureFlow.swift, Shell/RootView.swift, Shell/RouteDestination.swift, Shell/MenuDrawer.swift, Pages/MenuPage.swift, Shell/TabSlotMenu.swift (freshTab, shows), App/ParalistApp.swift (shows), App/LaunchOptions.swift, Reminders/NotificationHandler.swift, Chat/ChatListPage.swift, Shell/PageBar.swift (Menü aus Seiten außerhalb der Leiste), ParalistCore Library/TabBarLayout.swift (lift, pillDrop), Theme/EntryBarDimens.swift (entryBarPillRest), Entry/EntryToolbar.swift (EntryBottomBar), Library/TabBarOrder.swift, Pages/CalendarPage.swift (pullBlocked, moves), Shell/SplitRootView.swift (split, detailEpoch), Shell/RouterSplit.swift (openSplit, sideOpen, sidePath, toggleMenu, linked, expanded, push(from:)), Shell/SplitParts.swift, ParalistCore Library/SplitLayout.swift, docs/ipad.md
 import Foundation
 import Observation
 import ParalistCore
@@ -96,6 +96,10 @@ final class Router {
     var sideOpen = true
     var sidePath: [Route] = []
     var detailEpoch = 0
+    var expanded = false
+    var linked: Route?
+    var linkedPath: [Route] = []
+    var linkedEpoch = 0
     var mediaQueue: [String] = []
     var detailDrop: CGFloat = 0
     var detailInCover = false
@@ -251,6 +255,9 @@ final class Router {
         detail = nil
         detailPath = []
         mediaQueue = []
+        linked = nil
+        linkedPath = []
+        expanded = false
     }
 
     func dropDetail(_ height: CGFloat) {

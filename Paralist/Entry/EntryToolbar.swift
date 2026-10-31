@@ -1,4 +1,4 @@
-// Zusammenhang: Entry/EntryPage.swift, Shell/Router.swift (openChat, closeDetail, push, importCards, study, tabBarLift, entryPillDrop), Chat/ChatThreadPage.swift (chatSeed), Flashcards/StudyPage.swift, Flashcards/ImportCardsSheet.swift, ParalistCore Library/EdgePicker.swift (EntryCanvas), Entries/TypeLook.swift, Icons/AppIcons.swift, Theme/EntryBarDimens.swift, ParalistCore Links/SpotifyLinks.swift, Links/VideoLinks.swift, Files/FileCategory.swift, docs/detailseite.md
+// Zusammenhang: Entry/EntryPage.swift, Shell/RouterSplit.swift (closePane, push(from:), DetailPane), Shell/SplitParts.swift (SplitExpandButton), Shell/Router.swift (openChat, closeDetail, push, importCards, study, tabBarLift, entryPillDrop), Chat/ChatThreadPage.swift (chatSeed), Flashcards/StudyPage.swift, Flashcards/ImportCardsSheet.swift, ParalistCore Library/EdgePicker.swift (EntryCanvas), Entries/TypeLook.swift, Icons/AppIcons.swift, Theme/EntryBarDimens.swift, ParalistCore Links/SpotifyLinks.swift, Links/VideoLinks.swift, Files/FileCategory.swift, docs/detailseite.md
 import ParalistCore
 import SwiftUI
 
@@ -6,17 +6,22 @@ struct EntryToolbar: ToolbarContent {
     let entry: Entry
     let model: AppModel
     let router: Router
+    let pane: DetailPane
     @Binding var sheet: EntrySheet?
     let onDelete: () -> Void
 
     var body: some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
-            Button { router.closeDetail() } label: { Image(systemName: AppIcons.canvasBack).foregroundStyle(Palette.onSurface) }
+            Button { router.closePane(pane) } label: { Image(systemName: AppIcons.canvasBack).foregroundStyle(Palette.onSurface) }
                 .accessibilityLabel(L.s("menu_close"))
         }
         .sharedBackgroundVisibility(.hidden)
         ToolbarItem(placement: .topBarLeading) {
-            Color.clear.frame(width: 44, height: 44).accessibilityHidden(true)
+            if SplitExpandButton.shown(router, pane) {
+                SplitExpandButton().frame(width: 44, height: 44)
+            } else {
+                Color.clear.frame(width: 44, height: 44).accessibilityHidden(true)
+            }
         }
         .sharedBackgroundVisibility(.hidden)
         ToolbarItem(placement: .principal) {
@@ -80,6 +85,7 @@ struct EntryBottomBar: View {
     @Environment(Router.self) private var router
     @Environment(\.openURL) private var openURL
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.detailPane) private var pane
     @State private var completing = false
 
     private struct IconAction {
@@ -144,7 +150,7 @@ struct EntryBottomBar: View {
     }
 
     private var closeButton: some View {
-        Button { router.closeDetail() } label: {
+        Button { router.closePane(pane) } label: {
             Text(L.s("create_close"))
                 .font(Typo.dm(collapsed ? Dimens.entryBarPillFont : Dimens.entryBarFont, .semibold))
                 .lineLimit(1)
@@ -183,10 +189,10 @@ struct EntryBottomBar: View {
             if model.inDeck(entry.id).isEmpty {
                 return IconAction(symbol: AppIcons.importCards, label: "fc_import", run: { router.importCards = ImportRequest(deck: entry.id) })
             }
-            return IconAction(symbol: AppIcons.study, label: "fc_study", run: { router.push(.study(entry.id)) })
+            return IconAction(symbol: AppIcons.study, label: "fc_study", run: { router.push(.study(entry.id), from: pane) })
         }
         if entry.type == .flashcard, let deck = entry.deck, model.entry(deck) != nil {
-            return IconAction(symbol: AppIcons.study, label: "fc_study", run: { router.push(.study(deck)) })
+            return IconAction(symbol: AppIcons.study, label: "fc_study", run: { router.push(.study(deck), from: pane) })
         }
         if let url = entry.url, SpotifyLinks.item(url) != nil {
             return IconAction(symbol: playSymbol, label: playing ? "entry_audio_pause" : "entry_audio_play", run: onPlay)

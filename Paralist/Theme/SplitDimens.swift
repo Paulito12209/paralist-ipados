@@ -5,7 +5,13 @@ enum SplitDimens {
     static let minSide: CGFloat = 320
     static let minMain: CGFloat = 440
     static let margin: CGFloat = 10
-    static let gap: CGFloat = 10
+    static let bottom: CGFloat = 16
+    static let gap: CGFloat = 16
+    static let handleWidth: CGFloat = 4
+    static let handleHeight: CGFloat = 44
+    static let handleReach: CGFloat = 8
+    static let mainShare: CGFloat = 2.0 / 3
+    static let pairShare: CGFloat = 0.5
     static let radius: CGFloat = 28
     static let topBar: CGFloat = 60
     static let barInset: CGFloat = 8

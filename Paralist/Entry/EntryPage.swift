@@ -1,4 +1,4 @@
-// Zusammenhang: Entry/EntryCanvasPanel.swift, Entry/EntryToolbar.swift (EntryToolbar, EntryBottomBar), Entry/EntryHero.swift, Entry/CoverStage.swift, Entry/CoverChrome.swift, Entry/EdgePicker.swift, Entry/EntryBodyEditor.swift, Entry/TitleKeyboardBar.swift, Entry/EntryDestination.swift, Shell/DetailHost.swift, Shell/RouteDestination.swift (nested), Shell/Router.swift (detailPath, split), Flashcards/DeckSection.swift, ParalistCore Library/CoverTransition.swift, Library/EdgePicker.swift, Library/BarCollapse.swift, docs/detailseite.md
+// Zusammenhang: Entry/EntryCanvasPanel.swift, Entry/EntryToolbar.swift (EntryToolbar, EntryBottomBar), Entry/EntryHero.swift, Entry/CoverStage.swift, Entry/CoverChrome.swift, Entry/EdgePicker.swift, Entry/EntryBodyEditor.swift, Entry/TitleKeyboardBar.swift, Entry/EntryDestination.swift, Shell/DetailHost.swift, Shell/RouteDestination.swift (nested), Shell/Router.swift (detailPath, split), Shell/RouterSplit.swift (DetailPane, stack, pop), Flashcards/DeckSection.swift, ParalistCore Library/CoverTransition.swift, Library/EdgePicker.swift, Library/BarCollapse.swift, docs/detailseite.md
 import ParalistCore
 import QuickLook
 import SwiftUI
@@ -14,6 +14,7 @@ struct EntryPage: View {
     @Environment(Router.self) private var router
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
+    @Environment(\.detailPane) private var pane
     @State private var sheet: EntrySheet?
     @State private var confirmLink: String?
     @State private var preview: URL?
@@ -143,7 +144,7 @@ struct EntryPage: View {
             }
         }
         .toolbar {
-            EntryToolbar(entry: entry, model: model, router: router, sheet: $sheet, onDelete: {
+            EntryToolbar(entry: entry, model: model, router: router, pane: pane, sheet: $sheet, onDelete: {
                 model.moveToTrash(entry.id)
                 dismiss()
             })
@@ -247,7 +248,7 @@ struct EntryPage: View {
 
     private var backAction: (() -> Void)? {
         if canvas == .text || canvas == .links { return backToDetail }
-        if nested, !router.detailPath.isEmpty { return { router.detailPath.removeLast() } }
+        if nested, !router.stack(pane).isEmpty { return { router.pop(pane) } }
         return nil
     }
 

@@ -40,4 +40,24 @@ struct SplitLayoutTests {
         #expect(SplitLayout.panelWidth(total: 820, minSide: 320) == 320)
         #expect(SplitLayout.panelWidth(total: 200, minSide: 320) == 200)
     }
+
+    private func leading(_ total: Double, _ share: Double) -> Double {
+        SplitLayout.leadingWidth(total: total, share: share, minLeading: 440, minTrailing: 320)
+    }
+
+    @Test func dividerFollowsTheShare() {
+        #expect(leading(1200, 2.0 / 3) == 800)
+        #expect(leading(1200, 0.5) == 600)
+    }
+
+    @Test func dividerKeepsBothSidesAtTheirMinimum() {
+        #expect(leading(1200, 0.1) == 440)
+        #expect(leading(1200, 0.95) == 880)
+    }
+
+    @Test func dividerSplitsByShareWhenBothMinimumsDoNotFit() {
+        #expect(leading(600, 0.5) == 300)
+        #expect(leading(600, 1.5) == 600)
+        #expect(leading(0, 0.5) == 0)
+    }
 }

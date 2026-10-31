@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/Router.swift, Shell/MediaPager.swift, ParalistCore Library/MediaPaging.swift, Shell/AppSheets.swift, Shell/RouteDestination.swift, Shell/RootView.swift (NoticeBar), Shell/CreateOverlay.swift, Entry/EntryDestination.swift, Theme/Dimens.swift (swipeBack*), Entry/EntryPage.swift (Cover-Zug, detailDrop), Shell/SplitRootView.swift (inline), Chat/ChatThreadPage.swift, Flashcards/StudyPage.swift
+// Zusammenhang: Shell/Router.swift, Shell/MediaPager.swift, ParalistCore Library/MediaPaging.swift, Shell/AppSheets.swift, Shell/RouteDestination.swift, Shell/RootView.swift (NoticeBar), Shell/CreateOverlay.swift, Entry/EntryDestination.swift, Theme/Dimens.swift (swipeBack*), Entry/EntryPage.swift (Cover-Zug, detailDrop), Shell/SplitRootView.swift (inline, pane), Shell/RouterSplit.swift (DetailPane, stack, pop), Chat/ChatThreadPage.swift, Flashcards/StudyPage.swift
 import ParalistCore
 import SwiftUI
 import UIKit
@@ -7,6 +7,7 @@ struct DetailHost: View {
     private enum Swipe { case nested, drop, page }
 
     var inline = false
+    var pane: DetailPane = .primary
     @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -19,9 +20,9 @@ struct DetailHost: View {
 
     var body: some View {
         @Bindable var router = router
-        NavigationStack(path: $router.detailPath) {
+        NavigationStack(path: pane == .linked ? $router.linkedPath : $router.detailPath) {
             Group {
-                switch router.detail {
+                switch current {
                 case .cover(let id):
                     if router.mediaQueue.isEmpty {
                         EntryDestination(id: id, cover: true)
@@ -36,6 +37,7 @@ struct DetailHost: View {
             }
             .routeDestinations()
         }
+        .environment(\.detailPane, pane)
         .overlay(alignment: .bottom) { if !inline { NoticeBar(top: false) } }
         .overlay { CreateOverlay(nested: true) }
         .createSheets(nested: true)
@@ -90,8 +92,8 @@ struct DetailHost: View {
                 switch current {
                 case .nested:
                     if value.startLocation.x > Dimens.swipeBackEdge, dx > abs(value.translation.height) * 1.5,
-                       fling > size.width * Dimens.swipeBackShare, !router.detailPath.isEmpty {
-                        router.detailPath.removeLast()
+                       fling > size.width * Dimens.swipeBackShare, !router.stack(pane).isEmpty {
+                        router.pop(pane)
                     }
                 case .drop:
                     guard wasEngaged else { return }
@@ -109,18 +111,20 @@ struct DetailHost: View {
     }
 
     private func startMode(_ x: CGFloat) -> Swipe? {
-        if !router.detailPath.isEmpty { return .nested }
+        if !router.stack(pane).isEmpty { return .nested }
         if case .cover(let id) = router.detail, EntryDestination.bare(model.entry(id)),
            !router.mediaQueue.isEmpty, router.detailInCover, x > Dimens.swipeBackEdge { return .page }
         return inline ? nil : .drop
     }
+
+    private var current: Route? { pane == .linked ? router.linked : router.detail }
 
     private var dropRatio: CGFloat {
         size.width > 0 ? size.height / size.width : 1
     }
 
     private func neighbor(_ step: Int) -> String? {
-        guard case .cover(let id) = router.detail else { return nil }
+        guard pane == .primary, case .cover(let id) = router.detail else { return nil }
         return MediaPaging.neighbor(of: id, in: router.mediaQueue, step: step)
     }
 

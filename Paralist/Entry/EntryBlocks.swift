@@ -1,4 +1,4 @@
-// Zusammenhang: Entry/EntryPage.swift, Entry/EntryParts.swift, Entry/MarkdownText.swift, Entry/EntryBodyEditor.swift (Bearbeiten im Text-Container), Entry/TitleKeyboardBar.swift (BodyBarActions), Entry/CanvasCard.swift, Entry/EntryActions.swift (CanvasCardHead, CanvasOpenButton), Entries/EntryRow.swift, Flashcards/DeckSection.swift, App/AppModel.swift, Theme/Dimens.swift, Chat/ChatListPage.swift (ChatRow), Chat/ChatModel.swift (linked), ParalistCore Library/AttachmentEntry.swift, ParalistCore Library/PlacePicker.swift, Shell/Router.swift (push)
+// Zusammenhang: Entry/EntryPage.swift, Entry/EntryParts.swift, Entry/MarkdownText.swift, Entry/EntryBodyEditor.swift (Bearbeiten im Text-Container), Entry/TitleKeyboardBar.swift (BodyBarActions), Entry/CanvasCard.swift, Entry/EntryActions.swift (CanvasCardHead, CanvasOpenButton), Entries/EntryRow.swift, Flashcards/DeckSection.swift, App/AppModel.swift, Theme/Dimens.swift, Chat/ChatListPage.swift (ChatRow), Chat/ChatModel.swift (linked), ParalistCore Library/AttachmentEntry.swift, ParalistCore Library/PlacePicker.swift, Shell/Router.swift (push), Shell/RouterSplit.swift (DetailPane, push(from:), leave)
 import ParalistCore
 import SwiftUI
 
@@ -149,6 +149,7 @@ struct EntryRelations: View {
     var onOpen: (() -> Void)?
     @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
+    @Environment(\.detailPane) private var pane
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -172,7 +173,7 @@ struct EntryRelations: View {
                         .background(PlusFrameReporter())
                     }
                     ForEach(related) { child in
-                        EntryRow(entry: child) { router.push(.entry(child.id)) }
+                        EntryRow(entry: child) { router.push(.entry(child.id), from: pane) }
                     }
                 }
                 .padding(.bottom, 8)
@@ -185,7 +186,7 @@ struct EntryRelations: View {
                 VStack(alignment: .leading, spacing: 0) {
                     CanvasCardHead(icon: AppIcons.chat.outlined, title: L.s("chat_section"), count: chats.count) { EmptyView() }
                     ForEach(chats) { thread in
-                        ChatRow(thread: thread) { router.push(.chat(thread.id)) }
+                        ChatRow(thread: thread) { router.push(.chat(thread.id), from: pane) }
                             .padding(.horizontal, 16)
                     }
                 }

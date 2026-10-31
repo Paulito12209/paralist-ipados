@@ -90,15 +90,19 @@ mindestens 320 pt) neben dem Hauptcontainer.
 - `DetailHost(inline: true)` zeigt `router.detail`. Ohne Detail steht dort der
   Stapel mit den Kategorien (`sidePath`).
 - Ein Tipp links ersetzt das Detail (`Router.open`). Ein Link aus der
-  Detailseite heraus (Verknüpfung, Karte, Erwähnung, Lernen) schiebt auf
-  `detailPath` (`Router.push`), Zurück wie auf dem iPhone. Es gibt keine
-  zweite Detailseite daneben.
+  Detailseite heraus (Verknüpfung, Karte, Erwähnung, Lernen) öffnet die
+  verknüpfte Seite daneben (`Router.push(_:from:)`): Hauptcontainer zu,
+  Detailseite links, Verknüpfung rechts (`DetailHost(pane: .linked)`), 50/50
+  mit Ziehgriff. Nie mehr als zwei Seiten.
+- Oben links neben dem Schließen-Pfeil sitzt der Knopf Erweitern bzw.
+  Verkleinern (`SplitExpandButton`); er fehlt, solange eine Verknüpfung offen
+  ist.
 - `.chat` und `.study` öffnen ebenfalls rechts. Ihre Wurzel hat links oben
   einen Schließen-Pfeil.
-- „Schließen“ in der Bottom-Zeile leert das Detail (`closeDetail`). Das
-  Herunterziehen des Covers (`detailDrop`) und das Wegwischen nach rechts
-  entfallen; Zurück in verschachtelten Ebenen und das Blättern der Medien
-  (`MediaPager`) bleiben.
+- „Schließen“ in der Bottom-Zeile und der Pfeil oben schließen den eigenen
+  Container (`closePane`). Das Herunterziehen des Covers (`detailDrop`) und
+  das Wegwischen nach rechts entfallen; Zurück in verschachtelten Ebenen und
+  das Blättern der Medien (`MediaPager`, nur links) bleiben.
 - Passt die Seite nicht (Hauptcontainer unter 440 pt), gilt das
   iPhone-Verhalten mit Vollbild-Deckblatt; ein offenes Detail bleibt beim
   Wechsel erhalten.

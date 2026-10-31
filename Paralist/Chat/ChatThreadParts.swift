@@ -1,4 +1,4 @@
-// Zusammenhang: Chat/ChatThreadPage.swift, Chat/ChatMascotStage.swift, Chat/ChatEngine.swift (ChatAvailability, ChatFailure), Components/Chips.swift, Entries/TypeLook.swift, Theme/Dimens.swift (ChatDimens), Shell/Router.swift (push)
+// Zusammenhang: Chat/ChatThreadPage.swift, Chat/ChatMascotStage.swift, Chat/ChatEngine.swift (ChatAvailability, ChatFailure), Components/Chips.swift, Entries/TypeLook.swift, Theme/Dimens.swift (ChatDimens), Shell/Router.swift (push), Shell/RouterSplit.swift (DetailPane, push(from:), leave)
 import ParalistCore
 import SwiftUI
 import UIKit
@@ -90,6 +90,7 @@ struct ChatEntryChips: View {
     var label: String?
     @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
+    @Environment(\.detailPane) private var pane
 
     var body: some View {
         let entries = ids.compactMap { model.entry($0) }
@@ -101,7 +102,7 @@ struct ChatEntryChips: View {
                     }
                     ForEach(entries) { entry in
                         let look = TypeLook.of(entry)
-                        Button { router.push(.entry(entry.id)) } label: {
+                        Button { router.push(.entry(entry.id), from: pane) } label: {
                             HStack(spacing: 6) {
                                 GlyphIcon(look.icon.outlined, size: 14).foregroundStyle(look.color)
                                 Text(entry.title.isEmpty ? L.s("list_untitled") : entry.title).font(Typo.labelLarge).lineLimit(1)

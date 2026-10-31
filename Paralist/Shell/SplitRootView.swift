@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/RootView.swift (Umschaltung nach Fensterbreite, TabStacks), Shell/SplitTopBar.swift, Shell/SplitParts.swift, Shell/CategoryPanel.swift, Shell/DetailHost.swift (inline), Shell/Router.swift (split, detailEpoch, menuOpen), Shell/RouterSplit.swift (sideOpen, sidePath), Pages/MenuPage.swift, Pages/MediaBar.swift, Shell/AppSheets.swift, Shell/CreateOverlay.swift, Shell/RouteDestination.swift, Theme/SplitDimens.swift, Theme/Palette.swift (window), ParalistCore Library/SplitLayout.swift, docs/ipad.md
+// Zusammenhang: Shell/RootView.swift (Umschaltung nach Fensterbreite, TabStacks), Shell/SplitTopBar.swift, Shell/SplitParts.swift, Shell/CategoryPanel.swift, Shell/DetailHost.swift (inline), Shell/Router.swift (split, detailEpoch, menuOpen), Shell/RouterSplit.swift (sideOpen, sidePath), Pages/MenuPage.swift, Pages/MediaBar.swift, Shell/AppSheets.swift, Shell/CreateOverlay.swift, Shell/RouteDestination.swift, Theme/SplitDimens.swift, Theme/Palette.swift (window), Shell/SplitParts.swift (SplitHandle), ParalistCore Library/SplitLayout.swift, docs/ipad.md
 import ParalistCore
 import SwiftUI
 import UIKit
@@ -9,11 +9,6 @@ enum SplitMetrics {
         guard UIDevice.current.userInterfaceIdiom == .pad else { return nil }
         return SplitLayout.sideWidth(total: Double(width), minSide: Double(SplitDimens.minSide), minMain: Double(SplitDimens.minMain))
             .map { CGFloat($0) }
-    }
-
-    static func sidePane(_ width: CGFloat) -> CGFloat {
-        let side = SplitLayout.sideWidth(total: Double(width - SplitDimens.gap), minSide: Double(SplitDimens.minSide), minMain: 0)
-        return side.map { CGFloat($0) } ?? SplitDimens.minSide
     }
 
     static func menu(_ width: CGFloat) -> CGFloat {
@@ -29,30 +24,26 @@ enum SplitMetrics {
 struct SplitRootView: View {
     @Environment(Router.self) private var router
     @State private var drag: CGFloat = 0
+    @State private var mainShare = SplitDimens.mainShare
+    @State private var pairShare = SplitDimens.pairShare
+    @State private var dragFrom: CGFloat?
 
     var body: some View {
         GeometryReader { geo in
             let menu = SplitMetrics.menu(geo.size.width)
             let rest = router.menuOpen ? geo.size.width - menu : geo.size.width
             let inner = max(0, rest - 2 * SplitDimens.margin)
-            let sideShown = router.sideOpen && !router.menuOpen
             HStack(spacing: 0) {
                 if router.menuOpen {
                     MenuPage(lead: 0, drag: $drag, release: { _ in drag = 0 })
                         .frame(width: menu)
                         .transition(.move(edge: .leading))
                 }
-                HStack(spacing: SplitDimens.gap) {
-                    SplitMain()
-                    if sideShown {
-                        SplitSide()
-                            .frame(width: SplitMetrics.sidePane(inner))
-                            .transition(.move(edge: .trailing).combined(with: .opacity))
-                    }
-                }
-                .padding(.horizontal, SplitDimens.margin)
-                .padding(.bottom, SplitDimens.margin)
-                .frame(width: rest)
+                panes(inner)
+                    .padding(.horizontal, SplitDimens.margin)
+                    .padding(.bottom, SplitDimens.bottom)
+                    .frame(width: rest)
+                    .ignoresSafeArea(.container, edges: .bottom)
             }
         }
         .background(Palette.window.ignoresSafeArea())
@@ -66,6 +57,50 @@ struct SplitRootView: View {
         .overlay { CreateOverlay() }
         .overlay(alignment: .bottom) { NoticeBar(top: false) }
         .overlay(alignment: .top) { NoticeBar(top: true) }
+    }
+
+    @ViewBuilder
+    private func panes(_ inner: CGFloat) -> some View {
+        let total = max(0, inner - SplitDimens.gap)
+        if router.paired, !router.menuOpen {
+            let lead = width(total, pairShare, SplitDimens.minSide)
+            HStack(spacing: 0) {
+                DetailHost(inline: true).id(router.detailEpoch).splitPane()
+                    .frame(width: lead)
+                handle(total, lead) { pairShare = $0 }
+                DetailHost(inline: true, pane: .linked).id(router.linkedEpoch).splitPane()
+                    .transition(.move(edge: .trailing).combined(with: .opacity))
+            }
+        } else if router.expanded, router.detail != nil, !router.menuOpen {
+            SplitSide()
+        } else {
+            let sideShown = router.sideOpen && !router.menuOpen
+            let lead = width(total, mainShare, SplitDimens.minMain)
+            HStack(spacing: 0) {
+                SplitMain()
+                    .frame(width: sideShown ? lead : nil)
+                if sideShown {
+                    handle(total, lead) { mainShare = $0 }
+                    SplitSide()
+                        .transition(.move(edge: .trailing).combined(with: .opacity))
+                }
+            }
+        }
+    }
+
+    private func width(_ total: CGFloat, _ share: CGFloat, _ minLeading: CGFloat) -> CGFloat {
+        CGFloat(SplitLayout.leadingWidth(total: Double(total), share: Double(share), minLeading: Double(minLeading), minTrailing: Double(SplitDimens.minSide)))
+    }
+
+    private func handle(_ total: CGFloat, _ lead: CGFloat, set: @escaping (CGFloat) -> Void) -> some View {
+        SplitHandle(onDrag: { dx in
+            let from = dragFrom ?? lead
+            dragFrom = from
+            if total > 0 { set((from + dx) / total) }
+        }, onEnd: {
+            dragFrom = nil
+            if total > 0 { set(lead / total) }
+        })
     }
 }
 

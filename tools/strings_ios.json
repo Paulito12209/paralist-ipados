@@ -4485,5 +4485,35 @@
     "hi": "श्रेणियाँ",
     "ar": "الفئات",
     "bn": "বিভাগ"
+  },
+  "ipad_expand": {
+    "de": "Erweitern",
+    "en": "Expand",
+    "es": "Ampliar",
+    "fr": "Agrandir",
+    "zh-Hans": "展开",
+    "hi": "विस्तार करें",
+    "ar": "توسيع",
+    "bn": "প্রসারিত করুন"
+  },
+  "ipad_collapse": {
+    "de": "Verkleinern",
+    "en": "Collapse",
+    "es": "Reducir",
+    "fr": "Réduire",
+    "zh-Hans": "收起",
+    "hi": "छोटा करें",
+    "ar": "تصغير",
+    "bn": "ছোট করুন"
+  },
+  "ipad_resize": {
+    "de": "Breite anpassen",
+    "en": "Adjust width",
+    "es": "Ajustar ancho",
+    "fr": "Ajuster la largeur",
+    "zh-Hans": "调整宽度",
+    "hi": "चौड़ाई बदलें",
+    "ar": "ضبط العرض",
+    "bn": "প্রস্থ বদলান"
   }
 }
