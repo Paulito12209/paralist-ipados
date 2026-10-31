@@ -1,4 +1,4 @@
-<!-- Zusammenhang: Paralist/Shell/SplitRootView.swift, Paralist/Shell/SplitTopBar.swift, Paralist/Shell/SplitParts.swift (SplitExpandButton, SplitHandle), Paralist/Entry/EntryToolbar.swift, Paralist/Shell/CategoryPanel.swift, Paralist/Shell/RootView.swift, Paralist/Shell/Router.swift, Paralist/Shell/RouterSplit.swift, Paralist/Shell/DetailHost.swift, Paralist/Pages/MenuPage.swift, Paralist/Shell/AppSheets.swift, Paralist/Shell/CreateOverlay.swift, Paralist/Shell/RouteDestination.swift, Paralist/Theme/SplitDimens.swift, Paralist/Theme/CategoryDimens.swift, Paralist/Theme/Palette.swift, Paralist/App/ParalistApp.swift, Paralist/App/LaunchOptions.swift, ParalistCore/Sources/ParalistCore/Library/SplitLayout.swift, ParalistCore/Sources/ParalistCore/Library/TabBarOrder.swift, ParalistCore/Tests/ParalistCoreTests/SplitLayoutTests.swift, docs/detailseite.md -->
+<!-- Zusammenhang: Paralist/Shell/SplitRootView.swift, Paralist/Shell/SplitTopBar.swift, Paralist/Theme/SplitBarDimens.swift, Paralist/Pages/OverviewOptionParts.swift, ParalistCore/Sources/ParalistCore/Library/OverviewInline.swift, Paralist/Shell/SplitParts.swift (SplitExpandButton, SplitHandle), Paralist/Entry/EntryToolbar.swift, Paralist/Shell/CategoryPanel.swift, Paralist/Shell/RootView.swift, Paralist/Shell/Router.swift, Paralist/Shell/RouterSplit.swift, Paralist/Shell/DetailHost.swift, Paralist/Pages/MenuPage.swift, Paralist/Shell/AppSheets.swift, Paralist/Shell/CreateOverlay.swift, Paralist/Shell/RouteDestination.swift, Paralist/Theme/SplitDimens.swift, Paralist/Theme/CategoryDimens.swift, Paralist/Theme/Palette.swift, Paralist/App/ParalistApp.swift, Paralist/App/LaunchOptions.swift, ParalistCore/Sources/ParalistCore/Library/SplitLayout.swift, ParalistCore/Sources/ParalistCore/Library/TabBarOrder.swift, ParalistCore/Tests/ParalistCoreTests/SplitLayoutTests.swift, docs/detailseite.md -->
 
 # iPad: geteilte Ansicht
 
@@ -22,7 +22,8 @@ oder `nil`:
   Fensters, mindestens 320 pt.
 - Zwischen zwei Containern sitzt ein senkrechter Ziehgriff (`SplitHandle`).
   Er verschiebt die Grenze; `SplitLayout.leadingWidth` hält links mindestens
-  440 pt (Hauptcontainer) bzw. 320 pt (Detailseite) und rechts 320 pt. Start
+  `SplitLayout.mainMinimum` (ein Drittel, mindestens 320 pt) für den
+  Hauptcontainer bzw. 320 pt für die Detailseite und rechts 320 pt. Start
   ist 2/3 zu 1/3, bei Detail und Verknüpfung 50/50. Die Breite gilt, solange
   die App läuft.
 - Die Container enden 16 pt über dem unteren Geräterand (`SplitDimens.bottom`,
@@ -41,6 +42,14 @@ oder `nil`:
   rechts runder Glas-Knopf `sidebar.right` (`router.toggleSide`) für die
   rechte Seite. Der aktive Reiter hat eine silberblaue Fläche
   (`Palette.padTabActive`).
+  Die Pille bekommt nur den Platz zwischen den beiden Knöpfen
+  (`ViewThatFits`): Reiternamen, wenn sie passen, sonst Icons (aktiver
+  gefüllt), bei ganz wenig Platz Icons in einer waagrechten Scrollfläche.
+  Die Knöpfe werden nie überdeckt oder abgeschnitten.
+- Übersicht: Ist der Hauptcontainer mindestens halb so breit wie das Fenster
+  (`OverviewInline.showsOptions`), stehen die drei Edge-Picker-Optionen als
+  schlichte Icons links neben dem Plus der Sortierzeile und der Edge Picker
+  am Rand entfällt; schmaler bleibt der Edge Picker wie auf dem iPhone.
 - Reiter in der Pille: Übersicht, Aufgaben, Kalender fest, dahinter weitere
   Reiter aus `tabOrder` (`TabBarOrder.padTabs`, `AppTab.pad`). `router.shows`
   richtet sich in der geteilten Ansicht nach dieser Liste.
@@ -65,7 +74,8 @@ oder `nil`:
 |---|---|
 | `router.open(route)` | Reiter aus der Pille wählen den Reiter. `.entry`, `.cover`, `.chat`, `.study` öffnen rechts als Detail. Alles andere (Sammlungen, Einstellungen, Papierkorb, nicht gezeigte Reiter …) ersetzt den Stapel rechts (`sidePath = [route]`). In jedem Fall schließt das Menü und die rechte Seite geht auf |
 | `router.push(route, from: pane)` | Aus einer Detailseite heraus öffnen `.entry`, `.cover`, `.chat`, `.study` als verknüpfte Seite (`router.linked`): der Hauptcontainer klappt zu, die Detailseite steht links, die Verknüpfung rechts. Aus der linken Seite ersetzt ein weiterer Link die rechte; aus der rechten rückt die rechte nach links und der Link öffnet rechts. Andere Routen schieben im jeweiligen Container (`detailPath` bzw. `linkedPath`) |
-| `router.toggleExpanded()` | Knopf neben dem Schließen-Pfeil der Detailseite (`SplitExpandButton`): Detail füllt die ganze Breite (`router.expanded`), nochmal tippen holt den Hauptcontainer zurück |
+| `router.toggleExpanded(pane)` | Knopf oben rechts in der Detailseite (`SplitExpandButton`): Detail füllt die ganze Breite (`router.expanded`), nochmal tippen holt den Hauptcontainer zurück. Bei zwei Detailseiten klappt die andere zu und wird geparkt (`router.parked`); nochmal tippen stellt das Paar wieder her |
+| `router.toggleDetailSide(pane)` | Seitenleisten-Knopf oben rechts in der Detailseite (`SplitSideButton`): Hauptcontainer klappt zu, die Detailseite steht links, rechts das Kategorien-Panel (`router.detailSide`, `SplitCategories`). Nochmal tippen: Detail allein in voller Breite. Bei zwei Detailseiten bleibt die gedrückte, die andere schließt. Aus dem Panel geöffnete Sammlungen ersetzen den Stapel rechts, Einträge öffnen als verknüpfte Seite |
 | `router.closePane(pane)` | Schließen links: die verknüpfte Seite rückt nach links in die rechte Seite, der Hauptcontainer kommt zurück. Schließen rechts: die Detailseite bleibt erweitert. Ohne Verknüpfung wie `closeDetail` |
 | `router.openMedia(id, among:)` | Wie `open(.cover)`, mit Medienliste für das Blättern |
 | `router.closeDetail()` | Leert Detail und Verknüpfung, rechts erscheint wieder der Stapel mit den Kategorien |

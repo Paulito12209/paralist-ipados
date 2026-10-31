@@ -46,7 +46,10 @@ struct DetailRootClose: ViewModifier {
                         .accessibilityLabel(L.s("create_close"))
                 }
                 if SplitExpandButton.shown(router, pane) {
-                    ToolbarItem(placement: .topBarLeading) { SplitExpandButton() }
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        SplitExpandButton()
+                        SplitSideButton()
+                    }
                 }
             }
         }
@@ -55,16 +58,33 @@ struct DetailRootClose: ViewModifier {
 
 struct SplitExpandButton: View {
     @Environment(Router.self) private var router
+    @Environment(\.detailPane) private var pane
 
-    static func shown(_ router: Router, _ pane: DetailPane) -> Bool {
-        router.split && pane == .primary && router.linked == nil
-    }
+    static func shown(_ router: Router, _ pane: DetailPane) -> Bool { router.split }
 
     var body: some View {
-        Button { router.toggleExpanded() } label: {
-            Image(systemName: router.expanded ? AppIcons.paneCollapse : AppIcons.paneExpand).foregroundStyle(Palette.onSurface)
+        let open = router.isExpanded(pane)
+        Button { router.toggleExpanded(pane) } label: {
+            Image(systemName: open ? AppIcons.paneCollapse : AppIcons.paneExpand).foregroundStyle(Palette.onSurface)
         }
-        .accessibilityLabel(L.s(router.expanded ? "ipad_collapse" : "ipad_expand"))
+        .accessibilityLabel(L.s(open ? "ipad_collapse" : "ipad_expand"))
+    }
+}
+
+struct SplitSideButton: View {
+    @Environment(Router.self) private var router
+    @Environment(\.detailPane) private var pane
+
+    var body: some View {
+        let open = router.detailSide && router.linked == nil
+        Button { router.toggleDetailSide(pane) } label: {
+            Image(systemName: AppIcons.sidebarRight)
+                .foregroundStyle(Palette.onSurface)
+                .padding(SplitDimens.sideGlyphPad)
+                .background { if open { Circle().fill(Palette.padTabActive) } }
+        }
+        .accessibilityLabel(L.s("ipad_sidebar"))
+        .accessibilityAddTraits(open ? .isSelected : [])
     }
 }
 

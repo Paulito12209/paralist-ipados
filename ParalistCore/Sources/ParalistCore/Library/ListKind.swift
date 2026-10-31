@@ -39,8 +39,10 @@ public enum ListKind: String, CaseIterable, Sendable, Hashable, Identifiable {
     }
 
     public static let tiles: [ListKind] = [.projects, .areas, .resources, .archive]
-    public static let markedChoices: [ListKind] = [.pinned, .favorites]
-    public static let switchable: [ListKind] = [.inbox, .notes, .tasks, .events, .bookmarks, .files, .tags, .flashcards, .all]
+    public static let collections: [ListKind] = [.inbox, .pinned, .favorites, .resources, .archive, .all]
+    public static let lists: [ListKind] = [.notes, .tasks, .events, .bookmarks, .files, .tags, .flashcards, .projects, .areas]
+
+    public var isCollection: Bool { Self.collections.contains(self) }
 
     public static func fromKey(_ key: String?) -> ListKind? { key.flatMap(ListKind.init(rawValue:)) }
 

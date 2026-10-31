@@ -110,7 +110,7 @@ enum AppIcons {
     static let place = "tray.and.arrow.down"
     static let overviewTabs = "square.split.2x1"
     static let overviewStacked = "square.split.1x2"
-    static let overviewSwitch = "rectangle.2.swap"
+    static let overviewSwitch = "dots.and.line.vertical.and.pointer.arrow.rectangle"
     static let schedule = "clock"
     static let link = "asset:StreamlineCodeBranch"
     static let copyLink = "link"

@@ -13,7 +13,7 @@ keine Fremdmodelle, keine Schlüssel.
 - Oben ein Ordner wie bei Aufgaben mit der Zahl der angezeigten Chats. Gibt es
   angepinnte Chats, liegt der neueste rechts daneben; Wischen nach links holt
   ihn nach vorn, der Pfeil öffnet ihn.
-- Darunter die Sortierzeile mit Regler (Zuletzt geändert, Erstellt, Titel;
+- Darunter die Sortierzeile mit Regler (Sortieren nach Erstellung, Änderung, Titel;
   Reihenfolge) und, sobald es welche gibt, Filterreiter Alle, Angepinnt,
   Verknüpft. Angepinnte Chats stehen immer oben.
 - Liste: Titel, Pin-Zeichen, letzte Nachricht (ohne Markdown-Zeichen), Uhrzeit

@@ -26,6 +26,7 @@ struct SplitRootView: View {
     @State private var drag: CGFloat = 0
     @State private var mainShare = SplitDimens.mainShare
     @State private var pairShare = SplitDimens.pairShare
+    @State private var detailShare = SplitDimens.mainShare
     @State private var dragFrom: CGFloat?
 
     var body: some View {
@@ -72,10 +73,21 @@ struct SplitRootView: View {
                     .transition(.move(edge: .trailing).combined(with: .opacity))
             }
         } else if router.expanded, router.detail != nil, !router.menuOpen {
-            SplitSide()
+            if router.detailSide {
+                let lead = width(total, detailShare, SplitDimens.minSide)
+                HStack(spacing: 0) {
+                    DetailHost(inline: true).id(router.detailEpoch).splitPane()
+                        .frame(width: lead)
+                    handle(total, lead) { detailShare = $0 }
+                    SplitCategories().splitPane()
+                        .transition(.move(edge: .trailing).combined(with: .opacity))
+                }
+            } else {
+                SplitSide()
+            }
         } else {
             let sideShown = router.sideOpen && !router.menuOpen
-            let lead = width(total, mainShare, SplitDimens.minMain)
+            let lead = width(total, mainShare, CGFloat(SplitLayout.mainMinimum(total: Double(total), minSide: Double(SplitDimens.minSide))))
             HStack(spacing: 0) {
                 SplitMain()
                     .frame(width: sideShown ? lead : nil)
@@ -113,6 +125,7 @@ struct SplitMain: View {
             TabStacks()
         }
         .overlay(alignment: .bottom) { tools }
+        .searchInPane(.main)
         .splitPane()
     }
 
@@ -141,17 +154,26 @@ struct SplitSide: View {
     @Environment(Router.self) private var router
 
     var body: some View {
-        @Bindable var router = router
         Group {
             if router.detail != nil {
                 DetailHost(inline: true).id(router.detailEpoch)
             } else {
-                NavigationStack(path: $router.sidePath) {
-                    CategoryPanel().routeDestinations()
-                }
+                SplitCategories()
             }
         }
         .splitPane()
+    }
+}
+
+struct SplitCategories: View {
+    @Environment(Router.self) private var router
+
+    var body: some View {
+        @Bindable var router = router
+        NavigationStack(path: $router.sidePath) {
+            CategoryPanel().routeDestinations()
+        }
+        .searchInPane(.side)
     }
 }
 
@@ -166,4 +188,23 @@ struct SplitPane: ViewModifier {
 
 extension View {
     func splitPane() -> some View { modifier(SplitPane()) }
+}
+
+struct SearchInPane: ViewModifier {
+    let pane: SearchPane
+    @Environment(Router.self) private var router
+
+    func body(content: Content) -> some View {
+        content
+            .overlay {
+                if router.searchShows(in: pane) {
+                    SearchView().transition(.opacity)
+                }
+            }
+            .animation(.easeOut(duration: 0.2), value: router.searchShows(in: pane))
+    }
+}
+
+extension View {
+    func searchInPane(_ pane: SearchPane) -> some View { modifier(SearchInPane(pane: pane)) }
 }

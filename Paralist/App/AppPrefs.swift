@@ -38,7 +38,7 @@ final class AppPrefs {
     var markedList: ListKind { didSet { defaults.set(markedList.key, forKey: "marked_list") } }
     var overviewList: ListKind { didSet { defaults.set(overviewList.key, forKey: "overview_list") } }
     var overviewLayout: OverviewLayout { didSet { defaults.set(overviewLayout.encoded, forKey: "overview_tabs") } }
-    var overviewHintSeen: Bool { didSet { defaults.set(overviewHintSeen, forKey: "overview_edge_hint_seen") } }
+    var overviewHintSeen: Bool { didSet { defaults.set(overviewHintSeen, forKey: "overview_tabs_hint_seen") } }
     var emptyInfoHidden: Bool { didSet { defaults.set(emptyInfoHidden, forKey: "empty_info_hidden") } }
     var newCardsPerDay: Int { didSet { defaults.set(newCardsPerDay, forKey: "new_cards_per_day") } }
     var briefingSchedule: BriefingSchedule { didSet { defaults.set(briefingSchedule.rawValue, forKey: "briefing_schedule") } }
@@ -79,9 +79,9 @@ final class AppPrefs {
         let lists = ListKind.fromKey(defaults.string(forKey: "overview_list")) ?? .inbox
         markedList = marked
         overviewList = lists
-        let legacy = OverviewLayout.legacyStyle(defaults.string(forKey: "overview_layout")) ?? .stacked
+        let legacy = OverviewLayout.legacyStyle(defaults.string(forKey: "overview_layout")) ?? .tabs
         overviewLayout = OverviewLayout.decode(defaults.string(forKey: "overview_tabs"), fallback: .standard(marked: marked, lists: lists, style: legacy))
-        overviewHintSeen = defaults.bool(forKey: "overview_edge_hint_seen")
+        overviewHintSeen = defaults.bool(forKey: "overview_tabs_hint_seen")
         emptyInfoHidden = defaults.bool(forKey: "empty_info_hidden")
         newCardsPerDay = defaults.object(forKey: "new_cards_per_day") == nil ? StudyQueue.defaultNewPerDay : min(max(defaults.integer(forKey: "new_cards_per_day"), 0), 200)
         let schedule = BriefingSchedule(rawValue: defaults.string(forKey: "briefing_schedule") ?? "") ?? .sunday
@@ -121,6 +121,25 @@ final class AppPrefs {
                                       ascending: direction.map { $0 == "auf" },
                                       grouping: Grouping.fromKey(defaults.string(forKey: "view_group_\(kind.key)")),
                                       hidden: hidden.map(ViewSetting.hidden(fromKey:)) ?? ViewSetting.standard(for: kind).hidden)
+        }
+        resetOnce()
+    }
+
+    private func resetOnce() {
+        guard !defaults.bool(forKey: "defaults_reset_2026_10") else { return }
+        defaults.set(true, forKey: "defaults_reset_2026_10")
+        overviewLayout = .standard()
+        for kind in ListKind.allCases {
+            var setting = view(kind)
+            setting.sort = .created
+            setting.ascending = false
+            setView(kind, setting)
+        }
+        for (id, setting) in entryViews {
+            var changed = setting
+            changed.sort = .created
+            changed.ascending = false
+            setEntryView(id, changed)
         }
     }
 

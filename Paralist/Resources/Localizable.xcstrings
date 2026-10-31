@@ -22405,6 +22405,59 @@
         }
       }
     },
+    "ipad_categories_search": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بحث"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "খুঁজুন"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suchen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Search"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "खोजें"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "搜索"
+          }
+        }
+      }
+    },
     "ipad_collapse": {
       "extractionState": "manual",
       "localizations": {
@@ -22613,6 +22666,112 @@
           "stringUnit": {
             "state": "translated",
             "value": "边栏"
+          }
+        }
+      }
+    },
+    "ipad_to_cover": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض الغلاف"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "কভার ভিউ"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zur Coveransicht"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cover view"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista de portada"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vue couverture"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कवर दृश्य"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "封面视图"
+          }
+        }
+      }
+    },
+    "ipad_to_detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض التفاصيل"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "বিস্তারিত ভিউ"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zur Detailansicht"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Detail view"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vista de detalle"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vue détaillée"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "विवरण दृश्य"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "详情视图"
           }
         }
       }
@@ -25008,49 +25167,208 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "إضافة قائمة أو إدخال"
+            "value": "إضافة أو إزالة"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "তালিকা বা এন্ট্রি যোগ করুন"
+            "value": "যোগ বা সরাও"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Liste oder Eintrag hinzufügen"
+            "value": "Hinzufügen oder entfernen"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Add list or entry"
+            "value": "Add or remove"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Añadir lista o entrada"
+            "value": "Añadir o quitar"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ajouter une liste ou une entrée"
+            "value": "Ajouter ou retirer"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "सूची या प्रविष्टि जोड़ें"
+            "value": "जोड़ें या हटाएं"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "添加列表或条目"
+            "value": "添加或移除"
+          }
+        }
+      }
+    },
+    "overview_display_both": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأيقونة والاسم"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "আইকন ও নাম"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon und Name"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon and name"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icono y nombre"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icône et nom"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आइकन और नाम"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "图标和名称"
+          }
+        }
+      }
+    },
+    "overview_display_icon": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الأيقونة فقط"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "শুধু আইকন"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur Icon"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icon only"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo icono"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Icône seule"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "केवल आइकन"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仅图标"
+          }
+        }
+      }
+    },
+    "overview_display_name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الاسم فقط"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "শুধু নাম"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nur Name"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name only"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo nombre"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nom seul"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "केवल नाम"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仅名称"
           }
         }
       }
@@ -25061,49 +25379,49 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "جديد: اضبط العرض والقائمة والترتيب هنا على الحافة."
+            "value": "نصيحة: من هذه الحافة تضع القوائم والمجموعات جنبًا إلى جنب كعلامات تبويب وتبدّل بينها."
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "নতুন: ভিউ, তালিকা ও বিন্যাস এখন এখানে প্রান্তে সেট করুন।"
+            "value": "টিপ: এই কিনারা থেকে তালিকা ও সংগ্রহ পাশাপাশি ট্যাব হিসেবে রাখো ও বদলাও।"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Neu: Ansicht, Liste und Anordnung stellst du jetzt hier am Rand ein."
+            "value": "Tipp: Über diesen Rand legst du Listen und Sammlungen als Reiter nebeneinander an und wechselst sie."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "New: set view, list and layout here at the edge."
+            "value": "Tip: use this edge to place lists and collections side by side as tabs and switch them."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Novedad: ajusta la vista, la lista y la disposición aquí en el borde."
+            "value": "Consejo: desde este borde colocas listas y colecciones como pestañas una al lado de otra y las cambias."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nouveau : réglez l’affichage, la liste et la disposition ici, sur le bord."
+            "value": "Astuce : depuis ce bord, placez listes et collections côte à côte en onglets et changez-les."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "नया: दृश्य, सूची और व्यवस्था अब यहीं किनारे पर सेट करें।"
+            "value": "सुझाव: इस किनारे से सूचियों और संग्रहों को टैब के रूप में साथ-साथ रखें और बदलें।"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "新功能：现在可在此边缘设置视图、列表和布局。"
+            "value": "提示：通过此边缘可将列表和合集并排设为标签并切换。"
           }
         }
       }
@@ -25320,6 +25638,271 @@
         }
       }
     },
+    "overview_kind_collection": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مجموعة"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "সংগ্রহ"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sammlung"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collection"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colección"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collection"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संग्रह"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "合集"
+          }
+        }
+      }
+    },
+    "overview_kind_entry": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إدخال"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "এন্ট্রি"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eintrag"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entry"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entrada"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entrée"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "प्रविष्टि"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "条目"
+          }
+        }
+      }
+    },
+    "overview_kind_list": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قائمة"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "তালিকা"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "List"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lista"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Liste"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सूची"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "列表"
+          }
+        }
+      }
+    },
+    "overview_limit_all": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الكل"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "সব"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Todas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toutes"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सभी"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "全部"
+          }
+        }
+      }
+    },
+    "overview_limit_custom": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مخصص"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "নিজের মতো"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Individuell"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Custom"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personalizado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Personnalisé"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपनी पसंद"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自定义"
+          }
+        }
+      }
+    },
     "overview_no_entries": {
       "extractionState": "manual",
       "localizations": {
@@ -25369,6 +25952,59 @@
           "stringUnit": {
             "state": "translated",
             "value": "没有条目"
+          }
+        }
+      }
+    },
+    "overview_pick_collections": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المجموعات"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "সংগ্রহ"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sammlungen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collections"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Colecciones"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collections"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संग्रह"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "合集"
           }
         }
       }
@@ -25479,6 +26115,112 @@
         }
       }
     },
+    "overview_section_limit": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إدخالات لكل قسم"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "প্রতি অংশে এন্ট্রি"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einträge je Abschnitt"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entries per section"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entradas por sección"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entrées par section"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर खंड में प्रविष्टियां"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每个分组的条目"
+          }
+        }
+      }
+    },
+    "overview_section_limit_hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ينطبق على العرض المجمّع في النظرة العامة. مع «مخصص» يعرض كل قسم هذا العدد كحد أقصى، والباقي عبر «عرض الكل»."
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ওভারভিউয়ের গ্রুপ ভিউতে প্রযোজ্য। „নিজের মতো“ বাছলে প্রতিটি অংশে সর্বোচ্চ এতগুলো এন্ট্রি দেখায়, বাকিগুলো „সব দেখাও“ দিয়ে।"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gilt für die Gruppenansicht der Übersicht. Bei „Individuell“ zeigt jeder Abschnitt höchstens so viele Einträge, den Rest siehst du über „Alle anzeigen“."
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Applies to the grouped overview. With “Custom” each section shows at most this many entries; see the rest via “Show all”."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se aplica a la vista agrupada del resumen. Con «Personalizado» cada sección muestra como máximo esas entradas; el resto, con «Mostrar las»."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "S’applique à la vue groupée de l’aperçu. Avec « Personnalisé », chaque section affiche au plus ce nombre d’entrées ; le reste via « Afficher les »."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अवलोकन के समूह दृश्य पर लागू। „अपनी पसंद“ में हर खंड अधिकतम इतनी प्रविष्टियां दिखाता है, बाकी „सभी दिखाएं“ से।"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "适用于概览的分组视图。选择“自定义”后，每个分组最多显示该数量的条目，其余通过“显示全部”查看。"
+          }
+        }
+      }
+    },
     "overview_show": {
       "extractionState": "manual",
       "localizations": {
@@ -25532,55 +26274,108 @@
         }
       }
     },
+    "overview_show_all": {
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عرض الكل (%lld)"
+          }
+        },
+        "bn": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "সব %lld দেখাও"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alle %lld anzeigen"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show all %lld"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar las %lld"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher les %lld"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सभी %lld दिखाएं"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示全部 %lld 条"
+          }
+        }
+      }
+    },
     "overview_sources_hint": {
       "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "اضغط لعرض القائمة في علامة التبويب. اضغط مطولًا واسحب للترتيب، واسحب لليسار للإزالة."
+            "value": "اضغط لعرضها في علامة التبويب، واضغط مطولًا واسحب للترتيب. اسحب أفقيًا للتبديل بين القوائم والمجموعات."
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ট্যাবে তালিকা দেখাতে ট্যাপ করুন। সাজাতে চেপে ধরে টানুন, সরাতে বাঁয়ে সোয়াইপ করুন।"
+            "value": "ট্যাপ করলে ট্যাবে দেখাবে, ধরে টেনে ক্রম বদলাও। সোয়াইপে তালিকা ও সংগ্রহের মধ্যে যাও।"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tippen zeigt die Liste im Tab. Halten und ziehen ordnet, nach links wischen entfernt."
+            "value": "Tippen zeigt sie im Reiter, halten und ziehen ordnet. Wischen wechselt zwischen Listen und Sammlungen."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tap to show the list in the tab. Hold and drag to reorder, swipe left to remove."
+            "value": "Tap to show it in the tab, hold and drag to reorder. Swipe to switch between lists and collections."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Toca para mostrar la lista en la pestaña. Mantén y arrastra para ordenar, desliza a la izquierda para quitar."
+            "value": "Toca para mostrarla en la pestaña, mantén y arrastra para ordenar. Desliza para cambiar entre listas y colecciones."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Touchez pour afficher la liste dans l’onglet. Maintenez et faites glisser pour ordonner, balayez vers la gauche pour retirer."
+            "value": "Touchez pour l’afficher dans l’onglet, maintenez et faites glisser pour ordonner. Balayez pour passer des listes aux collections."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "टैब में सूची दिखाने के लिए टैप करें। क्रम बदलने के लिए दबाकर खींचें, हटाने के लिए बाईं ओर स्वाइप करें।"
+            "value": "टैप करके टैब में दिखाएं, पकड़कर खींचें तो क्रम बदले। स्वाइप करके सूचियों और संग्रहों के बीच जाएं।"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "轻点即可在标签页中显示该列表。按住拖动可排序，向左轻扫可移除。"
+            "value": "轻点即可在标签中显示，按住拖动可排序。滑动可在列表和合集之间切换。"
           }
         }
       }
@@ -25697,102 +26492,102 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "تبديل القائمة"
+            "value": "تبديل"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "তালিকা বদলান"
+            "value": "বদলান"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Liste wechseln"
+            "value": "Wechseln"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Switch list"
+            "value": "Switch"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cambiar lista"
+            "value": "Cambiar"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Changer de liste"
+            "value": "Changer"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "सूची बदलें"
+            "value": "बदलें"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "切换列表"
+            "value": "切换"
           }
         }
       }
     },
-    "overview_tab_custom": {
+    "overview_tab_display": {
       "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "علامة تبويب خاصة باسم"
+            "value": "عرض علامات التبويب"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "নাম সহ নিজের ট্যাব"
+            "value": "ট্যাবে দেখাও"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Eigener Tab mit Namen"
+            "value": "Reiter zeigen"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Own tab with a name"
+            "value": "Show tabs as"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pestaña propia con nombre"
+            "value": "Mostrar pestañas"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onglet personnel avec un nom"
+            "value": "Afficher les onglets"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "नाम वाला अपना टैब"
+            "value": "टैब में दिखाएं"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "自定义名称的标签页"
+            "value": "标签显示"
           }
         }
       }
@@ -25856,102 +26651,49 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "علامة تبويب من قائمة أو إدخال"
+            "value": "علامة تبويب من قائمة أو مجموعة أو إدخال"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "তালিকা বা এন্ট্রি থেকে ট্যাব"
+            "value": "তালিকা, সংগ্রহ বা এন্ট্রি থেকে ট্যাব"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tab aus Liste oder Eintrag"
+            "value": "Reiter aus Liste, Sammlung oder Eintrag"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tab from list or entry"
+            "value": "Tab from list, collection or entry"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pestaña de lista o entrada"
+            "value": "Pestaña de lista, colección o entrada"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Onglet depuis une liste ou une entrée"
+            "value": "Onglet depuis une liste, une collection ou une entrée"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "सूची या प्रविष्टि से टैब"
+            "value": "सूची, संग्रह या प्रविष्टि से टैब"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "从列表或条目新建标签页"
-          }
-        }
-      }
-    },
-    "overview_tab_list": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "القائمة"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "তালিকা"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Liste"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "List"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Lista"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Liste"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "सूची"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "列表"
+            "value": "从列表、合集或条目新建标签"
           }
         }
       }
@@ -26005,59 +26747,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "名称"
-          }
-        }
-      }
-    },
-    "overview_tab_new": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "علامة تبويب جديدة"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "নতুন ট্যাব"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Neuer Tab"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New tab"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nueva pestaña"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nouvel onglet"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "नया टैब"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "新建标签页"
           }
         }
       }
@@ -26174,49 +26863,49 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "اسحب لتغيير الترتيب، والعين تخفي علامة التبويب، والقلم يعيد تسميتها. تبقى علامة واحدة على الأقل ظاهرة. يمكن إخفاء «المميّزة» و«القوائم» فقط، أما علاماتك فيمكن حذفها أيضًا."
+            "value": "اسحب لتغيير الترتيب، والعين تُخفي علامة التبويب. تبقى علامة تبويب واحدة على الأقل ظاهرة. يمكن حذف علاماتك، وإعادة تسمية المأخوذة من إدخال بالقلم."
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "ক্রম বদলাতে টানুন, চোখ ট্যাব লুকায়, পেন্সিল নাম বদলায়। অন্তত একটি ট্যাব দেখা যায়। চিহ্নিত ও তালিকা শুধু লুকানো যায়, নিজের ট্যাব মুছেও ফেলা যায়।"
+            "value": "টেনে ক্রম বদলাও, চোখ ট্যাব লুকায়। অন্তত একটি ট্যাব দেখা যায়। নিজের ট্যাব মোছা যায়, এন্ট্রি থেকে বানানো ট্যাব পেনসিলে নাম বদলানো যায়।"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ziehen ändert die Reihenfolge, das Auge blendet einen Tab aus, der Stift benennt ihn um. Mindestens ein Tab bleibt sichtbar. Markiert und Listen lassen sich nur ausblenden, eigene Tabs auch löschen."
+            "value": "Ziehen ändert die Reihenfolge, das Auge blendet einen Reiter aus. Mindestens ein Reiter bleibt sichtbar. Eigene Reiter lassen sich löschen, Reiter aus einem Eintrag mit dem Stift umbenennen."
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Drag to reorder, the eye hides a tab, the pencil renames it. At least one tab stays visible. Marked and Lists can only be hidden, your own tabs can also be deleted."
+            "value": "Drag to reorder, the eye hides a tab. At least one tab stays visible. Your own tabs can be deleted, tabs made from an entry renamed with the pencil."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Arrastra para ordenar; el ojo oculta una pestaña y el lápiz la renombra. Siempre queda al menos una visible. Marcado y Listas solo se pueden ocultar; las pestañas propias también se pueden eliminar."
+            "value": "Arrastra para ordenar, el ojo oculta una pestaña. Al menos una pestaña queda visible. Tus pestañas se pueden borrar y las creadas desde una entrada, renombrar con el lápiz."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Faites glisser pour ordonner ; l’œil masque un onglet, le crayon le renomme. Au moins un onglet reste visible. Marqué et Listes peuvent seulement être masqués, vos onglets peuvent aussi être supprimés."
+            "value": "Faites glisser pour ordonner, l’œil masque un onglet. Au moins un onglet reste visible. Vos onglets peuvent être supprimés, ceux créés depuis une entrée renommés avec le crayon."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "क्रम बदलने के लिए खींचें, आंख टैब छिपाती है, पेंसिल नाम बदलती है। कम से कम एक टैब दिखता रहता है। चिह्नित और सूचियां केवल छिपाई जा सकती हैं, अपने टैब हटाए भी जा सकते हैं।"
+            "value": "खींचकर क्रम बदलें, आंख टैब छिपाती है। कम से कम एक टैब दिखता रहता है। अपने टैब हटाए जा सकते हैं, प्रविष्टि से बने टैब पेंसिल से नए नाम पा सकते हैं।"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "拖动可排序，眼睛图标隐藏标签页，铅笔图标重命名。至少保留一个可见。“已标记”和“列表”只能隐藏，自建标签页也可删除。"
+            "value": "拖动可调整顺序，眼睛图标可隐藏标签。至少保留一个可见标签。自建标签可删除，由条目创建的标签可用铅笔重命名。"
           }
         }
       }
@@ -41627,7 +42316,7 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "تاريخ الإنشاء"
+            "value": "الإنشاء"
           }
         },
         "bn": {
@@ -41639,37 +42328,37 @@
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Erstellt"
+            "value": "Erstellung"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Created"
+            "value": "Creation"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Creado"
+            "value": "Creación"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Créé"
+            "value": "Création"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "बनाया गया"
+            "value": "निर्माण"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "创建时间"
+            "value": "创建"
           }
         }
       }
@@ -41733,49 +42422,49 @@
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "آخر تعديل"
+            "value": "التعديل"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "সর্বশেষ পরিবর্তিত"
+            "value": "পরিবর্তন"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Zuletzt geändert"
+            "value": "Änderung"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Last updated"
+            "value": "Change"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Última modificación"
+            "value": "Cambio"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Dernière modification"
+            "value": "Modification"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "हाल में बदला"
+            "value": "बदलाव"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "最近修改"
+            "value": "修改"
           }
         }
       }

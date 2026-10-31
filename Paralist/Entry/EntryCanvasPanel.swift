@@ -1,4 +1,4 @@
-// Zusammenhang: Entry/EntryPage.swift, Entry/EntryCover.swift (CoverTitleVeil, CanvasSheet), Entry/EntryActions.swift, Entry/EntryBodyEditor.swift, Entry/EntryParts.swift, Entry/EntryPickers.swift, Entry/EntryReminderCard.swift, Entry/EntryTitle.swift, Entry/EntryMetaRow.swift, Entry/EntryInfoSheet.swift, Entry/EntryBlocks.swift, Entry/CanvasCard.swift, Entry/EntryHero.swift (AttachmentCard), Theme/Dimens.swift (mediaRatio), ParalistCore Library/CoverTransition.swift, Library/EdgePicker.swift (shownOnDetail)
+// Zusammenhang: Entry/EntryPage.swift, Entry/EntryCover.swift (CoverTitleVeil, CanvasSheet), Entry/EntryActions.swift, Entry/EntryBodyEditor.swift, Entry/EntryParts.swift, Entry/EntryPickers.swift, Entry/EntryReminderCard.swift, Entry/EntryTitle.swift, Entry/EntryMetaRow.swift, Entry/EntryActionBar.swift, Entry/EntryInfoSheet.swift, Entry/EntryBlocks.swift, Entry/CanvasCard.swift, Entry/EntryHero.swift (AttachmentCard), Theme/Dimens.swift (mediaRatio), ParalistCore Library/CoverTransition.swift, Library/EdgePicker.swift (shownOnDetail)
 import ParalistCore
 import SwiftUI
 
@@ -16,7 +16,11 @@ struct EntryCanvasPanel: View {
     @Binding var scrollEnd: CGFloat
     let onOpenCanvas: (EntryCanvas) -> Void
     let onCreateLinked: () -> Void
+    let onCover: () -> Void
+    let onDelete: () -> Void
+    @Binding var actionFrame: CGRect
     @Environment(AppModel.self) private var model
+    @Environment(Router.self) private var router
     @State private var scrolled = false
     @State private var textShown = false
     @State private var scrollHeight: CGFloat = 0
@@ -32,7 +36,11 @@ struct EntryCanvasPanel: View {
                         EntryTitleLine(entry: entry, onTap: { sheet = .title })
                             .padding(.horizontal, Dimens.entryInset).padding(.top, Dimens.entryTitleTop)
                         EntryMetaRow(entry: entry, onType: { sheet = .type }, onMore: { sheet = .info })
-                            .padding(.bottom, Dimens.entryMetaBottom)
+                            .padding(.bottom, router.split ? Dimens.entryActionMetaBottom : Dimens.entryMetaBottom)
+                        if router.split {
+                            EntryActionBar(entry: entry, onCover: onCover, onDelete: onDelete, sheet: $sheet)
+                                .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { actionFrame = $0 }
+                        }
                     }
                     .background { CoverTitleVeil().allowsHitTesting(false) }
                     VStack(alignment: .leading, spacing: 0) {

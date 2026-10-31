@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/Router.swift (topRequest), Shell/SectionChrome.swift (tabRoot), Shell/PageBar.swift, Pages/OverviewParts.swift, Pages/OverviewSections.swift, Pages/OverviewEdge.swift (Edge Picker), Pages/OverviewSwitchSheet.swift, Entries/ListAdd.swift, Entries/EntryRow.swift, Entries/InlineAdd.swift, Entries/RowSwipe.swift, Entries/SwipeRecognizers.swift, ParalistCore Library/ListKind.swift, Entry/LinkSheet.swift, Shell/AppSheets.swift (linking)
+// Zusammenhang: Shell/Router.swift (topRequest), Shell/SectionChrome.swift (tabRoot), Shell/PageBar.swift, Pages/OverviewParts.swift, Pages/OverviewSections.swift, Pages/OverviewTabLabel.swift (OverviewHeadRow, OverviewShowAllRow), Pages/OverviewEdge.swift (Edge Picker), Pages/OverviewSwitchSheet.swift, Entries/ListAdd.swift, Entries/EntryRow.swift, Entries/InlineAdd.swift, Entries/RowSwipe.swift, Entries/SwipeRecognizers.swift, ParalistCore Library/ListKind.swift, Entry/LinkSheet.swift, Shell/AppSheets.swift (linking)
 import ParalistCore
 import SwiftUI
 
@@ -11,9 +11,15 @@ struct OverviewPage: View {
     @State private var swipedAt = Date.distantPast
     @State private var swipes = RowSwipeState()
     @State private var viewport: CGFloat = 0
+    @State private var width: CGFloat = 0
+    @State private var option: OverviewEdgeOption?
     @State private var fillTop: CGFloat = 0
     @Environment(\.tabRoot) private var tabRoot
     @State private var position = ScrollPosition()
+
+    private var inline: Bool {
+        router.split && OverviewInline.showsOptions(container: Double(width), window: Double(SplitMetrics.sceneWidth))
+    }
 
     var body: some View {
         let stacked = model.prefs.overviewLayout.style == .stacked
@@ -27,7 +33,7 @@ struct OverviewPage: View {
                     TileGrid()
                     Spacer().frame(height: stacked ? 0 : OverviewDimens.tilesToList)
                     if stacked {
-                        ForEach(tabs) { item in stackedSection(item, fills: tabs.count == 1) }
+                        ForEach(tabs) { item in stackedSection(item, fills: tabs.count == 1, first: item.id == tabs.first?.id) }
                         if tabs.count > 1 { Color.clear.frame(height: OverviewDimens.stackedTail) }
                     } else {
                         let feed = model.overviewFeed(current)
@@ -51,6 +57,9 @@ struct OverviewPage: View {
             withAnimation(Motion.dock) { position.scrollTo(edge: .top) }
         }
         .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { viewport = $0 }
+        .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
+        .environment(\.overviewOptionAction, inline ? { option = $0 } : nil)
+        .modifier(OverviewOptionSheet(option: $option, focus: stacked ? tabs[0] : current, tabs: stacked ? tabs.map(\.id) : [current.id]))
         .scrollDismissesKeyboard(.interactively)
         .rowSwipeFeedback(swipes)
         .rowSwipeGesture(swipes)
@@ -68,8 +77,10 @@ struct OverviewPage: View {
             }
         )
         .overlay(alignment: .bottomTrailing) {
-            OverviewEdge(focus: stacked ? focusInStack(tabs) : current, tabs: stacked ? tabs.map(\.id) : [current.id])
-                .padding(.bottom, tabRoot ? router.tabBarReserve + Dimens.edgePickerLift : Dimens.edgePickerLift)
+            if !inline {
+                OverviewEdge(sheet: $option)
+                    .padding(.bottom, tabRoot ? router.tabBarReserve + Dimens.edgePickerLift : Dimens.edgePickerLift)
+            }
         }
         .pageBar(!tabRoot, search: nil, prompt: L.s("search_hint"), addLabel: L.s("nav_create")) { router.openCreate() }
         .background(Palette.background)
@@ -78,44 +89,30 @@ struct OverviewPage: View {
         .toolbar(removing: .title)
     }
 
-    private func collapseKey(_ item: OverviewTab) -> String { "overview/" + item.id }
-
-    private func focusInStack(_ tabs: [OverviewTab]) -> OverviewTab {
-        tabs.first { !model.prefs.isCollapsed(key: collapseKey($0)) } ?? tabs[0]
-    }
-
     @ViewBuilder
-    private func stackedSection(_ item: OverviewTab, fills: Bool) -> some View {
-        let key = collapseKey(item)
-        let collapsed = model.prefs.isCollapsed(key: key)
+    private func stackedSection(_ item: OverviewTab, fills: Bool, first: Bool) -> some View {
         let feed = model.overviewFeed(item)
-        PinnedSection(tail: collapsed ? 0 : OverviewDimens.headTail) {
+        PinnedSection {
             VStack(spacing: 0) {
-                let toggle = { withAnimation(Motion.short) { model.prefs.toggleCollapsed(key: key) } }
-                if collapsed {
-                    OverviewSectionToggle(title: model.tabTitle(item), count: feed.rows.count, icon: feed.source.map(model.sourceIcon), collapsed: true, toggle: toggle)
-                } else if feed.source == nil {
-                    OverviewSectionToggle(title: model.tabTitle(item), count: feed.rows.count, icon: nil, collapsed: false, toggle: toggle)
-                } else {
-                    OverviewHeadRow(feed: feed, title: model.tabTitle(item), onTitle: toggle)
-                    OverviewSortRow(feed: feed, onAdd: addAction(feed))
-                }
+                OverviewHeadRow(feed: feed, top: first ? OverviewDimens.listTop : OverviewDimens.groupTop)
+                OverviewSortRow(feed: feed, onAdd: addAction(feed))
             }
         } content: {
-            if !collapsed {
-                rows(feed)
-                if fills {
-                    restZone(feed)
-                } else {
-                    FillZone(empty: feed.rows.isEmpty, feed: feed, height: OverviewDimens.groupFill, action: addAction(feed))
-                }
+            rows(feed, limit: model.prefs.overviewLayout.sectionLimit)
+            if fills {
+                restZone(feed)
+            } else if feed.rows.isEmpty {
+                FillZone(empty: true, feed: feed, height: OverviewDimens.groupFill, action: addAction(feed))
+            } else {
+                Color.clear.frame(height: OverviewDimens.groupGap)
             }
         }
     }
 
     @ViewBuilder
-    private func rows(_ feed: OverviewFeed) -> some View {
-        ForEach(feed.groups.enumerated().map { (feed.tab.id + "#\($0.offset)", $0.element) }, id: \.0) { item in
+    private func rows(_ feed: OverviewFeed, limit: Int? = nil) -> some View {
+        let cut = limit.map { OverviewSectionLimit.cut(groups: feed.groups, limit: $0) } ?? (feed.groups, 0)
+        ForEach(cut.0.enumerated().map { (feed.tab.id + "#\($0.offset)", $0.element) }, id: \.0) { item in
             let group = item.1
             if let type = group.0 {
                 GroupLabel(kind: feed.kind ?? .all, type: type, count: group.1.count, scope: feed.groupScope)
@@ -130,6 +127,9 @@ struct OverviewPage: View {
                 .contextMenu { EntryQuickMenu(entry: entry) }
                 .armedSwipe(entry.id, swipes)
             }
+        }
+        if cut.1 > 0 {
+            PanelCard { OverviewShowAllRow(count: feed.rows.count) { showAll(feed) } }
         }
         if addAction(feed) != nil {
             PanelCard {
@@ -156,6 +156,11 @@ struct OverviewPage: View {
 
     private var tapAllowed: Bool {
         !swiping && !swipes.recent && Date.now.timeIntervalSince(swipedAt) > 0.4
+    }
+
+    private func showAll(_ feed: OverviewFeed) {
+        guard tapAllowed else { return }
+        if let kind = feed.kind { router.open(.list(kind)) } else if let root = feed.root { router.open(.entry(root.id)) }
     }
 
     private func addAction(_ feed: OverviewFeed) -> (() -> Void)? {

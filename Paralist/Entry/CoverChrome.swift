@@ -9,11 +9,19 @@ struct CoverChrome: View {
     let trailing: CGFloat
     let onPlay: () -> Void
     let onToggleDone: () -> Void
+    let onDetail: () -> Void
     @Binding var frame: CGRect
     @Environment(\.colorScheme) private var scheme
+    @Environment(Router.self) private var router
 
     var body: some View {
-        titleLine
+        VStack(alignment: .leading, spacing: Dimens.entryActionCoverGap) {
+            if router.split {
+                EntryViewPill(key: "ipad_to_detail", action: onDetail)
+            }
+            titleLine
+        }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, Dimens.coverRowInset)
             .padding(.trailing, Dimens.coverRowInset + trailing)
             .padding(.vertical, Dimens.coverRowInset)

@@ -42,6 +42,7 @@ struct CategoryPanel: View {
                     .foregroundStyle(Palette.onSurface)
                     .padding(.bottom, CategoryDimens.titleBottom)
                     .accessibilityAddTraits(.isHeader)
+                searchField
                 LazyVGrid(
                     columns: Array(repeating: GridItem(.flexible(), spacing: CategoryDimens.spacing), count: 2),
                     spacing: CategoryDimens.spacing
@@ -55,6 +56,23 @@ struct CategoryPanel: View {
             .padding(CategoryDimens.padding)
         }
         .background(Palette.background)
+    }
+
+    private var searchField: some View {
+        Button { router.openSearch(in: .side) } label: {
+            HStack(spacing: 8) {
+                Image(systemName: AppIcons.search).font(.system(size: 15, weight: .medium))
+                Text(L.s("ipad_categories_search")).font(Typo.bodyLarge).lineLimit(1)
+                Spacer(minLength: 0)
+            }
+            .foregroundStyle(Palette.onSurfaceVariant)
+            .padding(.horizontal, SearchPaneDimens.fieldInset)
+            .frame(maxWidth: .infinity, minHeight: SearchPaneDimens.fieldHeight)
+            .contentShape(Capsule())
+        }
+        .buttonStyle(.plain)
+        .glassEffect(.regular.interactive(), in: Capsule())
+        .accessibilityLabel(L.s("ipad_categories_search"))
     }
 
     private func tile(_ item: CategoryTile) -> some View {

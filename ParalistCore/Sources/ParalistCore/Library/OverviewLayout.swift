@@ -1,4 +1,4 @@
-// Zusammenhang: Library/OverviewScope.swift, Library/ListKind.swift, Paralist/App/AppPrefs.swift (overviewLayout), Paralist/Pages/OverviewPage.swift, Paralist/Pages/OverviewSections.swift, Paralist/Pages/OverviewEdge.swift, Paralist/Pages/OverviewSwitchSheet.swift, Paralist/Pages/OverviewTabsPage.swift, Tests OverviewLayoutTests.swift
+// Zusammenhang: Library/OverviewScope.swift, Library/OverviewOptions.swift, Library/ListKind.swift, Paralist/App/AppPrefs.swift (overviewLayout), Paralist/Pages/OverviewPage.swift, Paralist/Pages/OverviewSections.swift, Paralist/Pages/OverviewEdge.swift, Paralist/Pages/OverviewSwitchSheet.swift, Paralist/Pages/OverviewTabsPage.swift, Tests OverviewLayoutTests.swift
 import Foundation
 
 public enum OverviewStyle: String, CaseIterable, Sendable {
@@ -15,7 +15,7 @@ public enum OverviewSource: Hashable, Sendable, Identifiable {
     static let listPrefix = "liste:"
     static let entryPrefix = "eintrag:"
 
-    public static let listChoices: [ListKind] = ListKind.switchable + ListKind.markedChoices + ListKind.tiles
+    public static let listChoices: [ListKind] = ListKind.collections + ListKind.lists
 
     public var id: String { key }
 
@@ -34,6 +34,13 @@ public enum OverviewSource: Hashable, Sendable, Identifiable {
     public var entryId: String? {
         if case .entry(let id) = self { return id }
         return nil
+    }
+
+    public var category: OverviewSourceCategory {
+        switch self {
+        case .list(let kind): return kind.isCollection ? .collection : .list
+        case .entry: return .entry
+        }
     }
 
     public static func fromKey(_ key: String) -> OverviewSource? {
@@ -69,6 +76,10 @@ public struct OverviewTab: Hashable, Sendable, Identifiable {
 
     public var namedBySource: Bool { !isBuiltIn && name.isEmpty }
 
+    public var canRename: Bool { !isBuiltIn && active?.category == .entry }
+
+    public var customName: String? { canRename && !name.isEmpty ? name : nil }
+
     public func shown(existing: (String) -> Bool) -> [OverviewSource] {
         sources.filter { source in source.entryId.map(existing) ?? true }
     }
@@ -85,23 +96,29 @@ public struct OverviewLayout: Equatable, Sendable {
     public static let maxSources = 30
     public static let maxName = 40
 
-    public static func standard(marked: ListKind = .pinned, lists: ListKind = .inbox, style: OverviewStyle = .stacked) -> OverviewLayout {
+    public static func standard(marked: ListKind = .pinned, lists: ListKind = .inbox, style: OverviewStyle = .tabs) -> OverviewLayout {
         OverviewLayout(style: style, tabs: builtInTabs(marked: marked, lists: lists))
     }
 
+    static var catalog: [OverviewSource] { OverviewSource.listChoices.map(OverviewSource.list) }
+
     static func builtInTabs(marked: ListKind = .pinned, lists: ListKind = .inbox) -> [OverviewTab] {
         [
-            OverviewTab(id: OverviewTab.markedId, sources: ListKind.markedChoices.map(OverviewSource.list), active: .list(marked), hidden: true),
-            OverviewTab(id: OverviewTab.listsId, sources: ListKind.switchable.map(OverviewSource.list), active: .list(lists)),
+            OverviewTab(id: OverviewTab.listsId, sources: catalog, active: .list(lists)),
+            OverviewTab(id: OverviewTab.markedId, sources: catalog, active: .list(marked), hidden: true),
         ]
     }
 
     public var style: OverviewStyle
     public private(set) var tabs: [OverviewTab]
+    public var tabDisplay: OverviewTabDisplay
+    public var sectionLimit: Int? { didSet { sectionLimit = sectionLimit.map(OverviewSectionLimit.clamp) } }
 
-    public init(style: OverviewStyle, tabs: [OverviewTab]) {
+    public init(style: OverviewStyle, tabs: [OverviewTab], tabDisplay: OverviewTabDisplay = .both, sectionLimit: Int? = nil) {
         self.style = style
         self.tabs = tabs
+        self.tabDisplay = tabDisplay
+        self.sectionLimit = sectionLimit.map(OverviewSectionLimit.clamp)
         settle()
     }
 
@@ -137,7 +154,7 @@ public struct OverviewLayout: Equatable, Sendable {
 
     public mutating func rename(_ id: String, _ name: String) {
         let clean = Self.clean(name)
-        guard let i = index(id), !tabs[i].isBuiltIn, !clean.isEmpty else { return }
+        guard let i = index(id), tabs[i].canRename, !clean.isEmpty else { return }
         tabs[i].name = clean
     }
 
@@ -235,12 +252,17 @@ extension OverviewLayout {
 
         var stil: String
         var tabs: [Tab]
+        var v: Int?
+        var zeigen: String?
+        var je: Int?
     }
+
+    static let version = 3
 
     public var encoded: String {
         let stored = Stored(stil: style.rawValue, tabs: tabs.map {
             Stored.Tab(id: $0.id, name: $0.isBuiltIn ? nil : $0.name, quellen: $0.sources.map(\.key), aktiv: $0.active?.key, aus: $0.hidden ? true : nil)
-        })
+        }, v: Self.version, zeigen: tabDisplay.rawValue, je: sectionLimit)
         let encoder = JSONEncoder()
         encoder.outputFormatting = .sortedKeys
         return (try? encoder.encode(stored)).flatMap { String(data: $0, encoding: .utf8) } ?? ""
@@ -249,12 +271,19 @@ extension OverviewLayout {
     public static func decode(_ raw: String?, fallback: OverviewLayout = .standard()) -> OverviewLayout {
         guard let raw, raw.utf8.count <= 64_000, let data = raw.data(using: .utf8),
               let stored = try? JSONDecoder().decode(Stored.self, from: data) else { return fallback }
+        let legacy = (stored.v ?? 1) < 2
         let tabs = stored.tabs.compactMap { tab -> OverviewTab? in
             guard !tab.id.isEmpty, tab.id.count <= 64 else { return nil }
-            return OverviewTab(id: tab.id, name: tab.name ?? "", sources: tab.quellen.compactMap(OverviewSource.fromKey),
+            var sources = tab.quellen.compactMap(OverviewSource.fromKey)
+            if legacy, tab.id == OverviewTab.listsId || tab.id == OverviewTab.markedId {
+                sources += catalog.filter { !sources.contains($0) }
+            }
+            return OverviewTab(id: tab.id, name: tab.name ?? "", sources: sources,
                                active: tab.aktiv.flatMap(OverviewSource.fromKey), hidden: tab.aus ?? false)
         }
-        return OverviewLayout(style: OverviewStyle(rawValue: stored.stil) ?? fallback.style, tabs: tabs)
+        return OverviewLayout(style: OverviewStyle(rawValue: stored.stil) ?? fallback.style, tabs: tabs,
+                              tabDisplay: stored.zeigen.flatMap(OverviewTabDisplay.init(rawValue:)) ?? .both,
+                              sectionLimit: (stored.v ?? 1) < version ? nil : stored.je)
     }
 
     public static func legacyStyle(_ raw: String?) -> OverviewStyle? {

@@ -25,8 +25,8 @@ struct ChatViewSheet: View {
                     .padding(.top, 18).padding(.bottom, 2)
                     .option()
                 Picker(selection: Binding(get: { setting.sort }, set: { model.prefs.chatView = ChatViewSetting(sort: $0) })) {
-                    Text(L.s("view_sort_updated")).tag(ParalistCore.SortOrder.updated)
                     Text(L.s("view_sort_created")).tag(ParalistCore.SortOrder.created)
+                    Text(L.s("view_sort_updated")).tag(ParalistCore.SortOrder.updated)
                     Text(L.s("view_sort_title")).tag(ParalistCore.SortOrder.title)
                 } label: { row(AppIcons.sortBy, L.s("view_sort_by")) }
                 .frame(minHeight: 52)

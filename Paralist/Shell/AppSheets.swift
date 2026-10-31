@@ -44,11 +44,11 @@ struct AppSheets: ViewModifier {
                 }
             }
             .overlay {
-                if router.searchOpen {
+                if router.searchCoversWindow {
                     SearchView().transition(.opacity)
                 }
             }
-            .animation(.easeOut(duration: 0.2), value: router.searchOpen)
+            .animation(.easeOut(duration: 0.2), value: router.searchCoversWindow)
     }
 }
 

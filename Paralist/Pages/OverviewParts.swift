@@ -1,4 +1,4 @@
-// Zusammenhang: Pages/OverviewPage.swift, Pages/OverviewSections.swift (OverviewFeed, OverviewHeadRow), Pages/ListPage.swift (GroupLabel), Theme/Dimens.swift (OverviewDimens)
+// Zusammenhang: Pages/OverviewPage.swift, Pages/OverviewSections.swift (OverviewFeed), Pages/OverviewTabLabel.swift (OverviewTabLabel, overviewSwitcher), Pages/ListPage.swift (GroupLabel), Theme/Dimens.swift (OverviewDimens)
 import ParalistCore
 import SwiftUI
 
@@ -58,83 +58,55 @@ struct OverviewTabs: View {
     let feed: OverviewFeed
     @Environment(AppModel.self) private var model
     @Namespace private var selection
+    @State private var switching = false
 
     var body: some View {
-        Group {
-            if tabs.count == 1, let only = tabs.first {
-                HStack(spacing: 8) {
-                    Text(model.tabTitle(only))
-                        .font(Typo.dm(15, .medium))
-                        .foregroundStyle(Palette.muted)
-                        .lineLimit(1)
-                        .accessibilityAddTraits(.isHeader)
-                    OverviewSourcePill(feed: feed)
-                }
-                .frame(maxWidth: .infinity)
-            } else if tabs.count >= OverviewDimens.tabsLeading {
-                scrolling
-            } else {
-                ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 0) { slots(fill: true) }
-                    scrolling
-                }
-            }
-        }
-        .frame(height: OverviewDimens.tabHeight)
-        .padding(.horizontal, OverviewDimens.tabsEdge)
-        .padding(.top, OverviewDimens.listTop - OverviewDimens.tilesToList)
-        .padding(.bottom, OverviewDimens.listGap)
-    }
-
-    private var scrolling: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal) {
-                HStack(spacing: 0) { slots(fill: false) }
+                HStack(spacing: OverviewDimens.tabGap) {
+                    ForEach(tabs) { item in slot(item).id(item.id) }
+                }
+                .padding(.leading, Dimens.titleEdge)
+                .padding(.trailing, OverviewDimens.tabsEdge)
             }
             .scrollIndicators(.hidden)
-            .onAppear { proxy.scrollTo(tab, anchor: .center) }
-            .onChange(of: tab) { withAnimation(Motion.short) { proxy.scrollTo(tab, anchor: .center) } }
+            .scrollBounceBehavior(.basedOnSize, axes: .horizontal)
+            .onAppear { proxy.scrollTo(tab) }
+            .onChange(of: tab) { withAnimation(Motion.short) { proxy.scrollTo(tab) } }
         }
+        .frame(height: OverviewDimens.tabHeight)
+        .padding(.top, OverviewDimens.listTop - OverviewDimens.tilesToList)
+        .padding(.bottom, OverviewDimens.listGap)
+        .overviewSwitcher($switching, tabs: [tab])
     }
 
-    private func slots(fill: Bool) -> some View {
-        ForEach(tabs) { item in
-            slot(item, fill: fill).id(item.id)
-        }
-    }
-
-    private func slot(_ item: OverviewTab, fill: Bool) -> some View {
+    private func slot(_ item: OverviewTab) -> some View {
         let active = tab == item.id
-        return HStack(spacing: 8) {
-            Button {
+        let highlight = tabs.count > 1
+        let count = active ? feed.rows.count : model.overviewFeed(item).rows.count
+        return Button {
+            if active {
+                switching = true
+            } else {
                 withAnimation(Motion.short) { tab = item.id }
-            } label: {
-                HStack(spacing: 6) {
-                    CappedWidth(limit: fill ? .infinity : OverviewDimens.tabMaxWidth) {
-                        Text(model.tabTitle(item)).font(Typo.dm(16, .medium)).lineLimit(1)
-                    }
-                    if !active { GlyphIcon(model.tabIcon(item), size: 14, weight: .medium) }
-                }
-                .foregroundStyle(active ? Palette.level : Palette.subtle)
+            }
+        } label: {
+            OverviewTabLabel(title: model.tabTitle(item), icon: model.tabIcon(item), count: count,
+                             tone: !highlight ? .plain : active ? .active : .idle)
                 .overlay(alignment: .bottom) {
-                    if active {
+                    if highlight, active {
                         Circle().fill(Palette.level)
                             .frame(width: OverviewDimens.tabDot, height: OverviewDimens.tabDot)
                             .offset(y: OverviewDimens.tabDot + OverviewDimens.tabDotGap)
                             .matchedGeometryEffect(id: "dot", in: selection)
                     }
                 }
-                .padding(.horizontal, active ? 0 : 14)
-                .frame(maxWidth: fill && !active ? .infinity : nil)
                 .frame(height: OverviewDimens.tabHeight)
                 .contentShape(Rectangle())
-            }
-            .buttonStyle(.plain)
-            .accessibilityAddTraits(active ? .isSelected : [])
-            if active { OverviewSourcePill(feed: feed) }
         }
-        .padding(.horizontal, active ? 14 : 0)
-        .frame(maxWidth: fill ? .infinity : nil)
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(active ? .isSelected : [])
+        .accessibilityHint(active ? L.s("overview_switch") : "")
     }
 }
 
@@ -172,8 +144,9 @@ struct PinnedSection<Head: View, Content: View>: View {
     @ViewBuilder let content: () -> Content
     @State private var headBottom: CGFloat = 0
     @State private var bodyTop: CGFloat = 0
+    @State private var headTop: CGFloat = 0
 
-    private var pinned: Bool { headBottom - bodyTop > 1 }
+    private var pinned: Bool { headBottom - bodyTop > 1 && headTop < OverviewDimens.pinnedReach }
 
     var body: some View {
         Section {
@@ -197,7 +170,10 @@ struct PinnedSection<Head: View, Content: View>: View {
                     }
                 }
                 .animation(Motion.short, value: pinned)
-                .onGeometryChange(for: CGFloat.self) { $0.frame(in: .scrollView).maxY } action: { headBottom = $0 }
+                .onGeometryChange(for: CGRect.self) { $0.frame(in: .scrollView) } action: {
+                    headBottom = $0.maxY
+                    headTop = $0.minY
+                }
         }
     }
 }

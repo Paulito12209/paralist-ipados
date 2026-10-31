@@ -42,7 +42,7 @@ struct TrashPage: View {
             }
         }
         .environment(\.editMode, $editMode)
-        .navigationTitle(L.s("trash_title"))
+        .paneTitle("trash_title")
         .toolbar {
             if !shown.isEmpty {
                 ToolbarItem(placement: .topBarTrailing) {

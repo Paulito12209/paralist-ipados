@@ -24,4 +24,5 @@ enum SplitDimens {
     static let fabInset: CGFloat = 16
     static let floor: CGFloat = fab + 2 * fabInset
     static let createWidth: CGFloat = 560
+    static let sideGlyphPad: CGFloat = 6
 }

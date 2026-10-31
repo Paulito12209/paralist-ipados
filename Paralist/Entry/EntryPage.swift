@@ -35,6 +35,7 @@ struct EntryPage: View {
     @State private var rowFrame: CGRect = .zero
     @State private var pickerFrame: CGRect = .zero
     @State private var hintFrame: CGRect = .zero
+    @State private var actionFrame: CGRect = .zero
     @State private var dragFrom: CoverEnd?
     @State private var dragIgnored = false
     @State private var snapTarget: CoverEnd = .detail
@@ -89,11 +90,12 @@ struct EntryPage: View {
             EntryHero(entry: entry, t: cover, topInset: topInset, chrome: chrome, scrollOffset: scrollOffset,
                       rowTrailing: pickerOn && canvas == .cover ? Dimens.edgeNotchWidth : 0, playRequest: playRequest,
                       playing: $playing, embedPlaying: $embedPlaying, rowFrame: $rowFrame, hintFrame: $hintFrame,
-                      onPlay: { playRequest += 1 }, onToggleDone: { model.setDone(entry.id, !entry.isDone) }) {
+                      onPlay: { playRequest += 1 }, onToggleDone: { model.setDone(entry.id, !entry.isDone) }, onDetail: { settle(to: .detail) }) {
                 EntryCanvasPanel(entry: entry, canvas: panel, topInset: topInset,
                                  locked: dragFrom != nil, sheet: $sheet, bodyBar: $bodyBar, pickerTucked: $pickerTucked,
                                  confirmLink: $confirmLink, preview: $preview, scrollOffset: $scrollOffset, scrollEnd: $scrollEnd,
-                                 onOpenCanvas: { canvas = $0 }, onCreateLinked: { router.openCreate(link: entry.id) })
+                                 onOpenCanvas: { canvas = $0 }, onCreateLinked: { router.openCreate(link: entry.id) },
+                                 onCover: { canvas = .cover }, onDelete: { delete(entry) }, actionFrame: $actionFrame)
                     .offset(y: CoverTransition.canvasOffset(t: cover, height: height, band: band) - (dragFrom == .detail ? max(-scrollOffset, 0) : 0))
                     .allowsHitTesting(cover <= 0)
             }
@@ -144,10 +146,7 @@ struct EntryPage: View {
             }
         }
         .toolbar {
-            EntryToolbar(entry: entry, model: model, router: router, pane: pane, sheet: $sheet, onDelete: {
-                model.moveToTrash(entry.id)
-                dismiss()
-            })
+            EntryToolbar(entry: entry, model: model, router: router, pane: pane, sheet: $sheet, onDelete: { delete(entry) })
         }
         .sheet(item: $sheet) { which in EntrySheets(which: which, entry: entry) }
     }
@@ -176,6 +175,11 @@ struct EntryPage: View {
 
     private var pickerOn: Bool {
         EdgePicker.shownOnDetail && (canvas == .cover ? pickerShown : !pickerTucked)
+    }
+
+    private func delete(_ entry: Entry) {
+        model.moveToTrash(entry.id)
+        dismiss()
     }
 
     private var settleMotion: Animation? { reduceMotion ? nil : Motion.dock }
@@ -241,7 +245,7 @@ struct EntryPage: View {
                 if EdgePicker.shownOnDetail { pickerShown.toggle() }
                 chrome = true
             }
-        } else if cover <= 0, scrollOffset <= 0, point.y < band, !hintFrame.contains(point) {
+        } else if cover <= 0, scrollOffset <= 0, point.y < band, !hintFrame.contains(point), !actionFrame.contains(point) {
             if isPhoto(entry) { canvas = .cover } else if isVideo(entry) { playRequest += 1 }
         }
     }

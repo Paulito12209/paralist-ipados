@@ -1,14 +1,13 @@
-// Zusammenhang: Pages/OverviewSwitchSheet.swift (Knopf Tabs, OverviewSourcePicker), Pages/OverviewSections.swift (tabTitle, tabIcon), App/AppPrefs.swift (overviewLayout), ParalistCore Library/OverviewLayout.swift, Theme/OverviewSectionDimens.swift
+// Zusammenhang: Pages/OverviewSwitchSheet.swift (Knopf Tabs, OverviewSourcePicker), Pages/OverviewSections.swift (tabTitle, tabIcon, tabKind), Pages/SettingsPage.swift (OverviewTabOptions), ParalistCore Library/OverviewOptions.swift, App/AppPrefs.swift (overviewLayout), ParalistCore Library/OverviewLayout.swift, Theme/OverviewSectionDimens.swift
 import ParalistCore
 import SwiftUI
 
 struct OverviewTabsPage: View {
     @Environment(AppModel.self) private var model
-    @State private var naming = false
     @State private var renaming: String?
     @State private var draft = ""
-    @State private var filling: String?
     @State private var picking: String?
+    @State private var limitOpen = false
 
     var body: some View {
         let layout = model.prefs.overviewLayout
@@ -24,30 +23,20 @@ struct OverviewTabsPage: View {
             } footer: {
                 Text(L.s("overview_tabs_hint")).font(Typo.bodyMedium).foregroundStyle(Palette.onSurfaceVariant)
             }
+            Section { OverviewTabOptions(limitOpen: $limitOpen) }
         }
         .listStyle(.insetGrouped)
         .environment(\.editMode, .constant(.active))
         .navigationTitle(L.s("overview_tabs"))
         .navigationBarTitleDisplayMode(.inline)
-        .navigationDestination(item: $filling) { OverviewSourcePicker(tabId: $0) }
         .navigationDestination(item: $picking) { OverviewSourcePicker(tabId: $0, creating: true) }
+        .navigationDestination(isPresented: $limitOpen) { OverviewLimitPage() }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                Menu {
-                    Button { picking = Self.newId() } label: { Label(L.s("overview_tab_from_source"), systemImage: AppIcons.overviewSwitch) }
-                    Button {
-                        draft = ""
-                        naming = true
-                    } label: { Label(L.s("overview_tab_custom"), systemImage: AppIcons.edit) }
-                } label: { Image(systemName: AppIcons.add) }
-                .disabled(!layout.canAddTab)
-                .accessibilityLabel(L.s("overview_tab_new"))
+                Button { picking = Self.newId() } label: { Image(systemName: AppIcons.add) }
+                    .disabled(!layout.canAddTab)
+                    .accessibilityLabel(L.s("overview_tab_from_source"))
             }
-        }
-        .alert(L.s("overview_tab_new"), isPresented: $naming) {
-            TextField(L.s("overview_tab_name"), text: $draft)
-            Button(L.s("dialog_cancel"), role: .cancel) {}
-            Button(L.s("dialog_save")) { create() }
         }
         .alert(L.s("overview_tab_rename"), isPresented: Binding(get: { renaming != nil }, set: { if !$0 { renaming = nil } })) {
             TextField(L.s("overview_tab_name"), text: $draft)
@@ -62,12 +51,12 @@ struct OverviewTabsPage: View {
         HStack(spacing: 12) {
             GlyphIcon(model.tabIcon(tab), size: 20).foregroundStyle(tab.hidden ? Palette.muted : Palette.onSurfaceVariant)
                 .frame(width: OverviewDimens.pickerIcon)
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 0) {
                 Text(model.tabTitle(tab)).font(Typo.bodyLarge).foregroundStyle(tab.hidden ? Palette.muted : Palette.onSurface).lineLimit(1)
-                if tab.hidden { Text(L.s("tabbar_hidden")).font(Typo.bodyMedium).foregroundStyle(Palette.muted) }
+                Text(model.tabKind(tab)).font(Typo.dm(12)).foregroundStyle(Palette.muted)
             }
             Spacer(minLength: 0)
-            if !tab.isBuiltIn {
+            if tab.canRename {
                 Button {
                     draft = tab.name
                     renaming = tab.id
@@ -93,10 +82,78 @@ struct OverviewTabsPage: View {
     }
 
     private static func newId() -> String { "tab-" + UUID().uuidString.prefix(8).lowercased() }
+}
 
-    private func create() {
-        let id = Self.newId()
-        guard model.prefs.overviewLayout.addTab(id: id, name: draft) else { return }
-        filling = id
+struct OverviewTabOptions: View {
+    @Binding var limitOpen: Bool
+    @Environment(AppModel.self) private var model
+
+    var body: some View {
+        let limit = model.prefs.overviewLayout.sectionLimit
+        Picker(selection: Binding(get: { model.prefs.overviewLayout.tabDisplay }, set: { model.prefs.overviewLayout.tabDisplay = $0 })) {
+            ForEach(OverviewTabDisplay.allCases, id: \.self) { Text(L.s(Self.label($0))).tag($0) }
+        } label: { Label(L.s("overview_tab_display"), systemImage: AppIcons.overviewTabs) }
+        Button { limitOpen = true } label: {
+            LabeledContent {
+                HStack(spacing: 6) {
+                    Text(limit.map { "\($0)" } ?? L.s("overview_limit_all"))
+                    Image(systemName: AppIcons.chevronRight).font(.system(size: 13, weight: .semibold)).foregroundStyle(Palette.subtle)
+                }
+                .foregroundStyle(Palette.onSurfaceVariant)
+            } label: { Label(L.s("overview_section_limit"), systemImage: AppIcons.overviewStacked).foregroundStyle(Palette.onSurface) }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.borderless)
+    }
+
+    static func label(_ display: OverviewTabDisplay) -> String {
+        switch display {
+        case .both: return "overview_display_both"
+        case .name: return "overview_display_name"
+        case .icon: return "overview_display_icon"
+        }
+    }
+}
+
+struct OverviewLimitPage: View {
+    @Environment(AppModel.self) private var model
+
+    var body: some View {
+        let limit = model.prefs.overviewLayout.sectionLimit
+        List {
+            Section {
+                choice(L.s("overview_limit_all"), chosen: limit == nil) { model.prefs.overviewLayout.sectionLimit = nil }
+                choice(L.s("overview_limit_custom"), chosen: limit != nil) {
+                    if limit == nil { model.prefs.overviewLayout.sectionLimit = OverviewSectionLimit.individual }
+                }
+            } footer: {
+                Text(L.s("overview_section_limit_hint")).font(Typo.bodyMedium).foregroundStyle(Palette.onSurfaceVariant)
+            }
+            if let limit {
+                Section {
+                    LabeledContent {
+                        Text("\(limit)").font(Typo.titleMedium).foregroundStyle(Palette.primary)
+                    } label: { Text(L.s("overview_section_limit")) }
+                    Slider(value: Binding(get: { Double(OverviewSectionLimit.index(limit)) },
+                                          set: { model.prefs.overviewLayout.sectionLimit = OverviewSectionLimit.steps[Int($0.rounded())] }),
+                           in: 0...Double(OverviewSectionLimit.steps.count - 1), step: 1)
+                }
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle(L.s("overview_section_limit"))
+        .navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func choice(_ title: String, chosen: Bool, action: @escaping () -> Void) -> some View {
+        Button { withAnimation(Motion.short) { action() } } label: {
+            HStack {
+                Text(title).font(Typo.bodyLarge).foregroundStyle(Palette.onSurface)
+                Spacer(minLength: 0)
+                if chosen { Image(systemName: AppIcons.check).font(.system(size: 15, weight: .semibold)).foregroundStyle(Palette.primary) }
+            }
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
     }
 }

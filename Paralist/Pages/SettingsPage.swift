@@ -12,6 +12,7 @@ struct SettingsPage: View {
     @State private var notificationsOn = false
     @State private var licenses = false
     @State private var exporting = false
+    @State private var limitOpen = false
     @State private var importing = false
     @State private var shared: BackupFile?
     @State private var spotted = false
@@ -82,6 +83,7 @@ struct SettingsPage: View {
                 }
                 Text(L.s("settings_periods_hint")).font(Typo.bodyLarge).foregroundStyle(Palette.onSurfaceVariant)
             }
+            group("nav_overview") { OverviewTabOptions(limitOpen: $limitOpen) }
             group("settings_pins") {
                 LabeledContent {
                     Text("\(prefs.pinLimit)").font(Typo.titleMedium).foregroundStyle(Palette.primary)
@@ -146,8 +148,8 @@ struct SettingsPage: View {
         .foregroundStyle(Palette.onSurface)
         .environment(\.defaultMinListRowHeight, 64)
         .listSectionSpacing(.custom(20))
-        .navigationTitle(L.s("page_settings"))
-        .navigationBarTitleDisplayMode(.large)
+        .paneTitle("page_settings")
+        .navigationDestination(isPresented: $limitOpen) { OverviewLimitPage() }
         .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).maxY } action: { floor = $0 }
         .overlay { if !prefs.navHintSeen && !spotted { ScrollGlow().transition(.opacity) } }
         .animation(Motion.bars, value: spotted)

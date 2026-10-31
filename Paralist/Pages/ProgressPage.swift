@@ -78,8 +78,7 @@ struct ProgressPage: View {
         .scrollIndicators(.hidden)
         .contentMargins(.top, 8, for: .scrollContent)
         .background(Palette.background)
-        .navigationTitle(L.s("page_progress"))
-        .navigationBarTitleDisplayMode(.large)
+        .paneTitle("page_progress")
     }
 
     private var rulesDetail: String {

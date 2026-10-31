@@ -97,6 +97,8 @@ final class Router {
     var sidePath: [Route] = []
     var detailEpoch = 0
     var expanded = false
+    var detailSide = false
+    var parked: ParkedPane?
     var linked: Route?
     var linkedPath: [Route] = []
     var linkedEpoch = 0
@@ -117,7 +119,17 @@ final class Router {
     var camera: CaptureKind?
     var recording = false
     var composer: ComposerRequest?
-    var searchOpen = false
+    var searchOpen = false {
+        didSet {
+            guard !searchOpen else { return }
+            searchPane = .main
+            searchWide = false
+            searchQuery = ""
+        }
+    }
+    var searchPane: SearchPane = .main
+    var searchWide = false
+    var searchQuery = ""
     var chatSeed: String?
     var accountOpen = false
     var importCards: ImportRequest?
@@ -258,6 +270,8 @@ final class Router {
         linked = nil
         linkedPath = []
         expanded = false
+        detailSide = false
+        parked = nil
     }
 
     func dropDetail(_ height: CGFloat) {
@@ -351,5 +365,25 @@ final class Router {
 
     func back() {
         _ = paths[tab, default: []].popLast()
+    }
+}
+
+enum SearchPane {
+    case main
+    case side
+}
+
+extension Router {
+    func openSearch(in pane: SearchPane) {
+        searchPane = pane
+        searchOpen = true
+    }
+
+    func searchShows(in pane: SearchPane) -> Bool {
+        searchOpen && split && !searchWide && searchPane == pane
+    }
+
+    var searchCoversWindow: Bool {
+        searchOpen && (!split || searchWide)
     }
 }

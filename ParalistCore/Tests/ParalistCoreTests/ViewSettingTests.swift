@@ -13,6 +13,7 @@ struct ViewSettingTests {
     private func ids(_ s: ViewSetting) -> [String] { s.arrange(rows).flatMap(\.1).map(\.id) }
 
     @Test func sortsInBothDirections() {
+        #expect(SortOrder.fromKey(nil) == .created && ViewSetting().sort == .created)
         #expect(ids(ViewSetting(sort: .updated)) == ["b", "c", "a"])
         #expect(ids(ViewSetting(sort: .updated, ascending: true)) == ["a", "c", "b"])
         #expect(ids(ViewSetting(sort: .created)) == ["c", "a", "b"])

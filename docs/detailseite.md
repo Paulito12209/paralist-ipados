@@ -16,7 +16,8 @@ Schalter wieder `true` ist. Kalender und Übersicht sind nicht betroffen.
 
 | Begriff | Bedeutung |
 |---|---|
-| Kopfzeile | Navigationsleiste oben ohne Liquid Glass: Chevron nach unten, Kategorie mittig (eine Zeile, am Ende „…“), Favorit, Menü, Symbole und Kategorie in `Palette.onSurface` (hell schwarz, dunkel hell); in Detail-, Text- und Cover-Ansicht identisch |
+| Kopfzeile | Navigationsleiste oben ohne Liquid Glass: Chevron nach unten, Kategorie mittig (eine Zeile, am Ende „…“), Favorit, Menü (in der geteilten Ansicht stattdessen Erweitern-Knopf `SplitExpandButton` und Seitenleisten-Knopf `SplitSideButton`; Favorit und Menü wandern in die Aktionsleiste), Symbole und Kategorie in `Palette.onSurface` (hell schwarz, dunkel hell); in Detail-, Text- und Cover-Ansicht identisch |
+| Aktionsleiste | Nur in der geteilten Ansicht (`router.split`): Zeile zwischen Infozeile und Canvas-Blatt (`EntryActionBar`), links die Glas-Pille „Zur Coveransicht“ (`ipad_to_cover`), rechts Favoriten-Stern und Drei-Punkte-Menü in Glas-Kreisen (`EntryFavoriteButton`, `EntryMoreMenu`, wiederverwendet aus der Kopfzeile). Die Pille setzt `canvas = .cover`, dieselbe Animation wie das Ziehen nach unten; Maße in `EntryActionDimens`. In der Coveransicht steht über dem Titel die Pille „Zur Detailansicht“ (`ipad_to_detail`, `CoverChrome`), sie ruft `settle(to: .detail)`. Ihr Rahmen (`actionFrame`) ist vom Tipp-auf-Cover ausgenommen, damit Tippen auf die Leiste kein Video startet |
 | Cover-Bereich | Oberer Abschnitt unter der Kopfzeile, 16:9, läuft unter die Kopfzeile; darunter, ebenfalls auf dem Verlauf, Titel und Infozeile mit Schleier |
 | Canvas-Bereich | Karte unter Titel und Infozeile, oben 28 pt runde Ecken mit Griff, wie das Blatt bei Solcard |
 | Bottom-Zeile | Schwebende Zeile unten nach dem Vorbild der Safari-Leiste: Liquid-Glass-Knopf „Schließen“, links ein runder Zurück-Knopf (Text- und Verknüpfungen-Ansicht, verschachtelte Einträge), bei Lesezeichen, Medien, Deck und Karte rechts ein runder Icon-Knopf, bei offenen Aufgaben rechts der Erledigt-Knopf; klappt beim Scrollen nach unten zu einer kleinen Kapsel ein |
@@ -507,57 +508,76 @@ Aktion. Anders als im Kalender klappt er nie von selbst aus, auch nicht bei der
 Rückkehr zur Übersicht (aus einer Sammlung, einem Eintrag oder einem anderen
 Reiter); nur ein Tipp auf den Rand öffnet ihn, und der wird genau einmal
 ausgeführt (`handled`). Beim ersten Mal steht links neben dem Rand ein Hinweis
-(`overview_edge_hint`, gemerkt in `overview_edge_hint_seen`), er verschwindet
-beim Tipp auf ihn oder auf den Rand.
+(`overview_edge_hint`: Listen und Sammlungen als Reiter nebeneinander, gemerkt in
+`overview_tabs_hint_seen`), er verschwindet beim Tipp auf ihn oder auf den Rand.
 
 Drei Optionen von oben nach unten:
 
 1. **Regler** (`XoolSlidersIcon`, wie bei den Aufgaben): öffnet „Anpassen“ (`ViewSheet`) für die
    Liste des Tabs. Bei einem Eintrag gelten eigene Einstellungen je Eintrag
    (`view_entries`).
-2. **Liste wechseln** (`rectangle.2.swap`): Blatt mit den Quellen des Tabs
-   (untereinander: aller sichtbaren Tabs). Tipp zeigt die Quelle im Tab,
-   Halten und Ziehen ordnet, Wischen entfernt, „Liste oder Eintrag
-   hinzufügen“ öffnet die Auswahl (alle Listen, Einträge mit Suche). Oben
-   rechts „Tabs“: Reihenfolge, Auge, Stift zum Umbenennen, „+“ für einen
-   neuen Tab: „Tab aus Liste oder Eintrag“ (eine Quelle, Name folgt ihr) oder
-   „Eigener Tab mit Namen“ (danach direkt die Auswahl seiner Quellen).
+2. **Wechseln** (`dots.and.line.vertical.and.pointer.arrow.rectangle`, hüpft
+   beim Ausklappen, `.symbolEffect(.bounce)`): Blatt „Wechseln“ mit den Quellen
+   des Tabs (untereinander: aller sichtbaren Tabs), oben zwei Reiter
+   **Listen | Sammlungen** (dazu **Einträge**, sobald ein Tab Einträge als
+   Quelle hat), umschaltbar per Tipp und per Wischen. Tipp zeigt die Quelle im
+   Tab, Halten und Ziehen ordnet, „Hinzufügen oder entfernen“ öffnet die
+   Auswahl (Sammlungen, Listen, Einträge mit Suche). Oben rechts „Tabs“.
+   Dasselbe Blatt öffnet ein Tipp auf den aktiven Reiter bzw. den Gruppenkopf.
 3. **Anordnung**: Symbol zeigt den Zustand (Tab-Ansicht oder
    Gruppenansicht), ein Tipp schaltet um. Die Pille steht in Ruhe hier; nach
-   Regler oder Liste wechseln springt sie zurück.
+   Regler oder Wechseln springt sie zurück.
 
 ## Tabs der Übersicht
 
 Unter den Kacheln stehen Tabs (`OverviewLayout`, gespeichert als JSON in
 `overview_tabs`). Ein Tab hat einen Namen, Quellen und eine aktive Quelle.
-Quellen sind Listen (`liste:<art>`) oder Einträge (`eintrag:<id>`; zeigt
-alles, was darin abgelegt ist, über alle Stufen, dazu Verknüpfungen, ohne
-Archiv, `OverviewScope.contents`).
+Quellen gibt es in drei Arten (`OverviewSource.category`):
 
-- **Markiert** (Angepinnt, Favoriten) und **Liste** (Eingang bis Alle) sind
-  vorgegeben: Name fest (`overview_tab_list`, iOS-eigen, ohne „n“), nicht
-  löschbar, nur ausblendbar, Quellen frei erweiterbar, mindestens eine
-  bleibt. Standard: nur Liste sichtbar, Markiert ausgeblendet (unter „Tabs“
-  einblendbar).
-- **Eigene Tabs**: Name (höchstens 40 Zeichen), umbenennbar, löschbar, dürfen
-  leer sein (Hinweis `overview_tab_empty`). Höchstens 10 Tabs, je 30 Quellen.
-- **Tab aus Liste oder Eintrag**: eigener Tab ohne Namen mit genau einer
-  Quelle (`namedBySource`); Titel ist der Name der Quelle (z. B. „Eingang“).
-  Wird die Quelle entfernt, verschwindet der Tab.
-- Mindestens ein Tab bleibt sichtbar; bliebe keiner, erscheint Listen.
-- Zeile unter dem Tab (`OverviewHeadRow`), ohne Symbole:
-  - Tab mit genau einer Quelle: nur „n Einträge“ als Text (bei 0 nichts).
-  - Tab mit mehreren Quellen: Pille mit Name und Anzahl, ohne Pfeil und ohne
-    Aktion.
-  - Rechts gegenüber ein runder Plus-Knopf statt der früheren Zeile „Neue
-    Notiz“: Liste wie bisher (Aufgaben mit Schnelleingabe oben), Eintrag:
-    neue Notiz darin abgelegt oder, wenn er nichts aufnehmen kann, mit ihm
-    verknüpft. Kein Plus bei Alle, Angepinnt, Favoriten, Archiv.
-- Nicht aktive Tabs zeigen in der Tab-Leiste das Symbol ihrer Quelle.
+- **Sammlungen** (`ListKind.collections`): Eingang, Angepinnt, Favoriten,
+  Ressourcen, Archiv, Alle.
+- **Listen** (`ListKind.lists`): Notizen, Aufgaben, Termine, Lesezeichen,
+  Dateien, Tags, Karteikarten, Projekte, Arbeitsbereiche.
+- **Einträge** (`eintrag:<id>`; zeigt alles, was darin abgelegt ist, über alle
+  Stufen, dazu Verknüpfungen, ohne Archiv, `OverviewScope.contents`).
+
+Sammlungen und Listen werden als `liste:<art>` gespeichert.
+
+- Zwei Tabs sind vorgegeben (Ids `listen` und `markiert`), nicht löschbar,
+  nur ausblendbar, mit allen Sammlungen und Listen als Quellen (mindestens
+  eine bleibt). Standard: Tab-Ansicht, sichtbar nur **Eingang**, dahinter
+  **Angepinnt** ausgeblendet. Ihr Name ist immer der Name der gewählten
+  Quelle. Einmalig (Oktober 2026, `defaults_reset_2026_10`) wurden alle auf
+  diesen Standard und auf Sortierung nach Erstellung zurückgesetzt.
+- **Eigene Tabs** („+“ unter „Tabs“: „Reiter aus Liste, Sammlung oder
+  Eintrag“): löschbar. Höchstens 10 Tabs, je 30 Quellen. Umbenennen (Stift,
+  höchstens 40 Zeichen) gibt es nur für Tabs, deren gewählte Quelle ein
+  Eintrag ist; sonst zeigt der Tab den Namen der Quelle.
+- Blatt „Tabs“: je Zeile Symbol, Name und darunter klein die Art („Liste“,
+  „Sammlung“, „Eintrag“), rechts Stift (nur Eintrag), Auge, Ziehgriff.
+  Darunter „Reiter zeigen“ (Icon und Name, nur Name, nur Icon) und
+  „Einträge je Abschnitt“ mit Pfeil zu einer eigenen Seite: „Alle“
+  (Standard) oder „Individuell“ mit Schieberegler über 5, 10, 15, 20, 25,
+  50, 100 (`OverviewSectionLimit.steps`, Start 10); beides auch in den
+  Einstellungen unter „Übersicht“ (`OverviewTabOptions`, `OverviewLimitPage`).
+- Mindestens ein Tab bleibt sichtbar; bliebe keiner, erscheint der erste.
+- Reiter (`OverviewTabLabel`): Symbol der Quelle, Name der Quelle, Anzahl,
+  ohne Pille und ohne Pfeil, Schrift 15 medium. Ein Reiter allein oder ein
+  Gruppenkopf: grau (`Palette.muted`). Ab zwei Reitern in der Tab-Ansicht:
+  aktiver Reiter mit Symbol und Name in `Palette.level` und Punkt darunter,
+  die anderen in `Palette.subtle` mit 75 % Deckkraft (`idleTab`, im
+  Dunkelmodus dadurch dunkler, im Hellmodus heller).
+- Darunter die Sortierzeile (`OverviewSortRow`): „Zuletzt erstellt“ o. Ä.
+  links, rechts ein runder Plus-Knopf: Liste wie bisher (Aufgaben mit
+  Schnelleingabe), Eintrag: neue Notiz darin abgelegt oder, wenn er nichts
+  aufnehmen kann, mit ihm verknüpft. Kein Plus bei Alle, Angepinnt,
+  Favoriten, Archiv.
+- Abstände: Reiterzeile 32 pt unter den Kacheln (`listTop`), 36 pt hoch,
+  8 pt bis zur Sortierzeile (`listGap`), in beiden Ansichten gleich.
 - Köpfe bleiben beim Scrollen oben hängen, in beiden Ansichten
-  (`PinnedSection`): Tab-Leiste bzw. Gruppenname mit Pille und Plus. Der
-  undurchsichtige Grund endet an der Unterkante von Pille und Plus
-  (`headTail`), darunter läuft ein Übergang über 24 pt aus (`pinnedFade`).
+  (`PinnedSection`): Reiterzeile bzw. Gruppenkopf mit Sortierzeile und Plus.
+  Der undurchsichtige Grund endet 8 pt unter dem Plus (`headTail`), darunter
+  läuft ein Übergang aus (`pinnedFade`).
 - Anlegen auf drei Wegen: Plus gegenüber dem Listennamen, Zeile „Neue …“
   direkt unter dem letzten Eintrag (Aufgaben: Schnelleingabe in dieser Zeile,
   Einträge als Quelle: „Neue Notiz“) und Tipp auf die freie Fläche darunter
@@ -570,16 +590,22 @@ Archiv, `OverviewScope.contents`).
 - Info-Knopf am Emblem (`EmptyHint`, überall in der App): öffnet einen Dialog
   mit dem Hinweis und „Verstanden“ (Knopf bleibt) oder „Nicht mehr anzeigen“
   (Knopf verschwindet überall, `empty_info_hidden`).
-- **Tab-Ansicht** (Reiter nebeneinander): Tab-Leiste, Wischen wechselt. Bei nur
-  einem sichtbaren Tab entfällt der Punkt, der Name steht mittig mit denselben
-  Abständen wie ein Gruppenkopf (`toggleTop`, `toggleBottom`). Bis zwei Tabs teilen sie
-  sich die Breite, ab drei (`tabsLeading`) oder wenn die Titel nicht passen,
-  stehen sie linksbündig in einer scrollbaren Leiste (Titel höchstens 180 pt).
-- **Gruppenansicht** (Reiter untereinander, Standard): jeder Tab als Überschrift ohne Pfeil (wie bei Cursor),
-  Tipp klappt auf oder zu (`overview/<tab-id>`), eingeklappt mit dem Symbol
-  der gewählten Liste und danach der Anzahl.
+- **Tab-Ansicht** (Reiter nebeneinander): Reiter immer linksbündig, 20 pt
+  Abstand (`tabGap`), bei Platzmangel seitlich scrollbar (Name höchstens
+  180 pt). Tipp auf einen anderen Reiter wählt ihn, Tipp auf den aktiven
+  öffnet „Wechseln“; Wischen über die Liste wechselt den Reiter.
+- **Gruppenansicht** (Reiter untereinander): jeder Tab als
+  Gruppenkopf, nicht einklappbar; Tipp öffnet „Wechseln“. Bei „Individuell“
+  je Abschnitt höchstens so viele Einträge, darunter „Alle n anzeigen“ klein
+  und grau (`Palette.subtle`, öffnet die Liste bzw. den Eintrag). Ab dem
+  zweiten Abschnitt steht der Kopf 10 pt unter dem Ende des vorigen
+  (`groupTop`), ein leerer Abschnitt behält seine 80 pt Tippfläche.
 - Übernahme: Bei fehlendem `overview_tabs` gelten die bisherige Wahl
   (`marked_list`, `overview_list`) und die Anordnung aus `overview_layout`.
+  Gespeichertes JSON ohne `v` (vor Version 2) bekommt in den vorgegebenen
+  Tabs die fehlenden Sammlungen und Listen hinten angehängt; Sichtbarkeit,
+  Reihenfolge und Wahl bleiben. Neu im JSON: `v` (jetzt 3), `zeigen`, `je`
+  (fehlt bei „Alle“; Werte aus Version 2 gelten als „Alle“).
 
 Nur Einstellung, kein Dateiformat.
 
@@ -761,6 +787,7 @@ In der Cover-Ansicht gibt es keine Bottom-Zeile.
 |---|---|
 | `Paralist/Entry/EntryPage.swift` | Zustand `cover`, Zieh- und Tipp-Geste, Picker-Regeln hinter `EdgePicker.shownOnDetail`, Bottom-Zeile einhängen, `barCollapsed` (`BarCollapse`), Zurück-Regel `backAction`, `nested` |
 | `Paralist/Entry/EntryCanvasPanel.swift` | ScrollView mit Canvas (Infozeile, Titel, Optionen, Text, Verknüpfungen) |
+| `Paralist/Entry/EntryActionBar.swift`, `EntryMoreMenu.swift` | Aktionsleiste der geteilten Ansicht, Pille Cover/Detail, Favoriten-Knopf und Drei-Punkte-Menü |
 | `Paralist/Entry/EntryToolbar.swift` | Kopfzeile und Bottom-Zeile (Zurück, „Schließen“, Icon-Knopf; aus- und eingeklappt) |
 | `Paralist/Theme/EntryBarDimens.swift` | Maße der Bottom-Zeile nach Safari (`entryBarInset`, `entryBarGap`, `entryBarCircle`, `entryBarPill*` mit `entryBarPillRest`, `entryBarCollapseScroll`) |
 | `ParalistCore/.../Library/TabBarLayout.swift` | `lift` (Höhe der Bottom-Zeile wie Tab-Leiste) und `pillDrop` (Absenken der Kapsel), Tests `TabBarLayoutTests` |

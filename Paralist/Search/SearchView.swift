@@ -84,8 +84,10 @@ struct SearchView: View {
         }
         .onAppear {
             home = model.searchHomeStart
+            query = router.searchQuery
             chatScope = router.tab == .chats && router.path(.chats).isEmpty
         }
+        .onChange(of: query) { _, value in router.searchQuery = value }
         .task(id: query) {
             try? await Task.sleep(for: .milliseconds(150))
             debounced = String(query.prefix(100))

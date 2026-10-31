@@ -127,6 +127,7 @@ von Spotify.
   obere sichere Bereich enthält die Kopfzeile schon)
   (`coverVeilTail`, `coverVeilShade`). Liegt die
   Kopfzeile auf dem Verlauf, gibt es keinen Schleier.
+- In der geteilten Ansicht (`router.split`) steht über der Titelzeile die Glas-Pille „Zur Detailansicht“ (`EntryViewPill`, `onDetail` aus `EntryPage` über `EntryHero` und `CoverStage` bis `CoverChrome`); Tippen ruft `settle(to: .detail)`. Die Gegenrichtung ist die Pille „Zur Coveransicht“ in der Aktionsleiste der Detail-Ansicht.
 - Kopfzeile: links Chevron nach unten (schließt das Deckblatt), Mitte die
   Kategorie, rechts Favorit und die drei Punkte. Die Zurück-Wischgeste geht
   dort nicht.

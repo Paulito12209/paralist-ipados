@@ -14,8 +14,8 @@ struct ViewSheet: View {
             List {
                 header(L.s("view_sort"))
                 Picker(selection: binding(\.sort, setting) { s, sort in s.sort = sort; s.ascending = sort.naturalAscending }) {
-                    Text(L.s("view_sort_updated")).tag(ParalistCore.SortOrder.updated)
                     Text(L.s("view_sort_created")).tag(ParalistCore.SortOrder.created)
+                    Text(L.s("view_sort_updated")).tag(ParalistCore.SortOrder.updated)
                     Text(L.s("view_sort_title")).tag(ParalistCore.SortOrder.title)
                 } label: { row(AppIcons.sortBy, L.s("view_sort_by")) }
                 .plainOption()

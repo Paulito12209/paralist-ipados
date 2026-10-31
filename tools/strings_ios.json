@@ -4027,34 +4027,34 @@
     "bn": "ওভারভিউ সেটিংস"
   },
   "overview_switch": {
-    "de": "Liste wechseln",
-    "en": "Switch list",
-    "es": "Cambiar lista",
-    "fr": "Changer de liste",
-    "zh-Hans": "切换列表",
-    "hi": "सूची बदलें",
-    "ar": "تبديل القائمة",
-    "bn": "তালিকা বদলান"
+    "de": "Wechseln",
+    "en": "Switch",
+    "es": "Cambiar",
+    "fr": "Changer",
+    "zh-Hans": "切换",
+    "hi": "बदलें",
+    "ar": "تبديل",
+    "bn": "বদলান"
   },
   "overview_add_source": {
-    "de": "Liste oder Eintrag hinzufügen",
-    "en": "Add list or entry",
-    "es": "Añadir lista o entrada",
-    "fr": "Ajouter une liste ou une entrée",
-    "zh-Hans": "添加列表或条目",
-    "hi": "सूची या प्रविष्टि जोड़ें",
-    "ar": "إضافة قائمة أو إدخال",
-    "bn": "তালিকা বা এন্ট্রি যোগ করুন"
+    "de": "Hinzufügen oder entfernen",
+    "en": "Add or remove",
+    "es": "Añadir o quitar",
+    "fr": "Ajouter ou retirer",
+    "zh-Hans": "添加或移除",
+    "hi": "जोड़ें या हटाएं",
+    "ar": "إضافة أو إزالة",
+    "bn": "যোগ বা সরাও"
   },
   "overview_sources_hint": {
-    "de": "Tippen zeigt die Liste im Tab. Halten und ziehen ordnet, nach links wischen entfernt.",
-    "en": "Tap to show the list in the tab. Hold and drag to reorder, swipe left to remove.",
-    "es": "Toca para mostrar la lista en la pestaña. Mantén y arrastra para ordenar, desliza a la izquierda para quitar.",
-    "fr": "Touchez pour afficher la liste dans l’onglet. Maintenez et faites glisser pour ordonner, balayez vers la gauche pour retirer.",
-    "zh-Hans": "轻点即可在标签页中显示该列表。按住拖动可排序，向左轻扫可移除。",
-    "hi": "टैब में सूची दिखाने के लिए टैप करें। क्रम बदलने के लिए दबाकर खींचें, हटाने के लिए बाईं ओर स्वाइप करें।",
-    "ar": "اضغط لعرض القائمة في علامة التبويب. اضغط مطولًا واسحب للترتيب، واسحب لليسار للإزالة.",
-    "bn": "ট্যাবে তালিকা দেখাতে ট্যাপ করুন। সাজাতে চেপে ধরে টানুন, সরাতে বাঁয়ে সোয়াইপ করুন।"
+    "de": "Tippen zeigt sie im Reiter, halten und ziehen ordnet. Wischen wechselt zwischen Listen und Sammlungen.",
+    "en": "Tap to show it in the tab, hold and drag to reorder. Swipe to switch between lists and collections.",
+    "es": "Toca para mostrarla en la pestaña, mantén y arrastra para ordenar. Desliza para cambiar entre listas y colecciones.",
+    "fr": "Touchez pour l’afficher dans l’onglet, maintenez et faites glisser pour ordonner. Balayez pour passer des listes aux collections.",
+    "zh-Hans": "轻点即可在标签中显示，按住拖动可排序。滑动可在列表和合集之间切换。",
+    "hi": "टैप करके टैब में दिखाएं, पकड़कर खींचें तो क्रम बदले। स्वाइप करके सूचियों और संग्रहों के बीच जाएं।",
+    "ar": "اضغط لعرضها في علامة التبويب، واضغط مطولًا واسحب للترتيب. اسحب أفقيًا للتبديل بين القوائم والمجموعات.",
+    "bn": "ট্যাপ করলে ট্যাবে দেখাবে, ধরে টেনে ক্রম বদলাও। সোয়াইপে তালিকা ও সংগ্রহের মধ্যে যাও।"
   },
   "overview_tabs": {
     "de": "Tabs",
@@ -4067,24 +4067,14 @@
     "bn": "ট্যাব"
   },
   "overview_tabs_hint": {
-    "de": "Ziehen ändert die Reihenfolge, das Auge blendet einen Tab aus, der Stift benennt ihn um. Mindestens ein Tab bleibt sichtbar. Markiert und Listen lassen sich nur ausblenden, eigene Tabs auch löschen.",
-    "en": "Drag to reorder, the eye hides a tab, the pencil renames it. At least one tab stays visible. Marked and Lists can only be hidden, your own tabs can also be deleted.",
-    "es": "Arrastra para ordenar; el ojo oculta una pestaña y el lápiz la renombra. Siempre queda al menos una visible. Marcado y Listas solo se pueden ocultar; las pestañas propias también se pueden eliminar.",
-    "fr": "Faites glisser pour ordonner ; l’œil masque un onglet, le crayon le renomme. Au moins un onglet reste visible. Marqué et Listes peuvent seulement être masqués, vos onglets peuvent aussi être supprimés.",
-    "zh-Hans": "拖动可排序，眼睛图标隐藏标签页，铅笔图标重命名。至少保留一个可见。“已标记”和“列表”只能隐藏，自建标签页也可删除。",
-    "hi": "क्रम बदलने के लिए खींचें, आंख टैब छिपाती है, पेंसिल नाम बदलती है। कम से कम एक टैब दिखता रहता है। चिह्नित और सूचियां केवल छिपाई जा सकती हैं, अपने टैब हटाए भी जा सकते हैं।",
-    "ar": "اسحب لتغيير الترتيب، والعين تخفي علامة التبويب، والقلم يعيد تسميتها. تبقى علامة واحدة على الأقل ظاهرة. يمكن إخفاء «المميّزة» و«القوائم» فقط، أما علاماتك فيمكن حذفها أيضًا.",
-    "bn": "ক্রম বদলাতে টানুন, চোখ ট্যাব লুকায়, পেন্সিল নাম বদলায়। অন্তত একটি ট্যাব দেখা যায়। চিহ্নিত ও তালিকা শুধু লুকানো যায়, নিজের ট্যাব মুছেও ফেলা যায়।"
-  },
-  "overview_tab_new": {
-    "de": "Neuer Tab",
-    "en": "New tab",
-    "es": "Nueva pestaña",
-    "fr": "Nouvel onglet",
-    "zh-Hans": "新建标签页",
-    "hi": "नया टैब",
-    "ar": "علامة تبويب جديدة",
-    "bn": "নতুন ট্যাব"
+    "de": "Ziehen ändert die Reihenfolge, das Auge blendet einen Reiter aus. Mindestens ein Reiter bleibt sichtbar. Eigene Reiter lassen sich löschen, Reiter aus einem Eintrag mit dem Stift umbenennen.",
+    "en": "Drag to reorder, the eye hides a tab. At least one tab stays visible. Your own tabs can be deleted, tabs made from an entry renamed with the pencil.",
+    "es": "Arrastra para ordenar, el ojo oculta una pestaña. Al menos una pestaña queda visible. Tus pestañas se pueden borrar y las creadas desde una entrada, renombrar con el lápiz.",
+    "fr": "Faites glisser pour ordonner, l’œil masque un onglet. Au moins un onglet reste visible. Vos onglets peuvent être supprimés, ceux créés depuis une entrée renommés avec le crayon.",
+    "zh-Hans": "拖动可调整顺序，眼睛图标可隐藏标签。至少保留一个可见标签。自建标签可删除，由条目创建的标签可用铅笔重命名。",
+    "hi": "खींचकर क्रम बदलें, आंख टैब छिपाती है। कम से कम एक टैब दिखता रहता है। अपने टैब हटाए जा सकते हैं, प्रविष्टि से बने टैब पेंसिल से नए नाम पा सकते हैं।",
+    "ar": "اسحب لتغيير الترتيب، والعين تُخفي علامة التبويب. تبقى علامة تبويب واحدة على الأقل ظاهرة. يمكن حذف علاماتك، وإعادة تسمية المأخوذة من إدخال بالقلم.",
+    "bn": "টেনে ক্রম বদলাও, চোখ ট্যাব লুকায়। অন্তত একটি ট্যাব দেখা যায়। নিজের ট্যাব মোছা যায়, এন্ট্রি থেকে বানানো ট্যাব পেনসিলে নাম বদলানো যায়।"
   },
   "overview_tab_name": {
     "de": "Name",
@@ -4137,14 +4127,14 @@
     "bn": "এন্ট্রি"
   },
   "overview_edge_hint": {
-    "de": "Neu: Ansicht, Liste und Anordnung stellst du jetzt hier am Rand ein.",
-    "en": "New: set view, list and layout here at the edge.",
-    "es": "Novedad: ajusta la vista, la lista y la disposición aquí en el borde.",
-    "fr": "Nouveau : réglez l’affichage, la liste et la disposition ici, sur le bord.",
-    "zh-Hans": "新功能：现在可在此边缘设置视图、列表和布局。",
-    "hi": "नया: दृश्य, सूची और व्यवस्था अब यहीं किनारे पर सेट करें।",
-    "ar": "جديد: اضبط العرض والقائمة والترتيب هنا على الحافة.",
-    "bn": "নতুন: ভিউ, তালিকা ও বিন্যাস এখন এখানে প্রান্তে সেট করুন।"
+    "de": "Tipp: Über diesen Rand legst du Listen und Sammlungen als Reiter nebeneinander an und wechselst sie.",
+    "en": "Tip: use this edge to place lists and collections side by side as tabs and switch them.",
+    "es": "Consejo: desde este borde colocas listas y colecciones como pestañas una al lado de otra y las cambias.",
+    "fr": "Astuce : depuis ce bord, placez listes et collections côte à côte en onglets et changez-les.",
+    "zh-Hans": "提示：通过此边缘可将列表和合集并排设为标签并切换。",
+    "hi": "सुझाव: इस किनारे से सूचियों और संग्रहों को टैब के रूप में साथ-साथ रखें और बदलें।",
+    "ar": "نصيحة: من هذه الحافة تضع القوائم والمجموعات جنبًا إلى جنب كعلامات تبويب وتبدّل بينها.",
+    "bn": "টিপ: এই কিনারা থেকে তালিকা ও সংগ্রহ পাশাপাশি ট্যাব হিসেবে রাখো ও বদলাও।"
   },
   "overview_add_here": {
     "de": "Hinzufügen",
@@ -4157,34 +4147,14 @@
     "bn": "যোগ করুন"
   },
   "overview_tab_from_source": {
-    "de": "Tab aus Liste oder Eintrag",
-    "en": "Tab from list or entry",
-    "es": "Pestaña de lista o entrada",
-    "fr": "Onglet depuis une liste ou une entrée",
-    "zh-Hans": "从列表或条目新建标签页",
-    "hi": "सूची या प्रविष्टि से टैब",
-    "ar": "علامة تبويب من قائمة أو إدخال",
-    "bn": "তালিকা বা এন্ট্রি থেকে ট্যাব"
-  },
-  "overview_tab_custom": {
-    "de": "Eigener Tab mit Namen",
-    "en": "Own tab with a name",
-    "es": "Pestaña propia con nombre",
-    "fr": "Onglet personnel avec un nom",
-    "zh-Hans": "自定义名称的标签页",
-    "hi": "नाम वाला अपना टैब",
-    "ar": "علامة تبويب خاصة باسم",
-    "bn": "নাম সহ নিজের ট্যাব"
-  },
-  "overview_tab_list": {
-    "de": "Liste",
-    "en": "List",
-    "es": "Lista",
-    "fr": "Liste",
-    "zh-Hans": "列表",
-    "hi": "सूची",
-    "ar": "القائمة",
-    "bn": "তালিকা"
+    "de": "Reiter aus Liste, Sammlung oder Eintrag",
+    "en": "Tab from list, collection or entry",
+    "es": "Pestaña de lista, colección o entrada",
+    "fr": "Onglet depuis une liste, une collection ou une entrée",
+    "zh-Hans": "从列表、合集或条目新建标签",
+    "hi": "सूची, संग्रह या प्रविष्टि से टैब",
+    "ar": "علامة تبويب من قائمة أو مجموعة أو إدخال",
+    "bn": "তালিকা, সংগ্রহ বা এন্ট্রি থেকে ট্যাব"
   },
   "empty_info_ok": {
     "de": "Verstanden",
@@ -4515,5 +4485,185 @@
     "hi": "चौड़ाई बदलें",
     "ar": "ضبط العرض",
     "bn": "প্রস্থ বদলান"
+  },
+  "overview_pick_collections": {
+    "de": "Sammlungen",
+    "en": "Collections",
+    "es": "Colecciones",
+    "fr": "Collections",
+    "zh-Hans": "合集",
+    "hi": "संग्रह",
+    "ar": "المجموعات",
+    "bn": "সংগ্রহ"
+  },
+  "overview_kind_list": {
+    "de": "Liste",
+    "en": "List",
+    "es": "Lista",
+    "fr": "Liste",
+    "zh-Hans": "列表",
+    "hi": "सूची",
+    "ar": "قائمة",
+    "bn": "তালিকা"
+  },
+  "overview_kind_collection": {
+    "de": "Sammlung",
+    "en": "Collection",
+    "es": "Colección",
+    "fr": "Collection",
+    "zh-Hans": "合集",
+    "hi": "संग्रह",
+    "ar": "مجموعة",
+    "bn": "সংগ্রহ"
+  },
+  "overview_kind_entry": {
+    "de": "Eintrag",
+    "en": "Entry",
+    "es": "Entrada",
+    "fr": "Entrée",
+    "zh-Hans": "条目",
+    "hi": "प्रविष्टि",
+    "ar": "إدخال",
+    "bn": "এন্ট্রি"
+  },
+  "overview_tab_display": {
+    "de": "Reiter zeigen",
+    "en": "Show tabs as",
+    "es": "Mostrar pestañas",
+    "fr": "Afficher les onglets",
+    "zh-Hans": "标签显示",
+    "hi": "टैब में दिखाएं",
+    "ar": "عرض علامات التبويب",
+    "bn": "ট্যাবে দেখাও"
+  },
+  "overview_display_both": {
+    "de": "Icon und Name",
+    "en": "Icon and name",
+    "es": "Icono y nombre",
+    "fr": "Icône et nom",
+    "zh-Hans": "图标和名称",
+    "hi": "आइकन और नाम",
+    "ar": "الأيقونة والاسم",
+    "bn": "আইকন ও নাম"
+  },
+  "overview_display_name": {
+    "de": "Nur Name",
+    "en": "Name only",
+    "es": "Solo nombre",
+    "fr": "Nom seul",
+    "zh-Hans": "仅名称",
+    "hi": "केवल नाम",
+    "ar": "الاسم فقط",
+    "bn": "শুধু নাম"
+  },
+  "overview_display_icon": {
+    "de": "Nur Icon",
+    "en": "Icon only",
+    "es": "Solo icono",
+    "fr": "Icône seule",
+    "zh-Hans": "仅图标",
+    "hi": "केवल आइकन",
+    "ar": "الأيقونة فقط",
+    "bn": "শুধু আইকন"
+  },
+  "overview_section_limit": {
+    "de": "Einträge je Abschnitt",
+    "en": "Entries per section",
+    "es": "Entradas por sección",
+    "fr": "Entrées par section",
+    "zh-Hans": "每个分组的条目",
+    "hi": "हर खंड में प्रविष्टियां",
+    "ar": "إدخالات لكل قسم",
+    "bn": "প্রতি অংশে এন্ট্রি"
+  },
+  "overview_section_limit_hint": {
+    "de": "Gilt für die Gruppenansicht der Übersicht. Bei „Individuell“ zeigt jeder Abschnitt höchstens so viele Einträge, den Rest siehst du über „Alle anzeigen“.",
+    "en": "Applies to the grouped overview. With “Custom” each section shows at most this many entries; see the rest via “Show all”.",
+    "es": "Se aplica a la vista agrupada del resumen. Con «Personalizado» cada sección muestra como máximo esas entradas; el resto, con «Mostrar las».",
+    "fr": "S’applique à la vue groupée de l’aperçu. Avec « Personnalisé », chaque section affiche au plus ce nombre d’entrées ; le reste via « Afficher les ».",
+    "zh-Hans": "适用于概览的分组视图。选择“自定义”后，每个分组最多显示该数量的条目，其余通过“显示全部”查看。",
+    "hi": "अवलोकन के समूह दृश्य पर लागू। „अपनी पसंद“ में हर खंड अधिकतम इतनी प्रविष्टियां दिखाता है, बाकी „सभी दिखाएं“ से।",
+    "ar": "ينطبق على العرض المجمّع في النظرة العامة. مع «مخصص» يعرض كل قسم هذا العدد كحد أقصى، والباقي عبر «عرض الكل».",
+    "bn": "ওভারভিউয়ের গ্রুপ ভিউতে প্রযোজ্য। „নিজের মতো“ বাছলে প্রতিটি অংশে সর্বোচ্চ এতগুলো এন্ট্রি দেখায়, বাকিগুলো „সব দেখাও“ দিয়ে।"
+  },
+  "overview_show_all": {
+    "de": "Alle %lld anzeigen",
+    "en": "Show all %lld",
+    "es": "Mostrar las %lld",
+    "fr": "Afficher les %lld",
+    "zh-Hans": "显示全部 %lld 条",
+    "hi": "सभी %lld दिखाएं",
+    "ar": "عرض الكل (%lld)",
+    "bn": "সব %lld দেখাও"
+  },
+  "overview_limit_all": {
+    "de": "Alle",
+    "en": "All",
+    "es": "Todas",
+    "fr": "Toutes",
+    "zh-Hans": "全部",
+    "hi": "सभी",
+    "ar": "الكل",
+    "bn": "সব"
+  },
+  "overview_limit_custom": {
+    "de": "Individuell",
+    "en": "Custom",
+    "es": "Personalizado",
+    "fr": "Personnalisé",
+    "zh-Hans": "自定义",
+    "hi": "अपनी पसंद",
+    "ar": "مخصص",
+    "bn": "নিজের মতো"
+  },
+  "view_sort_created": {
+    "de": "Erstellung",
+    "en": "Creation",
+    "es": "Creación",
+    "fr": "Création",
+    "zh-Hans": "创建",
+    "hi": "निर्माण",
+    "ar": "الإنشاء",
+    "bn": "তৈরি"
+  },
+  "view_sort_updated": {
+    "de": "Änderung",
+    "en": "Change",
+    "es": "Cambio",
+    "fr": "Modification",
+    "zh-Hans": "修改",
+    "hi": "बदलाव",
+    "ar": "التعديل",
+    "bn": "পরিবর্তন"
+  },
+  "ipad_to_cover": {
+    "de": "Zur Coveransicht",
+    "en": "Cover view",
+    "es": "Vista de portada",
+    "fr": "Vue couverture",
+    "zh-Hans": "封面视图",
+    "hi": "कवर दृश्य",
+    "ar": "عرض الغلاف",
+    "bn": "কভার ভিউ"
+  },
+  "ipad_to_detail": {
+    "de": "Zur Detailansicht",
+    "en": "Detail view",
+    "es": "Vista de detalle",
+    "fr": "Vue détaillée",
+    "zh-Hans": "详情视图",
+    "hi": "विवरण दृश्य",
+    "ar": "عرض التفاصيل",
+    "bn": "বিস্তারিত ভিউ"
+  },
+  "ipad_categories_search": {
+    "de": "Suchen",
+    "en": "Search",
+    "es": "Buscar",
+    "fr": "Rechercher",
+    "zh-Hans": "搜索",
+    "hi": "खोजें",
+    "ar": "بحث",
+    "bn": "খুঁজুন"
   }
 }

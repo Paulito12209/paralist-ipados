@@ -12,6 +12,10 @@ public enum SplitLayout {
         min(max(minSide, total / 3), max(total, 0))
     }
 
+    public static func mainMinimum(total: Double, minSide: Double) -> Double {
+        max(minSide, total / 3)
+    }
+
     public static func leadingWidth(total: Double, share: Double, minLeading: Double, minTrailing: Double) -> Double {
         guard total > 0 else { return 0 }
         let upper = total - minTrailing

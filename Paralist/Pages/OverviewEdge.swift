@@ -1,4 +1,4 @@
-// Zusammenhang: Entry/EdgePicker.swift (EdgePickerView, onReselect), Pages/CalendarEdge.swift (gleiche Kerbe), Pages/OverviewPage.swift, Pages/OverviewSwitchSheet.swift (Listenwechsler), Pages/ViewSheet.swift (Regler), App/AppPrefs.swift (overviewLayout, overviewHintSeen), ParalistCore Library/OverviewLayout.swift, Theme/CalendarDimens.swift (edgeAutoTuck, calendarNotchHeight), Theme/OverviewSectionDimens.swift (hint*), Icons/AppIcons.swift, Icons/XoolIcons.swift (XoolSlidersIcon)
+// Zusammenhang: Entry/EdgePicker.swift (EdgePickerView, onReselect), Pages/CalendarEdge.swift (gleiche Kerbe), Pages/OverviewPage.swift, Pages/OverviewOptionParts.swift (Icons, Blatt), Pages/OverviewSwitchSheet.swift (Listenwechsler), Pages/ViewSheet.swift (Regler), App/AppPrefs.swift (overviewLayout, overviewHintSeen), ParalistCore Library/OverviewLayout.swift, Theme/CalendarDimens.swift (edgeAutoTuck, calendarNotchHeight), Theme/OverviewSectionDimens.swift (hint*), Icons/AppIcons.swift, Icons/XoolIcons.swift (XoolSlidersIcon)
 import ParalistCore
 import SwiftUI
 
@@ -9,11 +9,9 @@ enum OverviewEdgeOption: CaseIterable, Hashable, Identifiable {
 }
 
 struct OverviewEdge: View {
-    let focus: OverviewTab
-    let tabs: [String]
+    @Binding var sheet: OverviewEdgeOption?
     @Environment(AppModel.self) private var model
     @State private var pick = OverviewEdgeOption.arrange
-    @State private var sheet: OverviewEdgeOption?
     @State private var tucked = true
     @State private var shown = 0
     @State private var handled = 0
@@ -53,31 +51,12 @@ struct OverviewEdge: View {
             guard option != .arrange else { return }
             sheet = option
         }
-        .onDisappear { tucked = true }
-        .sheet(item: $sheet, onDismiss: {
+        .onChange(of: sheet) { _, option in
+            guard option == nil else { return }
             pick = .arrange
             tucked = true
-        }) { option in
-            Group {
-                if option == .view {
-                    viewSheet
-                } else {
-                    OverviewSwitchSheet(tabs: tabs)
-                }
-            }
-            .presentationDetents([.medium, .large])
-            .presentationDragIndicator(.visible)
-            .presentationCornerRadius(Dimens.sheetRadius)
         }
-    }
-
-    @ViewBuilder
-    private var viewSheet: some View {
-        switch model.overviewSource(focus) {
-        case .list(let kind): ViewSheet(kind: kind)
-        case .entry(let id): ViewSheet(kind: .all, entryId: id)
-        case nil: OverviewSwitchSheet(tabs: tabs)
-        }
+        .onDisappear { tucked = true }
     }
 
     private var hint: some View {
@@ -102,23 +81,9 @@ struct OverviewEdge: View {
         withAnimation(Motion.short) { model.prefs.overviewLayout.style = style.toggled }
     }
 
-    private func label(_ option: OverviewEdgeOption) -> String {
-        switch option {
-        case .view: return L.s("view_customize")
-        case .switcher: return L.s("overview_switch")
-        case .arrange: return L.s(style == .tabs ? "overview_style_tabs" : "overview_style_stacked")
-        }
-    }
+    private func label(_ option: OverviewEdgeOption) -> String { option.label(style) }
 
-    @ViewBuilder
     private func optionIcon(_ option: OverviewEdgeOption) -> some View {
-        switch option {
-        case .view:
-            XoolSlidersIcon(line: OverviewDimens.slidersLine).frame(width: OverviewDimens.slidersBox, height: OverviewDimens.slidersBox)
-        case .switcher:
-            Image(systemName: AppIcons.overviewSwitch).font(.system(size: EdgePicker.icon, weight: .semibold))
-        case .arrange:
-            Image(systemName: style == .tabs ? AppIcons.overviewTabs : AppIcons.overviewStacked).font(.system(size: EdgePicker.icon, weight: .semibold))
-        }
+        OverviewOptionIcon(option: option, style: style, size: EdgePicker.icon, bounce: tucked)
     }
 }

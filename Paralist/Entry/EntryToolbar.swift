@@ -1,4 +1,4 @@
-// Zusammenhang: Entry/EntryPage.swift, Shell/RouterSplit.swift (closePane, push(from:), DetailPane), Shell/SplitParts.swift (SplitExpandButton), Shell/Router.swift (openChat, closeDetail, push, importCards, study, tabBarLift, entryPillDrop), Chat/ChatThreadPage.swift (chatSeed), Flashcards/StudyPage.swift, Flashcards/ImportCardsSheet.swift, ParalistCore Library/EdgePicker.swift (EntryCanvas), Entries/TypeLook.swift, Icons/AppIcons.swift, Theme/EntryBarDimens.swift, ParalistCore Links/SpotifyLinks.swift, Links/VideoLinks.swift, Files/FileCategory.swift, docs/detailseite.md
+// Zusammenhang: Entry/EntryPage.swift, Entry/EntryMoreMenu.swift, Shell/RouterSplit.swift (closePane, push(from:), DetailPane), Shell/SplitParts.swift (SplitExpandButton), Shell/Router.swift (openChat, closeDetail, push, importCards, study, tabBarLift, entryPillDrop), Chat/ChatThreadPage.swift (chatSeed), Flashcards/StudyPage.swift, Flashcards/ImportCardsSheet.swift, ParalistCore Library/EdgePicker.swift (EntryCanvas), Entries/TypeLook.swift, Icons/AppIcons.swift, Theme/EntryBarDimens.swift, ParalistCore Links/SpotifyLinks.swift, Links/VideoLinks.swift, Files/FileCategory.swift, docs/detailseite.md
 import ParalistCore
 import SwiftUI
 
@@ -16,61 +16,21 @@ struct EntryToolbar: ToolbarContent {
                 .accessibilityLabel(L.s("menu_close"))
         }
         .sharedBackgroundVisibility(.hidden)
-        ToolbarItem(placement: .topBarLeading) {
-            if SplitExpandButton.shown(router, pane) {
-                SplitExpandButton().frame(width: 44, height: 44)
-            } else {
-                Color.clear.frame(width: 44, height: 44).accessibilityHidden(true)
-            }
-        }
-        .sharedBackgroundVisibility(.hidden)
         ToolbarItem(placement: .principal) {
             Text(L.s(TypeLook.of(entry).label)).font(Typo.titleMedium).foregroundStyle(Palette.onSurface)
                 .lineLimit(1).truncationMode(.tail)
         }
         .sharedBackgroundVisibility(.hidden)
         ToolbarItemGroup(placement: .topBarTrailing) {
-            Button { model.update(entry.id) { var e = $0; e.favorite.toggle(); return e } } label: {
-                Image(systemName: entry.favorite ? AppIcons.favorite.filled : AppIcons.favorite.outlined).foregroundStyle(Palette.onSurface)
+            if router.split {
+                SplitExpandButton()
+                SplitSideButton()
+            } else {
+                EntryFavoriteButton(entry: entry, model: model)
+                EntryMoreMenu(entry: entry, model: model, router: router, sheet: $sheet, onDelete: onDelete)
             }
-            .accessibilityLabel(L.s("tool_favorite"))
-            Menu {
-                Button { model.update(entry.id) { var e = $0; e.pinned.toggle(); return e } } label: {
-                    Label(L.s(entry.pinned ? "entry_unpin" : "tool_pin"), systemImage: entry.pinned ? AppIcons.pin.filled : AppIcons.pin.outlined)
-                }
-                Button { sheet = .links } label: { Label { Text(L.s("entry_link")) } icon: { GlyphIcon(AppIcons.link, size: 17) } }
-                Button { router.openChat(with: entry.id, newId: model.chats.newId()) } label: { Label(L.s("entry_open_chat"), systemImage: AppIcons.chat.outlined) }
-                Button { sheet = .type } label: { Label { Text(L.s("entry_change_type")) } icon: { GlyphIcon(TypeLook.of(entry.type).icon.outlined, size: 17) } }
-                Button { model.update(entry.id) { var e = $0; e.archived.toggle(); return e } } label: {
-                    Label(L.s(entry.archived ? "entry_unarchive" : "entry_archive"), systemImage: entry.archived ? AppIcons.fromArchive : AppIcons.toArchive)
-                }
-                if !model.shareItems(entry).isEmpty {
-                    Button { sheet = .share } label: { Label(L.s("entry_share"), systemImage: AppIcons.share) }
-                }
-                if !EntryFacts.content(entry).isEmpty {
-                    Menu {
-                        if !EntryFacts.title(entry).isEmpty {
-                            Button { copy(EntryFacts.title(entry), notice: "entry_title_copied") } label: { Text(L.s("entry_copy_title_only")) }
-                        }
-                        Button { copy(EntryFacts.content(entry), notice: "entry_content_copied") } label: { Text(L.s("entry_copy_title_text")) }
-                    } label: {
-                        Label(L.s("entry_copy_content"), systemImage: AppIcons.copy)
-                    }
-                }
-                Divider()
-                Button(role: .destructive, action: onDelete) { Label(L.s("entry_delete"), systemImage: AppIcons.delete) }
-            } label: {
-                Image(systemName: AppIcons.more).foregroundStyle(Palette.onSurface)
-            }
-            .accessibilityLabel(L.s("entry_more"))
         }
         .sharedBackgroundVisibility(.hidden)
-    }
-
-    private func copy(_ text: String, notice: String) {
-        UIPasteboard.general.string = text
-        ClipboardMemory.markHandled()
-        model.say(L.s(notice), top: true)
     }
 }
 

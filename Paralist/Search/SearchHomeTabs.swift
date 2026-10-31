@@ -5,8 +5,31 @@ import SwiftUI
 struct SearchHomeTabs: View {
     @Binding var selection: SearchHome
     @Namespace private var namespace
+    @Environment(Router.self) private var router
 
     var body: some View {
+        HStack(spacing: SearchPaneDimens.expandGap) {
+            tabs
+            if router.split { expandButton }
+        }
+        .padding(.horizontal, Dimens.pageEdge)
+        .padding(.vertical, 6)
+    }
+
+    private var expandButton: some View {
+        Button { withAnimation(Motion.short) { router.searchWide.toggle() } } label: {
+            Image(systemName: router.searchWide ? AppIcons.paneCollapse : AppIcons.paneExpand)
+                .font(.system(size: 16, weight: .medium))
+                .foregroundStyle(Palette.onSurface)
+                .frame(width: SearchPaneDimens.expandSize, height: SearchPaneDimens.expandSize)
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .glassEffect(.regular.interactive(), in: Circle())
+        .accessibilityLabel(L.s(router.searchWide ? "ipad_collapse" : "ipad_expand"))
+    }
+
+    private var tabs: some View {
         ViewThatFits(in: .horizontal) {
             pills(fill: true)
             ScrollViewReader { proxy in
@@ -24,8 +47,6 @@ struct SearchHomeTabs: View {
         .padding(4)
         .frame(height: 44)
         .glassEffect(.regular, in: Capsule())
-        .padding(.horizontal, Dimens.pageEdge)
-        .padding(.vertical, 6)
     }
 
     private func pills(fill: Bool) -> some View {

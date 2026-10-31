@@ -17,6 +17,7 @@ struct EntryHero<Panel: View>: View {
     @Binding var hintFrame: CGRect
     let onPlay: () -> Void
     let onToggleDone: () -> Void
+    let onDetail: () -> Void
     @ViewBuilder let panel: () -> Panel
     @Environment(AppModel.self) private var model
     @State private var linkColor: UInt32?
@@ -45,7 +46,7 @@ struct EntryHero<Panel: View>: View {
         ZStack(alignment: .top) {
             if let media {
                 CoverStage(entry: entry, media: media, look: look, black: model.prefs.blackMediaBackdrop, t: t, topInset: topInset, chrome: chrome,
-                           playing: playing || embedPlaying, rowTrailing: rowTrailing, onPlay: onPlay, onToggleDone: onToggleDone, rowFrame: $rowFrame)
+                           playing: playing || embedPlaying, rowTrailing: rowTrailing, onPlay: onPlay, onToggleDone: onToggleDone, onDetail: onDetail, rowFrame: $rowFrame)
                     .ignoresSafeArea()
             }
             panel()

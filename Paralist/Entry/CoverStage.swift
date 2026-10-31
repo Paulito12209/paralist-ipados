@@ -55,6 +55,7 @@ struct CoverStage: View {
     let rowTrailing: CGFloat
     let onPlay: () -> Void
     let onToggleDone: () -> Void
+    let onDetail: () -> Void
     @Binding var rowFrame: CGRect
 
     var body: some View {
@@ -69,7 +70,7 @@ struct CoverStage: View {
                     topFade.opacity(coverChrome)
                 }
                 CoverChrome(entry: entry, playing: playing, hasPlay: media.hasPlay, trailing: rowTrailing,
-                            onPlay: onPlay, onToggleDone: onToggleDone, frame: $rowFrame)
+                            onPlay: onPlay, onToggleDone: onToggleDone, onDetail: onDetail, frame: $rowFrame)
                     .opacity(coverChrome)
                     .allowsHitTesting(coverChrome >= 1)
                     .frame(maxHeight: .infinity, alignment: .bottom)

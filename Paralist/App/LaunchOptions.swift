@@ -52,7 +52,7 @@ enum LaunchOptions {
     @MainActor
     private static func show(_ router: Router, _ model: AppModel) {
         guard let screen = value("-screen") else { return }
-        var layout = OverviewLayout.standard()
+        var layout = OverviewLayout.standard(style: screen == "overview" ? .tabs : .stacked)
         if screen == "overviewstacked" {
             layout.addTab(id: "demo-tab-umzug", name: "Umzug")
             layout.toggle(.entry("demo-project-0001"), in: "demo-tab-umzug")

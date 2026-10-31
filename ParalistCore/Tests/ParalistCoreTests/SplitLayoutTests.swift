@@ -60,4 +60,10 @@ struct SplitLayoutTests {
         #expect(leading(600, 1.5) == 600)
         #expect(leading(0, 0.5) == 0)
     }
+
+    @Test func mainShrinksToAThirdButNotBelowTheSideMinimum() {
+        #expect(SplitLayout.mainMinimum(total: 1320, minSide: 320) == 440)
+        #expect(SplitLayout.mainMinimum(total: 900, minSide: 320) == 320)
+        #expect(SplitLayout.leadingWidth(total: 1320, share: 0.1, minLeading: SplitLayout.mainMinimum(total: 1320, minSide: 320), minTrailing: 320) == 440)
+    }
 }

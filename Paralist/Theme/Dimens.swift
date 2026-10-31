@@ -156,7 +156,6 @@ enum OverviewDimens {
     static let panelEdge: CGFloat = 0
     static let panelRadius: CGFloat = 26
     static let tabHeight: CGFloat = 36
-    static let tabsHeight: CGFloat = 44
     static let tabsEdge: CGFloat = 16
     static let viewButton: CGFloat = 36
     static let tabDot: CGFloat = 4
@@ -171,6 +170,7 @@ enum OverviewDimens {
     static let zoneMinHeight: CGFloat = 56
     static let pinnedFade: CGFloat = 24
     static let pinnedCover: CGFloat = 400
+    static let pinnedReach: CGFloat = 200
 }
 
 enum TaskDimens {

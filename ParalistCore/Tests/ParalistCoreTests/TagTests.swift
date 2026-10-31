@@ -33,7 +33,7 @@ struct TagTests {
     }
 
     @Test func tagsListShowsOnlyTags() {
-        #expect(ListKind.switchable.contains(.tags))
+        #expect(ListKind.lists.contains(.tags))
         #expect(ListKind.tags.includes(Entry("t", .tag, "Anna", epoch, epoch)))
         #expect(!ListKind.tags.includes(Entry("n", .note, "Notiz", epoch, epoch)))
     }

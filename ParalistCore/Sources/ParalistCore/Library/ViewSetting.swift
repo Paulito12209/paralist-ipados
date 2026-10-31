@@ -4,7 +4,7 @@ import Foundation
 public enum SortOrder: String, CaseIterable, Sendable {
     case updated = "geaendert", title = "titel", created = "erstellt"
 
-    public static func fromKey(_ key: String?) -> SortOrder { key.flatMap(SortOrder.init(rawValue:)) ?? .updated }
+    public static func fromKey(_ key: String?) -> SortOrder { key.flatMap(SortOrder.init(rawValue:)) ?? .created }
 
     public var naturalAscending: Bool { self == .title }
 }
@@ -21,7 +21,7 @@ public struct ViewSetting: Hashable, Sendable {
     public var grouping: Grouping
     public var hidden: Set<EntryType>
 
-    public init(sort: SortOrder = .updated, ascending: Bool? = nil, grouping: Grouping = .none, hidden: Set<EntryType> = []) {
+    public init(sort: SortOrder = .created, ascending: Bool? = nil, grouping: Grouping = .none, hidden: Set<EntryType> = []) {
         self.sort = sort
         self.ascending = ascending ?? sort.naturalAscending
         self.grouping = grouping
