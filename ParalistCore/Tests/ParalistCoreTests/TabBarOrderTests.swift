@@ -85,4 +85,11 @@ struct TabBarOrderTests {
         #expect(TabBarOrder.decode("overview,media,create,menu", known: known, standard: standard) == standard)
         #expect(TabBarOrder.decode("overview,calendar,tasks,media,create,menu", known: known + ["media"], standard: standard) == standard)
     }
+
+    @Test func padTabsKeepTheFixedTabsFirstAndAddShownOnes() {
+        let fixed = ["overview", "tasks", "calendar"]
+        #expect(TabBarOrder.standard(first: "overview").padTabs(fixed) == fixed)
+        let order = TabBarOrder(slots: [.tab("chats"), .tab("tasks"), .create, .menu])
+        #expect(order.padTabs(fixed) == ["overview", "tasks", "calendar", "chats"])
+    }
 }

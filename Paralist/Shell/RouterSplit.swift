@@ -1,63 +1,45 @@
-// Zusammenhang: Shell/Router.swift (split, second, panelOpen, detailWide, paneShare, appendSection), Shell/SplitRootView.swift, Shell/SplitPanes.swift, Shell/SplitTopBar.swift, Shell/DetailHost.swift (second), Entry/EntryToolbar.swift, Shell/SplitParts.swift (DetailRootClose), docs/ipad.md
+// Zusammenhang: Shell/Router.swift (split, sideOpen, sidePath, appendSection), Shell/SplitRootView.swift, Shell/SplitTopBar.swift, Shell/CategoryPanel.swift, App/ParalistApp.swift (shows), ParalistCore Library/TabBarOrder.swift (padTabs), docs/ipad.md
+import ParalistCore
 import SwiftUI
 
-extension Router {
-    var railShown: Bool { split && detail != nil && (second != nil || detailWide) }
+extension AppTab {
+    static let padCore: [AppTab] = [.overview, .tasks, .calendar]
 
+    static func pad(_ order: TabBarOrder) -> [AppTab] {
+        order.padTabs(padCore.map(\.key)).compactMap(AppTab.init(rawValue:))
+    }
+}
+
+extension Router {
     func openSplit(_ route: Route) {
         if let target = route.tab, shows(target) {
             select(target)
             return
         }
         setCompact(false)
+        closeMenu()
         if route.opensInDetail {
-            closeMenu()
             mediaQueue = []
             detailPath = []
-            second = nil
             detailEpoch += 1
             detail = route
-            return
+        } else {
+            closeDetail()
+            sidePath = [route]
         }
-        appendSection(route)
+        withAnimation(Motion.dock) { sideOpen = true }
     }
 
-    func pushSplit(_ route: Route) {
-        guard detail != nil, route.opensInDetail else {
-            openSplit(route)
-            return
-        }
-        withAnimation(Motion.dock) {
-            secondEpoch += 1
-            second = route
-        }
+    func toggleMenu() {
+        if menuOpen { closeMenu() } else { openMenu() }
     }
 
-    func closeSecond() {
-        withAnimation(Motion.dock) { second = nil }
+    func toggleSide() {
+        closeMenu()
+        withAnimation(Motion.dock) { sideOpen.toggle() }
     }
 
-    func toggleWide() {
-        withAnimation(Motion.dock) { detailWide.toggle() }
-    }
-
-    func togglePanel() {
-        withAnimation(Motion.dock) { panelOpen.toggle() }
-    }
-
-    func leaveRail(_ tab: AppTab) {
-        withAnimation(Motion.dock) {
-            second = nil
-            detailWide = false
-        }
-        tapTab(tab)
-    }
-
-    func leave(_ dismiss: DismissAction, second inSecond: Bool = false) {
-        if split, inSecond {
-            closeSecond()
-            return
-        }
+    func leave(_ dismiss: DismissAction) {
         switch detail {
         case .chat, .study: if split, detailPath.isEmpty { closeDetail() } else { dismiss() }
         default: dismiss()

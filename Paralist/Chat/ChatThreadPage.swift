@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/RouterSplit.swift (leave, secondPane), Chat/ChatModel.swift, Chat/ChatBubble.swift, Chat/ChatMentionParts.swift, Shell/Router.swift (chatSeed, leave), ParalistCore Chat/ChatMentionQuery.swift, Chat/ChatImageParts.swift (ChatImages, Quick Look), Chat/ChatDraftCard.swift, Chat/ChatInputBar.swift, Chat/ChatMascotStage.swift, Chat/ChatThreadParts.swift, Chat/ChatLinkSheet.swift, Chat/ChatListPage.swift, Shell/Router.swift (Route.chat), Entry/MarkdownText.swift, ParalistCore Chat/ChatHint.swift, App/AppPrefs.swift (chatHintSeen)
+// Zusammenhang: Chat/ChatModel.swift, Chat/ChatBubble.swift, Chat/ChatMentionParts.swift, Shell/Router.swift (chatSeed, leave), ParalistCore Chat/ChatMentionQuery.swift, Chat/ChatImageParts.swift (ChatImages, Quick Look), Chat/ChatDraftCard.swift, Chat/ChatInputBar.swift, Chat/ChatMascotStage.swift, Chat/ChatThreadParts.swift, Chat/ChatLinkSheet.swift, Chat/ChatListPage.swift, Shell/Router.swift (Route.chat), Entry/MarkdownText.swift, ParalistCore Chat/ChatHint.swift, App/AppPrefs.swift (chatHintSeen)
 import ParalistCore
 import QuickLook
 import SwiftUI
@@ -8,7 +8,6 @@ struct ChatThreadPage: View {
     @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.secondPane) private var secondPane
     @Environment(\.openURL) private var openURL
     @State private var draft = ""
     @State private var image: Attachment?
@@ -111,7 +110,7 @@ struct ChatThreadPage: View {
         .alert(L.s("chat_delete"), isPresented: $deleting) {
             Button(L.s("entry_delete"), role: .destructive) {
                 chats.delete(id)
-                router.leave(dismiss, second: secondPane)
+                router.leave(dismiss)
             }
             Button(L.s("dialog_cancel"), role: .cancel) {}
         } message: { Text(L.s("chat_delete_confirm")) }

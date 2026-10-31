@@ -26,7 +26,7 @@ struct MenuDrawer: ViewModifier {
                             .allowsHitTesting(false)
                             .accessibilityHidden(true)
                     }
-                    .clipShape(RoundedRectangle(cornerRadius: router.menuOpen && !router.split ? MenuDimens.contentRadius : 0, style: .continuous))
+                    .clipShape(RoundedRectangle(cornerRadius: router.menuOpen ? MenuDimens.contentRadius : 0, style: .continuous))
                     .shadow(color: .black.opacity(router.menuOpen ? 0.3 : 0), radius: MenuDimens.shadow)
                     .overlay {
                         if router.menuOpen {

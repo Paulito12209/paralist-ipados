@@ -9,7 +9,7 @@ struct RootView: View {
     @State private var width = SplitMetrics.sceneWidth
 
     var body: some View {
-        let list = SplitMetrics.list(for: width)
+        let list = SplitMetrics.side(for: width)
         Group {
             if list != nil { SplitRootView() } else { phone }
         }

@@ -42,7 +42,7 @@ struct MediaPage: View {
         ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 0) {
-                    if tabRoot { SectionHeader() }
+                    if tabRoot, !router.split { SectionHeader() }
                     PageTitle(text: L.s("page_media")).padding(.horizontal, Dimens.titleEdge)
                     MediaFilterRow(filter: $filter, counts: counts(all))
                         .id(PageSearchAnchor.id)

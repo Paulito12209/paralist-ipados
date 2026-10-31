@@ -22352,214 +22352,55 @@
         }
       }
     },
-    "ipad_detail_empty": {
+    "ipad_categories": {
       "extractionState": "manual",
       "localizations": {
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "اختر عنصرًا من القائمة"
+            "value": "الفئات"
           }
         },
         "bn": {
           "stringUnit": {
             "state": "translated",
-            "value": "বাম দিক থেকে একটি এন্ট্রি বেছে নিন"
+            "value": "বিভাগ"
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wähle links einen Eintrag aus"
+            "value": "Kategorien"
           }
         },
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "Select an entry on the left"
+            "value": "Categories"
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Selecciona una entrada a la izquierda"
+            "value": "Categorías"
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Sélectionnez une entrée à gauche"
+            "value": "Catégories"
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "बाईं ओर से कोई प्रविष्टि चुनें"
+            "value": "श्रेणियाँ"
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "在左侧选择一个条目"
-          }
-        }
-      }
-    },
-    "ipad_detail_narrow": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "إظهار القائمة مجددًا"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "তালিকা আবার দেখান"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Liste wieder zeigen"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show list again"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mostrar la lista de nuevo"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Réafficher la liste"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "सूची फिर से दिखाएँ"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "重新显示列表"
-          }
-        }
-      }
-    },
-    "ipad_detail_wide": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "عرض التفاصيل بعرض كامل"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "বিস্তারিত পূর্ণ প্রস্থে"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Detail auf volle Breite"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Show detail full width"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Detalle a ancho completo"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Détail en pleine largeur"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "विवरण पूरी चौड़ाई में"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "详情全宽显示"
-          }
-        }
-      }
-    },
-    "ipad_pane_divider": {
-      "extractionState": "manual",
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "الفاصل بين الصفحات"
-          }
-        },
-        "bn": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "পৃষ্ঠার মাঝের বিভাজক"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trenner zwischen den Seiten"
-          }
-        },
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Divider between pages"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Separador entre páginas"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Séparateur entre les pages"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "पृष्ठों के बीच विभाजक"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "页面之间的分隔条"
+            "value": "类别"
           }
         }
       }

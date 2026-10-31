@@ -1,4 +1,4 @@
-// Zusammenhang: App/AppModel.swift, Shell/Router.swift, Shell/RootView.swift, Reminders/NotificationHandler.swift, App/LaunchOptions.swift, ParalistCore Links/IncomingLink.swift, Paralist.entitlements, ParalistWidgets/EntryWidget.swift, Intents/ParalistShortcuts.swift
+// Zusammenhang: App/AppModel.swift, Shell/Router.swift, Shell/RouterSplit.swift (AppTab.pad), Shell/RootView.swift, Reminders/NotificationHandler.swift, App/LaunchOptions.swift, ParalistCore Links/IncomingLink.swift, Paralist.entitlements, ParalistWidgets/EntryWidget.swift, Intents/ParalistShortcuts.swift
 import AppIntents
 import ParalistCore
 import SwiftUI
@@ -14,7 +14,9 @@ struct ParalistApp: App {
     init() {
         let model = AppModel()
         let router = Router()
-        router.shows = { model.prefs.tabOrder.shows($0.key) }
+        router.shows = { [unowned router] tab in
+            router.split ? AppTab.pad(model.prefs.tabOrder).contains(tab) : model.prefs.tabOrder.shows(tab.key)
+        }
         router.tab = model.prefs.tabOrder.tabs.first.flatMap(AppTab.init(rawValue:)) ?? .overview
         _model = State(initialValue: model)
         _router = State(initialValue: router)

@@ -1,4 +1,4 @@
-<!-- Zusammenhang: Paralist/Entry/EntryPage.swift, Paralist/Entry/EntryCanvasPanel.swift, Paralist/Entry/EntryToolbar.swift, Paralist/Entry/EntryHero.swift, Paralist/Entry/CoverStage.swift, Paralist/Entry/CoverMotifLayer.swift, Paralist/Entry/CoverChrome.swift, Paralist/Entry/CoverVideo.swift, Paralist/Entry/EntryCover.swift (CoverTitleVeil, CanvasSheet), Paralist/Entry/EdgePicker.swift, Paralist/Entry/EntryBodyEditor.swift, Paralist/Entry/EntryBlocks.swift (EntryRelations, LinkAddMenu, PlusFrameKey), Paralist/Entry/EntryActions.swift, Paralist/Entry/EntryPickers.swift, Paralist/Entry/EntryMetaRow.swift, Paralist/Entry/EntryInfoSheet.swift, Paralist/Entry/CanvasCard.swift, ParalistCore/Sources/ParalistCore/Library/EntryFacts.swift, ParalistCore/Sources/ParalistCore/Library/EntryParent.swift, ParalistCore/Sources/ParalistCore/Library/PlacePicker.swift, Paralist/Entry/LinkSheet.swift (EntryPlaceSheet), Paralist/Entry/EntryDestination.swift, Paralist/Pages/MediaPage.swift, Paralist/Pages/OverviewEdge.swift, Paralist/Pages/OverviewSections.swift, Paralist/Pages/OverviewSwitchSheet.swift, Paralist/Pages/OverviewTabsPage.swift, ParalistCore/Sources/ParalistCore/Library/OverviewLayout.swift, ParalistCore/Sources/ParalistCore/Library/OverviewScope.swift, Paralist/Shell/Router.swift, Paralist/Shell/DetailHost.swift, Paralist/Shell/SplitRootView.swift, Paralist/Shell/SplitPanes.swift, Paralist/Shell/SplitParts.swift, Paralist/Shell/RouterSplit.swift, docs/ipad.md, Paralist/Shell/RouteDestination.swift, ParalistCore/Sources/ParalistCore/Library/BarCollapse.swift, Paralist/Shell/CreateOverlay.swift, Paralist/Shell/AppSheets.swift (CreateSheets), ParalistCore/Sources/ParalistCore/Library/CoverTransition.swift, ParalistCore/Sources/ParalistCore/Library/EdgePicker.swift, Paralist/Theme/Dimens.swift, Paralist/Theme/EntryBarDimens.swift, ParalistCore/Sources/ParalistCore/Library/TabBarLayout.swift, Paralist/Theme/CanvasOpenDimens.swift, Paralist/Pages/FolderStage.swift (PinnedCardShell), Paralist/Theme/Palette.swift, docs/etappen-cover-uebergang.md -->
+<!-- Zusammenhang: Paralist/Entry/EntryPage.swift, Paralist/Entry/EntryCanvasPanel.swift, Paralist/Entry/EntryToolbar.swift, Paralist/Entry/EntryHero.swift, Paralist/Entry/CoverStage.swift, Paralist/Entry/CoverMotifLayer.swift, Paralist/Entry/CoverChrome.swift, Paralist/Entry/CoverVideo.swift, Paralist/Entry/EntryCover.swift (CoverTitleVeil, CanvasSheet), Paralist/Entry/EdgePicker.swift, Paralist/Entry/EntryBodyEditor.swift, Paralist/Entry/EntryBlocks.swift (EntryRelations, LinkAddMenu, PlusFrameKey), Paralist/Entry/EntryActions.swift, Paralist/Entry/EntryPickers.swift, Paralist/Entry/EntryMetaRow.swift, Paralist/Entry/EntryInfoSheet.swift, Paralist/Entry/CanvasCard.swift, ParalistCore/Sources/ParalistCore/Library/EntryFacts.swift, ParalistCore/Sources/ParalistCore/Library/EntryParent.swift, ParalistCore/Sources/ParalistCore/Library/PlacePicker.swift, Paralist/Entry/LinkSheet.swift (EntryPlaceSheet), Paralist/Entry/EntryDestination.swift, Paralist/Pages/MediaPage.swift, Paralist/Pages/OverviewEdge.swift, Paralist/Pages/OverviewSections.swift, Paralist/Pages/OverviewSwitchSheet.swift, Paralist/Pages/OverviewTabsPage.swift, ParalistCore/Sources/ParalistCore/Library/OverviewLayout.swift, ParalistCore/Sources/ParalistCore/Library/OverviewScope.swift, Paralist/Shell/Router.swift, Paralist/Shell/DetailHost.swift, Paralist/Shell/SplitRootView.swift, Paralist/Shell/SplitParts.swift, Paralist/Shell/RouterSplit.swift, docs/ipad.md, Paralist/Shell/RouteDestination.swift, ParalistCore/Sources/ParalistCore/Library/BarCollapse.swift, Paralist/Shell/CreateOverlay.swift, Paralist/Shell/AppSheets.swift (CreateSheets), ParalistCore/Sources/ParalistCore/Library/CoverTransition.swift, ParalistCore/Sources/ParalistCore/Library/EdgePicker.swift, Paralist/Theme/Dimens.swift, Paralist/Theme/EntryBarDimens.swift, ParalistCore/Sources/ParalistCore/Library/TabBarLayout.swift, Paralist/Theme/CanvasOpenDimens.swift, Paralist/Pages/FolderStage.swift (PinnedCardShell), Paralist/Theme/Palette.swift, docs/etappen-cover-uebergang.md -->
 
 # Detailseite: Bereiche, Ansichten, Edge Picker
 
@@ -84,30 +84,24 @@ Schalter wieder `true` ist. Kalender und Übersicht sind nicht betroffen.
 ## iPad
 
 Ab ausreichender Fensterbreite (Regel siehe `docs/ipad.md`) liegt die
-Detailseite nicht als Vollbild-Deckblatt, sondern im rechten abgerundeten
-Container neben der Reiterseite (1/3, mindestens 320 pt).
+Detailseite nicht als Vollbild-Deckblatt, sondern in der rechten Seite (1/3,
+mindestens 320 pt) neben dem Hauptcontainer.
 
-- `DetailHost(inline: true)` zeigt `router.detail`. Ohne Detail steht dort
-  der Platzhalter („Wähle links einen Eintrag aus“) oder, über den
-  Seitenleisten-Knopf oben rechts, das `CategoryPanel`.
-- In der Kopfzeile sitzt links neben dem Schließen-Pfeil der Knopf
-  `sidebar.left` (`WideToggle`): Detail auf volle Breite, links bleibt eine
-  schmale Icon-Leiste. Nochmal tippen holt die Reiterseite zurück.
-- Ein Tipp in der Liste links ersetzt das Detail (`Router.open`). Ein Link aus
-  der Detailseite heraus (Verknüpfung, Karte, Erwähnung, Lernen,
-  `Router.push`) öffnet eine zweite Detailseite rechts daneben
-  (`router.second`); die Reiterseite schrumpft zur Icon-Leiste, dazwischen
-  liegt ein verschiebbarer Trenner. Weitere Links ersetzen die zweite Seite.
-- Auf der zweiten Seite ist der Knopf links oben ein ✕ (`secondPane`), ebenso
-  „Schließen“ in der Bottom-Zeile: Beide schließen nur die zweite Seite.
+- `DetailHost(inline: true)` zeigt `router.detail`. Ohne Detail steht dort der
+  Stapel mit den Kategorien (`sidePath`).
+- Ein Tipp links ersetzt das Detail (`Router.open`). Ein Link aus der
+  Detailseite heraus (Verknüpfung, Karte, Erwähnung, Lernen) schiebt auf
+  `detailPath` (`Router.push`), Zurück wie auf dem iPhone. Es gibt keine
+  zweite Detailseite daneben.
 - `.chat` und `.study` öffnen ebenfalls rechts. Ihre Wurzel hat links oben
-  einen Schließen-Pfeil (auf der zweiten Seite ✕).
-- „Schließen“ in der Bottom-Zeile der ersten Seite leert den Container
-  (`closeDetail`, auch die zweite Seite). Das Herunterziehen des Covers
-  (`detailDrop`) und das Wegwischen nach rechts entfallen; das Blättern der
-  Medien (`MediaPager`) bleibt.
-- Passt der Container nicht (unter 440 pt), gilt das iPhone-Verhalten mit
-  Vollbild-Deckblatt; ein offenes Detail bleibt beim Wechsel erhalten.
+  einen Schließen-Pfeil.
+- „Schließen“ in der Bottom-Zeile leert das Detail (`closeDetail`). Das
+  Herunterziehen des Covers (`detailDrop`) und das Wegwischen nach rechts
+  entfallen; Zurück in verschachtelten Ebenen und das Blättern der Medien
+  (`MediaPager`) bleiben.
+- Passt die Seite nicht (Hauptcontainer unter 440 pt), gilt das
+  iPhone-Verhalten mit Vollbild-Deckblatt; ein offenes Detail bleibt beim
+  Wechsel erhalten.
 
 ## Ansichten
 

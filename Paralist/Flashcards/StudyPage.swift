@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/RouterSplit.swift (leave, secondPane), Flashcards/StudyCard.swift, Entries/TypeLook.swift (StatusLook), ParalistCore Flashcards/StudyQueue.swift, Model/EntryStatus.swift, App/AppModel.swift (studyQueue, review, finishStudy), Shell/Router.swift (leave), Shell/RouteDestination.swift (hidesPhoneTabBar)
+// Zusammenhang: Flashcards/StudyCard.swift, Entries/TypeLook.swift (StatusLook), ParalistCore Flashcards/StudyQueue.swift, Model/EntryStatus.swift, App/AppModel.swift (studyQueue, review, finishStudy), Shell/Router.swift (leave), Shell/RouteDestination.swift (hidesPhoneTabBar)
 import ParalistCore
 import SwiftUI
 
@@ -7,7 +7,6 @@ struct StudyPage: View {
     @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.secondPane) private var secondPane
     @State private var queue: [StudyCandidate]?
     @State private var index = 0
     @State private var flipped = false
@@ -22,7 +21,7 @@ struct StudyPage: View {
                     Text(L.s("fc_queue_empty")).font(Typo.bodyLarge).foregroundStyle(Palette.onSurfaceVariant).multilineTextAlignment(.center).padding(32)
                     Spacer()
                 } else if index >= queue.count {
-                    StudyResult(results: results) { router.leave(dismiss, second: secondPane) }
+                    StudyResult(results: results) { router.leave(dismiss) }
                 } else if let card = model.entry(queue[index].cardId) {
                     ProgressView(value: Double(index), total: Double(queue.count)).tint(Palette.primary).padding(.horizontal, 16)
                     StudyCard(card: card, flipped: $flipped) { rate(card, $0) }

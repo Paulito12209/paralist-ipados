@@ -4456,16 +4456,6 @@
     "ar": "تحدث مجددًا",
     "bn": "আবার বলুন"
   },
-  "ipad_detail_empty": {
-    "de": "Wähle links einen Eintrag aus",
-    "en": "Select an entry on the left",
-    "es": "Selecciona una entrada a la izquierda",
-    "fr": "Sélectionnez une entrée à gauche",
-    "zh-Hans": "在左侧选择一个条目",
-    "hi": "बाईं ओर से कोई प्रविष्टि चुनें",
-    "ar": "اختر عنصرًا من القائمة",
-    "bn": "বাম দিক থেকে একটি এন্ট্রি বেছে নিন"
-  },
   "suggest_settings_hint": {
     "de": "Ein kleines Modell auf dem Gerät schlägt vor, wohin ein Eintrag passt. Nichts verlässt das iPad, nichts wird ohne dich verschoben.",
     "en": "A small on-device model suggests where an entry fits. Nothing leaves the iPad and nothing moves without you.",
@@ -4475,26 +4465,6 @@
     "hi": "डिवाइस पर एक छोटा मॉडल सुझाता है कि प्रविष्टि कहाँ फिट होती है। कुछ भी iPad से बाहर नहीं जाता और आपके बिना कुछ नहीं हटता।",
     "ar": "يقترح نموذج صغير على الجهاز أين يناسب المدخل. لا يغادر شيء الـ iPad ولا يُنقل شيء دون موافقتك.",
     "bn": "ডিভাইসের একটি ছোট মডেল পরামর্শ দেয় এন্ট্রিটি কোথায় মানায়। কিছুই iPad-এর বাইরে যায় না, আপনার ছাড়া কিছু সরে না।"
-  },
-  "ipad_detail_wide": {
-    "de": "Detail auf volle Breite",
-    "en": "Show detail full width",
-    "es": "Detalle a ancho completo",
-    "fr": "Détail en pleine largeur",
-    "zh-Hans": "详情全宽显示",
-    "hi": "विवरण पूरी चौड़ाई में",
-    "ar": "عرض التفاصيل بعرض كامل",
-    "bn": "বিস্তারিত পূর্ণ প্রস্থে"
-  },
-  "ipad_detail_narrow": {
-    "de": "Liste wieder zeigen",
-    "en": "Show list again",
-    "es": "Mostrar la lista de nuevo",
-    "fr": "Réafficher la liste",
-    "zh-Hans": "重新显示列表",
-    "hi": "सूची फिर से दिखाएँ",
-    "ar": "إظهار القائمة مجددًا",
-    "bn": "তালিকা আবার দেখান"
   },
   "ipad_sidebar": {
     "de": "Seitenleiste",
@@ -4506,14 +4476,14 @@
     "ar": "الشريط الجانبي",
     "bn": "সাইডবার"
   },
-  "ipad_pane_divider": {
-    "de": "Trenner zwischen den Seiten",
-    "en": "Divider between pages",
-    "es": "Separador entre páginas",
-    "fr": "Séparateur entre les pages",
-    "zh-Hans": "页面之间的分隔条",
-    "hi": "पृष्ठों के बीच विभाजक",
-    "ar": "الفاصل بين الصفحات",
-    "bn": "পৃষ্ঠার মাঝের বিভাজক"
+  "ipad_categories": {
+    "de": "Kategorien",
+    "en": "Categories",
+    "es": "Categorías",
+    "fr": "Catégories",
+    "zh-Hans": "类别",
+    "hi": "श्रेणियाँ",
+    "ar": "الفئات",
+    "bn": "বিভাগ"
   }
 }

@@ -19,7 +19,7 @@ struct FlashcardsPage: View {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
-                    if tabRoot { SectionHeader() }
+                    if tabRoot, !router.split { SectionHeader() }
                     PageTitle(text: L.s("page_flashcards")).padding(.horizontal, Dimens.titleEdge)
                     if allDecks.isEmpty && cards.isEmpty {
                         EmptyState(text: L.s("empty_flashcards")) { router.openCreate() }.padding(.top, 40)

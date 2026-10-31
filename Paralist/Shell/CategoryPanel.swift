@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/Router.swift (Route, open), Shell/SplitRootView.swift, Shell/TabSlotMenu.swift (TabSlotLook), Entries/TypeLook.swift (ListTitles, TypeLook), Theme/CategoryDimens.swift, Icons/GlyphIcon.swift
+// Zusammenhang: Shell/Router.swift (Route, open), Shell/RouterSplit.swift (openSplit), Shell/SplitRootView.swift (rechte Seite), Shell/TabSlotMenu.swift (TabSlotLook), Entries/TypeLook.swift (ListTitles, TypeLook), Theme/CategoryDimens.swift, Icons/GlyphIcon.swift
 import ParalistCore
 import SwiftUI
 
@@ -37,7 +37,7 @@ struct CategoryPanel: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: CategoryDimens.spacing) {
-                Text(L.s("nav_menu"))
+                Text(L.s("ipad_categories"))
                     .font(Typo.headlineLarge)
                     .foregroundStyle(Palette.onSurface)
                     .padding(.bottom, CategoryDimens.titleBottom)
@@ -72,7 +72,8 @@ struct CategoryPanel: View {
                 Text(item.title)
                     .font(Typo.dm(18, .bold))
                     .foregroundStyle(.white)
-                    .lineLimit(2)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
                     .multilineTextAlignment(.leading)
                     .padding(CategoryDimens.labelInset)
             }

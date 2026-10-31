@@ -30,7 +30,7 @@ struct SectionChrome: ViewModifier {
             .background { Palette.background.ignoresSafeArea() }
             .toolbar(.hidden, for: .navigationBar)
             .overlay(alignment: .top) {
-                if !manualHeader {
+                if !manualHeader, !router.split {
                     LinearGradient(colors: [Palette.background, Palette.background.opacity(0)], startPoint: .top, endPoint: .bottom)
                         .frame(height: Dimens.statusFade)
                         .ignoresSafeArea(edges: .top)

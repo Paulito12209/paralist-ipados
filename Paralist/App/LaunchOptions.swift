@@ -31,7 +31,7 @@ enum LaunchOptions {
     static func apply(_ router: Router, _ model: AppModel) {
         guard AppPaths.isDemo else { return }
         guard let orientation = value("-orientation") else {
-            router.split = SplitMetrics.list(for: SplitMetrics.sceneWidth) != nil
+            router.split = SplitMetrics.side(for: SplitMetrics.sceneWidth) != nil
             show(router, model)
             return
         }
@@ -72,14 +72,6 @@ enum LaunchOptions {
         case "split":
             router.select(.overview)
             router.open(.entry(DemoSeed.videoId))
-        case "pair":
-            router.select(.overview)
-            router.open(.entry(DemoSeed.videoId))
-            router.push(.entry(DemoSeed.taskId))
-        case "wide":
-            router.open(.entry(DemoSeed.videoId))
-            router.detailWide = true
-        case "panel": router.panelOpen = true
         case "entry": router.open(.entry(DemoSeed.videoId))
         case "task": router.open(.entry(DemoSeed.taskId))
         case "photo": router.open(.entry(DemoSeed.photoId))

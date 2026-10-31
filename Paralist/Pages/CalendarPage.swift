@@ -32,7 +32,7 @@ struct CalendarPage: View {
         let rows = model.calendar(around: selected)
         VStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
-                if tabRoot { SectionHeader() }
+                if tabRoot, !router.split { SectionHeader() }
                 PageTitle(text: L.s("nav_calendar")).padding(.leading, Dimens.titleEdge)
             }
             .frame(maxWidth: .infinity, alignment: .leading)

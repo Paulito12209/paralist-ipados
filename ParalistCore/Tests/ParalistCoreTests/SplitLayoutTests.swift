@@ -3,68 +3,41 @@ import Testing
 @testable import ParalistCore
 
 struct SplitLayoutTests {
-    private func list(_ total: Double) -> Double? {
-        SplitLayout.listWidth(total: total, minList: 320, minDetail: 440)
+    private func side(_ total: Double) -> Double? {
+        SplitLayout.sideWidth(total: total, minSide: 320, minMain: 440)
     }
 
-    @Test func listTakesAThirdOfWideWindows() {
-        #expect(list(1200) == 400)
-        #expect(list(1620) == 540)
+    @Test func sideTakesAThirdOfWideWindows() {
+        #expect(side(1200) == 400)
+        #expect(side(1620) == 540)
     }
 
-    @Test func listKeepsItsMinimumWidth() {
-        #expect(list(900) == 320)
-        #expect(list(960) == 320)
+    @Test func sideKeepsItsMinimumWidth() {
+        #expect(side(900) == 320)
+        #expect(side(960) == 320)
     }
 
     @Test func narrowWindowsFallBackToCompact() {
-        #expect(list(750) == nil)
-        #expect(list(639) == nil)
-        #expect(list(0) == nil)
-        #expect(list(-10) == nil)
+        #expect(side(750) == nil)
+        #expect(side(639) == nil)
+        #expect(side(0) == nil)
+        #expect(side(-10) == nil)
     }
 
-    @Test func detailMayBeExactlyAsNarrowAsTheMinimum() {
-        #expect(list(760) == 320)
-        #expect(list(759) == nil)
+    @Test func mainMayBeExactlyAsNarrowAsTheMinimum() {
+        #expect(side(760) == 320)
+        #expect(side(759) == nil)
     }
 
-    @Test func detailKeepsTwoThirdsOfWideWindows() throws {
+    @Test func mainKeepsTwoThirdsOfWideWindows() throws {
         let total = 1024.0
-        let width = try #require(list(total))
+        let width = try #require(side(total))
         #expect(abs((total - width) - total * 2 / 3) < 0.001)
     }
-}
 
-struct SplitPaneTests {
-    @Test func railLeavesTheRestForTheDetail() {
-        #expect(SplitLayout.beside(total: 1300, rail: 72, gap: 10) == 1218)
-        #expect(SplitLayout.beside(total: 50, rail: 72, gap: 10) == 0)
-    }
-
-    @Test func panesStartHalfAndHalf() {
-        let parts = SplitLayout.panes(total: 1010, share: 0.5, minPane: 320, divider: 10)
-        #expect(parts.first == 500)
-        #expect(parts.second == 500)
-    }
-
-    @Test func eachPaneKeepsItsMinimum() {
-        let left = SplitLayout.panes(total: 1010, share: 0.05, minPane: 320, divider: 10)
-        #expect(left.first == 320)
-        #expect(left.second == 680)
-        let right = SplitLayout.panes(total: 1010, share: 0.99, minPane: 320, divider: 10)
-        #expect(right.first == 680)
-        #expect(right.second == 320)
-    }
-
-    @Test func tooNarrowSplitsEvenly() {
-        #expect(SplitLayout.share(0.9, total: 600, minPane: 320) == 0.5)
-        #expect(SplitLayout.share(0.9, total: 0, minPane: 320) == 0.5)
-    }
-
-    @Test func dragMovesTheShareWithinBounds() {
-        #expect(abs(SplitLayout.drag(from: 0.5, by: 100, total: 1010, minPane: 320, divider: 10) - 0.6) < 0.0001)
-        #expect(abs(SplitLayout.drag(from: 0.5, by: -400, total: 1010, minPane: 320, divider: 10) - 0.32) < 0.0001)
-        #expect(abs(SplitLayout.drag(from: 0.5, by: 900, total: 1010, minPane: 320, divider: 10) - 0.68) < 0.0001)
+    @Test func menuPanelIsAThirdButAtLeastTheMinimum() {
+        #expect(SplitLayout.panelWidth(total: 1366, minSide: 320) == 1366.0 / 3)
+        #expect(SplitLayout.panelWidth(total: 820, minSide: 320) == 320)
+        #expect(SplitLayout.panelWidth(total: 200, minSide: 320) == 200)
     }
 }

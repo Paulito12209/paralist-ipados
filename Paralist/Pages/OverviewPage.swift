@@ -22,7 +22,7 @@ struct OverviewPage: View {
         ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 0, pinnedViews: [.sectionHeaders]) {
-                    if tabRoot { SectionHeader() }
+                    if tabRoot, !router.split { SectionHeader() }
                     PageTitle(text: L.s("nav_overview")).padding(.horizontal, Dimens.titleEdge)
                     TileGrid()
                     Spacer().frame(height: stacked ? 0 : OverviewDimens.tilesToList)

@@ -1,4 +1,4 @@
-// Zusammenhang: Paralist/Shell/AppTabBar.swift, Paralist/Shell/TabSlotMenu.swift, Paralist/Pages/MenuNavRow.swift, Paralist/App/AppPrefs.swift (tabOrder), Tests TabBarOrderTests.swift
+// Zusammenhang: Paralist/Shell/AppTabBar.swift, Paralist/Shell/TabSlotMenu.swift, Paralist/Pages/MenuNavRow.swift, Paralist/App/AppPrefs.swift (tabOrder), Paralist/Shell/RouterSplit.swift (padTabs), Tests TabBarOrderTests.swift
 import Foundation
 
 public enum TabSlot: Hashable, Sendable {
@@ -28,6 +28,10 @@ public struct TabBarOrder: Equatable, Sendable {
     public static func standard(first tab: String) -> TabBarOrder { TabBarOrder(slots: [.tab(tab), .create, .menu]) }
 
     public var tabs: [String] { slots.compactMap(\.tab) }
+
+    public func padTabs(_ fixed: [String]) -> [String] {
+        fixed + tabs.filter { !fixed.contains($0) }
+    }
 
     public static let maxTabs = 3
 

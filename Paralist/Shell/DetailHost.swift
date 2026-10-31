@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/Router.swift, Shell/MediaPager.swift, ParalistCore Library/MediaPaging.swift, Shell/AppSheets.swift, Shell/RouteDestination.swift, Shell/RootView.swift (NoticeBar), Shell/CreateOverlay.swift, Entry/EntryDestination.swift, Theme/Dimens.swift (swipeBack*), Entry/EntryPage.swift (Cover-Zug, detailDrop), Shell/SplitPanes.swift (inline, second), Shell/SplitParts.swift (secondPane, DetailRootClose), Chat/ChatThreadPage.swift, Flashcards/StudyPage.swift
+// Zusammenhang: Shell/Router.swift, Shell/MediaPager.swift, ParalistCore Library/MediaPaging.swift, Shell/AppSheets.swift, Shell/RouteDestination.swift, Shell/RootView.swift (NoticeBar), Shell/CreateOverlay.swift, Entry/EntryDestination.swift, Theme/Dimens.swift (swipeBack*), Entry/EntryPage.swift (Cover-Zug, detailDrop), Shell/SplitRootView.swift (inline), Chat/ChatThreadPage.swift, Flashcards/StudyPage.swift
 import ParalistCore
 import SwiftUI
 import UIKit
@@ -7,7 +7,6 @@ struct DetailHost: View {
     private enum Swipe { case nested, drop, page }
 
     var inline = false
-    var second = false
     @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -19,29 +18,8 @@ struct DetailHost: View {
     @State private var engaged = false
 
     var body: some View {
-        if second { secondBody } else { firstBody }
-    }
-
-    private var secondBody: some View {
-        NavigationStack {
-            Group {
-                switch router.second {
-                case .cover(let id): EntryDestination(id: id, cover: true)
-                case .entry(let id): EntryDestination(id: id)
-                case .chat(let id): ChatThreadPage(id: id).background { Palette.surface.ignoresSafeArea() }.modifier(DetailRootClose(inline: true))
-                case .study(let deck): StudyPage(deck: deck).modifier(DetailRootClose(inline: true))
-                default: Color.clear
-                }
-            }
-            .routeDestinations()
-        }
-        .environment(\.secondPane, true)
-        .background(Palette.surfaceContainer)
-    }
-
-    private var firstBody: some View {
         @Bindable var router = router
-        return NavigationStack(path: $router.detailPath) {
+        NavigationStack(path: $router.detailPath) {
             Group {
                 switch router.detail {
                 case .cover(let id):
