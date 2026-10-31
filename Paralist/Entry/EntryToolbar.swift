@@ -1,4 +1,4 @@
-// Zusammenhang: Entry/EntryPage.swift, Shell/Router.swift (openChat, closeDetail, push, importCards, study, tabBarLift, entryPillDrop), Chat/ChatThreadPage.swift (chatSeed), Flashcards/StudyPage.swift, Flashcards/ImportCardsSheet.swift, ParalistCore Library/EdgePicker.swift (EntryCanvas), Entries/TypeLook.swift, Icons/AppIcons.swift, Theme/EntryBarDimens.swift, ParalistCore Links/SpotifyLinks.swift, Links/VideoLinks.swift, Files/FileCategory.swift, docs/detailseite.md
+// Zusammenhang: Shell/RouterSplit.swift (closeSecond, secondPane), Shell/SplitParts.swift (WideToggle), Entry/EntryPage.swift, Shell/Router.swift (openChat, closeDetail, push, importCards, study, tabBarLift, entryPillDrop), Chat/ChatThreadPage.swift (chatSeed), Flashcards/StudyPage.swift, Flashcards/ImportCardsSheet.swift, ParalistCore Library/EdgePicker.swift (EntryCanvas), Entries/TypeLook.swift, Icons/AppIcons.swift, Theme/EntryBarDimens.swift, ParalistCore Links/SpotifyLinks.swift, Links/VideoLinks.swift, Files/FileCategory.swift, docs/detailseite.md
 import ParalistCore
 import SwiftUI
 
@@ -7,16 +7,23 @@ struct EntryToolbar: ToolbarContent {
     let model: AppModel
     let router: Router
     @Binding var sheet: EntrySheet?
+    var secondPane = false
     let onDelete: () -> Void
 
     var body: some ToolbarContent {
         ToolbarItem(placement: .topBarLeading) {
-            Button { router.closeDetail() } label: { Image(systemName: AppIcons.canvasBack).foregroundStyle(Palette.onSurface) }
-                .accessibilityLabel(L.s("menu_close"))
+            Button { if secondPane { router.closeSecond() } else { router.closeDetail() } } label: {
+                Image(systemName: secondPane ? AppIcons.close : AppIcons.canvasBack).foregroundStyle(Palette.onSurface)
+            }
+            .accessibilityLabel(L.s("menu_close"))
         }
         .sharedBackgroundVisibility(.hidden)
         ToolbarItem(placement: .topBarLeading) {
-            Color.clear.frame(width: 44, height: 44).accessibilityHidden(true)
+            if router.split, !secondPane, router.second == nil {
+                WideToggle()
+            } else {
+                Color.clear.frame(width: 44, height: 44).accessibilityHidden(true)
+            }
         }
         .sharedBackgroundVisibility(.hidden)
         ToolbarItem(placement: .principal) {
@@ -80,6 +87,7 @@ struct EntryBottomBar: View {
     @Environment(Router.self) private var router
     @Environment(\.openURL) private var openURL
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.secondPane) private var secondPane
     @State private var completing = false
 
     private struct IconAction {
@@ -144,7 +152,7 @@ struct EntryBottomBar: View {
     }
 
     private var closeButton: some View {
-        Button { router.closeDetail() } label: {
+        Button { if secondPane { router.closeSecond() } else { router.closeDetail() } } label: {
             Text(L.s("create_close"))
                 .font(Typo.dm(collapsed ? Dimens.entryBarPillFont : Dimens.entryBarFont, .semibold))
                 .lineLimit(1)

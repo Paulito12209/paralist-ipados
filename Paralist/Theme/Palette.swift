@@ -15,6 +15,7 @@ enum Palette {
     static let error = tone(0xB3261C, 0xF2B8B5)
     static let onError = tone(0xFFFFFF, 0x601410)
     static let background = tone(0xF3F3F6, 0x121316)
+    static let window = tone(0xDFE2E8, 0x000000)
     static let surface = tone(0xFFFFFF, 0x121316)
     static let onSurface = tone(0x1F1F1F, 0xE3E3E3)
     static let onSurfaceVariant = tone(0x444746, 0xC4C7C5)

@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/RootView.swift (Umschaltung nach Fensterbreite), Shell/SplitParts.swift, Shell/SplitToolbar.swift, Shell/DetailHost.swift (inline), Shell/Router.swift (split, columns, push, detailEpoch), Shell/TabSlotMenu.swift (TabSlotLook), Shell/MenuDrawer.swift, Shell/AppSheets.swift, Shell/CreateOverlay.swift, Theme/SplitDimens.swift, ParalistCore Library/SplitLayout.swift, docs/ipad.md
+// Zusammenhang: Shell/RootView.swift (Umschaltung nach Fensterbreite, TabStacks), Shell/SplitTopBar.swift, Shell/SplitPanes.swift (SplitRail, SplitPanes), Shell/SplitParts.swift, Shell/CategoryPanel.swift, Shell/DetailHost.swift (inline), Shell/Router.swift (split, detailEpoch), Shell/RouterSplit.swift (railShown, panelOpen), Pages/MediaBar.swift, Shell/MenuDrawer.swift, Shell/AppSheets.swift, Shell/CreateOverlay.swift, Theme/SplitDimens.swift, Theme/Palette.swift (window), ParalistCore Library/SplitLayout.swift, docs/ipad.md
 import ParalistCore
 import SwiftUI
 import UIKit
@@ -11,6 +11,11 @@ enum SplitMetrics {
             .map { CGFloat($0) }
     }
 
+    static func listPane(_ width: CGFloat) -> CGFloat {
+        let list = SplitLayout.listWidth(total: Double(width - SplitDimens.gap), minList: Double(SplitDimens.minList), minDetail: 0)
+        return list.map { CGFloat($0) } ?? SplitDimens.minList
+    }
+
     static var sceneWidth: CGFloat {
         let scene = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first
         return scene?.coordinateSpace.bounds.width ?? 0
@@ -18,19 +23,29 @@ enum SplitMetrics {
 }
 
 struct SplitRootView: View {
-    let listWidth: CGFloat
-    @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
 
     var body: some View {
-        TabView(selection: Binding(get: { router.tab }, set: { if $0 != router.tab { router.select($0) } })) {
-            ForEach(tabs, id: \.self) { tab in
-                Tab(TabSlotLook.title(tab), systemImage: TabSlotLook.icon(tab).outlined, value: tab) {
-                    SplitTabContent(tab: tab, listWidth: listWidth)
+        GeometryReader { geo in
+            let inner = max(0, geo.size.width - 2 * SplitDimens.margin)
+            let rail = router.railShown
+            let list = SplitMetrics.listPane(inner)
+            VStack(spacing: SplitDimens.gap) {
+                if !rail { SplitTopBar() }
+                HStack(spacing: SplitDimens.gap) {
+                    if rail {
+                        SplitRail()
+                    } else {
+                        SplitListPane().frame(width: list)
+                    }
+                    detail(width: rail ? CGFloat(SplitLayout.beside(total: Double(inner), rail: Double(SplitDimens.rail), gap: Double(SplitDimens.gap))) : inner - list - SplitDimens.gap)
                 }
             }
+            .padding(.horizontal, SplitDimens.margin)
+            .padding(.top, rail ? SplitDimens.margin : 0)
+            .padding(.bottom, SplitDimens.margin)
         }
-        .tabViewStyle(.sidebarAdaptable)
+        .background(Palette.window.ignoresSafeArea())
         .tint(Palette.onSurface)
         .background {
             Color.clear
@@ -44,35 +59,57 @@ struct SplitRootView: View {
         .overlay(alignment: .top) { NoticeBar(top: true) }
     }
 
-    private var tabs: [AppTab] {
-        model.prefs.tabOrder.tabs.compactMap(AppTab.init(rawValue:))
+    @ViewBuilder
+    private func detail(width: CGFloat) -> some View {
+        if router.detail != nil {
+            SplitPanes(width: width)
+        } else if router.panelOpen {
+            CategoryPanel().splitPane()
+        } else {
+            SplitPlaceholder().splitPane()
+        }
     }
 }
 
-struct SplitTabContent: View {
-    let tab: AppTab
-    let listWidth: CGFloat
+struct SplitListPane: View {
     @Environment(Router.self) private var router
 
     var body: some View {
-        NavigationSplitView(columnVisibility: Binding(get: { router.columns }, set: { router.columns = $0 })) {
-            NavigationStack(path: router.binding(tab)) {
-                TabRoot(tab: tab).sectionChrome(tab, manualHeader: tab == .calendar).splitToolbar(tab).routeDestinations()
-            }
-            .navigationSplitViewColumnWidth(listWidth)
-        } detail: {
-            detail
-        }
-        .navigationSplitViewStyle(.balanced)
-        .background(Palette.background.ignoresSafeArea())
+        TabStacks()
+            .overlay(alignment: .bottom) { tools }
+            .splitPane()
     }
 
-    @ViewBuilder
-    private var detail: some View {
-        if router.detail != nil {
-            DetailHost(inline: true).id(router.detailEpoch)
-        } else {
-            NavigationStack { SplitPlaceholder() }
+    private var tools: some View {
+        GlassEffectContainer(spacing: SplitDimens.gap) {
+            VStack(alignment: .trailing, spacing: SplitDimens.gap) {
+                if router.tab == .media, router.path(.media).isEmpty {
+                    MediaBar(importing: Binding(get: { router.mediaImport }, set: { router.mediaImport = $0 }))
+                }
+                Button { router.openCreate() } label: {
+                    SplitGlyph(asset: "XoolPlus", tint: Palette.level)
+                        .frame(width: SplitDimens.fab, height: SplitDimens.fab)
+                        .contentShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .glassEffect(.regular.interactive(), in: Circle())
+                .accessibilityLabel(L.s("nav_create"))
+            }
+            .frame(maxWidth: .infinity, alignment: .trailing)
         }
+        .padding(SplitDimens.fabInset)
     }
+}
+
+struct SplitPane: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Palette.background)
+            .clipShape(RoundedRectangle(cornerRadius: SplitDimens.radius, style: .continuous))
+    }
+}
+
+extension View {
+    func splitPane() -> some View { modifier(SplitPane()) }
 }

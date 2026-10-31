@@ -12,6 +12,7 @@ struct EntryPage: View {
     let id: String
     @Environment(AppModel.self) private var model
     @Environment(Router.self) private var router
+    @Environment(\.secondPane) private var secondPane
     @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) private var openURL
     @State private var sheet: EntrySheet?
@@ -143,7 +144,7 @@ struct EntryPage: View {
             }
         }
         .toolbar {
-            EntryToolbar(entry: entry, model: model, router: router, sheet: $sheet, onDelete: {
+            EntryToolbar(entry: entry, model: model, router: router, sheet: $sheet, secondPane: secondPane, onDelete: {
                 model.moveToTrash(entry.id)
                 dismiss()
             })

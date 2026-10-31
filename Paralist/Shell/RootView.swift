@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/AppTabBar.swift, Shell/MenuDrawer.swift, Shell/CreateOverlay.swift, Shell/Router.swift, Shell/SectionChrome.swift, Shell/RouteDestination.swift, Shell/AppSheets.swift, Shell/TabSlotMenu.swift (TabSlotLook), Shell/SplitRootView.swift (SplitMetrics), Pages/*, Chat/ChatListPage.swift
+// Zusammenhang: Shell/AppTabBar.swift, Shell/MenuDrawer.swift, Shell/CreateOverlay.swift, Shell/Router.swift, Shell/SectionChrome.swift, Shell/RouteDestination.swift, Shell/AppSheets.swift, Shell/TabSlotMenu.swift (TabSlotLook), Shell/SplitRootView.swift (SplitMetrics, SplitListPane nutzt TabStacks), Pages/*, Chat/ChatListPage.swift
 import ParalistCore
 import SwiftUI
 
@@ -11,7 +11,7 @@ struct RootView: View {
     var body: some View {
         let list = SplitMetrics.list(for: width)
         Group {
-            if let list { SplitRootView(listWidth: list) } else { phone }
+            if list != nil { SplitRootView() } else { phone }
         }
         .background {
             Color.clear.onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
@@ -20,6 +20,26 @@ struct RootView: View {
     }
 
     private var phone: some View {
+        TabStacks()
+            .tint(Palette.onSurface)
+            .safeAreaInset(edge: .bottom, spacing: 0) { if !router.hidesTabBar { AppTabBar() } }
+            .background {
+                Color.clear
+                    .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.bottom } action: { router.bottomInset = $0 }
+                    .ignoresSafeArea(.keyboard)
+            }
+            .menuDrawer()
+            .appSheets()
+            .overlay { CreateOverlay() }
+            .overlay(alignment: .bottom) { NoticeBar(top: false) }
+            .overlay(alignment: .top) { NoticeBar(top: true) }
+    }
+}
+
+struct TabStacks: View {
+    @Environment(Router.self) private var router
+
+    var body: some View {
         ZStack {
             ForEach(AppTab.allCases, id: \.self) { tab in
                 let active = router.tab == tab
@@ -32,18 +52,6 @@ struct RootView: View {
                 .zIndex(active ? 1 : 0)
             }
         }
-        .tint(Palette.onSurface)
-        .safeAreaInset(edge: .bottom, spacing: 0) { if !router.hidesTabBar { AppTabBar() } }
-        .background {
-            Color.clear
-                .onGeometryChange(for: CGFloat.self) { $0.safeAreaInsets.bottom } action: { router.bottomInset = $0 }
-                .ignoresSafeArea(.keyboard)
-        }
-        .menuDrawer()
-        .appSheets()
-        .overlay { CreateOverlay() }
-        .overlay(alignment: .bottom) { NoticeBar(top: false) }
-        .overlay(alignment: .top) { NoticeBar(top: true) }
     }
 }
 
@@ -94,7 +102,7 @@ struct NoticeBar: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(top ? .top : .bottom, top ? Dimens.navBarClearance : (router.split ? SplitDimens.margin : Dimens.tabBarClearance))
+            .padding(top ? .top : .bottom, top ? Dimens.navBarClearance : (router.split ? SplitDimens.floor : Dimens.tabBarClearance))
             .transition(.move(edge: top ? .top : .bottom).combined(with: .opacity))
             .task(id: notice.id) {
                 try? await Task.sleep(for: .seconds(notice.undoId == nil ? 3 : 6))

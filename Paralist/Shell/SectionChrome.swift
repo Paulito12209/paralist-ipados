@@ -28,9 +28,9 @@ struct SectionChrome: ViewModifier {
             )
             .sensoryFeedback(.impact(weight: .medium), trigger: armed) { _, now in now }
             .background { Palette.background.ignoresSafeArea() }
-            .toolbar(router.split ? .automatic : .hidden, for: .navigationBar)
+            .toolbar(.hidden, for: .navigationBar)
             .overlay(alignment: .top) {
-                if !manualHeader, !router.split {
+                if !manualHeader {
                     LinearGradient(colors: [Palette.background, Palette.background.opacity(0)], startPoint: .top, endPoint: .bottom)
                         .frame(height: Dimens.statusFade)
                         .ignoresSafeArea(edges: .top)

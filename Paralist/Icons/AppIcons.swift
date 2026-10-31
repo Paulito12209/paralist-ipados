@@ -140,6 +140,8 @@ enum AppIcons {
     static let canvasActions = "hand.tap"
     static let canvasBack = "chevron.down"
     static let splitEmpty = "rectangle.split.2x1"
+    static let sidebarRight = "sidebar.right"
+    static let sidebarLeft = "sidebar.left"
     static let suggestions = "sparkles"
     static let date = "calendar.badge.plus"
     static let dateSet = "calendar"

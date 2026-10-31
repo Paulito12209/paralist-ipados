@@ -23,7 +23,7 @@ struct TasksPage: View {
         ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 0) {
-                    if tabRoot, !router.split { SectionHeader() }
+                    if tabRoot { SectionHeader() }
                     PageTitle(text: L.s("nav_tasks")).padding(.horizontal, Dimens.titleEdge)
                     TaskStage(activeCount: TaskViewSetting.active(all).count, archivedCount: setting.archived(all, today: model.today, zone: .current).count,
                               pinned: TaskViewSetting.pinned(all).first, archive: $archive, showsPin: $showsPin) { router.open(.entry($0.id)) }

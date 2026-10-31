@@ -1,4 +1,4 @@
-// Zusammenhang: Shell/Router.swift, Pages/*, Entry/EntryPage.swift, Flashcards/StudyPage.swift, Chat/ChatListPage.swift, Chat/ChatThreadPage.swift, Shell/SplitRootView.swift (hidesPhoneTabBar), Pages/TrashPage.swift, Flashcards/StudyPage.swift
+// Zusammenhang: Shell/Router.swift, Pages/*, Entry/EntryPage.swift, Flashcards/StudyPage.swift, Chat/ChatListPage.swift, Chat/ChatThreadPage.swift, Pages/TrashPage.swift, Flashcards/StudyPage.swift
 import ParalistCore
 import SwiftUI
 
@@ -44,10 +44,8 @@ private extension Route {
 }
 
 struct HidesPhoneTabBar: ViewModifier {
-    @Environment(Router.self) private var router
-
     func body(content: Content) -> some View {
-        content.toolbar(router.split ? .automatic : .hidden, for: .tabBar)
+        content.toolbar(.hidden, for: .tabBar)
     }
 }
 

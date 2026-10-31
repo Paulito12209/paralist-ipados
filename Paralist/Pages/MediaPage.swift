@@ -42,7 +42,7 @@ struct MediaPage: View {
         ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 0) {
-                    if tabRoot, !router.split { SectionHeader() }
+                    if tabRoot { SectionHeader() }
                     PageTitle(text: L.s("page_media")).padding(.horizontal, Dimens.titleEdge)
                     MediaFilterRow(filter: $filter, counts: counts(all))
                         .id(PageSearchAnchor.id)
@@ -57,7 +57,7 @@ struct MediaPage: View {
                         .padding(.horizontal, MediaDimens.edge)
                         .padding(.top, 8)
                     }
-                    Color.clear.frame(height: tabRoot ? router.tabBarFloor + (router.split ? 0 : TabBarDimens.tools + TabBarDimens.gap) : 0)
+                    Color.clear.frame(height: tabRoot ? router.tabBarFloor + TabBarDimens.tools + TabBarDimens.gap : 0)
                     PageSearchRoom(active: searching)
                 }
             }

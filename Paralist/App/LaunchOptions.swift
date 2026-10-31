@@ -72,6 +72,14 @@ enum LaunchOptions {
         case "split":
             router.select(.overview)
             router.open(.entry(DemoSeed.videoId))
+        case "pair":
+            router.select(.overview)
+            router.open(.entry(DemoSeed.videoId))
+            router.push(.entry(DemoSeed.taskId))
+        case "wide":
+            router.open(.entry(DemoSeed.videoId))
+            router.detailWide = true
+        case "panel": router.panelOpen = true
         case "entry": router.open(.entry(DemoSeed.videoId))
         case "task": router.open(.entry(DemoSeed.taskId))
         case "photo": router.open(.entry(DemoSeed.photoId))

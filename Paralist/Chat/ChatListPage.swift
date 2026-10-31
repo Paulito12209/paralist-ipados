@@ -24,7 +24,7 @@ struct ChatListPage: View {
         let shown = view.arrange(chats.threads, filter: active, query: query)
         ScrollViewReader { proxy in
             List {
-                if tabRoot, !router.split { SectionHeader().plainRow() }
+                if tabRoot { SectionHeader().plainRow() }
                 PageTitle(text: L.s("chat_title"))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, Dimens.titleEdge)

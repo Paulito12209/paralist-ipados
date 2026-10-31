@@ -1,4 +1,4 @@
-// Zusammenhang: ParalistCore Library/TabTap.swift (tapTab, topRequests), Shell/CreateOverlay.swift, Shell/DetailHost.swift, Shell/MediaPager.swift, Pages/MediaPage.swift, Capture/CaptureFlow.swift, Shell/RootView.swift, Shell/RouteDestination.swift, Shell/MenuDrawer.swift, Pages/MenuPage.swift, Shell/TabSlotMenu.swift (freshTab, shows), App/ParalistApp.swift (shows), App/LaunchOptions.swift, Reminders/NotificationHandler.swift, Chat/ChatListPage.swift, Shell/PageBar.swift (Menü aus Seiten außerhalb der Leiste), ParalistCore Library/TabBarLayout.swift (lift, pillDrop), Theme/EntryBarDimens.swift (entryBarPillRest), Entry/EntryToolbar.swift (EntryBottomBar), Library/TabBarOrder.swift, Pages/CalendarPage.swift (pullBlocked, moves), Shell/SplitRootView.swift (split, push, detailEpoch), Shell/SplitParts.swift, ParalistCore Library/SplitLayout.swift, docs/ipad.md
+// Zusammenhang: ParalistCore Library/TabTap.swift (tapTab, topRequests), Shell/CreateOverlay.swift, Shell/DetailHost.swift, Shell/MediaPager.swift, Pages/MediaPage.swift, Capture/CaptureFlow.swift, Shell/RootView.swift, Shell/RouteDestination.swift, Shell/MenuDrawer.swift, Pages/MenuPage.swift, Shell/TabSlotMenu.swift (freshTab, shows), App/ParalistApp.swift (shows), App/LaunchOptions.swift, Reminders/NotificationHandler.swift, Chat/ChatListPage.swift, Shell/PageBar.swift (Menü aus Seiten außerhalb der Leiste), ParalistCore Library/TabBarLayout.swift (lift, pillDrop), Theme/EntryBarDimens.swift (entryBarPillRest), Entry/EntryToolbar.swift (EntryBottomBar), Library/TabBarOrder.swift, Pages/CalendarPage.swift (pullBlocked, moves), Shell/SplitRootView.swift (split, detailEpoch), Shell/RouterSplit.swift (openSplit, pushSplit, second, panelOpen, detailWide, paneShare), Shell/SplitPanes.swift, Shell/SplitParts.swift, ParalistCore Library/SplitLayout.swift, docs/ipad.md
 import Foundation
 import Observation
 import ParalistCore
@@ -93,8 +93,12 @@ final class Router {
     var detail: Route?
     var detailPath: [Route] = []
     var split = false
-    var columns: NavigationSplitViewVisibility = .all
-    private(set) var detailEpoch = 0
+    var panelOpen = false
+    var detailWide = false
+    var second: Route?
+    var paneShare = 0.5
+    var detailEpoch = 0
+    var secondEpoch = 0
     var mediaQueue: [String] = []
     var detailDrop: CGFloat = 0
     var detailInCover = false
@@ -192,30 +196,14 @@ final class Router {
     var detailCovers: Bool { detail != nil && !split }
 
     func push(_ route: Route) {
+        if split {
+            pushSplit(route)
+            return
+        }
         if detail != nil { detailPath.append(route) } else { open(route) }
     }
 
-    func leave(_ dismiss: DismissAction) {
-        switch detail {
-        case .chat, .study: if split, detailPath.isEmpty { closeDetail() } else { dismiss() }
-        default: dismiss()
-        }
-    }
-
-    private func openSplit(_ route: Route) {
-        if let target = route.tab, shows(target) {
-            select(target)
-            return
-        }
-        compact = false
-        if route.opensInDetail {
-            closeMenu()
-            mediaQueue = []
-            detailPath = []
-            detailEpoch += 1
-            detail = route
-            return
-        }
+    func appendSection(_ route: Route) {
         let swap = menuOpen && route.isSection && (path(tab).last?.isSection ?? false)
         closeMenu()
         if swap { paths[tab, default: []].removeLast() }
@@ -270,6 +258,8 @@ final class Router {
         detail = nil
         detailPath = []
         mediaQueue = []
+        second = nil
+        detailWide = false
     }
 
     func dropDetail(_ height: CGFloat) {
@@ -327,13 +317,13 @@ final class Router {
     }
 
     var tabBarFloor: CGFloat {
-        if split { return SplitDimens.margin }
+        if split { return SplitDimens.floor }
         return TabBarLayout.reserve(lift: tabBarLift, height: TabBarDimens.height, docked: true, compact: false,
                              compactHeight: TabBarDimens.compact, pillHeight: TabBarDimens.searchPill, gap: TabBarDimens.gap)
     }
 
     var tabBarReserve: CGFloat {
-        if split { return SplitDimens.margin }
+        if split { return SplitDimens.floor }
         return TabBarLayout.reserve(lift: tabBarLift, height: TabBarDimens.height, docked: searchBarDocked, compact: compact,
                              compactHeight: TabBarDimens.compact, pillHeight: TabBarDimens.searchPill, gap: TabBarDimens.gap)
     }
